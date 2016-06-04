@@ -1,0 +1,26 @@
+<div class="page_top_level_div">
+  <div>
+    <h2>Your Activity</h2>
+    <% @your_activity.each do |query| %>
+    <a href="/queries/<%=query.id%>"><%=label_tag(query.query_string)%></a>
+    <a href="/queries/<%=query.id%>/edit">Edit query</a>
+    <br><br>
+    <%end%>
+  </div>
+
+  <div>
+    <h2>Public Activity</h2>
+    <% @public_activity.each do |query| %>
+    <a href="/queries/<%=query.id%>"><%=label_tag(query.query_string)%></a>
+    <br><br>
+    <%end%>
+  </div>
+</div>
+
+
+<script type="text/javascript">
+  $(document).ready(function()
+  {
+    hideNewUserButton();
+  });
+</script>

@@ -1,0 +1,33 @@
+<div class="devise_login_page form_div">
+  <div class="errors_warnings">
+    <% if flash[:notice] and !flash[:notice].empty? %>
+    <div class = "alert"><%= flash[:notice] %></div>
+    <% end %>
+
+    <% if flash[:alert] and !flash[:alert].empty? %>
+    <div class = "alert"><%= flash[:alert] %></div>
+    <% end %>
+  </div>
+
+  <h2>Log in</h2>
+
+  <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+  <div class="field">
+    <%= f.email_field :email, :class => "form-control", :placeholder => "Email", autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.password_field  :password, :class => "form-control", :placeholder => "Password", autocomplete: "off" %>
+  </div>
+
+  <% if devise_mapping.rememberable? %>
+  <div class="field">
+    <%= f.check_box :remember_me, :class => "remember_me" %>
+    <%= f.label :remember_me %>
+  </div>
+  <% end %>
+
+  <%= f.submit "Sign in", :class => "btn btn-green btn-sm devise_login" %>
+  <%= render "devise/shared/links" %>
+  <% end %>
+</div>
