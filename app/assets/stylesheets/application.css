@@ -20,10 +20,9 @@ body
 	padding: 0;
 	font-family: "Work Sans";
 	background-image: url("bg.jpg");
-	background-repeat: no-repeat;
 	background-size: 1440px 960px;
-	background-position: fixed;
 	background-attachment: fixed;
+	background-repeat: no-repeat;
 }
 
 header
@@ -35,6 +34,7 @@ header
 	left: 0;
 	top : 0;
 	border-bottom: 1px solid rgba(0,0,0,0.75);
+	z-index: 1000;
 }
 
 footer
@@ -45,19 +45,39 @@ footer
 	position: fixed;
 	background-color: white;
 	padding: 10px;
-	height: 150px;
 	border-top: 1px solid rgba(0,0,0,0.75);
 }
 
-h1, h2, h3, h4 h5, h6, h7, input, p, span, div
+h1, h2, h3, h4 h5, h6, h7, input, p, span, div, pre
 {
 	font-weight: 300;
+	font-family: inherit;
 }
 
+pre
+{
+	background: transparent;
+	border: 0px;
+	margin: 0;
+	padding: 0;
+	font-size: 18px;
+}
 a
 {
 	font-weight: 400;
 }
+
+a:hover
+{
+	text-decoration: none;
+}
+
+::selection
+{
+	color: white;
+	background-color: rgb(46,200,102);
+}
+
 .content
 {
 	width: 80%;
@@ -86,10 +106,6 @@ header .content .right_content
 {
 	float: right;
 }
-.new_user
-{
-	margin-top: 5px;
-}
 
 footer .content nav
 {
@@ -108,15 +124,36 @@ footer .content nav a
 	padding: 10px;
 }
 
-.top_div, .welcome_user, .page_top_level_div
+.welcome_user, .page_top_level_div
 {
-	background-color: rgba(255,255,255,0.90);
+	background-color: rgba(255,255,255,0.5);
 	margin: 0;
+	padding: 0px 20px 20px 20px;
+}
+
+.welcome_user
+{
+	padding: 20px;
+}
+
+.top_div
+{
+	background-color: rgb(46,200,102);
+	padding: 0px 10px;
 }
 
 .page_top_level_div
 {
 	margin-top: -20px;
+}
+
+/* clearfix shit for parents of floating elements */
+.clearfix:after
+{
+   content: " ";
+   display: block;
+   height: 0;
+   clear: both;
 }
 
 /* An extended bootstrap option for green button */
@@ -151,4 +188,38 @@ for some common properties
 input
 {
 	margin: 20px 0px;
+}
+
+/* Added this to enable dropdown on hover */
+.dropdown:hover .dropdown-menu
+{
+	display: block;
+	opacity: 1;
+}
+
+/* There is a little margin between button and drop down options due to which
+the drop down menu sometimes disappers. This margin will stick drop down
+options with the button (UI hack)
+*/
+.navigation_button
+{
+	margin-top: 8px;
+	margin-bottom: -2px;
+}
+
+
+/* Apply property to elements via simple class names ;) */
+.float_right
+{
+	float: right;
+}
+
+.text_align_right
+{
+	text-align: right;
+}
+
+.inline_block
+{
+	display: inline-block;
 }

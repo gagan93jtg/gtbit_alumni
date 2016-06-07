@@ -1,26 +1,26 @@
 h2
 {
-  margin-bottom: 20px;
+	margin-bottom: 20px;
 }
 
 .devise_login_page, .devise_forgot_page
 {
-  width: 400px;
+	width: 400px;
 }
 
 .devise_login
 {
-  font-size: 14px;
+	font-size: 14px;
 }
 
 .back_to_login, .forgot_password
 {
-  float: right;
-  /*This margin top is important as 'input' tags have margin top and bottom 10px each*/
-  margin-top: 20px;
+	float: right;
+	/*This margin top is important as 'input' tags have margin top and bottom 10px each*/
+	margin-top: 20px;
 }
 
-.new_user
+.new_user_button
 {
-  visibility: visible;
+	margin-top: 5px;
 }

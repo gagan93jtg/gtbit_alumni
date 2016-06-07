@@ -13,13 +13,11 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require rails-timeago
 //= require_tree .
 
 
 $(document).ready(function()
 {
-	body_content_height = $('.body_content').css('height');
-	footer_height = $('.footer_height').css('height');
-	$('.body_content').css('height',body_content_height - footer_height);
 	$('.errors_warnings').delay(3000).fadeOut(2000);
 });

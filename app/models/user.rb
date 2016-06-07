@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
   has_many :responses
 
   def full_name
+    return email if self  .first_name.nil? || self.last_name.nil?
     return self.first_name + " " + self.last_name
   end
 
@@ -17,5 +18,13 @@ class User < ActiveRecord::Base
                 :phone => params[:phone], :gender => params[:gender], :batch => params[:batch],
                 :job_type => params[:job_type], :designation => params[:designation],
                 :company => params[:company], :experience_in_years => params[:experience_in_years])
+  end
+
+  def first_sign_in?
+    return sign_in_count == 1
+  end
+
+  def update_sign_in_count
+    self.update(sign_in_count: 2)
   end
 end

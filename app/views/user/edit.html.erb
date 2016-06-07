@@ -1,25 +1,27 @@
-<%= form_for :user, :url => user_path(), :method => "PUT" do |f|%>
+<div class="page_top_level_div">
+    <%= form_for :user, :url => user_path(), :method => "PUT" do |f|%>
     <h2>
       Update your profile
-    </h2>
-    <br><br>
-    <%=label_tag "First name"%><%= f.text_field :first_name, :value => current_user.first_name, :placeholder => "First name" %>
-    <br><br>
-    <%=label_tag "Last name"%><%= f.text_field :last_name, :value => current_user.last_name, :placeholder => "Last name" %>
-    <br><br>
-    <%=label_tag "Phone no."%><%= f.text_field :phone, :value => current_user.phone, :placeholder => "Personal contact no." %>
-    <br><br>
-    <%=label_tag "Gender"%><%= f.text_field :gender, :value => current_user.gender, :placeholder => "Gender ('Male' or 'Female')" %>
-    <br><br>
-    <%=label_tag "Batch"%><%= f.text_field :batch, :value => current_user.batch, :placeholder => "Batch (Eg. CSE 2011 - 2015)" %>
-    <br><br>
-    <%=label_tag "Work type"%><%= f.text_field :job_type, :value => current_user.job_type, :placeholder => "Work type (Job / Business / Others (Please specify)" %>
-    <br><br>
-    <%=label_tag "Designation"%><%= f.text_field :designation, :value => current_user.designation, :placeholder => "Designation" %>
-    <br><br>
-    <%=label_tag "Company"%><%= f.text_field :company, :value => current_user.company, :placeholder => "Company" %>
-    <br><br>
-    <%=label_tag "Experience (in years)"%><%= f.text_field :experience_in_years, :value => current_user.experience_in_years, :placeholder => "Experience (In years)" %>
-    <br><br>
-    <%= submit_tag(@save_string) %>
-<%end%>
+  </h2>
+  <br><br>
+  <%=label_tag "First name"%><%= f.text_field :first_name, :value => current_user.first_name, :placeholder => "First name" %>
+  <br><br>
+  <%=label_tag "Last name"%><%= f.text_field :last_name, :value => current_user.last_name, :placeholder => "Last name" %>
+  <br><br>
+  <%=label_tag "Phone no."%><%= f.text_field :phone, :value => current_user.phone, :placeholder => "Personal contact no." %>
+  <br><br>
+  <%=label_tag "Gender"%><%= f.text_field :gender, :value => current_user.gender, :placeholder => "Gender ('Male' or 'Female')" %>
+  <br><br>
+  <%=label_tag "Batch"%><%= f.text_field :batch, :value => current_user.batch, :placeholder => "Batch (Eg. CSE 2011 - 2015)" %>
+  <br><br>
+  <%=label_tag "Work type"%><%= f.text_field :job_type, :value => current_user.job_type, :placeholder => "Work type (Job / Business / Others (Please specify)" %>
+  <br><br>
+  <%=label_tag "Designation"%><%= f.text_field :designation, :value => current_user.designation, :placeholder => "Designation" %>
+  <br><br>
+  <%=label_tag "Company"%><%= f.text_field :company, :value => current_user.company, :placeholder => "Company" %>
+  <br><br>
+  <%=label_tag "Experience (in years)"%><%= f.text_field :experience_in_years, :value => current_user.experience_in_years, :placeholder => "Experience (In years)" %>
+  <br><br>
+  <%= submit_tag(@save_string) %>
+  <%end%>
+</div>
