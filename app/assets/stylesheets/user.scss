@@ -2,7 +2,40 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.top_div
+.query_string:hover
 {
+	text-decoration: none;
+}
 
+.your_activity, .public_activity
+{
+	width: 80%;
+}
+
+.your_activity_question, .public_activity_question
+{
+	margin: 20px;
+	border-bottom: 1px solid rgba(0,0,0,0.10);
+	padding-bottom: 25px;
+}
+
+.public_activity_user
+{
+	border: 1px solid rgba(0,0,0,0.25);
+	width: 64px;
+	height: 64px;
+}
+
+.query_string
+{
+	margin-top: 10px;
+}
+
+.left_div
+{
+	vertical-align: top;
+}
+.right_div
+{
+	margin: 5px 0px 0px 10px;
 }
