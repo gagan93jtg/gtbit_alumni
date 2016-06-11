@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_many :queries
   has_many :responses
+  has_many :query_histories
 
   def full_name
     return email if self  .first_name.nil? || self.last_name.nil?

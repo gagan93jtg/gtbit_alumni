@@ -190,6 +190,12 @@ input
 	margin: 20px 0px;
 }
 
+.loading
+{
+	width: 32px;
+	height: 32px;
+}
+
 /* Added this to enable dropdown on hover */
 .dropdown:hover .dropdown-menu
 {

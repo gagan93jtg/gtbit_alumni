@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160508134222) do
+ActiveRecord::Schema.define(version: 20160611063000) do
 
   create_table "queries", force: :cascade do |t|
     t.integer  "user_id",       limit: 4
@@ -20,6 +20,15 @@ ActiveRecord::Schema.define(version: 20160508134222) do
     t.boolean  "is_anonymous",                default: false
     t.boolean  "is_direct",                   default: false
     t.integer  "ask_to_answer", limit: 4
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "query_histories", force: :cascade do |t|
+    t.integer  "user_id",      limit: 4
+    t.integer  "query_id",     limit: 4
+    t.text     "query_string", limit: 65535
+    t.text     "tags",         limit: 65535
     t.datetime "created_at"
     t.datetime "updated_at"
   end

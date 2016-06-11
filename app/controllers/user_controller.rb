@@ -18,7 +18,6 @@ class UserController < ApplicationController
 
   def trusted
     @trusted_members = User.all
-    Rails.logger.info "\n\n\n\n\n\n\n\nGot a hit\n\n\n\n\n\n\n\n"
   end
 
   def show

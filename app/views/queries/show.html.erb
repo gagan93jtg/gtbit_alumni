@@ -1,29 +1,53 @@
 <div class="page_top_level_div">
   <div class="show_question">
     <div class="question">
-      <%=label_tag asked_by(@query.user)%> asked <%=is_anonymous?(@query)%>
+      <%= label_tag asked_by(@query.user) %> asked <%= is_anonymous?(@query) %>
       <br>
-      <%=label_tag @query.query_string %> on <%=timeago_tag @query.query_time%>
+      <pre class='query_string'><%= @query.query_string.strip %></pre>
+      <i> <%=timeago_tag @query.query_time%> </i>
       <br>
-      Tags: <%=label_tag @query.tags%>
+      <span class='tags'> <%= @query.tags %> </span>
+      <% if @query.query_histories.count > 0 %>
+      <a href="#" data-toggle="modal" data-target="#edit_history_modal" class="edit_history"> View edit history </a>
+      <% end %>
     </div>
     <br>
     <div class="comments">
       <%@query.responses.each do |resp|%>
       <div class="comment">
-        <%=resp.user.full_name%> : "<%=resp.response_string%>" on <%=timeago_tag resp.created_at%>
+        <%=resp.user.full_name%> : "<%=resp.response_string%>" <i> <%=timeago_tag resp.created_at%> </i>
       </div>
       <%end%>
     </div>
     <br><br>
     <div class="add_comment">
       <%= form_for :response, :url => responses_path(), :method => "POST" do |f|%>
-      <input type="hidden" name="[query][id]" value=<%=@query.id%>>
+      <input type="hidden" name="[query][id]" value= <%= @query.id %>>
       <%= f.text_area :response_string, :placeholder => "Write a comment", :size => "30x2" %>
-      <br><br>
+      <br>
       <%= submit_tag("Add") %>
       <%end%>
-
     </div>
   </div>
 </div>
+
+<div id="edit_history_modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Edit history </h4>
+      </div>
+      <div class="modal-body">
+        <%= image_tag 'loading.gif', class: 'loading' %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-green" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  bind_edit_history_modal_click("<%=@query.id%>");
+</script>
