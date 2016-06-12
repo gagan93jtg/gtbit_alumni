@@ -2,12 +2,17 @@ Rails.application.routes.draw do
 
   devise_for :users
 
+  get 'user/trusted' => 'user#trusted', :as => "trusted_users"
+  get 'queries/edit_history' => 'queries#edit_history'
+
   root 'user#index'
   resources :queries
   resources :user
   resources :responses
 
-  get 'user/trusted' => 'user#trusted', :as => "trusted_users"
+  get 'errors/file_not_found', :as => "error_file_not_found"
+  get 'errors/unprocessable', :as => "error_unprocessable"
+  get 'errors/internal_server_error', :as => "error_internal_server_error"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
