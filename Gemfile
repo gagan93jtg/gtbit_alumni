@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 gem 'actionmailer', '4.2.5.1'
 gem 'actionpack', '4.2.5.1'
 gem 'actionview', '4.2.5.1'
@@ -61,6 +60,19 @@ gem 'turbolinks', '2.5.3'
 gem 'tzinfo', '1.2.2'
 gem 'uglifier', '2.7.2'
 gem 'web-console', '2.3.0'
+gem 'will_paginate', '~> 3.1'
+
+group :development do
+  gem 'rails_best_practices', '1.16'
+  gem 'rubocop', '0.40.0'
+  gem 'tabs2spaces', '~> 0.0.7'
+end
+
+group :test do
+  gem 'simplecov-rcov'
+  gem 'factory_girl_rails', '4.7'
+end
+
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.1.0'

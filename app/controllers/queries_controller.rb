@@ -12,19 +12,21 @@ class QueriesController < ApplicationController
 
   def show
     @query = Query.find_by_id(params[:id])
-    redirect_to controller: "errors", action: "file_not_found" and return unless @query
+    redirect_to controller: 'errors', action: 'file_not_found' && return unless @query
   end
 
   def edit
     @query = Query.find_by_id(params[:id])
-    redirect_to controller: "errors", action: "file_not_found" and return unless @query
-    redirect_to controller: "errors", action: "unprocessable" and return unless current_user.id == @query.user_id
+    redirect_to controller: 'errors', action: 'file_not_found' && return unless @query
+    redirect_to controller: 'errors', action: 'unprocessable' && return unless
+      current_user.id == @query.user_id
   end
 
   def update
     query = Query.find(params[:id])
-    redirect_to controller: "errors", action: "file_not_found" and return unless query
-    redirect_to controller: "errors", action: "unprocessable" and return unless current_user.id == query.user_id
+    redirect_to controller: 'errors', action: 'file_not_found' && return unless query
+    redirect_to controller: 'errors', action: 'unprocessable' && return unless
+      current_user.id == query.user_id
 
     query.update_query(params)
     redirect_to root_path
@@ -32,7 +34,8 @@ class QueriesController < ApplicationController
 
   def edit_history
     query = Query.find(params[:id])
-    redirect_to controller: "errors", action: "file_not_found" and return unless query
-    render json: query.query_histories.to_json and return
+    redirect_to controller: 'errors', action: 'file_not_found' && return unless query
+    render json: query.query_histories.to_json
+    return
   end
 end
