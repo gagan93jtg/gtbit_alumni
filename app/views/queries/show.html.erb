@@ -1,7 +1,7 @@
 <div class="page_top_level_div">
   <div class="show_question">
     <div class="question">
-      <%= label_tag asked_by(@query.user) %> asked <%= is_anonymous?(@query) %>
+      <%= label_tag asked_by(@query.user) %> asked <%= anonymous?(@query) %>
       <br>
       <pre class='query_string'><%= @query.query_string.strip %></pre>
       <i> <%=timeago_tag @query.query_time%> </i>

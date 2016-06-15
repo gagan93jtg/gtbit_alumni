@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  get 'user/trusted' => 'user#trusted', :as => "trusted_users"
+  get 'user/trusted' => 'user#trusted', as: 'trusted_users'
   get 'queries/edit_history' => 'queries#edit_history'
 
   root 'user#index'
@@ -10,14 +10,14 @@ Rails.application.routes.draw do
   resources :user
   resources :responses
 
-  get 'errors/file_not_found', :as => "error_file_not_found"
-  get 'errors/unprocessable', :as => "error_unprocessable"
-  get 'errors/internal_server_error', :as => "error_internal_server_error"
+  get 'errors/file_not_found', as: 'error_file_not_found'
+  get 'errors/unprocessable', as: 'error_unprocessable'
+  get 'errors/internal_server_error', as: 'error_internal_server_error'
 
   # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
+  # See how all your routes lay out with 'rake routes'.
 
-  # You can have the root of your site routed with "root"
+  # You can have the root of your site routed with 'root'
   # root 'welcome#index'
 
   # Example of regular route:

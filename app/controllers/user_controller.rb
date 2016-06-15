@@ -1,5 +1,4 @@
 class UserController < ApplicationController
-  #check user's login status, controller is accessible only if user is logged in
   before_filter :authenticate_user!
 
   def index
@@ -8,7 +7,6 @@ class UserController < ApplicationController
   end
 
   def edit
-
   end
 
   def update
@@ -21,6 +19,5 @@ class UserController < ApplicationController
   end
 
   def show
-
   end
 end

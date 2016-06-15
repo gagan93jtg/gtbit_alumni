@@ -5,9 +5,11 @@ class CreateResponses < ActiveRecord::Migration
       t.references :user
 
       t.text    :response_string
-      t.integer :upvotes, :default => 0
+      t.integer :upvotes, default: 0
 
       t.timestamps
     end
+    add_index :responses, :query_id
+    add_index :responses, :user_id
   end
 end

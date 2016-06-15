@@ -24,6 +24,8 @@ ActiveRecord::Schema.define(version: 20160611063000) do
     t.datetime "updated_at"
   end
 
+  add_index "queries", ["user_id"], name: "index_queries_on_user_id", using: :btree
+
   create_table "query_histories", force: :cascade do |t|
     t.integer  "user_id",      limit: 4
     t.integer  "query_id",     limit: 4
@@ -33,6 +35,9 @@ ActiveRecord::Schema.define(version: 20160611063000) do
     t.datetime "updated_at"
   end
 
+  add_index "query_histories", ["query_id"], name: "index_query_histories_on_query_id", using: :btree
+  add_index "query_histories", ["user_id"], name: "index_query_histories_on_user_id", using: :btree
+
   create_table "responses", force: :cascade do |t|
     t.integer  "query_id",        limit: 4
     t.integer  "user_id",         limit: 4
@@ -41,6 +46,9 @@ ActiveRecord::Schema.define(version: 20160611063000) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "responses", ["query_id"], name: "index_responses_on_query_id", using: :btree
+  add_index "responses", ["user_id"], name: "index_responses_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "first_name",             limit: 255

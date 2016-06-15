@@ -9,5 +9,7 @@ class CreateQueryHistory < ActiveRecord::Migration
 
       t.timestamps
     end
+    add_index :query_histories, :user_id
+    add_index :query_histories, :query_id
   end
 end
