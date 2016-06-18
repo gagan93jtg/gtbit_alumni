@@ -9,3 +9,5 @@
 
 User.create(first_name: 'Gagandeep', last_name: 'Singh', email: 'gagan@gmail.com',
             password: '123123123')
+
+User.create(email: 'g@gmail.com', password: '123123123')

@@ -4,7 +4,7 @@ function bind_edit_history_modal_click(id)
 	{
 		$('.loading').css('display','inline-block');
 		$.ajax({
-			url: '/queries/edit_history',
+			url: '/posts/edit_history',
 			type: 'GET',
 			data: {id: id}
 		})

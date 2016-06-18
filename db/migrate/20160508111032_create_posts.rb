@@ -1,6 +1,6 @@
-class CreateQueries < ActiveRecord::Migration
+class CreatePosts < ActiveRecord::Migration
   def change
-    create_table :queries do |t|
+    create_table :posts do |t|
       t.references :user
 
       t.text    :query_string
@@ -11,6 +11,6 @@ class CreateQueries < ActiveRecord::Migration
 
       t.timestamps
     end
-    add_index :queries, :user_id
+    add_index :posts, :user_id
   end
 end

@@ -1,0 +1,9 @@
+development:
+  redis_master:
+    host: localhost
+    port: 6379
+    db: 0
+  redis_slave:
+    host: localhost
+    port: 6379
+    db: 0

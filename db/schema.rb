@@ -13,7 +13,31 @@
 
 ActiveRecord::Schema.define(version: 20160611063000) do
 
-  create_table "queries", force: :cascade do |t|
+  create_table "comments", force: :cascade do |t|
+    t.integer  "post_id",        limit: 4
+    t.integer  "user_id",        limit: 4
+    t.text     "comment_string", limit: 65535
+    t.integer  "upvotes",        limit: 4,     default: 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "comments", ["post_id"], name: "index_comments_on_post_id", using: :btree
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
+
+  create_table "post_histories", force: :cascade do |t|
+    t.integer  "user_id",      limit: 4
+    t.integer  "post_id",      limit: 4
+    t.text     "query_string", limit: 65535
+    t.text     "tags",         limit: 65535
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "post_histories", ["post_id"], name: "index_post_histories_on_post_id", using: :btree
+  add_index "post_histories", ["user_id"], name: "index_post_histories_on_user_id", using: :btree
+
+  create_table "posts", force: :cascade do |t|
     t.integer  "user_id",       limit: 4
     t.text     "query_string",  limit: 65535
     t.text     "tags",          limit: 65535
@@ -24,31 +48,7 @@ ActiveRecord::Schema.define(version: 20160611063000) do
     t.datetime "updated_at"
   end
 
-  add_index "queries", ["user_id"], name: "index_queries_on_user_id", using: :btree
-
-  create_table "query_histories", force: :cascade do |t|
-    t.integer  "user_id",      limit: 4
-    t.integer  "query_id",     limit: 4
-    t.text     "query_string", limit: 65535
-    t.text     "tags",         limit: 65535
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "query_histories", ["query_id"], name: "index_query_histories_on_query_id", using: :btree
-  add_index "query_histories", ["user_id"], name: "index_query_histories_on_user_id", using: :btree
-
-  create_table "responses", force: :cascade do |t|
-    t.integer  "query_id",        limit: 4
-    t.integer  "user_id",         limit: 4
-    t.text     "response_string", limit: 65535
-    t.integer  "upvotes",         limit: 4,     default: 0
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "responses", ["query_id"], name: "index_responses_on_query_id", using: :btree
-  add_index "responses", ["user_id"], name: "index_responses_on_user_id", using: :btree
+  add_index "posts", ["user_id"], name: "index_posts_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "first_name",             limit: 255
