@@ -1,10 +1,12 @@
 <div class="page_top_level_div">
-	<h2>Unread notifications</h2>
-	<% @notifications.each do |notif| %>
+	<h1>count : <%=@notif_count  %></h1>
+	<h2>Your notifications</h2>
+	<% @notifications.each do |notification| %>
 	<div class="notification">
-		<% notification = JSON.parse(notif) %>
-		<p class="notification_text">
-			<%= notification["text"] %> <%= link_to 'post', post_path(notification["post_id"]) %>
+		<p class="<%=notification.inspect%>">
+			<%= link_to User.find(notification["commenter_id"]).full_name, user_path(notification["commenter_id"])%>
+			<%= notification["text"] %>
+			<%= link_to notification["type"], post_path(notification["post_id"]) %>
 		</p>
 		<i> <%=timeago_tag Time.at(notification["timestamp"]) %> </i>
 	</div>

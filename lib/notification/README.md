@@ -17,18 +17,19 @@
 
   * Read : After writing, read this set again and create notifications for all those IDs
 
-### Every user will have two redis LISTS
+### Every user will have two redis HASHES
 
-  * DataType : List (ordered collection implemented as a linked list)
+  * DataType : HASH (Key value pairs)
 
-  * Key names : READ\_NOTIFS:user\_id, UNREAD\_NOTIFS:user\_id
+  * Key names : UNREAD\_NOTIFS, UNREAD\_NOTIFS:user\_id
 
-  * Stores : Complete information about a notification in JSON format.
+  * Stores : UNREAD\_NOTIFS:user\_id stores complete information about a notification in JSON format.
+             UNREAD\_NOTIFS is a hash which stores no. of unread notifications for all users
 
-  * Useful commands : LPUSH, RPUSH, LLEN, LRANGE
+  * Useful commands : HDEL, HSET, HKEYS, HGET, HGETALL, HMSET, HLEN
 
-  * Write : Write READ\_NOTIFS:<user_id> list whenever a user sees all his notifications.
-            Write UNREAD\_NOTIFS:<user_id> list whenever any user makes comment on a post where this user also did
+  * Write : Increment hash position of user inside UNREAD\_NOTIFS whenever comment is made for a subscribed post
+            Write UNREAD\_NOTIFS:<user_id> list whenever any user makes comment on a subscribed post
 
-  * Read : Read READ\_NOTIFS:<user_id> using a special method only when user demands.
+  * Read : Read UNREAD\_NOTIFS whenever user log's in and clear it once user opens notifications/index
            Read UNREAD\_NOTIFS:<user_id> whenver user tries to see 'all notifications' page.
