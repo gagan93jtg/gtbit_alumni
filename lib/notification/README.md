@@ -21,15 +21,14 @@
 
   * DataType : HASH (Key value pairs)
 
-  * Key names : UNREAD\_NOTIFS, UNREAD\_NOTIFS:user\_id
+  * Key names : UNREAD\_NOTIFS:user_id, READ\_NOTIFS:user_id
 
-  * Stores : UNREAD\_NOTIFS:user\_id stores complete information about a notification in JSON format.
+  * Stores : READ\_NOTIFS is a hash which stores no. of read notifications for all users
              UNREAD\_NOTIFS is a hash which stores no. of unread notifications for all users
 
   * Useful commands : HDEL, HSET, HKEYS, HGET, HGETALL, HMSET, HLEN
 
-  * Write : Increment hash position of user inside UNREAD\_NOTIFS whenever comment is made for a subscribed post
-            Write UNREAD\_NOTIFS:<user_id> list whenever any user makes comment on a subscribed post
+  * Write : Write UNREAD\_NOTIFS:<user_id> hash whenever any user makes comment on a subscribed post
+            Write READ\_NOTIFS:<user_id> hash after showing all notifications to user
 
-  * Read : Read UNREAD\_NOTIFS whenever user log's in and clear it once user opens notifications/index
-           Read UNREAD\_NOTIFS:<user_id> whenver user tries to see 'all notifications' page.
+  * Read : Read both hashes whenever user hits index action of notifications controller

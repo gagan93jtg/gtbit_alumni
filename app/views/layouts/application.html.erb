@@ -23,8 +23,9 @@
             </span>
           </button>
           <ul class="dropdown-menu">
+
             <li> <%= link_to "Home", root_path %> </li>
-            <li> <%= link_to "View notifications", notifications_index_path %> </li>
+            <li> <%= link_to "View notifications (#{notif_count})", notifications_index_path %> </li>
             <li> <%= link_to "Ask a question", new_post_path %> </li>
             <li> <%= link_to "View trusted members", trusted_users_path %> </li>
             <li> <%= link_to "Update profile", edit_user_path(current_user) %> </li>

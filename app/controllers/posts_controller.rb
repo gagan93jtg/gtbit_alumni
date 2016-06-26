@@ -26,9 +26,9 @@ class PostsController < ApplicationController
     post = Post.find(params[:id])
     redirect_to controller: 'errors', action: 'file_not_found' && return unless post
     redirect_to controller: 'errors', action: 'unprocessable' && return unless
-      current_user.id == Post.user_id
+      current_user.id == post.user_id
 
-    Post.update_post(params)
+    post.update_post(params)
     redirect_to root_path
   end
 
