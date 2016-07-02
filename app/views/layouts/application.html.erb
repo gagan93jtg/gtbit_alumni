@@ -5,9 +5,68 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  <link href='https://fonts.googleapis.com/css?family=Work+Sans:100,300,400,600' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,900,700italic,700,600italic,400italic,600,300italic,300,200italic,200' rel='stylesheet' type='text/css'>
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
 </head>
 <body>
+
+<!-- **********************Header Starts*********************** -->
+  <div class="header">
+    <nav class="navbar navbar-default navbar-fixed-top clearfix">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">
+            <span class="one">GTBIT Alumni Network</span>
+          </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li ><a class="new_user_button" href="#">New User ?<span class="sr-only">(current)</span></a></li>
+            <!--
+            <li><a href="#">Two</a></li>
+            <li><a href="#">Three</a></li>-->
+          
+            <!-- Dropdown-->
+            <% if current_user %>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle navigation_button" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Navigate<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#"><%= link_to "Home", root_path %> </a></li>
+                <li><a href="#"><%= link_to "View notifications (#{notif_count})", notifications_index_path %> </a></li>
+                <li><a href="#"><%= link_to "Ask a question", new_post_path %> </a></li>
+                <li><a href="#"><%= link_to "View trusted members", trusted_users_path %></a></li>
+                <li><a href="#"><%= link_to "Update profile", edit_user_path(current_user) %></a></li>
+                <li><a href="#"><%= link_to "Search users", "#" %> </a></li>
+                <li><a href="#"><%= link_to "Search questions", "#" %></a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#"><%= link_to 'Help', "#" %> </a></li>
+                <li><a href="#"><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></a></li>
+              </ul>
+            </li>
+            <!-- Dropdown-->
+            <% end %>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+  </div>
+  <!-- **********************Header Ends*********************** -->
+
+<!--
   <header>
     <div class="content">
       <div class="left_content">
@@ -40,26 +99,45 @@
       </div>
     </div>
   </header>
+-->
+  <!-- **********************old_Header Ends*********************** -->
+
+
+  <!-- **********************Body starts********************** -->
   <div class="body_content">
     <%= yield %>
   </div>
-  <footer>
-    <div class="content">
-      <div class="footer_content">
-        <h3 class="app_heading_small">GTBIT Alumni Network</h4>
+  <!-- **********************Body Ends*********************** -->
+
+
+  <div class="footer">
+    <div class="container">
+      <div class="row">
+        <a class="new" href="https://www.facebook.com/"><i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i></a>
+        <a href="https://www.twitter.com/"><i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i></a>
+        <a href="https://plus.google.com/"><i class="fa fa-google-plus-square fa-2x" aria-hidden="true"></i></a>
+        <a href="#" class="scrollup" style="display: inline;"><i class="fa fa-chevron-circle-up fa-2x"> </i></a>
       </div>
-      Our vision is to connect oldest alumni, seniors, batchmates and juniors of GTBIT so that
-      anybody can seek suggestion(s) of any kind.
-      <nav class="footer_nav">
-        <a href="#">About us</a>
-        <a href="#">Contact us</a>
-        <a href="#">Meet the Developers</a>
-        <a href="#">Contribute</a>
-        <a href="#">Report a Bug </a>
-        <a href="#">FAQs </a>
-      </nav>
+      <div class="row">
+        <ul>
+          <li><a href="">About Us</a></li>
+          <li>|</li>
+          <li><a href="">Contact Us</a></li>
+          <li>|</li>
+          <li><a href="">Meet the developers</a></li>
+          <li>|</li>
+          <li><a href="">Contribute</a></li>
+          <li>|</li>
+          <li><a href="">Report a Bug</a></li>
+          <li>|</li>
+          <li><a href="">FAQs</a></li>
+        </ul>
+      </div>
+      <p>&copy;Copyright 2016 <span><a href="">GTBIT Alumni Network</a></span></p>
     </div>
-  </footer>
+  </div>
+
+  
 </body>
 </html>
 

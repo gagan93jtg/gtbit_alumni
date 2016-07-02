@@ -1,3 +1,4 @@
+<!--
 <div class="page_top_level_div">
     <%= form_for :user, :url => user_path(), :method => "PUT" do |f|%>
     <h2>
@@ -24,4 +25,53 @@
   <br><br>
   <%= submit_tag(@save_string) %>
   <%end%>
-</div>
+</div>-->
+
+
+<div class="main">
+    <div class="container-custom">
+      <h1>Update Your Profile</h1>
+      <%= form_for :user, :url => user_path(), :method => "PUT" do |f|%>
+        <div class="form-group">
+          <label for="exampleInputName1">First Name </label>
+          <input type="text" class="form-control" id="exampleInputName1" placeholder="Enter First Name" autofocus="autofocus" autocomplete="off" name="user[first_name]">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputName2">Last Name </label>
+          <input type="text" class="form-control" id="exampleInputName2" placeholder="Enter Last Name" autocomplete="off" name="user[last_name]">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputName3">Phone No.</label>
+          <input type="text" class="form-control" id="exampleInputName3" placeholder="Enter contact no." autocomplete="off" name="user[phone]">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputName4">Gender</label>
+          <input type="text" class="form-control" id="exampleInputName4" placeholder="Enter Gender ('Male' or 'Female')" autocomplete="off" name="user[gender]">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputName5">Batch</label>
+          <input type="text" class="form-control" id="exampleInputName5" placeholder="Enter Batch (Eg. CSE 2011 - 2015)" First Name" autocomplete="off" name="user[batch]">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputName6">Work Type</label>
+          <input type="text" class="form-control" id="exampleInputName6" placeholder="Enter Work type (Job / Business / Others (Please specify)" autocomplete="off" name="user[job_type]">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputName7">Designation</label>
+          <input type="text" class="form-control" id="exampleInputName7" placeholder="Enter Designation" autocomplete="off" name="user[designation]">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputName8">Company</label>
+          <input type="text" class="form-control" id="exampleInputName8" placeholder="Enter Company Name" autocomplete="off" name="user[company]">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputName9">Experience</label>
+          <input type="text" class="form-control" id="exampleInputName9" placeholder="Enter Experience (In years)" autocomplete="off" name="user[experience_in_years]">
+        </div>        
+        <button type="submit" class="btn-update btn btn-default">Update</button>
+        <%= submit_tag(@save_string) %>
+      <%end%>
+
+    </div>
+  </div>
+  

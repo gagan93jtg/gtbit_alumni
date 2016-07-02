@@ -1,3 +1,4 @@
+<!--
 <div class="page_top_level_div">
   <% if current_user.first_sign_in?%>
   <div class="first_sign_in">
@@ -43,4 +44,62 @@
     <%end%>
   </div>
 </div>
-</div>
+</div>-->
+
+
+<div class="first_sign_in">
+    <div class="container-custom">
+    <% if current_user.first_sign_in?%>
+      <div class="first-time alert alert-success" role="alert">
+        <p>Hey,hope you're doing good! As this is your first time login, You can Update few things. </p>
+        <ul>
+          <li>Update your profile, we have no clue about you except your Email Id (Navigate --> Update Profile). </li>
+          <li>Ask your Questions, there are a lot of people to help you out! (Navigate --> Ask a question). </li>
+        </ul>
+      </div>
+      <% current_user.update_sign_in_count %>
+      <% end %>
+
+      <h1>Welcome <div class="cust-name"><%= current_user.full_name %></div>,</h1>
+      <h2>Your Activity...</h2>
+      
+      <div class="your_activity">
+        <% @your_activity.each do |post| %>
+        <div class="your_activity_question">
+          <div class="cust-activity">
+            <%= link_to post.query_string, post_path(post.id) %>
+          </div>
+          <div class="cust-edit" ><%= link_to "Edit question", edit_post_path(post.id) %></div>
+        </div> 
+        <%end%>     
+      </div>
+
+      <div class="no_question_yet">
+        <% if @your_activity.length == 0 %>
+        <h3>You haven't asked a query since you have joined.</h3>
+        <h4>Use the navigation to ask questions, find users and search questions etc.</h4>
+        <% end %>
+      </div>
+
+      <h2>Public Activity...</h2>  
+      <div class="public_activity">
+      <% @public_activity.each do |post| %>
+        <div class="your_activity_question">
+          <div class="left_div">
+            <img src="/assets/logov2.jpg" alt="profile pic" class="img-circle public_activity_user">
+          </div>
+          <div class="right_div">
+           <p class="cust-name"><%= post.user.full_name %></p>
+           <p class="cust-time"><%=timeago_tag post.created_at %></p>
+          </div>
+          <div class="cust-activity cust-post">
+            <a href="">
+              <%= link_to post.query_string, post_path(post.id) %> 
+            </a>            
+          </div>
+        </div>
+        <%end%>
+      </div> 
+      <hr class="style12"></hr>   
+    </div>
+  </div>

@@ -13,214 +13,123 @@
 *= require_tree .
 *= require_self
 */
-
 body
 {
-	margin: 0px 0px 150px 0px;
 	padding: 0;
-	font-family: "Work Sans";
-	background-image: url("bg.jpg");
-	background-size: 1440px 960px;
-	background-attachment: fixed;
-	background-repeat: no-repeat;
+	padding-top: 50px;
+	font-family: 'Titillium Web', sans-serif;
 }
 
-header
-{
-	background-color: white;
-	position: fixed;
-	right: 0;
-	left: 0;
-	top : 0;
-	border-bottom: 1px solid rgba(0,0,0,0.75);
-	z-index: 1000;
+/* ------------------Header Styles Start------------------*/
+.header{
+	font-family: 'Titillium Web', sans-serif;
+	font-size:20px;
 }
-
-footer
-{
-	bottom: 0;
-	left: 0;
-	right: 0;
-	position: fixed;
-	background-color: white;
-	border-top: 1px solid rgba(0,0,0,0.75);
-	padding-bottom: 10px;
+.header .navbar-brand{
+	font-family: 'Titillium Web', sans-serif;
+	font-weight: 700;
+	font-size:30px;
 }
-
-h1, h2, h3, h4 h5, h6, h7, input, p, span, div, pre
-{
-	font-weight: 300;
-	font-family: inherit;
-}
-
-pre
-{
-	background: transparent;
-	border: 0px;
-	margin: 0;
-	padding: 0;
-	font-size: 18px;
-}
-a
-{
+.header .navbar-default .navbar-nav .open .dropdown-menu>li>a{
+	font-family: 'Titillium Web', sans-serif;
 	font-weight: 400;
+	font-size:15px;
+}
+.header .navbar-default{
+	background-color: #fff;
+}
+.header .navbar-brand,.header .navbar-brand:hover,.navbar-default .navbar-nav>li>a{
+	color: #00bfa9;
+}
+.header .dropdown-menu>li>a{
+	color: #00bfa9;
+}
+.header .navbar-default .navbar-toggle{
+	border-color: #00bfa9;
+}
+.header .navbar-default .navbar-toggle .icon-bar{
+	background-color: #00bfa9;
 }
 
-a:hover
-{
+.header .navbar-default .navbar-toggle .icon-bar :focus,.header .navbar-default .navbar-toggle .icon-bar :hover{
+	background-color:#00bfa9;
+}
+.header .navbar-default .navbar-nav>li>a:focus,.header .navbar-default .navbar-nav>li>a:hover{
+	background-color: #00bfa9;
+	color: #ffffff;
+}
+.header .navbar-default .navbar-nav .open .dropdown-menu>li>a{
+	color: #00bfa9;
+}
+.header .navbar-default .navbar-nav .open .dropdown-menu>li>a:focus, .header .navbar-default .navbar-nav .open .dropdown-menu>li>a:hover{
+	background-color: #00bfa9;
+	color: #ffffff;
+}
+@media (max-width: 400px) {
+	.header .navbar-brand{
+		font-size: 23px;
+	}
+}
+@media (max-width: 320px) {
+	.header .navbar-brand{
+		font-size: 20px;
+	}
+}
+/* ------------------Header Styles End------------------*/
+
+
+
+/* ------------------footer Start------------------*/
+.footer{
+	text-align: center;
+	padding-top: 20px;
+	height: 120px;
+	background-color: #685E6D;
+}
+.footer a{
+	color: #00bfa9;
 	text-decoration: none;
 }
-
-::selection
-{
-	color: white;
-	background-color: rgb(46,200,102);
+.footer a:hover{
+	color: #fff;
+	cursor: pointer;
+	text-decoration: none;
 }
-
-.content
-{
-	width: 80%;
-	margin: 0 auto;
-}
-
-.alert
-{
-	background-color: rgb(222,39,40);
-	color: white;
-}
-
-.app_heading
-{
-	font-size: 32px;
-	color: black;
-	font-weight: 300;
-}
-
-header .content .left_content
-{
-	float: left;
-}
-
-header .content .right_content
-{
+.footer .scrollup{
 	float: right;
 }
-
-footer .content nav
-{
-	margin-top: 20px;
+.footer .new{
+	margin-left: 35px;
 }
-
-footer .content nav a
-{
-	margin-right: 20px;
+.footer li a{
+	text-decoration: none;
 }
-
-.body_content
-{
-	width: 80%;
-	margin: 10px auto;
-	padding: 45px 10px 10px 10px;
+.footer ul{
+	margin-top: 5px;
+	margin-right: 35px;
 }
-
-.page_top_level_div
-{
-	background-color: rgba(255,255,255,0.5);
-	margin: 0;
-	padding: 0px 20px 20px 20px;
+.footer li{
+	font-size: 17px;
+	list-style: none;
+	display: inline;
 }
-
-.top_div
-{
-	background-color: rgb(46,200,102);
-	padding: 0px 10px;
+.footer p{
+	font-family: inherit;
+	font-size: 14px;
 }
-
-/* FIXME: ganda wala UI hack */
-.page_top_level_div
-{
-	margin-top: -20px;
+@media(max-width: 620px){
+	.footer{
+		height: 150px;
+	}
 }
-
-/* clearfix shit for parents of floating elements */
-.clearfix:after
-{
-   content: " ";
-   display: block;
-   height: 0;
-   clear: both;
+@media(max-width: 400px){
+	.footer{
+		height: 170px;
+	}
 }
-
-/* An extended bootstrap option for green button */
-.btn-green
-{
-	background-color: rgb(46,200,102);
-	color: white;
-	border: 1px solid rgb(46,200,102);
+@media(max-width: 300px){
+	.footer{
+		height: 180px;
+	}
 }
-
-.btn-green:hover
-{
-	transition: background-color 0.5s ease;
-	color: rgb(46,200,102);
-	background-color: white;
-}
-
-/* If there is a div holding form or a form itself, give it this class
-for some common properties
-*/
-.form_div
-{
-	-webkit-box-shadow: 0px 0px 8px 5px rgba(0,0,0,0.75);
-	-moz-box-shadow: 0px 0px 8px 5px rgba(0,0,0,0.75);
-	box-shadow: 0px 0px 8px 5px rgba(0,0,0,0.75);
-	margin: 25px auto;
-	background-color: white;
-	padding: 25px;
-	color: black;
-}
-
-input
-{
-	margin: 20px 0px;
-}
-
-.loading
-{
-	width: 32px;
-	height: 32px;
-}
-
-/* Added this to enable dropdown on hover */
-.dropdown:hover .dropdown-menu
-{
-	display: block;
-	opacity: 1;
-}
-
-/* There is a little margin between button and drop down options due to which
-the drop down menu sometimes disappers. This margin will stick drop down
-options with the button (UI hack)
-*/
-.navigation_button
-{
-	margin-top: 8px;
-	margin-bottom: -2px;
-}
-
-
-/* Apply property to elements via simple class names ;) */
-.float_right
-{
-	float: right;
-}
-
-.text_align_right
-{
-	text-align: right;
-}
-
-.inline_block
-{
-	display: inline-block;
-}
+/* ------------------footer End-------------------*/

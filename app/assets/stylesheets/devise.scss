@@ -1,26 +1,301 @@
-h2
-{
-	margin-bottom: 20px;
-}
+/* ------------------LOgin - form Start------------------*/
+body{
 
-.devise_login_page, .devise_forgot_page
-{
-	width: 400px;
 }
-
-.devise_login
-{
-	font-size: 14px;
+.login-pane{
+	margin-top: 60px;
 }
-
-.back_to_login, .forgot_password
-{
-	float: right;
-	/*This margin top is important as 'input' tags have margin top and bottom 10px each*/
+.main-form{
+	border: 1px solid #685E6D;
+	border-radius: 2%;
+	padding:30px;
+}
+.login-pane span {
+	font-family: 'Titillium Web', sans-serif;
+	color: #685E6D;
+	font-size: 22px;
+	font-weight: 600;
+	float: left;
+}
+.login-pane h4{
+	font-family: 'Titillium Web', sans-serif;
+	color: #685E6D;
+	font-size: 22px;
+	font-weight: 600;
+}
+.login-pane .sign-in hr{
+	border-color: #00bfa9;
+	width: 176px;
+}
+.login-pane .first{
+	margin-left: 13px;
+}
+.login-pane .main-form{
+	margin: 0 auto;
+	width: 500px;
+}
+.login-pane .form-control{
+	color: #00bfa9;
+	border:2px solid #00bfa9;
+	border-radius: 0;
+}
+.login-pane label{
+	font-family: 'Titillium Web', sans-serif;
+	color: #685E6D;
+	font-size: 22px;
+	font-weight: 600;
+}
+.login-pane .check{
+	font-size: 15px;
+	margin-bottom: 10px;
+}
+.login-pane .btn-sign{
+	font-family: inherit;
+	font-size: 17px;
+	font-weight: 700;
+	color: #fff;
+	background-color: #00bfa9;
+	border: 5px solid #00bfa9;
+	border-radius: 0;
+	text-align: center;
+	padding: 5px 185px;
+	margin-bottom: 15px;
+}
+.login-pane .btn-sign:hover{
+	margin-bottom: 15px;
+	font-family: inherit;
+	font-size: 17px;
+	font-weight: 700;
+	color: #00bfa9;
+	background-color: #fff;
+	border: 5px solid #00bfa9;
+	border-radius: 0;
+	text-align: center;
+	padding: 5px 185px;
+}
+.login-pane .sign-with{
 	margin-top: 20px;
 }
-
-.new_user_button
-{
-	margin-top: 5px;
+.login-pane .sign-with hr{
+	border-color: #00bfa9;
+	width: 146px;
 }
+.login-pane .create{
+	text-align: center;
+}
+.login-pane .btn-create{
+	text-align: center;
+	margin-top: 10px;
+	font-family: inherit;
+	font-size: 17px;
+	font-weight: 700;
+	color: #00bfa9;
+	background-color: #fff;
+	border: 5px solid #00bfa9;
+	border-radius: 0;
+	text-align: center;
+	padding: 5px 125px;
+	margin-bottom: 70px;
+
+}
+.login-pane .btn-create:hover{
+	text-align: center;
+	margin-top: 10px;
+	font-family: inherit;
+	font-size: 17px;
+	font-weight: 700;
+	color: #fff;
+	background-color: #00bfa9;
+	border: 5px solid #00bfa9;
+	border-radius: 0;
+	text-align: center;
+	padding: 5px 125px;
+	margin-bottom: 70px;
+}
+.login-pane h4{
+	text-align: center;
+	margin-top: 20px;
+	font-family: inherit;
+}
+@media(max-width: 590px){
+
+	.login-pane span{
+		font-size: 19px;
+	}
+	.login-pane h4{
+		font-size: 19px;
+	}
+	.login-pane .sign-in hr{
+		width: 160px;
+	}
+	.login-pane .main-form{
+		margin: 0 auto;
+		width: 450px;
+	}
+	.login-pane .first{
+		margin-left: 14px;
+	}
+	.login-pane label{
+		font-size: 19px;
+	}
+	.login-pane .check{
+		font-size: 13px;
+	}
+	.login-pane .btn-sign{
+		width: 100%;
+		font-size: 15px;
+		padding: 5px 172px;
+	}
+	.login-pane .btn-sign:hover{
+		width: 100%;
+		font-size: 15px;
+		padding: 5px 172px;
+	}
+	.login-pane .btn-create{
+		width:450px;
+		font-size: 15px;
+		padding: 5px 100px;
+	}
+	.login-pane .btn-create:hover{
+		width:450px;
+		font-size: 15px;
+		padding: 5px 100px;
+	}
+}
+@media(max-width: 490px){
+
+	.login-pane span{
+		font-size: 17px;
+	}
+	.login-pane h4{
+		font-size: 17px;
+	}
+	.login-pane .sign-in hr{
+		width: 100px;
+	}
+	.login-pane .main-form{
+		margin: 0 auto;
+		width: 315px;
+	}
+	.login-pane .first{
+		margin-left: 14px;
+	}
+	.login-pane label{
+		font-size: 17px;
+	}
+	.login-pane .check{
+		font-size: 13px;
+	}
+	.login-pane .btn-sign{
+		width: 100%;
+		font-size: 14px;
+		padding: 5px 90px;
+	}
+	.login-pane .btn-sign:hover{
+		width: 100%;
+		font-size: 14px;
+		padding: 5px 90px;
+	}
+	.login-pane .btn-create{
+		width:320px;
+		font-size: 14px;
+		padding: 5px 50px;
+	}
+	.login-pane .btn-create:hover{
+		width:320px;
+		font-size: 14px;
+		padding: 5px 50px;
+	}
+}
+@media(max-width: 370px){
+
+	.login-pane span{
+		font-size: 15px;
+	}
+	.login-pane h4{
+		font-size: 15px;
+	}
+	.login-pane .sign-in hr{
+		width: 80px;
+	}
+	.login-pane .main-form{
+		margin: 0 auto;
+		width: 270px;
+	}
+	.login-pane .first{
+		margin-left: 12px;
+	}
+	.login-pane label{
+		font-size: 15px;
+	}
+	.login-pane .check{
+		font-size: 13px;
+	}
+	.login-pane .btn-sign{
+		width: 100%;
+		font-size: 14px;
+		padding: 5px 70px;
+	}
+	.login-pane .btn-sign:hover{
+		width: 100%;
+		font-size: 14px;
+		padding: 5px 70px;
+	}
+	.login-pane .btn-create{
+		width:285px;
+		font-size: 14px;
+		padding: 5px 30px;
+	}
+	.login-pane .btn-create:hover{
+		width:285px;
+		font-size: 14px;
+		padding: 5px 30px;
+	}
+}
+@media(max-width: 340px){
+
+	.login-pane span{
+		font-size: 15px;
+	}
+	.login-pane h4{
+		font-size: 15px;
+	}
+	.login-pane .sign-in hr{
+		width: 65px;
+	}
+	.login-pane .main-form{
+		margin: 0 auto;
+		width: 240px;
+	}
+	.login-pane .first{
+		margin-left: 12px;
+	}
+	.login-pane label{
+		font-size: 15px;
+	}
+	.login-pane .check{
+		font-size: 13px;
+	}
+	.login-pane .btn-sign{
+		width: 100%;
+		font-size: 13px;
+		padding: 5px 40px;
+	}
+	.login-pane .btn-sign:hover{
+		width: 100%;
+		font-size: 13px;
+		padding: 5px 40px;
+	}
+	.login-pane .btn-create{
+		width:245px;
+		font-size: 13px;
+		padding: 5px 27px;
+	}
+	.login-pane .btn-create:hover{
+		width:245px;
+		font-size: 13px;
+		padding: 5px 27px;
+	}
+}
+
+/* ------------------Login-form End------------------*/
