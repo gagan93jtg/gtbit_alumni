@@ -5,9 +5,9 @@ class User < ActiveRecord::Base
   # I also removed :registerable as I don't want a signup process here.
   devise :database_authenticatable,
          :recoverable, :rememberable, :trackable, :validatable
-  has_many :queries
-  has_many :responses
-  has_many :query_histories
+  has_many :posts
+  has_many :comments
+  has_many :post_histories
 
   def full_name
     return email if first_name.nil? || last_name.nil?

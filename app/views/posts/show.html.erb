@@ -1,29 +1,29 @@
 <div class="page_top_level_div">
   <div class="show_question">
     <div class="question">
-      <%= label_tag asked_by(@query.user) %> asked <%= anonymous?(@query) %>
+      <%= label_tag asked_by(@post.user) %> asked <%= anonymous?(@post) %>
       <br>
-      <pre class='query_string'><%= @query.query_string.strip %></pre>
-      <i> <%=timeago_tag @query.query_time%> </i>
+      <pre class='query_string'><%= @post.query_string.strip %></pre>
+      <i> <%=timeago_tag Time.at(@post.created_at) %> </i>
       <br>
-      <span class='tags'> <%= @query.tags %> </span>
-      <% if @query.query_histories.count > 0 %>
+      <span class='tags'> <%= @post.tags %> </span>
+      <% if @post.post_histories.count > 0 %>
       <a href="#" data-toggle="modal" data-target="#edit_history_modal" class="edit_history"> View edit history </a>
       <% end %>
     </div>
     <br>
     <div class="comments">
-      <%@query.responses.each do |resp|%>
+      <%@post.comments.each do |comment|%>
       <div class="comment">
-        <%=resp.user.full_name%> : "<%=resp.response_string%>" <i> <%=timeago_tag resp.created_at%> </i>
+        <%=comment.user.full_name%> : "<%=comment.comment_string%>" <i> <%=timeago_tag comment.created_at%> </i>
       </div>
       <%end%>
     </div>
     <br><br>
     <div class="add_comment">
-      <%= form_for :response, :url => responses_path(), :method => "POST" do |f|%>
-      <input type="hidden" name="[query][id]" value= <%= @query.id %>>
-      <%= f.text_area :response_string, :placeholder => "Write a comment", :size => "30x2" %>
+      <%= form_for :comment, :url => comments_path(), :method => "POST" do |f|%>
+      <input type="hidden" name="[post][id]" value= <%= @post.id %>>
+      <%= f.text_area :comment_string, :placeholder => "Write a comment", :size => "30x2" %>
       <br>
       <%= submit_tag("Add") %>
       <%end%>
@@ -49,5 +49,5 @@
 </div>
 
 <script type="text/javascript">
-  bind_edit_history_modal_click("<%=@query.id%>");
+  bind_edit_history_modal_click("<%=@post.id%>");
 </script>

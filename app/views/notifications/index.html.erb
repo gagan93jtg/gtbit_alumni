@@ -1,0 +1,26 @@
+<div class="page_top_level_div">
+	<h2>Your notifications</h2>
+	<% @unread_nfs.each do |notification| %>
+	<div class="notification">
+		<p class="<%=notification.inspect%>">
+			<%= link_to User.find(notification["commenter_id"]).full_name, user_path(notification["commenter_id"])%>
+			<%= notification["text"] %>
+			<%= link_to notification["type"], post_path(notification["post_id"]) %>
+		</p>
+		<i> <%=timeago_tag Time.at(notification["timestamp"]) %> </i>
+	</div>
+	<% end %>
+	<hr>
+	<h2>Old notifications</h2>
+	<% @read_nfs.each do |notification| %>
+	<div class="notification">
+		<p class="<%=notification.inspect%>">
+			<%= link_to User.find(notification["commenter_id"]).full_name, user_path(notification["commenter_id"])%>
+			<%= notification["text"] %>
+			<%= link_to notification["type"], post_path(notification["post_id"]) %>
+		</p>
+		<i> <%=timeago_tag Time.at(notification["timestamp"]) %> </i>
+	</div>
+	<% end %>
+
+</div>

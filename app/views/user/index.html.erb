@@ -12,10 +12,10 @@
   <h3 class="welcome_user">Welcome <%= current_user.full_name %></h3>
   <h2>Your Activity</h2>
   <div class="your_activity">
-    <% @your_activity.each do |query| %>
+    <% @your_activity.each do |post| %>
     <div class="your_activity_question">
-      <pre><%= link_to query.query_string, query_path(query.id) %></pre>
-      <%= link_to "Edit question", edit_query_path(query.id), class: 'float_right' %>
+      <pre><%= link_to post.query_string, post_path(post.id) %></pre>
+      <%= link_to "Edit question", edit_post_path(post.id), class: 'float_right' %>
     </div>
     <%end%>
 
@@ -27,17 +27,17 @@
 
   <div class="public_activity">
     <h2>Public Activity</h2>
-    <% @public_activity.each do |query| %>
+    <% @public_activity.each do |post| %>
     <div class="public_activity_question">
       <div class="left_div inline_block">
         <img class="public_activity_user"></img>
       </div>
       <div class="right_div inline_block">
-        <p><%= query.user.full_name %></p>
-        <p><%=timeago_tag query.created_at %></p>
+        <p><%= post.user.full_name %></p>
+        <p><%=timeago_tag post.created_at %></p>
       </div>
       <div class="query_string">
-        <pre> <%= link_to query.query_string, query_path(query.id) %> </pre>
+        <pre> <%= link_to post.query_string, post_path(post.id) %> </pre>
       </div>
     </div>
     <%end%>
