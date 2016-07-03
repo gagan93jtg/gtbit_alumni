@@ -3,39 +3,39 @@
     <div class="main-form">
       <div class="errors_warnings">
         <% if flash[:notice] and !flash[:notice].empty? %>
-        <div class = "alert"><%= flash[:notice] %></div>
+        <div class = "alert alert-danger"><%= flash[:notice] %></div>
         <% end %>
 
         <% if flash[:alert] and !flash[:alert].empty? %>
-        <div class = "alert"><%= flash[:alert] %></div>
+        <div class = "alert alert-danger"><%= flash[:alert] %></div>
         <% end %>
       </div>
       <div class="row sign-in">
-        <span class="first"><hr></span><span>&nbsp;&nbsp;Sign in&nbsp;&nbsp;</span><span class="second"><hr></span>
+        <p class="sign_in_text">Sign in</p>
       </div>
       <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
       <div class="form-group">
-        <label for="exampleInputEmail1">Email address</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email" autofocus="autofocus" name="user[email]">
+        <input type="email" class="form-control" placeholder="Email" autofocus="autofocus" name="user[email]">
       </div>
       <div class="form-group">
-        <label for="exampleInputPassword1">Password</label>
-        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" autocomplete="off" name="user[password]">
+        <input type="password" class="form-control" placeholder="Password" autocomplete="off" name="user[password]">
       </div>
       <% if devise_mapping.rememberable? %>
       <div class="checkbox">
         <label class="check">
-          <%= f.check_box :remember_me, :class => "remember_me" %>
-          <%= f.label :remember_me %>
+          <%= f.check_box :remember_me, class: "remember_me_checkbox" %>
+          <p class="remember_me">Remember me</p>
         </label>
       </div>
-      <% end %> 
-      <%= f.submit "Sign in", :class => "btn-sign btn btn-default" %>
+      <% end %>
+      <%= f.submit "Sign in", :class => "btn-sign btn background-seagreen" %>
       <%= render "devise/shared/links" %>
       <% end %>
     </div>
   </div>
   <div class="create">
     <h4>New to Alumni Network?</h4>
-    <button type="submit" class="btn-create btn btn-default">Request to Create an Account</button>
+    <button type="submit" class="btn-create btn foreground-seagreen">Request to Create an Account</button>
   </div>
+</div>
+

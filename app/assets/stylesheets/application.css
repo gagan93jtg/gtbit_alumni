@@ -13,123 +13,211 @@
 *= require_tree .
 *= require_self
 */
+
+*
+{
+	padding: 0;
+	margin: 0;
+}
+
+::selection
+{
+	color: #00bfa9;
+	background-color: rgba(0,0,0,0.05);
+}
+
 body
 {
 	padding: 0;
 	padding-top: 50px;
-	font-family: 'Titillium Web', sans-serif;
+	font-family: 'Work Sans';
 }
 
-/* ------------------Header Styles Start------------------*/
-.header{
-	font-family: 'Titillium Web', sans-serif;
+a:link, a:visited, a:hover, a:active
+{
+	text-decoration: none;
+	color: inherit;
+}
+
+a:hover
+{
+	color: #00bfa9;
+}
+
+label
+{
+	font-weight: 300;
+}
+
+.background-seagreen
+{
+	background-color: #00bfa9 !important;
+	border: 1px solid #00bfa9 !important;
+	color: white !important;
+	transition: background-color 0.5s ease;
+}
+
+.background-seagreen:hover
+{
+	color: #00bfa9 !important;
+	background-color: white !important;
+}
+
+.foreground-seagreen
+{
+	color: #00bfa9 !important;
+	border: 1px solid #00bfa9 !important;
+	background-color: white !important;
+	transition: background-color 0.5s ease;
+}
+
+.foreground-seagreen:hover
+{
+	background-color: #00bfa9 !important;
+	color: white !important;
+}
+
+.transparent-bg
+{
+	background-color: transparent !important;
+	border: 0px solid white !important;
+}
+
+header
+{
 	font-size:20px;
 }
-.header .navbar-brand{
-	font-family: 'Titillium Web', sans-serif;
-	font-weight: 700;
-	font-size:30px;
-}
-.header .navbar-default .navbar-nav .open .dropdown-menu>li>a{
-	font-family: 'Titillium Web', sans-serif;
-	font-weight: 400;
-	font-size:15px;
-}
-.header .navbar-default{
-	background-color: #fff;
-}
-.header .navbar-brand,.header .navbar-brand:hover,.navbar-default .navbar-nav>li>a{
-	color: #00bfa9;
-}
-.header .dropdown-menu>li>a{
-	color: #00bfa9;
-}
-.header .navbar-default .navbar-toggle{
-	border-color: #00bfa9;
-}
-.header .navbar-default .navbar-toggle .icon-bar{
-	background-color: #00bfa9;
+
+header .navbar-left
+{
+	display: block;
+	cursor: pointer;
 }
 
-.header .navbar-default .navbar-toggle .icon-bar :focus,.header .navbar-default .navbar-toggle .icon-bar :hover{
-	background-color:#00bfa9;
+header .navbar-left span
+{
+	margin-left: 10px;
+	font-size: 24px;
+	vertical-align: bottom;
+	color: white;
 }
-.header .navbar-default .navbar-nav>li>a:focus,.header .navbar-default .navbar-nav>li>a:hover{
-	background-color: #00bfa9;
-	color: #ffffff;
+
+header .navbar-default
+{
+	background: black;
+	border-bottom: 1px solid white;
 }
-.header .navbar-default .navbar-nav .open .dropdown-menu>li>a{
-	color: #00bfa9;
-}
-.header .navbar-default .navbar-nav .open .dropdown-menu>li>a:focus, .header .navbar-default .navbar-nav .open .dropdown-menu>li>a:hover{
-	background-color: #00bfa9;
-	color: #ffffff;
-}
-@media (max-width: 400px) {
-	.header .navbar-brand{
-		font-size: 23px;
+
+@media (max-width: 400px)
+{
+	header .navbar-left
+	{
+		font-size: 24px;
 	}
 }
-@media (max-width: 320px) {
-	.header .navbar-brand{
-		font-size: 20px;
+
+@media (max-width: 320px)
+{
+	header .navbar-default
+	{
+		font-size: 16px;
 	}
 }
-/* ------------------Header Styles End------------------*/
 
+.top_logo
+{
+	margin-top: 10px;
+}
 
-
-/* ------------------footer Start------------------*/
-.footer{
+footer
+{
 	text-align: center;
 	padding-top: 20px;
-	height: 120px;
-	background-color: #685E6D;
+	background-color: #000;
+	color: white;
 }
-.footer a{
-	color: #00bfa9;
-	text-decoration: none;
-}
-.footer a:hover{
-	color: #fff;
-	cursor: pointer;
-	text-decoration: none;
-}
-.footer .scrollup{
+
+footer .scrollup
+{
 	float: right;
+	display: inline-block;
 }
-.footer .new{
-	margin-left: 35px;
-}
-.footer li a{
-	text-decoration: none;
-}
-.footer ul{
+
+
+footer ul
+{
 	margin-top: 5px;
 	margin-right: 35px;
 }
-.footer li{
-	font-size: 17px;
+
+footer li
+{
+	font-size: 16px;
 	list-style: none;
+	font-weight: 300;
+	margin: 0px 5px;
 	display: inline;
 }
-.footer p{
+
+footer p
+{
 	font-family: inherit;
 	font-size: 14px;
 }
-@media(max-width: 620px){
-	.footer{
+
+.footer_icons
+{
+	display: inline-block;
+	width: 32px;
+	height: 32px;
+}
+
+img.small_icon
+{
+	border-bottom: 2px solid black;
+}
+
+img.small_icon:hover
+{
+	border-bottom: 2px solid #00bfa9;
+}
+
+.small_icon
+{
+	width: 32px;
+	height: 32px;
+}
+
+.footer_copyright_stamp
+{
+	margin-left: 20px;
+}
+
+.separator
+{
+	margin: 0px 2px;
+}
+
+@media(max-width: 620px)
+{
+	footer
+	{
 		height: 150px;
 	}
 }
-@media(max-width: 400px){
-	.footer{
+
+@media(max-width: 400px)
+{
+	footer
+	{
 		height: 170px;
 	}
 }
-@media(max-width: 300px){
-	.footer{
+
+@media(max-width: 300px)
+{
+	footer
+	{
 		height: 180px;
 	}
 }
-/* ------------------footer End-------------------*/

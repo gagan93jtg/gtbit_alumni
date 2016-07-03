@@ -1,301 +1,310 @@
-/* ------------------LOgin - form Start------------------*/
-body{
-
-}
-.login-pane{
+.login-pane
+{
 	margin-top: 60px;
 }
-.main-form{
-	border: 1px solid #685E6D;
+
+.main-form
+{
+	border: 1px solid #000;
 	border-radius: 2%;
 	padding:30px;
 }
-.login-pane span {
-	font-family: 'Titillium Web', sans-serif;
+
+.login-pane span
+{
 	color: #685E6D;
 	font-size: 22px;
-	font-weight: 600;
-	float: left;
 }
-.login-pane h4{
-	font-family: 'Titillium Web', sans-serif;
+
+.login-pane h4
+{
 	color: #685E6D;
 	font-size: 22px;
-	font-weight: 600;
 }
-.login-pane .sign-in hr{
-	border-color: #00bfa9;
-	width: 176px;
+
+.sign_in_text, .forgot_password_text
+{
+	display: block;
+	text-align: center;
+	font-size: 28px;
+	color: black;
+	font-weight: 900;
+	margin: 12px;
 }
-.login-pane .first{
-	margin-left: 13px;
-}
-.login-pane .main-form{
+
+.login-pane .main-form
+{
 	margin: 0 auto;
 	width: 500px;
 }
-.login-pane .form-control{
-	color: #00bfa9;
-	border:2px solid #00bfa9;
-	border-radius: 0;
+
+.btn-recover-password
+{
+	display: block;
+	margin: 20px auto;
+	width: 90%;
 }
-.login-pane label{
-	font-family: 'Titillium Web', sans-serif;
+
+.back_to_login
+{
+	display: block;
+}
+
+.form-control
+{
+	border: 1px solid #00bfa9;
+}
+
+.login-pane label
+{
 	color: #685E6D;
-	font-size: 22px;
-	font-weight: 600;
+	font-size: 16px;
 }
-.login-pane .check{
+
+.login-pane .check
+{
 	font-size: 15px;
 	margin-bottom: 10px;
 }
-.login-pane .btn-sign{
-	font-family: inherit;
+
+.login-pane .btn-sign
+{
 	font-size: 17px;
-	font-weight: 700;
-	color: #fff;
-	background-color: #00bfa9;
-	border: 5px solid #00bfa9;
-	border-radius: 0;
 	text-align: center;
-	padding: 5px 185px;
-	margin-bottom: 15px;
+	display: block;
+	width: 90%;
+	margin: 0 auto;
 }
-.login-pane .btn-sign:hover{
-	margin-bottom: 15px;
-	font-family: inherit;
-	font-size: 17px;
-	font-weight: 700;
-	color: #00bfa9;
-	background-color: #fff;
-	border: 5px solid #00bfa9;
-	border-radius: 0;
-	text-align: center;
-	padding: 5px 185px;
-}
-.login-pane .sign-with{
+
+.login-pane .sign-with
+{
 	margin-top: 20px;
 }
-.login-pane .sign-with hr{
-	border-color: #00bfa9;
-	width: 146px;
-}
-.login-pane .create{
-	text-align: center;
-}
-.login-pane .btn-create{
-	text-align: center;
-	margin-top: 10px;
-	font-family: inherit;
-	font-size: 17px;
-	font-weight: 700;
-	color: #00bfa9;
-	background-color: #fff;
-	border: 5px solid #00bfa9;
-	border-radius: 0;
-	text-align: center;
-	padding: 5px 125px;
-	margin-bottom: 70px;
 
-}
-.login-pane .btn-create:hover{
+.login-pane .create
+{
 	text-align: center;
-	margin-top: 10px;
-	font-family: inherit;
-	font-size: 17px;
-	font-weight: 700;
-	color: #fff;
-	background-color: #00bfa9;
-	border: 5px solid #00bfa9;
-	border-radius: 0;
-	text-align: center;
-	padding: 5px 125px;
-	margin-bottom: 70px;
 }
-.login-pane h4{
+
+.login-pane .btn-create
+{
+	font-size: 18px;
+	text-align: center;
+	padding: 5px;
+	width: 500px;
+	margin: 10px 0px 50px 0px;
+}
+
+.login-pane h4
+{
 	text-align: center;
 	margin-top: 20px;
-	font-family: inherit;
 }
-@media(max-width: 590px){
 
-	.login-pane span{
+.remember_me
+{
+	display: inline-block;
+	margin-bottom: -2px;
+}
+
+.remember_me_checkbox
+{
+	border: 1px solid #00bfa9;
+}
+
+.forgot_password
+{
+	margin-top: 20px;
+	display: block;
+}
+
+.forgot_password_pane
+{
+	margin-bottom: 250px;
+}
+
+@media(max-width: 590px)
+{
+	.login-pane span
+	{
 		font-size: 19px;
 	}
-	.login-pane h4{
+
+	.login-pane h4
+	{
 		font-size: 19px;
 	}
-	.login-pane .sign-in hr{
+
+	.login-pane .sign-in hr
+	{
 		width: 160px;
 	}
-	.login-pane .main-form{
+
+	.login-pane .main-form
+	{
 		margin: 0 auto;
 		width: 450px;
 	}
-	.login-pane .first{
-		margin-left: 14px;
-	}
-	.login-pane label{
+
+	.login-pane label
+	{
 		font-size: 19px;
 	}
-	.login-pane .check{
+
+	.login-pane .check
+	{
 		font-size: 13px;
 	}
-	.login-pane .btn-sign{
-		width: 100%;
-		font-size: 15px;
-		padding: 5px 172px;
-	}
-	.login-pane .btn-sign:hover{
-		width: 100%;
-		font-size: 15px;
-		padding: 5px 172px;
-	}
-	.login-pane .btn-create{
-		width:450px;
-		font-size: 15px;
-		padding: 5px 100px;
-	}
-	.login-pane .btn-create:hover{
-		width:450px;
-		font-size: 15px;
-		padding: 5px 100px;
-	}
-}
-@media(max-width: 490px){
 
-	.login-pane span{
+	.login-pane .btn-sign
+	{
+		font-size: 15px;
+	}
+
+	.login-pane .btn-create
+	{
+		font-size: 15px;
+	}
+
+}
+
+@media(max-width: 490px)
+{
+	.login-pane span
+	{
 		font-size: 17px;
 	}
-	.login-pane h4{
+
+	.login-pane h4
+	{
 		font-size: 17px;
 	}
-	.login-pane .sign-in hr{
+
+	.login-pane .sign-in hr
+	{
 		width: 100px;
 	}
-	.login-pane .main-form{
+
+	.login-pane .main-form
+	{
 		margin: 0 auto;
 		width: 315px;
 	}
-	.login-pane .first{
-		margin-left: 14px;
-	}
-	.login-pane label{
+
+	.login-pane label
+	{
 		font-size: 17px;
 	}
-	.login-pane .check{
+
+	.login-pane .check
+	{
 		font-size: 13px;
 	}
-	.login-pane .btn-sign{
-		width: 100%;
-		font-size: 14px;
-		padding: 5px 90px;
-	}
-	.login-pane .btn-sign:hover{
-		width: 100%;
-		font-size: 14px;
-		padding: 5px 90px;
-	}
-	.login-pane .btn-create{
-		width:320px;
-		font-size: 14px;
-		padding: 5px 50px;
-	}
-	.login-pane .btn-create:hover{
-		width:320px;
-		font-size: 14px;
-		padding: 5px 50px;
-	}
-}
-@media(max-width: 370px){
 
-	.login-pane span{
+	.login-pane .btn-sign
+	{
+		width: 100%;
+		font-size: 14px;
+	}
+
+	.login-pane .btn-create
+	{
+		width:320px;
+		font-size: 14px;
+	}
+
+}
+
+@media(max-width: 370px)
+{
+	.login-pane span
+	{
 		font-size: 15px;
 	}
-	.login-pane h4{
+
+	.login-pane h4
+	{
 		font-size: 15px;
 	}
-	.login-pane .sign-in hr{
+
+	.login-pane .sign-in hr
+	{
 		width: 80px;
 	}
-	.login-pane .main-form{
+
+	.login-pane .main-form
+	{
 		margin: 0 auto;
 		width: 270px;
 	}
-	.login-pane .first{
-		margin-left: 12px;
-	}
-	.login-pane label{
+
+	.login-pane label
+	{
 		font-size: 15px;
 	}
-	.login-pane .check{
+
+	.login-pane .check
+	{
 		font-size: 13px;
 	}
-	.login-pane .btn-sign{
+
+	.login-pane .btn-sign
+	{
 		width: 100%;
 		font-size: 14px;
-		padding: 5px 70px;
 	}
-	.login-pane .btn-sign:hover{
-		width: 100%;
-		font-size: 14px;
-		padding: 5px 70px;
-	}
-	.login-pane .btn-create{
+
+	.login-pane .btn-create
+	{
 		width:285px;
 		font-size: 14px;
-		padding: 5px 30px;
-	}
-	.login-pane .btn-create:hover{
-		width:285px;
-		font-size: 14px;
-		padding: 5px 30px;
 	}
 }
-@media(max-width: 340px){
 
-	.login-pane span{
+@media(max-width: 340px)
+{
+	.login-pane span
+	{
 		font-size: 15px;
 	}
-	.login-pane h4{
+
+	.login-pane h4
+	{
 		font-size: 15px;
 	}
-	.login-pane .sign-in hr{
+
+	.login-pane .sign-in hr
+	{
 		width: 65px;
 	}
-	.login-pane .main-form{
+
+	.login-pane .main-form
+	{
 		margin: 0 auto;
 		width: 240px;
 	}
-	.login-pane .first{
-		margin-left: 12px;
-	}
-	.login-pane label{
+
+	.login-pane label
+	{
 		font-size: 15px;
 	}
-	.login-pane .check{
+
+	.login-pane .check
+	{
 		font-size: 13px;
 	}
-	.login-pane .btn-sign{
+
+	.login-pane .btn-sign
+	{
 		width: 100%;
 		font-size: 13px;
 		padding: 5px 40px;
 	}
-	.login-pane .btn-sign:hover{
-		width: 100%;
-		font-size: 13px;
-		padding: 5px 40px;
-	}
-	.login-pane .btn-create{
-		width:245px;
-		font-size: 13px;
-		padding: 5px 27px;
-	}
-	.login-pane .btn-create:hover{
+
+	.login-pane .btn-create
+	{
 		width:245px;
 		font-size: 13px;
 		padding: 5px 27px;
 	}
 }
-
-/* ------------------Login-form End------------------*/

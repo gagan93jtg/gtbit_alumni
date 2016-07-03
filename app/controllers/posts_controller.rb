@@ -12,21 +12,29 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find_by_id(params[:id])
-    redirect_to controller: 'errors', action: 'file_not_found' && return unless @post
+    redirect_to controller: 'errors', action: 'file_not_found' && return if @post.nil?
   end
 
   def edit
     @post = Post.find_by_id(params[:id])
     redirect_to controller: 'errors', action: 'file_not_found' && return unless @post
-    redirect_to controller: 'errors', action: 'unprocessable' && return unless
-      current_user.id == @post.user_id
+
+    if current_user.id != @post.user_id
+      @post = nil
+      redirect_to controller: 'errors', action: 'unprocessable'
+      return
+    end
+
   end
 
   def update
     post = Post.find(params[:id])
     redirect_to controller: 'errors', action: 'file_not_found' && return unless post
-    redirect_to controller: 'errors', action: 'unprocessable' && return unless
-      current_user.id == post.user_id
+
+    if current_user.id != post.user_id
+      redirect_to controller: 'errors', action: 'unprocessable'
+      return
+    end
 
     post.update_post(params)
     redirect_to root_path
