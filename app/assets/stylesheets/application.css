@@ -108,6 +108,12 @@ header .navbar-default
 	border-bottom: 1px solid white;
 }
 
+.body_content
+{
+	/* main body height is 100% of viewport height - (header height + footer height) */
+	min-height: calc(100vh - (50px + 120px));
+}
+
 @media (max-width: 400px)
 {
 	header .navbar-left
