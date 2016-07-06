@@ -26,42 +26,38 @@
 	font-size: 15px;
 	margin-bottom: 50px;
 }
-
-.first_sign_in h1
-{
-	font-size: 25px;
-}
-
 .first_sign_in_text ul li
 {
 	margin-left: 20px;
 }
 
+
 .welcome_text
 {
 	color: #00bfa9;
+	font-size: 25px;
+	padding-top: 20px;
 }
 
 .activity_question
 {
-	background-color: rgb(245, 245, 245);
+	background-color: rgb(237, 234, 234);
 	border-radius: 10px;
 	padding: 20px;
 	margin: 25px 0px;
 }
-
 
 .view_post, .edit_post
 {
 	display: inline-block;
 	margin: 10px;
 	font-size: 15px;
-	color: #00bfa9 !important;
+	border-radius: 5px;
+	padding: 5px 15px;
 }
 
-.activity p, .activity p
+.left_div,.right_div
 {
-	font-size: 22px;
 	display: inline;
 }
 
@@ -75,13 +71,16 @@
 	z-index: 100;
 }
 
-.left_div,.right_div
+.user-name
 {
+	font-size: 22px;
 	display: inline;
 }
 
 .user-time
 {
+	margin-left: 10px;
+	margin-top:15px;
 	font-size: 18px;
 	float: right;
 	font-weight: 300;
@@ -93,64 +92,66 @@
 	font-size: 16px;
 	white-space: pre-wrap;
 	display: inline-block;
-	background-color: rgba(240,240,240,0.7);
+	background-color: rgba(209,202,202,0.7);
 	padding: 10px;
 	border-radius: 10px;
-	margin-top: -10px;
+	margin-top:10px;
 	width: 100%;
 }
 
-.user-time
+.update_your_profile
 {
-	margin-left: 10px;
-}
-
-
-.main
-{
-	margin: 80px 0;
+	margin: 50px 0;
 	color: #685E6D;
 	font-size: 18px;
 }
 
-.main h1
+.update_your_profile form
 {
+	margin-top: -30px;
+}
+
+.update_your_profile h1
+{
+	padding-top: 20px;
 	font-size: 35px;
 	margin-bottom: 60px;
 }
 
-.main .form-control
+.update_your_profile .form-control
 {
 	color: #00bfa9;
-	border:2px solid #00bfa9;
-	border-radius: 0;
+	border: 1px solid #00bfa9;
+	border-radius: 4px;
 }
 
-.main .btn-update
+.update_your_profile .btn-update
 {
 	width: 200px;
-	margin-top:30px;
+	margin-top: 25px;
 	font-size: 17px;
-	color: #fff;
-	background-color: #00bfa9;
-	border: 5px solid #00bfa9;
-	border-radius: 0;
-	text-align: center;
-}
-
-.main .btn-update:hover
-{
-	width: 200px;
-	margin-top:30px;
-	font-size: 17px;
-	color: #00bfa9;
-	background-color: #fff;
-	border: 5px solid #00bfa9;
-	border-radius: 0;
 	text-align: center;
 }
 
 @media(max-width: 1000px)
+{
+	.container-custom
+	{
+		width: 900px;
+	}
+
+}
+
+@media(max-width: 960px)
+{
+	.container-custom
+	{
+		width: 850px;
+	}
+
+}
+
+@media(max-width: 900px)
 {
 	.container-custom
 	{
@@ -159,7 +160,16 @@
 
 }
 
-@media(max-width: 990px)
+@media(max-width: 850px)
+{
+	.container-custom
+	{
+		width: 750px;
+	}
+
+}
+
+@media(max-width: 800px)
 {
 	.container-custom
 	{
@@ -168,7 +178,16 @@
 
 }
 
-@media(max-width: 780px)
+@media(max-width: 750px)
+{
+	.container-custom
+	{
+		width: 650px;
+	}
+
+}
+
+@media(max-width: 700px)
 {
 	.container-custom
 	{
@@ -181,6 +200,15 @@
 {
 	.container-custom
 	{
+		width: 550px;
+	}
+
+}
+
+@media(max-width: 600px)
+{
+	.container-custom
+	{
 		width: 500px;
 	}
 
@@ -190,28 +218,67 @@
 {
 	.container-custom
 	{
-		width: 400px;
+		width: 450px;
 	}
 
-	.main
-	{
-		margin: 80px 0;
-		font-size: 16px;
-	}
-
-	.main h1
+	.update_your_profile h1
 	{
 		font-size: 33px;
 	}
 
-	.main .btn-update
+	.update_your_profile .btn-update
 	{
 		font-size: 16px;
 	}
 
-	.main .btn-update:hover
+}
+
+@media(max-width: 500px)
+{
+	.container-custom
+	{
+		width: 400px;
+	}
+
+	.welcome_text
+	{
+		font-size: 23px;
+	}
+
+	.activity_heading
+	{
+		font-size: 27px;
+	}
+
+	.user-name
+	{
+		font-size: 20px;
+	}
+
+	.user-time
+	{
+		margin-top:17px;
+		font-size: 16px;
+	}
+
+	.user-post
+	{
+		font-size: 15px;
+	}
+
+	.update_your_profile
 	{
 		font-size: 16px;
+	}
+
+	.update_your_profile h1
+	{
+		font-size: 32px;
+	}
+
+	.update_your_profile .btn-update
+	{
+		font-size: 15px;
 	}
 
 }
@@ -220,27 +287,39 @@
 {
 	.container-custom
 	{
-		width: 300px;
+		width: 350px;
 	}
 
-	.main
+	.left_div,.right_div
 	{
-		margin: 80px 0;
+		display: inline-block;
+	}
+
+	.user-time,.user-name{
+		display: inline-block;
+	}
+
+	.user-name{
+		margin-left: -80px;
+	}
+
+	.user-time
+	{
+		margin-top: 30px;
+		float: left;
+	}
+
+	.update_your_profile
+	{
 		font-size: 14px;
 	}
 
-	.main h1
+	.update_your_profile h1
 	{
 		font-size: 30px;
 	}
 
-	.main .btn-update
-	{
-		width: 100%;
-		font-size: 14px;
-	}
-
-	.main .btn-update:hover
+	.update_your_profile .btn-update
 	{
 		width: 100%;
 		font-size: 14px;
@@ -248,39 +327,112 @@
 
 }
 
-@media(max-width: 350px)
+@media(max-width: 400px)
 {
 	.container-custom
 	{
-		width: 250px;
+		width: 330px;
 	}
 
-	.main
+	.welcome_text
 	{
-		margin: 80px 0;
-		font-size: 12px;
+		font-size: 20px;
 	}
 
-	.main h1
+	.activity_heading
 	{
 		font-size: 25px;
 	}
 
-	.main form
+	.user-name
 	{
-		margin-top: -30px;
+		font-size: 18px;
 	}
 
-	.main .btn-update
+	.user-time
+	{
+		font-size: 15px;
+	}
+
+	.user-post
+	{
+		font-size: 15px;
+	}
+
+	.view_post, .edit_post
 	{
 		width: 100%;
+		text-align: center;
+		margin-left: -0.5px;
+	}
+
+	.activity img, .activity img
+	{
+		width: 60px;
+		height: 60px;
+	}
+
+	.update_your_profile
+	{
 		font-size: 13px;
 	}
 
-	.main .btn-update:hover
+	.update_your_profile h1
 	{
-		width: 100%;
+		font-size: 27px;
+	}	
+
+	.update_your_profile .btn-update
+	{
 		font-size: 13px;
 	}
 
+}
+@media(max-width: 350px)
+{
+	.container-custom
+	{
+		width: 280px;
+	}
+
+	.user-name
+	{
+		margin-left: -75px;
+	}
+
+}
+
+@media(max-width: 300px)
+{
+	.container-custom
+	{
+		width: 230px;
+	}
+
+	.welcome_text
+	{
+		font-size: 17px;
+	}
+
+	.activity_heading
+	{
+		font-size: 23px;
+	}
+
+	.user-name
+	{
+		font-size: 16px;
+		margin-left: -70px;
+	}
+
+	.user-time
+	{
+		font-size: 14px;
+		margin-top: 19px
+	}
+
+	.user-post
+	{
+		font-size: 14px;
+	}
 }

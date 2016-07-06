@@ -83,6 +83,7 @@ label
 	border: 0px solid white !important;
 }
 
+
 header
 {
 	font-size:20px;
@@ -108,31 +109,70 @@ header .navbar-default
 	border-bottom: 1px solid white;
 }
 
+
 .body_content
 {
 	/* main body height is 100% of viewport height - (header height + footer height) */
 	min-height: calc(100vh - (50px + 120px));
 }
-
-@media (max-width: 400px)
+@media (max-width: 767px)
 {
-	header .navbar-left
-	{
-		font-size: 24px;
+	header .navbar-left{
+		margin-left: 10px;
 	}
 }
 
-@media (max-width: 320px)
+@media (max-width: 400px)
 {
+	header .navbar-left span
+	{
+		font-size: 20px;
+	}
+}
+
+@media (max-width: 370px)
+{
+	header .navbar-left span
+	{
+		font-size: 18px;
+	}
 	header .navbar-default
 	{
 		font-size: 16px;
 	}
 }
-
-.top_logo
+@media (max-width: 340px)
 {
-	margin-top: 10px;
+	header .navbar-left span
+	{
+		font-size: 16px;
+	}
+	header .navbar-default
+	{
+		font-size: 15px;
+	}
+}
+@media (max-width: 315px)
+{
+	header .navbar-left span
+	{
+		font-size: 14px;
+	}
+	header .navbar-default
+	{
+		font-size: 14px;
+	}
+}
+@media (max-width: 296px)
+{
+	header .navbar-left span
+	{
+		font-size: 13px;
+	}
+	header .navbar-default
+	{
+		font-size: 13px;
+	}
 }
 
 footer
@@ -141,6 +181,7 @@ footer
 	padding-top: 20px;
 	background-color: #000;
 	color: white;
+	height: 150px;
 }
 
 footer .scrollup
@@ -177,6 +218,10 @@ footer p
 	width: 32px;
 	height: 32px;
 }
+.top_logo
+{
+	margin-top: 10px;
+}
 
 img.small_icon
 {
@@ -208,7 +253,7 @@ img.small_icon:hover
 {
 	footer
 	{
-		height: 150px;
+		height: 185px;
 	}
 }
 
@@ -216,7 +261,14 @@ img.small_icon:hover
 {
 	footer
 	{
-		height: 170px;
+		height: 190px;
+	}
+}
+@media(max-width: 345px)
+{
+	footer
+	{
+		height: 195px;
 	}
 }
 
@@ -224,6 +276,6 @@ img.small_icon:hover
 {
 	footer
 	{
-		height: 180px;
+		height: 220px;
 	}
 }

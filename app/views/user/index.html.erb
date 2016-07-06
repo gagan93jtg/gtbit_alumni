@@ -11,10 +11,10 @@
     <% current_user.update_sign_in_count %>
     <% end %>
 
-    <h1 class="welcome_text">Welcome <%= current_user.full_name %></h1>
+    <h1 class="welcome_text">Welcome <%= current_user.full_name %>,</h1>
     <hr>
     <div class="activity">
-      <h2>Your Activity</h2>
+      <h2 class="activity_heading">Your Activity</h2>
       <div class="activity_content">
         <% @your_activity.each do |post| %>
         <div class="activity_question">
@@ -26,8 +26,8 @@
            <p class="user-time"><%= timeago_tag post.created_at %></p>
          </div>
          <span class="post-string user-post"><%= post.query_string %></span>
-         <%= link_to "View post", post_path(post.id), class: 'view_post' %>
-         <%= link_to "Edit post", edit_post_path(post.id), class: 'edit_post' %>
+         <%= link_to "View post", post_path(post.id), class: 'view_post background-seagreen' %>
+         <%= link_to "Edit post", edit_post_path(post.id), class: 'edit_post background-seagreen' %>
        </div>
        <%end%>
      </div>
@@ -41,7 +41,7 @@
     </div>
     <hr>
     <div class="activity">
-      <h2>Public Activity</h2>
+      <h2 class="activity_heading">Public Activity</h2>
 
       <div class="activity_content">
         <% @public_activity.each do |post| %>
@@ -54,7 +54,7 @@
            <p class="user-time"><%=timeago_tag post.created_at %></p>
          </div>
          <span class="post-string user-post"><%= post.query_string %></span>
-         <%= link_to "View post", post_path(post.id), class: 'view_post' %>
+         <%= link_to "View post", post_path(post.id), class: 'view_post background-seagreen' %>
        </div>
        <%end%>
      </div>

@@ -1,4 +1,4 @@
-<div class="main">
+<div class="update_your_profile">
     <div class="container-custom">
       <h1>Update Your Profile</h1>
       <%= form_for :user, :url => user_path(), :method => "PUT" do |f|%>
@@ -38,8 +38,7 @@
           <label for="exampleInputName9">Experience</label>
           <input type="text" class="form-control" id="exampleInputName9" placeholder="Enter Experience (In years)" autocomplete="off" name="user[experience_in_years]">
         </div>
-        <button type="submit" class="btn-update btn btn-default">Update</button>
-        <%= submit_tag(@save_string) %>
+        <%= submit_tag(@save_string ,{class: "background-seagreen btn-update btn"}) %>
       <%end%>
 
     </div>
