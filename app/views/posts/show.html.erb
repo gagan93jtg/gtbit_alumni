@@ -1,9 +1,10 @@
-<div class="page_top_level_div">
-  <div class="show_question">
+<div class="view_query_chain">
+  <div class="container-custom">
     <div class="question">
       <%= label_tag asked_by(@post.user) %> asked <%= anonymous?(@post) %>
       <br>
-      <pre class='query_string'><%= @post.query_string.strip %></pre>
+
+      <span class="post-string user-post"><%= @post.query_string.strip %></span>
       <i> <%=timeago_tag Time.at(@post.created_at) %> </i>
       <br>
       <span class='tags'> <%= @post.tags %> </span>
@@ -11,13 +12,26 @@
       <a href="#" data-toggle="modal" data-target="#edit_history_modal" class="edit_history"> View edit history </a>
       <% end %>
     </div>
-    <br>
+    <br><!--
     <div class="comments">
       <%@post.comments.each do |comment|%>
       <div class="comment">
         <%=comment.user.full_name%> : "<%=comment.comment_string%>" <i> <%=timeago_tag comment.created_at%> </i>
       </div>
-      <%end%>
+      <%end%>-->
+
+
+      <div class="activity_question">
+      <%@post.comments.each do |comment|%>
+        <div class="left_div">
+          <img src="/assets/logov2.png" alt="profile pic" class="img-circle public_activity_user">
+        </div>
+        <div class="right_div">
+          <p class="user-name"><%=comment.user.full_name%></p>
+          <p class="user-time"><%=timeago_tag comment.created_at%> </p>
+       </div>
+       <span class="post-string user-post"><%=comment.comment_string%></span>
+       <%end%>
     </div>
     <br><br>
     <div class="add_comment">

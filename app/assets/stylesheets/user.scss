@@ -58,10 +58,10 @@
 
 .left_div,.right_div
 {
-	display: inline;
+	display: inline-block;
 }
 
-.activity img, .activity img
+.activity_question img,
 {
 	border: 2px solid #00bfa9;
 	background-color: #685E6D;
@@ -69,6 +69,11 @@
 	width: 64px;
 	height: 64px;
 	z-index: 100;
+}
+.user-time,.user-name
+{
+	display: inline-flex;
+	flex-wrap: wrap;
 }
 
 .user-name
@@ -79,10 +84,9 @@
 
 .user-time
 {
-	margin-left: 10px;
+	margin-left: 500px;
 	margin-top:15px;
 	font-size: 18px;
-	float: right;
 	font-weight: 300;
 	color: #685E6D;
 }
@@ -120,7 +124,6 @@
 
 .update_your_profile .form-control
 {
-	color: #00bfa9;
 	border: 1px solid #00bfa9;
 	border-radius: 4px;
 }
@@ -140,6 +143,11 @@
 		width: 900px;
 	}
 
+	.user-time
+	{
+		margin-left: 450px;
+	}
+
 }
 
 @media(max-width: 960px)
@@ -149,6 +157,10 @@
 		width: 850px;
 	}
 
+	.user-time
+	{
+		margin-left: 400px;
+	}
 }
 
 @media(max-width: 900px)
@@ -156,6 +168,11 @@
 	.container-custom
 	{
 		width: 800px;
+	}
+
+	.user-time
+	{
+		margin-left: 350px;
 	}
 
 }
@@ -167,6 +184,11 @@
 		width: 750px;
 	}
 
+	.user-time
+	{
+		margin-left: 300px;
+	}
+
 }
 
 @media(max-width: 800px)
@@ -174,6 +196,11 @@
 	.container-custom
 	{
 		width: 700px;
+	}
+
+	.user-time
+	{
+		margin-left: 250px;
 	}
 
 }
@@ -185,6 +212,11 @@
 		width: 650px;
 	}
 
+	.user-time
+	{
+		margin-left: 200px;
+	}
+
 }
 
 @media(max-width: 700px)
@@ -192,6 +224,11 @@
 	.container-custom
 	{
 		width: 600px;
+	}
+
+	.user-time
+	{
+		margin-left: 150px;
 	}
 
 }
@@ -203,6 +240,11 @@
 		width: 550px;
 	}
 
+	.user-time
+	{
+		margin-left: 100px;
+	}
+
 }
 
 @media(max-width: 600px)
@@ -210,6 +252,11 @@
 	.container-custom
 	{
 		width: 500px;
+	}
+
+	.user-time
+	{
+		margin-left: 50px;
 	}
 
 }
@@ -229,6 +276,11 @@
 	.update_your_profile .btn-update
 	{
 		font-size: 16px;
+	}
+
+	.user-time
+	{
+		margin-left: 20px;
 	}
 
 }
@@ -257,7 +309,7 @@
 
 	.user-time
 	{
-		margin-top:17px;
+		
 		font-size: 16px;
 	}
 
@@ -288,26 +340,7 @@
 	.container-custom
 	{
 		width: 350px;
-	}
-
-	.left_div,.right_div
-	{
-		display: inline-block;
-	}
-
-	.user-time,.user-name{
-		display: inline-block;
-	}
-
-	.user-name{
-		margin-left: -80px;
-	}
-
-	.user-time
-	{
-		margin-top: 30px;
-		float: left;
-	}
+	}	
 
 	.update_your_profile
 	{
@@ -395,9 +428,11 @@
 		width: 280px;
 	}
 
-	.user-name
+	.user-time
 	{
-		margin-left: -75px;
+		margin-top: -50px;
+
+		margin-left: 0;
 	}
 
 }
@@ -422,13 +457,11 @@
 	.user-name
 	{
 		font-size: 16px;
-		margin-left: -70px;
 	}
 
 	.user-time
 	{
 		font-size: 14px;
-		margin-top: 19px
 	}
 
 	.user-post
