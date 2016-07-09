@@ -223,12 +223,12 @@ footer p
 	margin-top: 10px;
 }
 
-img.small_icon
+img.small_icon_social
 {
 	border-bottom: 2px solid black;
 }
 
-img.small_icon:hover
+img.small_icon_social:hover
 {
 	border-bottom: 2px solid #00bfa9;
 }
