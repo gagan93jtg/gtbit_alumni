@@ -39,7 +39,7 @@
 	padding-top: 20px;
 }
 
-.activity_question
+.activity_question, .activity_comment
 {
 	background-color: rgb(237, 234, 234);
 	border-radius: 10px;
@@ -61,7 +61,7 @@
 	display: inline-block;
 }
 
-.activity_question img
+.activity_question img, .activity_comment img
 {
 	border: 2px solid #00bfa9;
 	background-color: #685E6D;
@@ -70,6 +70,7 @@
 	height: 64px;
 	z-index: 100;
 }
+
 .user-time,.user-name
 {
 	display: inline-flex;
@@ -95,6 +96,7 @@
 {
 	font-size: 16px;
 	white-space: pre-wrap;
+	word-wrap: break-word;
 	display: inline-block;
 	background-color: rgba(209,202,202,0.7);
 	padding: 10px;
@@ -103,6 +105,10 @@
 	width: 100%;
 }
 
+.user-tags
+{
+
+}
 .update_your_profile
 {
 	margin: 50px 0;
@@ -134,6 +140,28 @@
 	margin-top: 25px;
 	font-size: 17px;
 	text-align: center;
+}
+
+.add_comment
+{
+	margin-top: 25px;
+
+	.add_comment_button
+	{
+		margin: 10px 0px 25px 0px;
+	}
+}
+
+.block_details
+{
+	margin:	25px 0px;
+}
+
+.details_heading
+{
+	font-size: 24px;
+	margin-bottom: 20px;
+	color: #00bfa9;
 }
 
 @media(max-width: 1000px)
@@ -309,7 +337,7 @@
 
 	.user-time
 	{
-		
+
 		font-size: 16px;
 	}
 
@@ -340,7 +368,7 @@
 	.container-custom
 	{
 		width: 350px;
-	}	
+	}
 
 	.update_your_profile
 	{
@@ -413,7 +441,7 @@
 	.update_your_profile h1
 	{
 		font-size: 27px;
-	}	
+	}
 
 	.update_your_profile .btn-update
 	{

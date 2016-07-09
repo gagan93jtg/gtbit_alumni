@@ -4,7 +4,7 @@
 		<div class="row">
 
 			<div class="col-md-6 col-sm-6 col-xs-12">
-				<h2>Your notifications</h2>
+				<h2>Recent notifications</h2>
 				<% @unread_nfs.each do |notification| %>
 				<div class="notification">
 					<p class="<%=notification.inspect%>">
@@ -29,8 +29,8 @@
 					<i> <%=timeago_tag Time.at(notification["timestamp"]) %> </i>
 				</div>
 				<% end %>
-			</div>	
+			</div>
 
-		</div>		
+		</div>
 	</div>
 </div>
