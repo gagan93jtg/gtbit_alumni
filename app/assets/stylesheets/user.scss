@@ -40,7 +40,7 @@
 	padding-top: 20px;
 }
 
-.activity_question, .activity_comment
+.activity_question, .activity_comment, .activity_notify
 {
 	background-color: rgb(237, 234, 234);
 	border-radius: 10px;
@@ -62,7 +62,7 @@
 	display: inline;
 }
 
-.activity_question img, .activity_comment img
+.activity_question img, .activity_comment img, .activity_notify img
 {
 	border: 2px solid #00bfa9;
 	background-color: #685E6D;
@@ -71,6 +71,7 @@
 	height: 64px;
 	z-index: 100;
 }
+
 
 .user-time,.user-name
 {

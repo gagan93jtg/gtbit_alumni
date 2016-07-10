@@ -2,13 +2,96 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.notification
+
+
+.activity_notify
 {
-	margin: 10px 0px;
-	background-color: rgba(255,255,255,0.2);
+	a:link, a:visited, a:hover, a:active
+	{
+		color: #337ab7;
+	}
+
+	.user-name
+	{
+		font-size: 20px;
+	}
+
+	a:hover
+	{
+		color: #00bfa9;
+	}
 }
 
-.notification_text
+@media(max-width: 950px)
 {
-	font-size: 14px;
+	.activity_notify
+	{
+		.post-link
+		{
+			display: block !important;
+		}
+		.public_activity_user
+		{
+			margin-top: -10px;
+		}
+	}	
+}
+
+@media(max-width: 800px)
+{
+	.activity_notify
+	{
+		.public_activity_user
+		{
+			height: 55px;
+			width: 55px;
+		}
+		.user-name
+		{
+			font-size: 18px;
+		}
+	}
+}
+
+@media(max-width: 750px)
+{
+	.activity_notify
+	{
+		.public_activity_user
+		{
+			height: 50px;
+			width: 50px;
+		}
+		.user-name
+		{
+			font-size: 17px;
+		}
+	}
+}
+
+@media(max-width: 750px)
+{
+	.activity_notify
+	{
+		.user-name
+		{
+			font-size: 16px;
+		}
+	}
+}
+
+@media(max-width: 600px)
+{
+	.activity_notify
+	{
+		.public_activity_user
+		{
+			height: 50px;
+			width: 50px;
+		}
+		.user-time
+		{
+			font-size: 14px;
+		}
+	}
 }
