@@ -7,7 +7,7 @@
           <img src="/assets/logov2.png" alt="profile pic" class="img-circle public_activity_user">
         </div>
         <div class="right_div">
-          <%= link_to asked_by(@post.user), user_path(@post.user.id), class: 'user-name' %> asked <%= anonymous?(@post) %>
+          <p class="user-name"> <%= link_to asked_by(@post.user), user_path(@post.user.id), class: '' %> asked <%= anonymous?(@post) %></p>
           <p class="user-time"><%=timeago_tag Time.at(@post.created_at) %></p>
         </div>
         <span class="user-post"><%= @post.query_string.strip %></span>
@@ -30,7 +30,7 @@
           <img src="/assets/logov2.png" alt="profile pic" class="img-circle public_activity_user">
         </div>
         <div class="right_div">
-          <%= link_to comment.user.full_name, user_path(comment.user.id), class: 'user-name' %>
+          <p class="user-name"><%= link_to comment.user.full_name, user_path(comment.user.id), class: '' %></p>
           <p class="user-time"><%=timeago_tag comment.created_at%> </p>
         </div><span class="user-post"><%=comment.comment_string%></span>
       </div>

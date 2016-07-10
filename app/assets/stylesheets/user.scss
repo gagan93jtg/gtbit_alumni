@@ -59,7 +59,7 @@
 
 .left_div,.right_div
 {
-	display: inline-block;
+	display: inline;
 }
 
 .activity_question img, .activity_comment img
@@ -74,20 +74,18 @@
 
 .user-time,.user-name
 {
-	display: inline-flex;
-	flex-wrap: wrap;
+	display: inline-block;
 }
 
 .user-name
 {
 	font-size: 22px;
-	display: inline;
 }
 
 .user-time
 {
-	margin-left: 500px;
-	margin-top:15px;
+	float: right;
+	margin-top: 18px;
 	font-size: 18px;
 	font-weight: 300;
 	color: #685E6D;
@@ -106,10 +104,6 @@
 	width: 100%;
 }
 
-.user-tags
-{
-
-}
 .update_your_profile
 {
 	margin: 50px 0;
@@ -176,11 +170,6 @@
 		width: 900px;
 	}
 
-	.user-time
-	{
-		margin-left: 450px;
-	}
-
 }
 
 @media(max-width: 960px)
@@ -189,11 +178,6 @@
 	{
 		width: 850px;
 	}
-
-	.user-time
-	{
-		margin-left: 400px;
-	}
 }
 
 @media(max-width: 900px)
@@ -201,11 +185,6 @@
 	.container-custom
 	{
 		width: 800px;
-	}
-
-	.user-time
-	{
-		margin-left: 350px;
 	}
 
 }
@@ -217,11 +196,6 @@
 		width: 750px;
 	}
 
-	.user-time
-	{
-		margin-left: 300px;
-	}
-
 }
 
 @media(max-width: 800px)
@@ -229,11 +203,6 @@
 	.container-custom
 	{
 		width: 700px;
-	}
-
-	.user-time
-	{
-		margin-left: 250px;
 	}
 
 }
@@ -245,11 +214,6 @@
 		width: 650px;
 	}
 
-	.user-time
-	{
-		margin-left: 200px;
-	}
-
 }
 
 @media(max-width: 700px)
@@ -257,11 +221,6 @@
 	.container-custom
 	{
 		width: 600px;
-	}
-
-	.user-time
-	{
-		margin-left: 150px;
 	}
 
 }
@@ -273,11 +232,6 @@
 		width: 550px;
 	}
 
-	.user-time
-	{
-		margin-left: 100px;
-	}
-
 }
 
 @media(max-width: 600px)
@@ -285,11 +239,6 @@
 	.container-custom
 	{
 		width: 500px;
-	}
-
-	.user-time
-	{
-		margin-left: 50px;
 	}
 
 }
@@ -311,9 +260,14 @@
 		font-size: 16px;
 	}
 
+	.user-time,.user-name{
+		display: block;
+	}
+
 	.user-time
 	{
-		margin-left: 20px;
+		float: left;
+		margin-top: -8px;
 	}
 
 }
@@ -338,12 +292,6 @@
 	.user-name
 	{
 		font-size: 20px;
-	}
-
-	.user-time
-	{
-
-		font-size: 16px;
 	}
 
 	.user-post
@@ -415,11 +363,6 @@
 		font-size: 18px;
 	}
 
-	.user-time
-	{
-		font-size: 15px;
-	}
-
 	.user-post
 	{
 		font-size: 15px;
@@ -459,13 +402,6 @@
 	.container-custom
 	{
 		width: 280px;
-	}
-
-	.user-time
-	{
-		margin-top: -50px;
-
-		margin-left: 0;
 	}
 
 }
