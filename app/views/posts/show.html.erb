@@ -1,8 +1,7 @@
 <div class="view_query_chain">
   <div class="container-custom">
     <div class="question">
-
-      <div class="activity_question">
+      <div class="activity_question clearfix">
         <div class="left_div">
           <img src="/assets/logov2.png" alt="profile pic" class="img-circle public_activity_user">
         </div>
@@ -25,14 +24,21 @@
       <div class="separator_hr"></div>
       <% @post.comments.each do |comment| %>
 
-      <div class="activity_comment">
-        <div class="left_div">
-          <img src="/assets/logov2.png" alt="profile pic" class="img-circle public_activity_user">
+      <div class="activity_comment ">
+        <div class="left clearfix"><span><img src="/assets/logov2.png" alt="profile pic" class="img-circle public_activity_user comment-img pull-left" ></span>
+
+          <div class="right clearfix">
+          <div class="header">
+            <p class="user-name"><%= link_to comment.user.full_name, user_path(comment.user.id), class: '' %></p>  
+            <p class=" user-time"><%=timeago_tag comment.created_at%> </p>
+            <span class="user-post"><%=comment.comment_string%></span>
+          </div>
+            
+          </div>
+          
         </div>
-        <div class="right_div">
-          <p class="user-name"><%= link_to comment.user.full_name, user_path(comment.user.id), class: '' %></p>
-          <p class="user-time"><%=timeago_tag comment.created_at%> </p>
-        </div><span class="user-post"><%=comment.comment_string%></span>
+        
+        
       </div>
       <% end %>
       <div class="form-group add_comment">
