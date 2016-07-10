@@ -20,6 +20,6 @@ class UserController < ApplicationController
 
   def show
     @user = User.find_by_id(params[:id])
-    redirect_to controller: 'errors', action: 'file_not_found' && return unless @user
+    redirect_to controller: 'errors', action: 'file_not_found' and return unless @user
   end
 end

@@ -20,10 +20,6 @@ Rails.application.configure do
   # NGINX, varnish or squid.
   # config.action_dispatch.rack_cache = true
 
-  # Disable serving static files from the `/public` folder by default since
-  # Apache or NGINX already handles this.
-  config.serve_static_files = ENV['RAILS_SERVE_STATIC_FILES'].present?
-
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = :uglifier
   # config.assets.css_compressor = :sass
@@ -77,4 +73,11 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  # Assets don't work in prod (http://stackoverflow.com/questions/18700219/rails-4-assets-not-loading-in-production)
+  # Disable serving static files from the `/public` folder by default since
+  # Apache or NGINX already handles this.
+  # REMOVE THIS WHEN USING NGINX
+  config.serve_static_files = true
+
 end

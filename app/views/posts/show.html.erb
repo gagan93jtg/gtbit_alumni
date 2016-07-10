@@ -12,6 +12,11 @@
         </div>
         <span class="user-post"><%= @post.query_string.strip %></span>
         <span class="user-tags"><%= @post.tags%></span>
+
+        <% if @post.user.id == current_user.id %>
+        <%= link_to "Edit post", edit_post_path(@post.id), class: 'edit_post background-seagreen' %>
+        <% end %>
+
         <% if @post.post_histories.count > 0 %>
         <a href="#" data-toggle="modal" data-target="#edit_history_modal" class="background-seagreen btn edit_history"> View edit history </a>
         <% end %>

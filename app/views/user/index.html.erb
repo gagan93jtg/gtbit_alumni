@@ -19,7 +19,7 @@
         <% @your_activity.each do |post| %>
         <div class="activity_question">
           <div class="left_div">
-            <img src="/assets/logov2.png" alt="profile pic" class="img-circle public_activity_user">
+            <%= image_tag "logov2.png", class: 'img-circle public_activity_user', alt: 'profile pic' %>
           </div>
           <div class="right_div">
            <p class="user-name"><%= post.user.full_name %></p>
@@ -32,32 +32,31 @@
        <% end %>
      </div>
 
-      <div class="no_question_yet">
-        <% if @your_activity.length == 0 %>
-        <h3>You haven't asked a query since you have joined.</h3>
-        <h4>Use the navigation to ask questions, find users and search questions etc.</h4>
-        <% end %>
-      </div>
+     <div class="no_question_yet">
+      <% if @your_activity.length == 0 %>
+      <h3>You haven't asked a query since you have joined.</h3>
+      <h4>Use the navigation to ask questions, find users and search questions etc.</h4>
+      <% end %>
     </div>
-    <hr>
-    <div class="activity">
-      <h2 class="activity_heading">Public Activity</h2>
+  </div>
+  <hr>
+  <div class="activity">
+    <h2 class="activity_heading">Public Activity</h2>
 
-      <div class="activity_content">
-        <% @public_activity.each do |post| %>
-        <div class="activity_question">
-          <div class="left_div">
-            <img src="/assets/logov2.png" alt="profile pic" class="img-circle public_activity_user">
-          </div>
-          <div class="right_div">
-           <p class="user-name"><%= post.user.full_name %></p>
-           <p class="user-time"><%=timeago_tag post.created_at %></p>
-         </div>
-         <span class="post-string user-post"><%= post.query_string %></span>
-         <%= link_to "View post", post_path(post.id), class: 'view_post background-seagreen' %>
+    <div class="activity_content">
+      <% @public_activity.each do |post| %>
+      <div class="activity_question">
+        <div class="left_div">
+          <%= image_tag "logov2.png", class: 'img-circle public_activity_user', alt: 'profile pic' %>
+        </div>
+        <div class="right_div">
+         <p class="user-name"><%= post.user.full_name %></p>
+         <p class="user-time"><%=timeago_tag post.created_at %></p>
        </div>
-       <% end %>
+       <span class="post-string user-post"><%= post.query_string %></span>
+       <%= link_to "View post", post_path(post.id), class: 'view_post background-seagreen' %>
      </div>
+     <% end %>
    </div>
  </div>
 </div>

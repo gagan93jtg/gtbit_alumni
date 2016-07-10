@@ -12,37 +12,27 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find_by_id(params[:id])
-    redirect_to controller: 'errors', action: 'file_not_found' && return if @post.nil?
+    redirect_to controller: 'errors', action: 'file_not_found' and return if @post.nil?
   end
 
   def edit
     @post = Post.find_by_id(params[:id])
-    redirect_to controller: 'errors', action: 'file_not_found' && return unless @post
-
-    if current_user.id != @post.user_id
-      @post = nil
-      redirect_to controller: 'errors', action: 'unprocessable'
-      return
-    end
-
+    redirect_to controller: 'errors', action: 'file_not_found' and return unless @post
+    redirect_to controller: 'errors', action: 'unprocessable' and return if current_user.id != @post.user_id
   end
 
   def update
     post = Post.find(params[:id])
-    redirect_to controller: 'errors', action: 'file_not_found' && return unless post
-
-    if current_user.id != post.user_id
-      redirect_to controller: 'errors', action: 'unprocessable'
-      return
-    end
+    redirect_to controller: 'errors', action: 'file_not_found' and return unless post
+    redirect_to controller: 'errors', action: 'unprocessable'and return if current_user.id != post.user_id
 
     post.update_post(params)
-    redirect_to root_path
+    redirect_to post_path(post.id)
   end
 
   def edit_history
     post = Post.find(params[:id])
-    redirect_to controller: 'errors', action: 'file_not_found' && return unless post
+    redirect_to controller: 'errors', action: 'file_not_found' and return unless post
     render json: post.post_histories.to_json
     return
   end
