@@ -10,12 +10,8 @@
           <p class="user-time"><%=timeago_tag Time.at(@post.created_at) %></p>
         </div>
         <span class="user-post"><%= @post.query_string.strip %></span>
-        <span class="user-tags"><%= @post.tags%></span>
-
-        <% if @post.user.id == current_user.id %>
-        <%= link_to "Edit post", edit_post_path(@post.id), class: 'edit_post background-seagreen' %>
-        <% end %>
-
+        <span class=" user-post user-tags">Tags:&nbsp;<%= @post.tags%></span>
+        <br>
         <% if @post.post_histories.count > 0 %>
         <a href="#" data-toggle="modal" data-target="#edit_history_modal" class="background-seagreen btn edit_history"> View edit history </a>
         <% end %>
@@ -54,9 +50,9 @@
 </div>
 
 <div id="edit_history_modal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
+  <div class="modal-dialog ">
+    <div class="modal-content ">
+      <div class="modal-header separator_hr">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title">Edit history </h4>
       </div>
@@ -64,7 +60,7 @@
         <%= image_tag 'loading.gif', class: 'loading' %>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-green" data-dismiss="modal">Close</button>
+        <button type="button" class="modal-button btn btn-green background-seagreen" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>

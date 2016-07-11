@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
 .container-custom
 {
 	width: 940px;
@@ -51,9 +52,12 @@
 .separator_hr
 {
 	border-bottom: 1px solid #00bfa9;
-	opacity: 0.25;
-	width: 50%;
-	margin: 10px auto;
+	width: 80%;
+	margin: 0 auto;
+}
+.user-tags
+{
+	margin-bottom: 10px;
 }
 
 .activity_comment
@@ -77,20 +81,29 @@
 	}
 }
 
-.edit_history
+#edit_history_modal
 {
-	margin: 10px 0px;
+	.loading
+	{
+		width: 64px;
+		height: 64px;
+	}
+	.modal-content
+	{
+		background-color: #edeaea;
+		border-radius: 0;
+		border: 5px solid #00bfa9;
+	}
+	.modal-button
+	{
+		margin-top: -40px;
+	}
+	.separator_hr
+	{
+		width: 100%;
+	}
 }
 
-.search_heading
-{
-	padding: 10px 0px 0px 10px;
-}
-
-.search_query
-{
-	margin: 10px 0px;
-}
 
 @media(max-width: 1000px)
 {
