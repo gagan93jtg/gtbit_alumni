@@ -22,6 +22,6 @@ test:
   <<: *default
   database: gtbit_placement_test
 
-#production:
-#  <<: *default
-#W  database: db/production.sqlite3
+production:
+  <<: *default
+  database: gtbit_placement_dev

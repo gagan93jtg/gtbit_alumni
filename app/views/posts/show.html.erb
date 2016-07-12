@@ -1,32 +1,48 @@
-<div class="page_top_level_div">
-  <div class="show_question">
+<div class="view_query_chain">
+  <div class="container-custom">
     <div class="question">
-      <%= label_tag asked_by(@post.user) %> asked <%= anonymous?(@post) %>
-      <br>
-      <pre class='query_string'><%= @post.query_string.strip %></pre>
-      <i> <%=timeago_tag Time.at(@post.created_at) %> </i>
-      <br>
-      <span class='tags'> <%= @post.tags %> </span>
-      <% if @post.post_histories.count > 0 %>
-      <a href="#" data-toggle="modal" data-target="#edit_history_modal" class="edit_history"> View edit history </a>
-      <% end %>
-    </div>
-    <br>
-    <div class="comments">
-      <%@post.comments.each do |comment|%>
-      <div class="comment">
-        <%=comment.user.full_name%> : "<%=comment.comment_string%>" <i> <%=timeago_tag comment.created_at%> </i>
+
+      <div class="activity_question">
+        <div class="left_div">
+          <img src="/assets/logov2.png" alt="profile pic" class="img-circle public_activity_user">
+        </div>
+        <div class="right_div">
+          <%= link_to asked_by(@post.user), user_path(@post.user.id), class: 'user-name' %> asked <%= anonymous?(@post) %>
+          <p class="user-time"><%=timeago_tag Time.at(@post.created_at) %></p>
+        </div>
+        <span class="user-post"><%= @post.query_string.strip %></span>
+        <span class="user-tags"><%= @post.tags%></span>
+
+        <% if @post.user.id == current_user.id %>
+        <%= link_to "Edit post", edit_post_path(@post.id), class: 'edit_post background-seagreen' %>
+        <% end %>
+
+        <% if @post.post_histories.count > 0 %>
+        <a href="#" data-toggle="modal" data-target="#edit_history_modal" class="background-seagreen btn edit_history"> View edit history </a>
+        <% end %>
       </div>
-      <%end%>
-    </div>
-    <br><br>
-    <div class="add_comment">
-      <%= form_for :comment, :url => comments_path(), :method => "POST" do |f|%>
-      <input type="hidden" name="[post][id]" value= <%= @post.id %>>
-      <%= f.text_area :comment_string, :placeholder => "Write a comment", :size => "30x2" %>
-      <br>
-      <%= submit_tag("Add") %>
-      <%end%>
+
+      <div class="separator_hr"></div>
+      <% @post.comments.each do |comment| %>
+
+      <div class="activity_comment">
+        <div class="left_div">
+          <img src="/assets/logov2.png" alt="profile pic" class="img-circle public_activity_user">
+        </div>
+        <div class="right_div">
+          <%= link_to comment.user.full_name, user_path(comment.user.id), class: 'user-name' %>
+          <p class="user-time"><%=timeago_tag comment.created_at%> </p>
+        </div><span class="user-post"><%=comment.comment_string%></span>
+      </div>
+      <% end %>
+      <div class="form-group add_comment">
+        <%= form_for :comment, :url => comments_path(), :method => "POST" do |f| %>
+        <input type="hidden" name="[post][id]" value= <%= @post.id %>>
+        <label for="query_tags">Add comment</label>
+        <textarea rows="3" class="form-control" id="query_tags" placeholder="Write a comment" name="comment[comment_string]"></textarea>
+        <%= submit_tag("Add", {class: "background-seagreen edit_post btn btn-submit add_comment_button"}) %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

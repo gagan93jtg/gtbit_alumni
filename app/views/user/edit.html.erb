@@ -1,27 +1,59 @@
-<div class="page_top_level_div">
+<div class="update_your_profile">
+  <div class="container-custom">
+    <h1>Update Your Profile</h1>
     <%= form_for :user, :url => user_path(), :method => "PUT" do |f|%>
-    <h2>
-      Update your profile
-  </h2>
-  <br><br>
-  <%=label_tag "First name"%><%= f.text_field :first_name, :value => current_user.first_name, :placeholder => "First name" %>
-  <br><br>
-  <%=label_tag "Last name"%><%= f.text_field :last_name, :value => current_user.last_name, :placeholder => "Last name" %>
-  <br><br>
-  <%=label_tag "Phone no."%><%= f.text_field :phone, :value => current_user.phone, :placeholder => "Personal contact no." %>
-  <br><br>
-  <%=label_tag "Gender"%><%= f.text_field :gender, :value => current_user.gender, :placeholder => "Gender ('Male' or 'Female')" %>
-  <br><br>
-  <%=label_tag "Batch"%><%= f.text_field :batch, :value => current_user.batch, :placeholder => "Batch (Eg. CSE 2011 - 2015)" %>
-  <br><br>
-  <%=label_tag "Work type"%><%= f.text_field :job_type, :value => current_user.job_type, :placeholder => "Work type (Job / Business / Others (Please specify)" %>
-  <br><br>
-  <%=label_tag "Designation"%><%= f.text_field :designation, :value => current_user.designation, :placeholder => "Designation" %>
-  <br><br>
-  <%=label_tag "Company"%><%= f.text_field :company, :value => current_user.company, :placeholder => "Company" %>
-  <br><br>
-  <%=label_tag "Experience (in years)"%><%= f.text_field :experience_in_years, :value => current_user.experience_in_years, :placeholder => "Experience (In years)" %>
-  <br><br>
-  <%= submit_tag(@save_string) %>
-  <%end%>
+
+    <div class="personal_details block_details">
+      <div class="details_heading"><span> Personal details </span> </div>
+      <div class="form-group">
+        <label for="exampleInputName1">First Name </label>
+        <input type="text" class="form-control" id="exampleInputName1" placeholder="Your first name" autofocus="autofocus" autocomplete="off" name="user[first_name]">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputName2">Last Name </label>
+        <input type="text" class="form-control" id="exampleInputName2" placeholder="Your last name" autocomplete="off" name="user[last_name]">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputName4">Gender</label>
+        <input type="text" class="form-control" id="exampleInputName4" placeholder="Your gender ('Male' or 'Female')" autocomplete="off" name="user[gender]">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputName3">Phone No.</label>
+        <input type="text" class="form-control" id="exampleInputName3" placeholder="Your contact no." autocomplete="off" name="user[phone]">
+      </div>
+    </div>
+    <hr class="hr">
+
+    <div class="college_details block_details">
+      <div class="details_heading"><span> College details </span> </div>
+      <div class="form-group">
+        <label for="exampleInputName5">Batch</label>
+        <input type="text" class="form-control" id="exampleInputName5" placeholder="Your batch (Eg. CSE 2011 - 2015)" autocomplete="off" name="user[batch]">
+      </div>
+    </div>
+    <hr class="hr">
+
+    <div class="professional_details block_details">
+      <div class="details_heading"><span> Professional details </span> </div>
+      <div class="form-group">
+        <label for="exampleInputName6">Work Type</label>
+        <input type="text" class="form-control" id="exampleInputName6" placeholder="Your work type (Job / Business / Others (Please specify)" autocomplete="off" name="user[job_type]">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputName7">Designation</label>
+        <input type="text" class="form-control" id="exampleInputName7" placeholder="Your designation" autocomplete="off" name="user[designation]">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputName8">Company</label>
+        <input type="text" class="form-control" id="exampleInputName8" placeholder="Your company name" autocomplete="off" name="user[company]">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputName9">Experience</label>
+        <input type="text" class="form-control" id="exampleInputName9" placeholder="Your Experience (In years)" autocomplete="off" name="user[experience_in_years]">
+      </div>
+    </div>
+    <%= submit_tag(@save_string ,{class: "background-seagreen btn-update btn"}) %>
+    <% end %>
+  </div>
 </div>
+

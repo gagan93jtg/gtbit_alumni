@@ -2,40 +2,498 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.query_string:hover
+.container-custom
 {
-	text-decoration: none;
+	width: 940px;
+	padding: 0px 15px;
+	margin: 0px auto;
 }
 
-.your_activity, .public_activity
+.first_sign_in
 {
-	width: 80%;
+	margin-top: 40px;
 }
 
-.your_activity_question, .public_activity_question
+.first_sign_in_text
 {
-	margin: 20px;
-	border-bottom: 1px solid rgba(0,0,0,0.10);
-	padding-bottom: 25px;
+	color: #685E6D;
+	border: 2px solid #00bfa9;
+	-webkit-box-shadow: 6px 8px 15px 1px rgba(104,94,109,0.7);
+	-moz-box-shadow: 6px 8px 15px 1px rgba(104,94,109,0.7);
+	box-shadow: 6px 8px 15px 1px rgba(104,94,109,0.7);
+	width: 100%;
+	padding: 20px;
+	font-size: 15px;
+	margin-bottom: 50px;
+}
+.first_sign_in_text ul li
+{
+	margin-left: 20px;
 }
 
-.public_activity_user
+
+.welcome_text
 {
-	border: 1px solid rgba(0,0,0,0.25);
+	color: #00bfa9;
+	font-size: 25px;
+	padding-top: 20px;
+}
+
+.activity_question, .activity_comment
+{
+	background-color: rgb(237, 234, 234);
+	border-radius: 10px;
+	padding: 20px;
+	margin: 25px 0px;
+}
+
+.view_post, .edit_post
+{
+	display: inline-block;
+	margin: 10px;
+	font-size: 15px;
+	border-radius: 5px;
+	padding: 5px 15px;
+}
+
+.left_div,.right_div
+{
+	display: inline-block;
+}
+
+.activity_question img, .activity_comment img
+{
+	border: 2px solid #00bfa9;
+	background-color: #685E6D;
+	padding: 5px;
 	width: 64px;
 	height: 64px;
+	z-index: 100;
 }
 
-.query_string
+.user-time,.user-name
 {
-	margin-top: 10px;
+	display: inline-flex;
+	flex-wrap: wrap;
 }
 
-.left_div
+.user-name
 {
-	vertical-align: top;
+	font-size: 22px;
+	display: inline;
 }
-.right_div
+
+.user-time
 {
-	margin: 5px 0px 0px 10px;
+	margin-left: 500px;
+	margin-top:15px;
+	font-size: 18px;
+	font-weight: 300;
+	color: #685E6D;
+}
+
+.user-post
+{
+	font-size: 16px;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+	display: inline-block;
+	background-color: rgba(209,202,202,0.7);
+	padding: 10px;
+	border-radius: 10px;
+	margin-top:10px;
+	width: 100%;
+}
+
+.user-tags
+{
+
+}
+.update_your_profile
+{
+	margin: 50px 0;
+	color: #685E6D;
+	font-size: 18px;
+}
+
+.update_your_profile form
+{
+	margin-top: -30px;
+}
+
+.update_your_profile h1
+{
+	padding-top: 20px;
+	font-size: 35px;
+	margin-bottom: 60px;
+}
+
+.update_your_profile .form-control
+{
+	border: 1px solid #00bfa9;
+	border-radius: 4px;
+}
+
+.update_your_profile .btn-update
+{
+	width: 200px;
+	margin-top: 25px;
+	font-size: 17px;
+	text-align: center;
+}
+
+.add_comment
+{
+	margin-top: 25px;
+
+	.add_comment_button
+	{
+		margin: 10px 0px 25px 0px;
+	}
+}
+
+.block_details
+{
+	margin:	25px 0px;
+}
+
+.details_heading
+{
+	font-size: 24px;
+	margin-bottom: 20px;
+	color: #00bfa9;
+}
+
+@media(max-width: 1000px)
+{
+	.container-custom
+	{
+		width: 900px;
+	}
+
+	.user-time
+	{
+		margin-left: 450px;
+	}
+
+}
+
+@media(max-width: 960px)
+{
+	.container-custom
+	{
+		width: 850px;
+	}
+
+	.user-time
+	{
+		margin-left: 400px;
+	}
+}
+
+@media(max-width: 900px)
+{
+	.container-custom
+	{
+		width: 800px;
+	}
+
+	.user-time
+	{
+		margin-left: 350px;
+	}
+
+}
+
+@media(max-width: 850px)
+{
+	.container-custom
+	{
+		width: 750px;
+	}
+
+	.user-time
+	{
+		margin-left: 300px;
+	}
+
+}
+
+@media(max-width: 800px)
+{
+	.container-custom
+	{
+		width: 700px;
+	}
+
+	.user-time
+	{
+		margin-left: 250px;
+	}
+
+}
+
+@media(max-width: 750px)
+{
+	.container-custom
+	{
+		width: 650px;
+	}
+
+	.user-time
+	{
+		margin-left: 200px;
+	}
+
+}
+
+@media(max-width: 700px)
+{
+	.container-custom
+	{
+		width: 600px;
+	}
+
+	.user-time
+	{
+		margin-left: 150px;
+	}
+
+}
+
+@media(max-width: 650px)
+{
+	.container-custom
+	{
+		width: 550px;
+	}
+
+	.user-time
+	{
+		margin-left: 100px;
+	}
+
+}
+
+@media(max-width: 600px)
+{
+	.container-custom
+	{
+		width: 500px;
+	}
+
+	.user-time
+	{
+		margin-left: 50px;
+	}
+
+}
+
+@media(max-width: 550px)
+{
+	.container-custom
+	{
+		width: 450px;
+	}
+
+	.update_your_profile h1
+	{
+		font-size: 33px;
+	}
+
+	.update_your_profile .btn-update
+	{
+		font-size: 16px;
+	}
+
+	.user-time
+	{
+		margin-left: 20px;
+	}
+
+}
+
+@media(max-width: 500px)
+{
+	.container-custom
+	{
+		width: 400px;
+	}
+
+	.welcome_text
+	{
+		font-size: 23px;
+	}
+
+	.activity_heading
+	{
+		font-size: 27px;
+	}
+
+	.user-name
+	{
+		font-size: 20px;
+	}
+
+	.user-time
+	{
+
+		font-size: 16px;
+	}
+
+	.user-post
+	{
+		font-size: 15px;
+	}
+
+	.update_your_profile
+	{
+		font-size: 16px;
+	}
+
+	.update_your_profile h1
+	{
+		font-size: 32px;
+	}
+
+	.update_your_profile .btn-update
+	{
+		font-size: 15px;
+	}
+
+}
+
+@media(max-width: 450px)
+{
+	.container-custom
+	{
+		width: 350px;
+	}
+
+	.update_your_profile
+	{
+		font-size: 14px;
+	}
+
+	.update_your_profile h1
+	{
+		font-size: 30px;
+	}
+
+	.update_your_profile .btn-update
+	{
+		width: 100%;
+		font-size: 14px;
+	}
+
+}
+
+@media(max-width: 400px)
+{
+	.container-custom
+	{
+		width: 330px;
+	}
+
+	.welcome_text
+	{
+		font-size: 20px;
+	}
+
+	.activity_heading
+	{
+		font-size: 25px;
+	}
+
+	.user-name
+	{
+		font-size: 18px;
+	}
+
+	.user-time
+	{
+		font-size: 15px;
+	}
+
+	.user-post
+	{
+		font-size: 15px;
+	}
+
+	.view_post, .edit_post
+	{
+		width: 100%;
+		text-align: center;
+		margin-left: -0.5px;
+	}
+
+	.activity img, .activity img
+	{
+		width: 60px;
+		height: 60px;
+	}
+
+	.update_your_profile
+	{
+		font-size: 13px;
+	}
+
+	.update_your_profile h1
+	{
+		font-size: 27px;
+	}
+
+	.update_your_profile .btn-update
+	{
+		font-size: 13px;
+	}
+
+}
+@media(max-width: 350px)
+{
+	.container-custom
+	{
+		width: 280px;
+	}
+
+	.user-time
+	{
+		margin-top: -50px;
+
+		margin-left: 0;
+	}
+
+}
+
+@media(max-width: 300px)
+{
+	.container-custom
+	{
+		width: 230px;
+	}
+
+	.welcome_text
+	{
+		font-size: 17px;
+	}
+
+	.activity_heading
+	{
+		font-size: 23px;
+	}
+
+	.user-name
+	{
+		font-size: 16px;
+	}
+
+	.user-time
+	{
+		font-size: 14px;
+	}
+
+	.user-post
+	{
+		font-size: 14px;
+	}
 }

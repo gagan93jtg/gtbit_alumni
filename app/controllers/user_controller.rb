@@ -3,7 +3,7 @@ class UserController < ApplicationController
 
   def index
     @your_activity = current_user.posts
-    @public_activity = Post.where("user_id != #{current_user.id}")
+    @public_activity = Post.public_activity(current_user.id)
   end
 
   def edit
@@ -20,6 +20,6 @@ class UserController < ApplicationController
 
   def show
     @user = User.find_by_id(params[:id])
-    redirect_to controller: 'errors', action: 'file_not_found' && return unless @user
+    redirect_to controller: 'errors', action: 'file_not_found' and return unless @user
   end
 end

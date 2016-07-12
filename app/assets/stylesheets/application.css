@@ -14,213 +14,268 @@
 *= require_self
 */
 
-body
+*
 {
-	margin: 0px 0px 150px 0px;
 	padding: 0;
-	font-family: "Work Sans";
-	background-image: url("bg.jpg");
-	background-size: 1440px 960px;
-	background-attachment: fixed;
-	background-repeat: no-repeat;
-}
-
-header
-{
-	background-color: white;
-	position: fixed;
-	right: 0;
-	left: 0;
-	top : 0;
-	border-bottom: 1px solid rgba(0,0,0,0.75);
-	z-index: 1000;
-}
-
-footer
-{
-	bottom: 0;
-	left: 0;
-	right: 0;
-	position: fixed;
-	background-color: white;
-	border-top: 1px solid rgba(0,0,0,0.75);
-	padding-bottom: 10px;
-}
-
-h1, h2, h3, h4 h5, h6, h7, input, p, span, div, pre
-{
-	font-weight: 300;
-	font-family: inherit;
-}
-
-pre
-{
-	background: transparent;
-	border: 0px;
 	margin: 0;
-	padding: 0;
-	font-size: 18px;
-}
-a
-{
-	font-weight: 400;
-}
-
-a:hover
-{
-	text-decoration: none;
 }
 
 ::selection
 {
-	color: white;
-	background-color: rgb(46,200,102);
+	color: #00bfa9;
+	background-color: rgba(0,0,0,0.05);
 }
 
-.content
+body
 {
-	width: 80%;
-	margin: 0 auto;
+	padding: 0;
+	padding-top: 50px;
+	font-family: 'Work Sans';
 }
 
-.alert
+a:link, a:visited, a:hover, a:active
 {
-	background-color: rgb(222,39,40);
-	color: white;
+	text-decoration: none;
+	color: inherit;
 }
 
-.app_heading
+a:hover
 {
-	font-size: 32px;
-	color: black;
+	color: #00bfa9;
+}
+
+label
+{
 	font-weight: 300;
 }
 
-header .content .left_content
+.background-seagreen
 {
-	float: left;
+	background-color: #00bfa9 !important;
+	border: 1px solid #00bfa9 !important;
+	color: white !important;
+	transition: background-color 0.5s ease;
 }
 
-header .content .right_content
+.background-seagreen:hover
 {
-	float: right;
+	color: #00bfa9 !important;
+	background-color: white !important;
 }
 
-footer .content nav
+.foreground-seagreen
 {
-	margin-top: 20px;
+	color: #00bfa9 !important;
+	border: 1px solid #00bfa9 !important;
+	background-color: white !important;
+	transition: background-color 0.5s ease;
 }
 
-footer .content nav a
+.foreground-seagreen:hover
 {
-	margin-right: 20px;
+	background-color: #00bfa9 !important;
+	color: white !important;
 }
+
+.transparent-bg
+{
+	background-color: transparent !important;
+	border: 0px solid white !important;
+}
+
+
+header
+{
+	font-size:20px;
+}
+
+header .navbar-left
+{
+	display: block;
+	cursor: pointer;
+}
+
+header .navbar-left span
+{
+	margin-left: 10px;
+	font-size: 24px;
+	vertical-align: bottom;
+	color: white;
+}
+
+header .navbar-default
+{
+	background: black;
+	border-bottom: 1px solid white;
+}
+
 
 .body_content
 {
-	width: 80%;
-	margin: 10px auto;
-	padding: 45px 10px 10px 10px;
+	/* main body height is 100% of viewport height - (header height + footer height) */
+	min-height: calc(100vh - (50px + 120px));
+}
+@media (max-width: 767px)
+{
+	header .navbar-left{
+		margin-left: 10px;
+	}
 }
 
-.page_top_level_div
+@media (max-width: 400px)
 {
-	background-color: rgba(255,255,255,0.5);
-	margin: 0;
-	padding: 0px 20px 20px 20px;
+	header .navbar-left span
+	{
+		font-size: 20px;
+	}
 }
 
-.top_div
+@media (max-width: 370px)
 {
-	background-color: rgb(46,200,102);
-	padding: 0px 10px;
+	header .navbar-left span
+	{
+		font-size: 18px;
+	}
+	header .navbar-default
+	{
+		font-size: 16px;
+	}
+}
+@media (max-width: 340px)
+{
+	header .navbar-left span
+	{
+		font-size: 16px;
+	}
+	header .navbar-default
+	{
+		font-size: 15px;
+	}
+}
+@media (max-width: 315px)
+{
+	header .navbar-left span
+	{
+		font-size: 14px;
+	}
+	header .navbar-default
+	{
+		font-size: 14px;
+	}
+}
+@media (max-width: 296px)
+{
+	header .navbar-left span
+	{
+		font-size: 13px;
+	}
+	header .navbar-default
+	{
+		font-size: 13px;
+	}
 }
 
-/* FIXME: ganda wala UI hack */
-.page_top_level_div
+footer
 {
-	margin-top: -20px;
-}
-
-/* clearfix shit for parents of floating elements */
-.clearfix:after
-{
-   content: " ";
-   display: block;
-   height: 0;
-   clear: both;
-}
-
-/* An extended bootstrap option for green button */
-.btn-green
-{
-	background-color: rgb(46,200,102);
+	text-align: center;
+	padding-top: 20px;
+	background-color: #000;
 	color: white;
-	border: 1px solid rgb(46,200,102);
+	height: 150px;
 }
 
-.btn-green:hover
+footer .scrollup
 {
-	transition: background-color 0.5s ease;
-	color: rgb(46,200,102);
-	background-color: white;
+	float: right;
+	display: inline-block;
 }
 
-/* If there is a div holding form or a form itself, give it this class
-for some common properties
-*/
-.form_div
+
+footer ul
 {
-	-webkit-box-shadow: 0px 0px 8px 5px rgba(0,0,0,0.75);
-	-moz-box-shadow: 0px 0px 8px 5px rgba(0,0,0,0.75);
-	box-shadow: 0px 0px 8px 5px rgba(0,0,0,0.75);
-	margin: 25px auto;
-	background-color: white;
-	padding: 25px;
-	color: black;
+	margin-top: 5px;
+	margin-right: 35px;
 }
 
-input
+footer li
 {
-	margin: 20px 0px;
+	font-size: 16px;
+	list-style: none;
+	font-weight: 300;
+	margin: 0px 5px;
+	display: inline;
 }
 
-.loading
+footer p
+{
+	font-family: inherit;
+	font-size: 14px;
+}
+
+.footer_icons
+{
+	display: inline-block;
+	width: 32px;
+	height: 32px;
+}
+.top_logo
+{
+	margin-top: 10px;
+}
+
+img.small_icon_social
+{
+	border-bottom: 2px solid black;
+}
+
+img.small_icon_social:hover
+{
+	border-bottom: 2px solid #00bfa9;
+}
+
+.small_icon
 {
 	width: 32px;
 	height: 32px;
 }
 
-/* Added this to enable dropdown on hover */
-.dropdown:hover .dropdown-menu
+.footer_copyright_stamp
 {
-	display: block;
-	opacity: 1;
+	margin-left: 20px;
 }
 
-/* There is a little margin between button and drop down options due to which
-the drop down menu sometimes disappers. This margin will stick drop down
-options with the button (UI hack)
-*/
-.navigation_button
+.separator
 {
-	margin-top: 8px;
-	margin-bottom: -2px;
+	margin: 0px 2px;
 }
 
-
-/* Apply property to elements via simple class names ;) */
-.float_right
+@media(max-width: 620px)
 {
-	float: right;
+	footer
+	{
+		height: 185px;
+	}
 }
 
-.text_align_right
+@media(max-width: 400px)
 {
-	text-align: right;
+	footer
+	{
+		height: 190px;
+	}
+}
+@media(max-width: 345px)
+{
+	footer
+	{
+		height: 195px;
+	}
 }
 
-.inline_block
+@media(max-width: 300px)
 {
-	display: inline-block;
+	footer
+	{
+		height: 220px;
+	}
 }

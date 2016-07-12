@@ -6,58 +6,86 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <link href='https://fonts.googleapis.com/css?family=Work+Sans:100,300,400,600' rel='stylesheet' type='text/css'>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+  <%= favicon_link_tag 'logov2.png' %>
 </head>
 <body>
   <header>
-    <div class="content">
-      <div class="left_content">
-        <p class="app_heading">GTBIT Alumni Network</p>
-      </div>
-      <div class="right_content">
-        <button class="new_user_button btn btn-green">New User ?</button>
-        <% if current_user %>
-        <div class="dropdown">
-          <button class="navigation_button btn btn-green dropdown-toggle" type="button" data-toggle="dropdown">
-            Navigate
-            <span class="caret">
-            </span>
+    <nav class="navbar navbar-default navbar-fixed-top clearfix" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
           </button>
-          <ul class="dropdown-menu">
-
-            <li> <%= link_to "Home", root_path %> </li>
-            <li> <%= link_to "View notifications (#{notif_count})", notifications_index_path %> </li>
-            <li> <%= link_to "Ask a question", new_post_path %> </li>
-            <li> <%= link_to "View trusted members", trusted_users_path %> </li>
-            <li> <%= link_to "Update profile", edit_user_path(current_user) %> </li>
-            <li> <%= link_to "Search users", "#" %> </li>
-            <li> <%= link_to "Search questions", "#" %> </li>
-            <li class="divider"></li>
-            <li> <%= link_to 'Help', "#" %> </li>
-            <li> <%= link_to 'Sign out', destroy_user_session_path, method: :delete %> </li>
+          <a class="navbar-left" href="/">
+            <%= image_tag "logov2.png", class: 'small_icon top_logo' %>
+            <span>GTBIT Alumni Network</span>
+          </a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right ">
+            <li ><a class="new_user_button foreground-seagreen transparent-bg" href="#">New User ?</a></li>
+            <% if current_user %>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle navigation_button foreground-seagreen transparent-bg" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Navigate<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><%= link_to "Home", root_path %> </li>
+                <li><%= link_to "View notifications (#{notif_count})", notifications_index_path %> </li>
+                <li><%= link_to "Ask a question", new_post_path %> </li>
+                <li><%= link_to "View trusted members", trusted_users_path %></li>
+                <li><%= link_to "Update profile", edit_user_path(current_user) %></li>
+                <li><%= link_to "Search users", "#" %> </li>
+                <li><%= link_to "Search questions", "#" %></li>
+                <li role="separator" class="divider"></li>
+                <li><%= link_to 'Help', "#" %> </li>
+                <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
+              </ul>
+            </li>
+            <% end %>
           </ul>
         </div>
-        <% end %>
       </div>
-    </div>
+    </nav>
   </header>
   <div class="body_content">
     <%= yield %>
   </div>
   <footer>
-    <div class="content">
-      <div class="footer_content">
-        <h3 class="app_heading_small">GTBIT Alumni Network</h4>
+    <div class="container">
+      <div class="row">
+        <a classs="footer_icons" href="https://www.fb.com" target="_blank"> <%= image_tag "fb.png", class: 'small_icon small_icon_social' %> </a>
+        <a classs="footer_icons" href="https://www.twitter.com" target="_blank"> <%= image_tag "twitter.png", class: 'small_icon small_icon_social' %> </a>
+        <a classs="footer_icons" href="https://www.google.co.in" target="_blank"> <%= image_tag "gplus.png", class: 'small_icon small_icon_social' %> </a>
+        <a href="#" class="scrollup btn-lg"> <span class="glyphicon glyphicon-arrow-up"> </span> </a>
       </div>
-      Our vision is to connect oldest alumni, seniors, batchmates and juniors of GTBIT so that
-      anybody can seek suggestion(s) of any kind.
-      <nav class="footer_nav">
-        <a href="#">About us</a>
-        <a href="#">Contact us</a>
-        <a href="#">Meet the Developers</a>
-        <a href="#">Contribute</a>
-        <a href="#">Report a Bug </a>
-        <a href="#">FAQs </a>
-      </nav>
+      <div class="row">
+        <ul>
+          <li><a href="#" id="about_us">About Us</a></li>
+          <li class="separator">|</li>
+          <li><a href="#" id="contact_us">Contact Us</a></li>
+          <li class="separator">|</li>
+          <li><a href="#" id="the_team">Meet the developers</a></li>
+          <li class="separator">|</li>
+          <li><a href="#" id="contribute">Contribute</a></li>
+          <li class="separator">|</li>
+          <li><a href="#" id="report_a_bug">Report a Bug</a></li>
+          <li class="separator">|</li>
+          <li><a href="#" id="faqs">FAQs</a></li>
+        </ul>
+      </div>
+      <p>
+        &copy; Copyright 2016
+        <span>
+          <a href="/" class="footer_copyright_stamp">GTBIT Alumni Network</a>
+        </span>
+      </p>
     </div>
   </footer>
 </body>
@@ -67,7 +95,6 @@
   The code below handles with visiblity of 'New User ?' and 'Navigate' buttons.
   The visiblity depends on the fact if the user is logged in or not. At a time,
   only one button should be visible
-
 -->
 
 <% if current_user %>
@@ -78,5 +105,4 @@
 <script type="text/javascript">
   $('.new_user_button').css('display','inline-block');
 </script>
-
 <% end %>
