@@ -1,6 +1,10 @@
 class PostsController < ApplicationController
   before_filter :authenticate_user!
 
+  def index
+    @posts, @show_recent_posts = get_posts
+  end
+
   def new
     @post = Post.new
   end
@@ -35,5 +39,18 @@ class PostsController < ApplicationController
     redirect_to controller: 'errors', action: 'file_not_found' and return unless post
     render json: post.post_histories.to_json
     return
+  end
+
+  private
+
+  def get_posts
+    search_string = params['search_query']
+    search_string = nil if search_string.blank?
+
+    if search_string.nil?
+      return Post.order('id DESC').last(10).reverse, true
+    else
+      return Post.where("query_string LIKE '%#{search_string}%'"), false
+    end
   end
 end

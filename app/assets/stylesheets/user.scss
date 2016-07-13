@@ -5,8 +5,8 @@
 .container-custom
 {
 	width: 940px;
-	padding: 0px 15px;
-	margin: 0px auto;
+	padding: 15px;
+	margin: 10px auto;
 }
 
 .first_sign_in
@@ -26,6 +26,7 @@
 	font-size: 15px;
 	margin-bottom: 50px;
 }
+
 .first_sign_in_text ul li
 {
 	margin-left: 20px;
@@ -164,6 +165,10 @@
 	color: #00bfa9;
 }
 
+.clickable-row
+{
+	cursor: pointer;
+}
 @media(max-width: 1000px)
 {
 	.container-custom

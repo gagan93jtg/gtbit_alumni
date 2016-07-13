@@ -2,7 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
 .container-custom
 {
 	width: 940px;
@@ -44,7 +43,8 @@
 	font-size: 18px;
 }
 
-.dark_blue{
+.dark_blue
+{
 	background-color: #83af9b;
 }
 
@@ -66,11 +66,22 @@
 .separator_hr
 {
 	border-bottom: 1px solid #00bfa9;
-	width: 80%;
-	margin: 0 auto;
+	opacity: 0.25;
+	width: 50%;
+	margin: 10px auto;
 }
 
 .edit_history
+{
+	margin: 10px 0px;
+}
+
+.search_heading
+{
+	padding: 10px 0px 0px 10px;
+}
+
+.search_query
 {
 	margin: 10px 0px;
 }
