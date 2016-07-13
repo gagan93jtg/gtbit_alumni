@@ -41,7 +41,7 @@ Rails.application.configure do
 
   # replicate action mailer and exception notification settings in staging/production.rb when deploying
 
-  config.action_mailer.default_url_options = { :host => 'smtp.gmail.com' }
+  config.action_mailer.default_url_options = { :host => 'http://localhost:3000' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
       :address              => 'smtp.gmail.com',
@@ -53,12 +53,11 @@ Rails.application.configure do
       :enable_starttls_auto => true
   }
 
-  Rails.application.config.middleware.use ExceptionNotification::Rack,
-  :email => {
-    #:deliver_with => :deliver, # Rails >= 4.2.1 do not need this option since it defaults to :deliver_now
-    :email_prefix => "[ERROR] ",
-    :sender_address => %{"notifier" <alumnigtbit@gmail.com>},
-    :exception_recipients => %w{gagan93gtbit@gmail.com}
-  }
+  #Rails.application.config.middleware.use ExceptionNotification::Rack,
+  #:email => {
+  #  :email_prefix => "[ERROR] ",
+  #  :sender_address => %{"notifier" <alumnigtbit@gmail.com>},
+  #  :exception_recipients => %w{gagan93gtbit@gmail.com}
+  #}
 
 end

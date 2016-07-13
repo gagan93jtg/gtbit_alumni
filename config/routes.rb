@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
 
-  root 'user#index'
+  root 'welcome#index'
   devise_for :users
-
-  get 'user/trusted' => 'user#trusted', as: 'trusted_users'
 
   get 'posts/edit_history' => 'posts#edit_history'
 
