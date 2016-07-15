@@ -84,6 +84,7 @@
 .login-pane .create
 {
 	text-align: center;
+	margin: 0 auto;
 }
 
 .login-pane .btn-create
@@ -164,6 +165,7 @@
 	.login-pane .btn-create
 	{
 		font-size: 15px;
+		width: 450px;
 	}
 
 }
@@ -188,7 +190,7 @@
 	.login-pane .main-form
 	{
 		margin: 0 auto;
-		width: 315px;
+		width: 400px;
 	}
 
 	.login-pane label
@@ -209,12 +211,26 @@
 
 	.login-pane .btn-create
 	{
-		width:320px;
+		width:350px;
 		font-size: 14px;
 	}
 
 }
-
+@media(max-width: 450px)
+{
+	.main-form
+	{
+		border: 0;
+	}
+	.login-pane .btn-create
+	{
+		width:300px;
+	}
+	.login-pane .main-form
+	{
+		width: 350px;
+	}
+}
 @media(max-width: 370px)
 {
 	.login-pane span
@@ -234,8 +250,7 @@
 
 	.login-pane .main-form
 	{
-		margin: 0 auto;
-		width: 270px;
+		width: 330px;
 	}
 
 	.login-pane label
@@ -256,7 +271,7 @@
 
 	.login-pane .btn-create
 	{
-		width:285px;
+		width:300px;
 		font-size: 14px;
 	}
 }
@@ -280,8 +295,7 @@
 
 	.login-pane .main-form
 	{
-		margin: 0 auto;
-		width: 240px;
+		width: 285px;
 	}
 
 	.login-pane label
@@ -303,7 +317,7 @@
 
 	.login-pane .btn-create
 	{
-		width:245px;
+		width:265px;
 		font-size: 13px;
 		padding: 5px 27px;
 	}

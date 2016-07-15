@@ -44,6 +44,16 @@ a:hover
 	color: #00bfa9;
 }
 
+.user-link a:link, .user-link a:visited, .user-link a:hover, .user-link a:active
+{
+	color: #337ab7;
+}
+
+.user-link a:hover
+{
+	color: #00bfa9;
+}
+
 label
 {
 	font-weight: 300;
@@ -83,6 +93,22 @@ label
 	border: 0px solid white !important;
 }
 
+.dropdown-menu
+{
+	background-color: #fff !important;
+	color: #00bfa9 !important;
+}
+
+.dropdown-menu>li>a
+{
+	color: #00bfa9 !important;
+}
+
+.dropdown-menu>li>a:hover
+{
+	background-color: #00bfa9 !important;
+	color: #000 !important;
+}
 
 header
 {

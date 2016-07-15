@@ -42,11 +42,10 @@
 	margin: 50px 0;
 	color: #685E6D;
 	font-size: 18px;
-}
-
-.dark_blue
-{
-	background-color: #83af9b;
+	.question
+	{
+		padding-top: 20px;
+	}
 }
 
 .separator_hr
@@ -132,7 +131,7 @@
 			margin-right: 20px;
 		}
 	}
-	
+
 }
 
 @media(max-width: 850px)
@@ -333,7 +332,7 @@
 
 	.activity_comment
 	{
-		
+
 		.user-name, .user-time
 		{
 			display: block !important;

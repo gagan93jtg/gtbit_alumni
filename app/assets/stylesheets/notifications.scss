@@ -6,19 +6,9 @@
 
 .activity_notify
 {
-	a:link, a:visited, a:hover, a:active
-	{
-		color: #337ab7;
-	}
-
 	.user-name
 	{
 		font-size: 20px;
-	}
-
-	a:hover
-	{
-		color: #00bfa9;
 	}
 }
 
@@ -34,7 +24,7 @@
 		{
 			margin-top: -10px;
 		}
-	}	
+	}
 }
 
 @media(max-width: 800px)
