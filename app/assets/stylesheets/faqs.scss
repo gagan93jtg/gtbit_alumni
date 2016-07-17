@@ -1,0 +1,35 @@
+// Place all the styles related to the FAQS controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.faqs_header
+{
+  word-wrap: break-word;
+  font-size: 16px;
+}
+
+.faqs_body
+{
+  margin-top: 25px;
+}
+
+.faq
+{
+  margin-top: 12px;
+  background-color: rgb(230,230,230);
+  padding: 10px;
+  word-wrap: break-word;
+
+  .faq_question
+  {
+    font-size: 18px;
+    font-weight: 900;
+  }
+
+  .faq_answer
+  {
+    font-size: 16px;
+    margin-left: 20px;
+  }
+}
+

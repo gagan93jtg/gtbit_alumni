@@ -1,0 +1,18 @@
+<div class="container-custom">
+  <p class="faqs_header">
+    Before you ask a new question, do check these questions. This list contains questions which are generally asked. This is an ongoing list, so your question (with an appropriate answer) may be added to this list.
+  </p>
+
+  <div class="faqs_body">
+    <% @faqs.each do |faq| %>
+    <div class="faq">
+      <p class="faq_question">
+        <%= link_to faq.question, faq_path(faq.id) %>
+      </p>
+    </div>
+    <% end %>
+  </div>
+  <div class="digg_pagination">
+    <%= will_paginate @faqs, :container => false %>
+  </div>
+</div>

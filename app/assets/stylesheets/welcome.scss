@@ -1,3 +1,51 @@
 // Place all the styles related to the Welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.team_member
+{
+  margin-bottom: 25px;
+  background-color: rgb(235,235,235);
+  padding: 10px;
+  border-radius: 10px;
+
+  .left_div
+  {
+    float: left;
+
+    .display_pic
+    {
+      img
+      {
+        border-radius: 50%;
+        padding: 10px;
+        border: 2px solid #00bfa9;
+        background-color: #685E6D;
+        width: 96px;
+        height: 96px;
+      }
+    }
+  }
+
+  .right_div
+  {
+    float: right;
+
+    .work_info, .designation,
+    {
+      word-wrap: break-word;
+      font-weight: 900;
+      font-size: 18px;
+    }
+    .work_info_right, .designation_right
+    {
+      text-align: right;
+    }
+
+    .about
+    {
+      word-wrap: break-word;
+      line-height: 2;
+    }
+  }
+}

@@ -7,6 +7,7 @@ development:
     host: localhost
     port: 6379
     db: 0
+  dev_email: 'alumnigtbit@gmail.com'
 
 production:
   redis_master:
@@ -17,3 +18,4 @@ production:
     host: localhost
     port: 6379
     db: 0
+  dev_email: 'alumnigtbit@gmail.com'
