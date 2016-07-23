@@ -1,5 +1,5 @@
 class WelcomeController < ApplicationController
-  # This is important, authentication will be done for index action ONLY !!!!!
+  # This is important : authentication will be done for index action ONLY !!!!!
   # Take care while adding new actions in this controller
   before_filter :authenticate_user!, only: [:index]
 
@@ -9,7 +9,7 @@ class WelcomeController < ApplicationController
   end
 
   def contact_us_mail
-    UserMailer.contact_us_mail(params)
+    UserMailer.contact_us_mail(params).deliver_now
 
     respond_to do |format|
       format.js {}
@@ -17,9 +17,7 @@ class WelcomeController < ApplicationController
   end
 
   def report_bug
-    Rails.logger.info "Hola got a hit : #{params.inspect}"
-    UserMailer.contact_us_mail(params)
-    Rails.logger.info "Hola sent mail"
+    UserMailer.report_bug_mail(params).deliver_now
 
     respond_to do |format|
       format.js {}
