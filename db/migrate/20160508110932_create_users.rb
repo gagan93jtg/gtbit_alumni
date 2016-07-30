@@ -4,17 +4,22 @@ class CreateUsers < ActiveRecord::Migration
 
       t.string  :first_name
       t.string  :last_name
-      t.string  :urlkey
-      t.string  :phone
+      t.string  :username
       t.string  :gender
-      t.boolean :is_admin, default: false
-      t.boolean :is_trusted, default: false
+      t.string  :bio
 
       t.string  :batch
+      t.string  :company
       t.string  :job_type
       t.string  :designation
-      t.string  :company
       t.integer :experience_in_years, default: 0
+
+      t.string  :phone
+      t.string  :fb_link
+      t.string  :twitter_link
+      t.string  :linked_in_link
+
+      t.boolean :is_admin, default: false
 
       t.timestamps
     end

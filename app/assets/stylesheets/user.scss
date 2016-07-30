@@ -456,19 +456,8 @@
 
 	.social-bar
 	{
-		background-color: #00bfa9;
 		margin-bottom: 35px;
 		padding: 20px;
-		border-bottom-right-radius: 10px;
-		-webkit-border-bottom-right-radius: 10px;
-		-moz-border-bottom-right-radius: 10px;
-		-ms-border-bottom-right-radius: 10px;
-		-o-border-bottom-right-radius: 10px;
-		border-bottom-left-radius: 10px;
-		-webkit-border-bottom-left-radius: 10px;
-		-moz-border-bottom-left-radius: 10px;
-		-ms-border-bottom-left-radius: 10px;
-		-o-border-bottom-left-radius: 10px;
 	}
 
 	.social-bar a
@@ -482,6 +471,7 @@
 		width: 65px;
 		height: 65px;
 	}
+
 	.user
 	{
 		margin-top: 30px;
@@ -595,7 +585,7 @@
 
 	.hr-left {
 		height: 1px;
-		width: 100px;
+		width: 100%;
 		margin-bottom: 20px;
 		background-color: #ddd;
 	}

@@ -1,12 +1,8 @@
   <div class="user-profile">
     <div class="container">
       <div class="row">
-
         <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
           <div class="profile-sidebar">
-
-
-
             <div class="user">
               <div class="text-center">
                 <img src="/assets/user.jpg" class="img-circle">
@@ -14,18 +10,16 @@
               <div class="user-head text-center">
                 <h1><%= @user.full_name %></h1>
                 <div class="hr-center"></div>
-                <h2><%= @user.job_type %></h2>
+                <h2><%= @user.batch %></h2>
               </div>
             </div>
-
             <div class="social-bar">
               <div class="text-center">
-                <a classs="footer_icons" href="https://www.fb.com" target="_blank"> <%= image_tag "fb.png", class: 'small_icon small_icon_social' %> </a>
-                <a classs="footer_icons" href="https://www.twitter.com" target="_blank"> <%= image_tag "twitter.png", class: 'small_icon small_icon_social' %> </a>
-                <a classs="footer_icons" href="https://www.google.co.in" target="_blank"> <%= image_tag "gplus.png", class: 'small_icon small_icon_social' %> </a>
+                <a href="https://www.fb.com" target="_blank"> <%= image_tag "fb.png", class: 'small_icon' %> </a>
+                <a href="https://www.twitter.com" target="_blank"> <%= image_tag "twitter.png", class: 'small_icon' %> </a>
+                <a href="https://www.google.co.in" target="_blank"> <%= image_tag "gplus.png", class: 'small_icon' %> </a>
               </div>
             </div>
-
           </div>
         </div>
 
@@ -35,18 +29,25 @@
             <ul class="timeline">
 
               <li class="profile-icon">
-                <h1 class="timeline-head">PROFILE</h1>
+                <h1 class="timeline-head">
+                <% if @user == current_user %>
+                  Your profile
+                <% else %>
+                  <%= @user.first_name %>'s Profile
+                <% end %>
+                </h1>
                 <div class="timeline-badge">
                   <img src="/assets/profile-icon.png" alt="">
                 </div>
               </li>
 
               <li class="profile-panel">
-                <h1 class="user-name"><strong><%= @user.full_name %></strong></h1>
-                <h4 class="user-job-type"><%= @user.job_type %></h4>
+                <h1 class="user-name"><strong>About <%= @user.full_name %></strong></h1>
+                <h4 class="user-job-type"><%= @user.designation %></h4>
                 <h4 class="user-company"><%= @user.company %></h4>
                 <div class="hr-left"></div>
                 <p>
+                  <%#= @user.bio %>
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.
                 </p>
               </li>
@@ -101,18 +102,3 @@
     </div>
   </div>
 </div>
-
-
-<!--
-<div class="page_top_level_div">
-	<h1>The user :</h1>
-
-	<p class="name"><%= @user.full_name %></p>
-	<p class="phone"><%= @user.phone %></p>
-	<p class="gender"><%= @user.gender %></p>
-	<p class="batch"><%= @user.batch %></p>
-	<p class="batch"><%= @user.batch %></p>
-	<p class="job_type"><%= @user.job_type %></p>
-	<p class="company"><%= @user.company %></p>
-</div>
--->
