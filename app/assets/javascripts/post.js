@@ -35,7 +35,7 @@ function show_on_modal(data)
        for (i = 0 ; i < data.length; i++)
               $(".modal_body_question").append("\
                      <div class='modal_question'>\
-                     <pre class='query_string'> " + data[i].query_string + "</pre>\
-                     <span class='tags'> " + data[i].tags + "</span>\
+                     <div class='query_string user-post'> " + data[i].query_string + "</div>\
+                     <span class='tags user-post user-tags'> " + data[i].tags + "</span>\
                      </div>");
 }

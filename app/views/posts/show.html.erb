@@ -1,22 +1,17 @@
 <div class="view_query_chain">
   <div class="container-custom">
     <div class="question">
-
-      <div class="activity_question">
+      <div class="activity_question clearfix">
         <div class="left_div">
           <img src="/assets/logov2.png" alt="profile pic" class="img-circle public_activity_user">
         </div>
         <div class="right_div">
-          <%= link_to asked_by(@post.user), user_path(@post.user.id), class: 'user-name' %> asked <%= anonymous?(@post) %>
+          <p class="user-name user-link"> <%= link_to asked_by(@post.user), user_path(@post.user.id), class: '' %> asked <%= anonymous?(@post) %></p>
           <p class="user-time"><%=timeago_tag Time.at(@post.created_at) %></p>
         </div>
         <span class="user-post"><%= @post.query_string.strip %></span>
-        <span class="user-tags"><%= @post.tags%></span>
-
-        <% if @post.user.id == current_user.id %>
-        <%= link_to "Edit post", edit_post_path(@post.id), class: 'edit_post background-seagreen' %>
-        <% end %>
-
+        <span class=" user-post user-tags">Tags:&nbsp;<%= @post.tags%></span>
+        <br>
         <% if @post.post_histories.count > 0 %>
         <a href="#" data-toggle="modal" data-target="#edit_history_modal" class="background-seagreen btn edit_history"> View edit history </a>
         <% end %>
@@ -25,14 +20,21 @@
       <div class="separator_hr"></div>
       <% @post.comments.each do |comment| %>
 
-      <div class="activity_comment">
-        <div class="left_div">
-          <img src="/assets/logov2.png" alt="profile pic" class="img-circle public_activity_user">
+      <div class="activity_comment ">
+        <div class="left clearfix"><span><img src="/assets/logov2.png" alt="profile pic" class="img-circle public_activity_user comment-img pull-left" ></span>
+
+          <div class="right clearfix">
+          <div class="header">
+            <p class="user-name user-link"><%= link_to comment.user.full_name, user_path(comment.user.id), class: '' %></p>
+            <p class=" user-time"><%=timeago_tag comment.created_at%> </p>
+            <span class="user-post"><%=comment.comment_string%></span>
+          </div>
+
+          </div>
+
         </div>
-        <div class="right_div">
-          <%= link_to comment.user.full_name, user_path(comment.user.id), class: 'user-name' %>
-          <p class="user-time"><%=timeago_tag comment.created_at%> </p>
-        </div><span class="user-post"><%=comment.comment_string%></span>
+
+
       </div>
       <% end %>
       <div class="form-group add_comment">
@@ -48,9 +50,9 @@
 </div>
 
 <div id="edit_history_modal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
+  <div class="modal-dialog ">
+    <div class="modal-content ">
+      <div class="modal-header separator_hr">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title">Edit history </h4>
       </div>
@@ -58,7 +60,7 @@
         <%= image_tag 'loading.gif', class: 'loading' %>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-green" data-dismiss="modal">Close</button>
+        <button type="button" class="modal-button btn btn-green background-seagreen" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
