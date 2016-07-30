@@ -1,0 +1,116 @@
+<div id="about_us" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">About us </h4>
+      </div>
+      <div class="modal-body">
+        We are a group of alumni with a vision to make a strong network. Blah Blah Blah
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn " data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="contact_us" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Contact us </h4>
+      </div>
+      <div class="modal-body">
+        <p>Have a question ? Drop us a mail and we'll reach you</p>
+
+        <form action="/contact_us" method="POST" data-remote="true" id="contact_us_form">
+          <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+          <% if current_user %>
+          <div class="form-group">
+           <input class="form-control" name="full_name" placeholder="Full name" value="<%= current_user.full_name %>">
+         </div>
+         <div class="form-group">
+           <input type="email" class="form-control" name="email" placeholder="Email id" value="<%= current_user.email %>">
+         </div>
+         <% else %>
+         <div class="form-group">
+           <input class="form-control" name="full_name" placeholder="Full name" >
+         </div>
+         <div class="form-group">
+           <input type="email" class="form-control" name="email" placeholder="Email id" >
+         </div>
+         <% end %>
+         <div class="form-group">
+           <textarea placeholder="Message" name="message" rows="5" class="form-control"></textarea>
+         </div>
+         <input type="submit" value="Drop a mail" class="background-seagreen btn btn-md contact_us_click" data-disable-with="Sending mail..">
+       </form>
+     </div>
+     <div class="modal-footer">
+      <button type="button" class="btn dismiss-contact-us" data-dismiss="modal">Close</button>
+    </div>
+  </div>
+</div>
+</div>
+
+
+<div id="contribute" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Contribute </h4>
+      </div>
+      <div class="modal-body">
+        You can contribute to us by doing Blah
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn " data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="report_bug" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Report a bug </h4>
+      </div>
+      <div class="modal-body">
+        <p>Experiencing issues while using our site ? Do let us know</p>
+
+        <form action="/report_bug" method="POST" data-remote="true" id="report_bug_form">
+          <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+          <% if current_user %>
+          <div class="form-group">
+           <input class="form-control" name="full_name" placeholder="Full name" value="<%= current_user.full_name %>">
+         </div>
+         <div class="form-group">
+           <input type="email" class="form-control" name="email" placeholder="Email id" value="<%= current_user.email %>">
+         </div>
+         <% else %>
+         <div class="form-group">
+           <input class="form-control" name="full_name" placeholder="Full name" >
+         </div>
+         <div class="form-group">
+           <input type="email" class="form-control" name="email" placeholder="Email id" >
+         </div>
+         <% end %>
+         <div class="form-group">
+           <textarea placeholder="Problem description. You can also attach a screenshot on tinypic.com and add a link here. (Screenshots make debugging easy)." name="problem" rows="5" class="form-control"></textarea>
+         </div>
+         <input type="submit" value="Report" class="background-seagreen btn btn-md contact_us_click" data-disable-with="Reporting bug..">
+       </form>
+     </div>
+     <div class="modal-footer">
+      <button type="button" class="btn dismiss-report-bug" data-dismiss="modal">Close</button>
+    </div>
+  </div>
+</div>
+</div>

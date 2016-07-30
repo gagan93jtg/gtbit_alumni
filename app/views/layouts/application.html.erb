@@ -37,13 +37,13 @@
               <a href="#" class="dropdown-toggle navigation_button foreground-seagreen transparent-bg" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= current_user.full_name %><span class="caret"></span></a>
               <ul class="dropdown-menu menu-white">
                 <li><%= link_to "Home", root_path %> </li>
-                <li><%= link_to "View notifications (#{notif_count})", notifications_index_path %> </li>
+                <li><%= link_to "View notifications (#{notif_count})", notifications_path %> </li>
                 <li><%= link_to "Ask a question", new_post_path %> </li>
                 <li><%= link_to "Update profile", edit_user_path(current_user) %></li>
                 <li><%= link_to "Search users", user_index_path  %> </li>
                 <li><%= link_to "Search questions", posts_path  %></li>
                 <li role="separator" class="divider"></li>
-                <li><%= link_to 'Help', "#" %> </li>
+                <li><%= link_to 'FAQs', faqs_path() %></li>
                 <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
               </ul>
             </li>
@@ -66,21 +66,21 @@
       </div>
       <div class="row">
         <ul>
-          <li><a href="#" id="about_us">About Us</a></li>
+          <li><a href="#" data-toggle="modal" data-target="#about_us">About Us</a></li>
           <li class="separator">|</li>
-          <li><a href="#" id="contact_us">Contact Us</a></li>
+          <li><a href="#" data-toggle="modal" data-target="#contact_us">Contact Us</a></li>
           <li class="separator">|</li>
-          <li><a href="#" id="the_team">Meet the developers</a></li>
+          <li><a href="/team">Meet the developers</a></li>
           <li class="separator">|</li>
-          <li><a href="#" id="contribute">Contribute</a></li>
+          <li><a href="#" data-toggle="modal" data-target="#contribute">Contribute</a></li>
           <li class="separator">|</li>
-          <li><a href="#" id="report_a_bug">Report a Bug</a></li>
+          <li><a href="#" data-toggle="modal" data-target="#report_bug">Report a Bug</a></li>
           <li class="separator">|</li>
-          <li><a href="#" id="faqs">FAQs</a></li>
+          <li><%= link_to 'FAQs', faqs_path() %></li>
         </ul>
       </div>
       <p>
-        &copy; Copyright 2016
+        &copy; Copyright <%= Time.current.year %>
         <span>
           <a href="/" class="footer_copyright_stamp">GTBIT Alumni Network</a>
         </span>
@@ -90,6 +90,8 @@
 </body>
 </html>
 
+
+<%= render 'layouts/footer_links' %>
 <!--
   The code below handles with visiblity of 'New User ?' and 'Navigate' buttons.
   The visiblity depends on the fact if the user is logged in or not. At a time,

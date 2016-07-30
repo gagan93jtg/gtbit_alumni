@@ -1,6 +1,9 @@
 <div class="create_udpate_query_div">
   <div class="container-custom">
     <% create_update_form_options(form_type) %>
+    <% if form_type == 'create'%>
+      Hey, we recommend you to check our <%= link_to 'FAQs page', faqs_path  %> before posting a question
+    <% end%>
     <%= form_for :post, :url => @url, :method => @form_method do |f|%>
     <h1><%= form_type == "create" ? "Post a question" : "Update question"%></h1>
     <div class="form-group">

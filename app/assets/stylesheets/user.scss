@@ -32,7 +32,6 @@
 	margin-left: 20px;
 }
 
-
 .welcome_text
 {
 	color: #00bfa9;
@@ -437,5 +436,212 @@
 	.user-post
 	{
 		font-size: 14px;
+	}
+}
+.user-profile
+{
+	background-color: rgb(245,245,245);
+
+	.dev-intro
+	{
+		margin-top: 10px;
+		font-size: 15px;
+		color: #7f8c8d;
+	}
+
+	.profile-sidebar
+	{
+		border-top: 10px solid #685E6D;
+	}
+
+	.social-bar
+	{
+		margin-bottom: 35px;
+		padding: 20px;
+	}
+
+	.social-bar a
+	{
+		margin-right: 10px;
+		margin-left: 10px;
+	}
+
+	.social-bar img
+	{
+		width: 65px;
+		height: 65px;
+	}
+
+	.user
+	{
+		margin-top: 30px;
+		margin-bottom: 30px;
+	}
+
+	.user img
+	{
+		border: 10px solid #00bfa9;
+	}
+
+	.user h1, .timeline-head
+	{
+		color: #34495e;
+	}
+
+	.user h1, .user-name
+	{
+		text-transform: uppercase;
+	}
+	.hr-center
+	{
+		height: 3px;
+		background-color: #00bfa9;
+		width: 40%;
+		display: block;
+		margin: 0 auto;
+	}
+
+	.user h2
+	{
+		font-weight: 600;
+		color: #7f8c8d;
+	}
+
+	.profile-content
+	{
+		border-top: 10px solid #00bfa9;
+	}
+
+	.main-content
+	{
+		margin-top: 30px;
+		margin-bottom: 50px;
+		padding: 0 20px;
+	}
+
+	.timeline
+	{
+		list-style: none;
+		padding: 20px 0 20px;
+		position: relative;
+	}
+
+	.timeline > li {
+		margin-bottom: 20px;
+		position: relative;
+	}
+
+	.profile-icon
+	{
+		text-align: right;
+	}
+
+	.timeline-badge,.timeline-head
+	{
+		display: inline;
+	}
+
+	.profile-icon img
+	{
+		width: 50px;
+		height: 50px;
+	}
+
+	.timeline-head
+	{
+		position: relative;
+		top: 10px;
+		right: 25px;
+	}
+
+	.profile-panel
+	{
+		width: 100%;
+		float: left;
+		color: #34495e;
+		border: 1px solid #d4d4d4;
+		border-radius: 2px;
+		padding: 10px 20px 10px;
+		position: relative;
+		-webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+		box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+	}
+
+	.user-name,.panel-head
+	{
+		font-size: 27px;
+	}
+
+	.user-job-type
+	{
+		color: #00bfa9;
+	}
+
+	.user-company
+	{
+		color: #00bfa9;
+		margin-top: -6px;
+	}
+
+	.hr-left {
+		height: 1px;
+		width: 100%;
+		margin-bottom: 20px;
+		background-color: #ddd;
+	}
+
+	.btn-group
+	{
+		margin-right: 20px;
+		margin-bottom: 20px;
+	}
+
+	.profile-btn-one{
+		pointer-events: none;
+		background-color: #00bfa9;
+		color: #fff;
+		border: 1px solid #00bfa9;
+		font-size: 16px;
+	}
+
+	.profile-btn-two
+	{
+		pointer-events: none;
+		background-color: #ecf0f1;
+		color: #34495e;
+		border: 1px solid rgba(0,0,0,0.25);
+		font-size: 16px;
+	}
+
+	@media (max-width: 385px)
+	{
+		.profile-btn-one,.profile-btn-two
+		{
+			font-size: 14px;
+		}
+	}
+
+	@media (max-width: 360px)
+	{
+		.profile-btn-one,.profile-btn-two
+		{
+			font-size: 13px;
+		}
+	}
+
+	@media (max-width: 340px)
+	{
+		.profile-btn-one,.profile-btn-two
+		{
+			font-size: 12px;
+		}
+	}
+
+	@media (max-width: 325px)
+	{
+		.profile-btn-one,.profile-btn-two
+		{
+			font-size: 11px;
+		}
 	}
 }

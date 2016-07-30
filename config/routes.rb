@@ -5,15 +5,19 @@ Rails.application.routes.draw do
 
   get 'posts/edit_history' => 'posts#edit_history'
 
-  get 'notifications/index'
-
   get 'errors/file_not_found', as: 'error_file_not_found'
   get 'errors/unprocessable', as: 'error_unprocessable'
   get 'errors/internal_server_error', as: 'error_internal_server_error'
 
+  post 'contact_us', :to => 'welcome#contact_us_mail'
+  post 'report_bug', :to => 'welcome#report_bug'
+  get  'team',       :to => 'welcome#team'
+
+  resources :notifications, only: [:index]
   resources :posts
+  resources :faqs, only: [:index, :show]
   resources :user
-  resources :comments
+  resources :comments, only: [:create]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with 'rake routes'.

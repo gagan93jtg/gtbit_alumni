@@ -244,6 +244,7 @@ footer p
 	width: 32px;
 	height: 32px;
 }
+
 .top_logo
 {
 	margin-top: 10px;
@@ -273,6 +274,12 @@ img.small_icon_social:hover
 .separator
 {
 	margin: 0px 2px;
+}
+
+.modal-title
+{
+	text-align: center;
+	font-size: 18px;
 }
 
 table tbody tr:nth-child(odd)

@@ -1,11 +1,104 @@
-<div class="page_top_level_div">
-	<h1>The user :</h1>
+  <div class="user-profile">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+          <div class="profile-sidebar">
+            <div class="user">
+              <div class="text-center">
+                <img src="/assets/user.jpg" class="img-circle">
+              </div>
+              <div class="user-head text-center">
+                <h1><%= @user.full_name %></h1>
+                <div class="hr-center"></div>
+                <h2><%= @user.batch %></h2>
+              </div>
+            </div>
+            <div class="social-bar">
+              <div class="text-center">
+                <a href="https://www.fb.com" target="_blank"> <%= image_tag "fb.png", class: 'small_icon' %> </a>
+                <a href="https://www.twitter.com" target="_blank"> <%= image_tag "twitter.png", class: 'small_icon' %> </a>
+                <a href="https://www.google.co.in" target="_blank"> <%= image_tag "gplus.png", class: 'small_icon' %> </a>
+              </div>
+            </div>
+          </div>
+        </div>
 
-	<p class="name"><%= @user.full_name %></p>
-	<p class="phone"><%= @user.phone %></p>
-	<p class="gender"><%= @user.gender %></p>
-	<p class="batch"><%= @user.batch %></p>
-	<p class="batch"><%= @user.batch %></p>
-	<p class="job_type"><%= @user.job_type %></p>
-	<p class="company"><%= @user.company %></p>
+        <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
+          <div class="profile-content">
+           <div class="main-content">
+            <ul class="timeline">
+
+              <li class="profile-icon">
+                <h1 class="timeline-head">
+                <% if @user == current_user %>
+                  Your profile
+                <% else %>
+                  <%= @user.first_name %>'s Profile
+                <% end %>
+                </h1>
+                <div class="timeline-badge">
+                  <img src="/assets/profile-icon.png" alt="">
+                </div>
+              </li>
+
+              <li class="profile-panel">
+                <h1 class="user-name"><strong>About <%= @user.full_name %></strong></h1>
+                <h4 class="user-job-type"><%= @user.designation %></h4>
+                <h4 class="user-company"><%= @user.company %></h4>
+                <div class="hr-left"></div>
+                <p>
+                  <%#= @user.bio %>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.
+                </p>
+              </li>
+
+              <li class="profile-panel">
+                <h1 class="panel-head">Dashboard</h1>
+                <div class="hr-left"></div>
+                <div class="btn-group">
+                  <button type="button" disabled class="btn btn-default profile-btn-two"><strong>0</strong></button>
+                  <button type="button" disabled class="btn btn-primary profile-btn-one">Questions Posted</button>
+                </div>
+                <div class="btn-group">
+                  <button type="button" disabled class="btn btn-default profile-btn-two"><strong>0</strong></button>
+                  <button type="button" disabled class="btn btn-primary profile-btn-one">Questions Answered</button>
+                </div>
+              </li>
+
+              <li class="profile-panel">
+                <h1 class="panel-head">Contact</h1>
+                <div class="hr-left"></div>
+
+                <div class="btn-group">
+                  <button type="button" disabled class="btn btn-primary profile-btn-one">Batch</button>
+                  <button type="button" disabled class="btn btn-default profile-btn-two"><strong><%= @user.batch %></strong></button>
+                </div>
+
+                <div class="btn-group">
+                  <button type="button" disabled class="btn btn-primary profile-btn-one">Phone</button>
+                  <button type="button" disabled class="btn btn-default profile-btn-two"><strong><%= @user.phone %></strong></button>
+                </div>
+                <div class="btn-group">
+                  <button type="button" disabled class="btn btn-primary profile-btn-one">Branch</button>
+                  <button type="button" disabled class="btn btn-default profile-btn-two"><strong><%= @user.batch %></strong></button>
+                </div>
+
+                <div class="btn-group">
+                  <button type="button" disabled class="btn btn-primary profile-btn-one">Gender</button>
+                  <button type="button" disabled class="btn btn-default profile-btn-two"><strong><%= @user.gender %></strong></button>
+                </div>
+
+                <div class="btn-group">
+                  <button type="button" disabled class="btn btn-primary profile-btn-one">Email</button>
+                  <button type="button" disabled class="btn btn-default profile-btn-two"><strong>ekaspreet93.singh@gmail.com</strong></button>
+                </div>
+              </li>
+
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
 </div>
