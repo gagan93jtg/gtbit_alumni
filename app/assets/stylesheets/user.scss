@@ -442,6 +442,13 @@
 {
 	background-color: rgb(245,245,245);
 
+	.user-profile-pic
+	{
+		width: 256px;
+		height: 256px;
+		padding: 10px;
+	}
+
 	.dev-intro
 	{
 		margin-top: 10px;
@@ -480,7 +487,7 @@
 
 	.user img
 	{
-		border: 10px solid #00bfa9;
+		border: 10px solid #685E6D;
 	}
 
 	.user h1, .timeline-head
@@ -551,7 +558,7 @@
 	{
 		position: relative;
 		top: 10px;
-		right: 25px;
+		right: 10px;
 	}
 
 	.profile-panel

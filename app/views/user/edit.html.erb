@@ -1,25 +1,36 @@
 <div class="update_your_profile">
   <div class="container-custom">
     <h1>Update Your Profile</h1>
-    <%= form_for :user, :url => user_path(), :method => "PUT" do |f|%>
-
+    <%= form_for :user, :url => user_path(), html: { multipart: true }, :method => "PUT" do |f|%>
+    <div class="errors">
+      <p>The details could not be saved due to the following reasons:</p>
+      <ul class="active-record-errors">
+        <% current_user.errors.full_messages.each do |message| %>
+        <li class="active-record-error"><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
     <div class="personal_details block_details">
       <div class="details_heading"><span> Personal details </span> </div>
       <div class="form-group">
-        <label for="exampleInputName1">First Name </label>
-        <input type="text" class="form-control" id="exampleInputName1" placeholder="Your first name" autofocus="autofocus" autocomplete="off" name="user[first_name]" value="<%= current_user.first_name %>">
+        <label for="first_name">First Name </label>
+        <input type="text" class="form-control" id="first_name" placeholder="Your first name" autofocus="autofocus" autocomplete="off" name="user[first_name]" value="<%= current_user.first_name %>">
       </div>
       <div class="form-group">
-        <label for="exampleInputName2">Last Name </label>
-        <input type="text" class="form-control" id="exampleInputName2" placeholder="Your last name" autocomplete="off" name="user[last_name]" value="<%= current_user.last_name %>">
+        <label for="last_name">Last Name </label>
+        <input type="text" class="form-control" id="last_name" placeholder="Your last name" autocomplete="off" name="user[last_name]" value="<%= current_user.last_name %>">
       </div>
       <div class="form-group">
-        <label for="exampleInputName4">Gender</label>
-        <input type="text" class="form-control" id="exampleInputName4" placeholder="Your gender ('Male' or 'Female')" autocomplete="off" name="user[gender]" value="<%= current_user.gender %>">
+        <label for="gender">Gender</label>
+        <input type="text" class="form-control" id="gender" placeholder="Your gender ('Male' or 'Female')" autocomplete="off" name="user[gender]" value="<%= current_user.gender %>">
       </div>
       <div class="form-group">
-        <label for="exampleInputName3">Phone No.</label>
-        <input type="text" class="form-control" id="exampleInputName3" placeholder="Your contact no." autocomplete="off" name="user[phone]" value="<%= current_user.phone %>">
+        <label for="ph_no">Phone No.</label>
+        <input type="text" class="form-control" id="ph_no" placeholder="Your contact no." autocomplete="off" name="user[phone]" value="<%= current_user.phone %>">
+      </div>
+      <div class="form-group">
+        <label for="bio">About yourself</label>
+        <textarea class="form-control" rows="5" id="bio" placeholder="Your bio." autocomplete="off" name="user[bio]"><%= current_user.bio %></textarea>
       </div>
     </div>
     <hr class="hr">
@@ -27,8 +38,8 @@
     <div class="college_details block_details">
       <div class="details_heading"><span> College details </span> </div>
       <div class="form-group">
-        <label for="exampleInputName5">Batch</label>
-        <input type="text" class="form-control" id="exampleInputName5" placeholder="Your batch (Eg. CSE 2011 - 2015)" autocomplete="off" name="user[batch]" value="<%= current_user.batch %>">
+        <label for="batch">Batch</label>
+        <input type="text" class="form-control" id="batch" placeholder="Your batch (Eg. CSE 2011 - 2015)" autocomplete="off" name="user[batch]" value="<%= current_user.batch %>">
       </div>
     </div>
     <hr class="hr">
@@ -36,22 +47,40 @@
     <div class="professional_details block_details">
       <div class="details_heading"><span> Professional details </span> </div>
       <div class="form-group">
-        <label for="exampleInputName6">Work Type</label>
-        <input type="text" class="form-control" id="exampleInputName6" placeholder="Your work type (Job / Business / Others (Please specify)" autocomplete="off" name="user[job_type]" value="<%= current_user.job_type %>">
+        <label for="job_type">Work Type</label>
+        <input type="text" class="form-control" id="job_type" placeholder="Your work type (Job / Business / Others (Please specify)" autocomplete="off" name="user[job_type]" value="<%= current_user.job_type %>">
       </div>
       <div class="form-group">
-        <label for="exampleInputName7">Designation</label>
-        <input type="text" class="form-control" id="exampleInputName7" placeholder="Your designation" autocomplete="off" name="user[designation]" value="<%= current_user.designation %>">
+        <label for="designation">Designation</label>
+        <input type="text" class="form-control" id="designation" placeholder="Your designation" autocomplete="off" name="user[designation]" value="<%= current_user.designation %>">
       </div>
       <div class="form-group">
-        <label for="exampleInputName8">Company</label>
-        <input type="text" class="form-control" id="exampleInputName8" placeholder="Your company name" autocomplete="off" name="user[company]" value="<%= current_user.company %>">
+        <label for="company">Company</label>
+        <input type="text" class="form-control" id="company" placeholder="Your company name" autocomplete="off" name="user[company]" value="<%= current_user.company %>">
       </div>
       <div class="form-group">
-        <label for="exampleInputName9">Experience</label>
-        <input type="text" class="form-control" id="exampleInputName9" placeholder="Your Experience (In years)" autocomplete="off" name="user[experience_in_years]" value="<%= current_user.experience_in_years %>">
+        <label for="experience">Experience (In years)</label>
+        <input type="text" class="form-control" id="experience" placeholder="Your Experience (In years)" autocomplete="off" name="user[experience_in_years]" value="<%= current_user.experience_in_years %>">
       </div>
     </div>
+
+    <div class="social_details block_details">
+      <div class="details_heading"><span> Social Networking Details </span> </div>
+      <div class="form-group">
+        <label for="fb_link">Facebook Username</label>
+        <input type="text" class="form-control" id="fb_link" placeholder="www.fb.com/myAwesomeUsername" autocomplete="off" name="user[fb_link]" value="<%= current_user.fb_link %>">
+      </div>
+      <div class="form-group">
+        <label for="twitter_link">Twitter Handle</label>
+        <input type="text" class="form-control" id="twitter_link" placeholder="www.twitter.com/myHandle" autocomplete="off" name="user[twitter_link]" value="<%= current_user.twitter_link %>">
+      </div>
+      <div class="form-group">
+        <label for="linked_in_link">Linkedin Account</label>
+        <input type="text" class="form-control" id="linked_in_link" placeholder="in.linkedin.com/in/myLinkedinID" autocomplete="off" name="user[linked_in_link]" value="<%= current_user.linked_in_link %>">
+      </div>
+    </div>
+
+    <%= f.file_field :avatar %>
     <%= submit_tag(@save_string ,{class: "background-seagreen btn-update btn"}) %>
     <% end %>
     <br>

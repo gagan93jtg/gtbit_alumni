@@ -7,9 +7,49 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-User.create(email: 'gagan93gtbit@gmail.com', password: '123123123')
-User.create(email: 'ekaspreet.singh93@gmail.com', password: '123123123')
+User.create(email: 'gagan93gtbit@gmail.com', password: '123123123', first_name: 'Gogo',
+            last_name: 'Singh')
+User.create(email: 'ekaspreet.singh93@gmail.com', password: '123123123', first_name: 'Ekaspreet',
+            last_name: 'Singh')
 User.create(first_name: 'Gagandeep', last_name: 'Singh', email: 'gagan@gmail.com',
             password: '123123123')
 User.create(first_name: 'Gagandeep', last_name: 'Singh', email: 'gagan@yahoo.com',
             password: '123123123')
+
+Post.create(user_id: 1, query_string: "Portugal became the first team to reach the Euro semi-finals"\
+            " without winning a single game. That's something.\r\nhttp://9gag.com/gag/amz9RXV?ref=f"\
+            "bp\r\n", tags: "  1,2,3", is_anonymous: false)
+
+
+Post.create(user_id: 1, query_string: "Waheguru Ji Ka Khalsa, Waheguru Ji Ki Fateh !\r\nWatch This "\
+            "Extremely Beautiful Short Movie Based On Sikh Values\r\nMannan Di Saari Team Nu Bahut "\
+            "Bahut Mubaraka jinha ne ehni sohni film banayi hai, Benti hai Ji Iss Movie Nu Vadh Toh"\
+            " Vadh Spread Karo taaki Jo Sikh Bhatke Hoye Ne Oh Sri Guru Granth Sahib Ji Naal Vapis "\
+            "Jur Ke Vapsi Kar Sakan..\r\nWritten & Directed By - Harjeet Singh Oberoi \r\n* "\
+            "Inderpreet Singh, Manpreet Singh Gaba, Jasmeet Singh Kohli" ,
+            tags: "  1,2,3", is_anonymous: false)
+
+Post.create(user_id: 2, query_string: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, "\
+            "sed do eiusmod\r\ntempor incididunt ut labore et dolore magna aliqua. Ut enim ad "\
+            "minim veniam,\r\nquis nostrud exercitation ullamco laboris nisi ut aliquip ex ea "\
+            "commodo\r\nconsequat. Duis aute irure dolor in reprehenderit in voluptate velit "\
+            "esse\r\ncillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat "\
+            "non\r\nproident, sunt in culpa qui officia deserunt mollit anim id est laborum." ,
+            tags: "  1,2,3", is_anonymous: false)
+
+Comment.create(post_id: 1, user_id: 2, comment_string: "hey ", upvotes: 0)
+Comment.create(post_id: 1, user_id: 3, comment_string: "hello", upvotes: 0)
+Comment.create(post_id: 1, user_id: 1, comment_string: "hey people", upvotes: 0)
+Comment.create(post_id: 1, user_id: 2, comment_string: "hey", upvotes: 0)
+Comment.create(post_id: 1, user_id: 3, comment_string: "heyaaa", upvotes: 0)
+Comment.create(post_id: 1, user_id: 1, comment_string: "cinn", upvotes: 0)
+Comment.create(post_id: 1, user_id: 1, comment_string: "test comment", upvotes: 0)
+Comment.create(post_id: 1, user_id: 1, comment_string: "another commment", upvotes: 0)
+Comment.create(post_id: 1, user_id: 1, comment_string: "aaa", upvotes: 0)
+Comment.create(post_id: 1, user_id: 1, comment_string: "My from phone", upvotes: 0)
+Comment.create(post_id: 1, user_id: 1, comment_string: "sdkjghgf", upvotes: 0)
+Comment.create(post_id: 1, user_id: 1, comment_string: "I think it would be better if blah blah "\
+               "blah !", upvotes: 0)
+Comment.create(post_id: 1, user_id: 1, comment_string: "another comment", upvotes: 0)
+Comment.create(post_id: 1, user_id: 1, comment_string: "k", upvotes: 0)
+

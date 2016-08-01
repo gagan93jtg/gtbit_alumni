@@ -5,7 +5,11 @@
           <div class="profile-sidebar">
             <div class="user">
               <div class="text-center">
-                <img src="/assets/user.jpg" class="img-circle">
+                <% if @user.avatar? %>
+                <%= image_tag @user.avatar.url(:large), class: 'img-circle user-profile-pic'  %>
+                <% else %>
+                <%= image_tag 'logov2.png', class: 'img-circle user-profile-pic'  %>
+                <% end %>
               </div>
               <div class="user-head text-center">
                 <h1><%= @user.full_name %></h1>
@@ -15,9 +19,9 @@
             </div>
             <div class="social-bar">
               <div class="text-center">
-                <a href="https://www.fb.com" target="_blank"> <%= image_tag "fb.png", class: 'small_icon' %> </a>
-                <a href="https://www.twitter.com" target="_blank"> <%= image_tag "twitter.png", class: 'small_icon' %> </a>
-                <a href="https://www.google.co.in" target="_blank"> <%= image_tag "gplus.png", class: 'small_icon' %> </a>
+                <a href="<%= @user.fb_link %>" target="_blank"> <%= image_tag "fb.png", class: 'small_icon' %> </a>
+                <a href="<%= @user.twitter_link %>" target="_blank"> <%= image_tag "twitter.png", class: 'small_icon' %> </a>
+                <a href="<%= @user.linked_in_link %>" target="_blank"> <%= image_tag "linked_in.png", class: 'small_icon' %> </a>
               </div>
             </div>
           </div>
@@ -30,14 +34,14 @@
 
               <li class="profile-icon">
                 <h1 class="timeline-head">
-                <% if @user == current_user %>
+                  <% if @user == current_user %>
                   Your profile
-                <% else %>
+                  <% else %>
                   <%= @user.first_name %>'s Profile
-                <% end %>
+                  <% end %>
                 </h1>
                 <div class="timeline-badge">
-                  <img src="/assets/profile-icon.png" alt="">
+                  <%= image_tag @user.avatar.url(:thumb), class: 'img-circle' %>
                 </div>
               </li>
 
@@ -46,10 +50,7 @@
                 <h4 class="user-job-type"><%= @user.designation %></h4>
                 <h4 class="user-company"><%= @user.company %></h4>
                 <div class="hr-left"></div>
-                <p>
-                  <%#= @user.bio %>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.
-                </p>
+                <p class="user-post"><%= @user.bio %></p>
               </li>
 
               <li class="profile-panel">

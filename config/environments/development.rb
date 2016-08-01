@@ -59,5 +59,4 @@ Rails.application.configure do
   #  :sender_address => %{"notifier" <alumnigtbit@gmail.com>},
   #  :exception_recipients => %w{gagan93gtbit@gmail.com}
   #}
-
 end

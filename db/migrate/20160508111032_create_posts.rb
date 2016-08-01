@@ -6,8 +6,6 @@ class CreatePosts < ActiveRecord::Migration
       t.text    :query_string
       t.text    :tags
       t.boolean :is_anonymous, default: false
-      t.boolean :is_direct, default: false
-      t.integer :ask_to_answer
 
       t.timestamps
     end

@@ -135,12 +135,17 @@ header .navbar-default
 	border-bottom: 1px solid white;
 }
 
-
 .body_content
 {
 	/* main body height is 100% of viewport height - (header height + footer height) */
 	min-height: calc(100vh - (50px + 120px));
 }
+
+.active-record-error
+{
+	margin-left: 25px;
+}
+
 @media (max-width: 767px)
 {
 	header .navbar-left{

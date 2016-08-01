@@ -6,7 +6,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string  :last_name
       t.string  :username
       t.string  :gender
-      t.string  :bio
+      t.text  :bio
 
       t.string  :batch
       t.string  :company

@@ -3,6 +3,8 @@ class Comment < ActiveRecord::Base
   belongs_to :post
   after_save :update_subscribers_and_notifications
 
+  validates :comment_string, length: { maximum: 65535 }
+
   def self.save_comment(user, params)
     comment_params = params[:comment]
     comment = user.comments.build(comment_string: comment_params[:comment_string],

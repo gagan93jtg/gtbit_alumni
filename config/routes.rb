@@ -9,9 +9,11 @@ Rails.application.routes.draw do
   get 'errors/unprocessable', as: 'error_unprocessable'
   get 'errors/internal_server_error', as: 'error_internal_server_error'
 
-  post 'contact_us', :to => 'welcome#contact_us_mail'
-  post 'report_bug', :to => 'welcome#report_bug'
-  get  'team',       :to => 'welcome#team'
+  post 'contact_us',    :to => 'welcome#contact_us_mail'
+  post 'report_bug',    :to => 'welcome#report_bug'
+  get  'team',          :to => 'welcome#team'
+  # get  'user/:id/crop', :to => 'user#crop'
+  # post 'user/:id/crop', :to => 'user#save_crop'
 
   resources :notifications, only: [:index]
   resources :posts

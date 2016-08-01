@@ -2,6 +2,12 @@ class Post < ActiveRecord::Base
   belongs_to :user
   has_many :comments
   has_many :post_histories
+
+  validates :query_string, length: { maximum: 65535 }
+  validates :tags, length: { maximum: 65535 }
+  validates :is_anonymous, inclusion: { in: [true, false] }
+
+
   scope :public_activity, -> (id) { where("user_id != #{id}") }
 
   def self.save_post(user, params)

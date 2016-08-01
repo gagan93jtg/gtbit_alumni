@@ -7,13 +7,29 @@ class UserController < ApplicationController
 
   def update
     current_user.update_details(params[:user])
-    redirect_to user_path(params[:id])
+
+    if current_user.errors.any?
+      render action: :edit
+    else
+      redirect_to user_path(params[:id])
+    end
+
+    # elsif !params[:user][:avatar].blank?
+    #  redirect_to controller: 'user', action: 'crop', id: current_user.id
   end
 
   def show
     @user = User.find_by_id(params[:id])
     redirect_to controller: 'errors', action: 'file_not_found' and return unless @user
   end
+
+  # def crop
+  #
+  # end
+
+  # def save_crop
+  #
+  # end
 
   private
 
