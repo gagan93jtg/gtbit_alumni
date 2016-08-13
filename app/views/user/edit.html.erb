@@ -68,15 +68,24 @@
       <div class="details_heading"><span> Social Networking Details </span> </div>
       <div class="form-group">
         <label for="fb_link">Facebook Username</label>
-        <input type="text" class="form-control" id="fb_link" placeholder="www.fb.com/myAwesomeUsername" autocomplete="off" name="user[fb_link]" value="<%= current_user.fb_link %>">
+        <div class="input-group">
+          <span class="input-group-addon">https://facebook.com/</span>
+          <input type="text" id="fb_link" class="form-control" name="email" placeholder="myAwesomeUsername" name="user[fb_link]" value="<%= @current_user.fb_link %>">
+        </div>
       </div>
       <div class="form-group">
         <label for="twitter_link">Twitter Handle</label>
-        <input type="text" class="form-control" id="twitter_link" placeholder="www.twitter.com/myHandle" autocomplete="off" name="user[twitter_link]" value="<%= current_user.twitter_link %>">
+        <div class="input-group">
+          <span class="input-group-addon">https://twitter.com/</span>
+          <input type="text" id="twitter_link" class="form-control" name="email" placeholder="myAwesomeUsername" name="user[twitter_link]" value="<%= @current_user.twitter_link %>">
+        </div>
       </div>
       <div class="form-group">
-        <label for="linked_in_link">Linkedin Account</label>
-        <input type="text" class="form-control" id="linked_in_link" placeholder="in.linkedin.com/in/myLinkedinID" autocomplete="off" name="user[linked_in_link]" value="<%= current_user.linked_in_link %>">
+      <label for="linked_in_link">Linkedin Account</label>
+        <div class="input-group">
+          <span class="input-group-addon">https://in.linkedin.com/</span>
+          <input type="text" id="linked_in_link" class="form-control" name="email" placeholder="myAwesomeUsername" name="user[linked_in_link]" value="<%= @current_user.linked_in_link %>">
+        </div>
       </div>
     </div>
 

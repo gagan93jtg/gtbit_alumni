@@ -33,6 +33,6 @@ class JobPost < ActiveRecord::Base
   end
 
   def comments
-    Comment.where("post_id = #{id} AND post_type = #{Comment::POST_TYPE[:JOB_POST]}")
+    Comment.where("post_id = #{id} AND post_type = #{Comment::POST_TYPE[:JOB]}")
   end
 end

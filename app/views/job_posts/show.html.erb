@@ -9,9 +9,7 @@
           <p class="user-name user-link"> <%= link_to asked_by(@job_post.user), user_path(@job_post.user.id), class: '' %> posted a Job</p>
           <p class="user-time"><%=timeago_tag Time.at(@job_post.created_at) %></p>
         </div>
-        <span class="user-post multiline_text"><%= @job_post.inspect.strip %></span>
-
-        <br>
+        <%= render 'show_job_post', job_post: @job_post, preview: 'false' %>
       </div>
       <br>
       <% @job_post.comments.each do |comment| %>
@@ -20,11 +18,11 @@
         <div class="left clearfix"><span><img src="/assets/logov2.png" alt="profile pic" class="img-circle public_activity_user comment-img pull-left" ></span>
 
           <div class="right clearfix">
-          <div class="header">
-            <p class="user-name user-link"><%= link_to comment.user.full_name, user_path(comment.user.id), class: '' %></p>
-            <p class=" user-time"><%=timeago_tag comment.created_at%> </p>
-            <span class="user-post multiline_text"><%=comment.comment_string%></span>
-          </div>
+            <div class="header">
+              <p class="user-name user-link"><%= link_to comment.user.full_name, user_path(comment.user.id), class: '' %></p>
+              <p class=" user-time"><%=timeago_tag comment.created_at%> </p>
+              <span class="user-post multiline_text"><%=comment.comment_string%></span>
+            </div>
           </div>
         </div>
       </div>
@@ -32,6 +30,7 @@
       <div class="form-group add_comment">
         <%= form_for :comment, :url => comments_path(), :method => "POST" do |f| %>
         <input type="hidden" name="[post][id]" value= <%= @job_post.id %>>
+        <input type="hidden" name="[post][post_type]" value= <%= Comment::POST_TYPE[:JOB] %>>
         <textarea rows="3" class="form-control" id="query_tags" placeholder="Write a comment" name="comment[comment_string]"></textarea>
         <%= submit_tag("Add", {class: "background-seagreen edit_post btn btn-submit add_comment_button"}) %>
         <% end %>

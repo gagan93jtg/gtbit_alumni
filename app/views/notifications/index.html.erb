@@ -1,44 +1,28 @@
 <div class="page_notify">
-<br><br><br>
+	<br><br><br>
 	<div class="container-custom">
 		<div class="row">
 
 			<div class="col-md-12 col-sm-12 col-xs-12 ">
-				<h2>Recent notifications</h2>
-				<% @unread_nfs.each do |notification| %>
+				<h2>Your notifications</h2>
+				<% @notifications.each do |notification| %>
 				<div class="activity_notify">
 					<div class="left_div">
 						<img src="/assets/logov2.png" alt="profile pic" class="img-circle public_activity_user">
 					</div>
 					<div class="<%=notification.inspect%> right_div">
-						<p class="user-name user-link"><%= link_to User.find(notification["commenter_id"]).full_name, user_path(notification["commenter_id"])%><span class="post-link user-link">
-						<%= notification["text"] %>&nbsp;<%= link_to notification["type"], post_path(notification["post_id"]) %></span></p>
-						<p class="user-time"><%=timeago_tag Time.at(notification["timestamp"]) %></p>
-					</div>
-				</div>
-				<% end %>
-				<div class="separator_hr"></div>
-			</div>
+						<p class="user-name user-link">
+							<%= link_to User.find(notification["commenter_id"]).full_name, user_path(notification["commenter_id"])%>
+							<span class="post-link user-link">
+								<%= notification["text"] %>&nbsp;<%= link_to notification["type"], post_path(notification["post_id"]) %>
+							</span>
 
-
-			<div class="col-md-12 col-sm-12 col-xs-12 ">
-				<h2>Old notifications</h2>
-				<% @read_nfs.each do |notification| %>
-				<div class="activity_notify">
-					<div class="left_div">
-						<img src="/assets/logov2.png" alt="profile pic" class="img-circle public_activity_user">
-					</div>
-					<div class="<%=notification.inspect%> right_div">
-						<p class="user-name user-link"><%= link_to User.find(notification["commenter_id"]).full_name, user_path(notification["commenter_id"])%><span class="post-link user-link">
-						<%= notification["text"] %>&nbsp;<%= link_to notification["type"], post_path(notification["post_id"]) %></span></p>
+						</p>
 						<p class="user-time"><%=timeago_tag Time.at(notification["timestamp"]) %></p>
 					</div>
 				</div>
 				<% end %>
 			</div>
-
-
 		</div>
 	</div>
-	<br><br>
 </div>

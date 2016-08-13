@@ -4,7 +4,7 @@ class CreatePosts < ActiveRecord::Migration
       t.references :user
 
       t.text    :query_string
-      t.text    :tags
+      t.string  :tags
       t.integer :post_type, default: true  # post_type = 1 for Question and 2 for Experience
       t.boolean :is_anonymous, default: false
 

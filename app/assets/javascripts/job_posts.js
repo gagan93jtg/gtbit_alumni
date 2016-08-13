@@ -55,19 +55,19 @@ function preview_job_post()
     content_other = "More details : ";
 
     if(eligibility_criteria != "")
-      $('#preview_div').append("<p class='inner_preview_div multiline_text'><b>Eligibility Criteria : </b>"
+      $('#preview_div').append("<p class='more_details multiline_text'><b>Eligibility Criteria : </b>"
         + eligibility_criteria +"</p>");
 
     if(selection_process != "")
-      $('#preview_div').append("<p class='inner_preview_div multiline_text'><b>Selection Process : </b>"
+      $('#preview_div').append("<p class='more_details multiline_text'><b>Selection Process : </b>"
         + selection_process +"</p>");
 
     if(job_description != "")
-      $('#preview_div').append("<p class='inner_preview_div multiline_text'><b>Job Description : </b>"
+      $('#preview_div').append("<p class='more_details multiline_text'><b>Job Description : </b>"
         + job_description +"</p>");
 
     if(other_details != "")
-      $('#preview_div').append("<p class='inner_preview_div multiline_text'><b>Other Details : </b>"
+      $('#preview_div').append("<p class='more_details multiline_text'><b>Other Details : </b>"
         + other_details +"</p>")
 
     $('html, body').animate({

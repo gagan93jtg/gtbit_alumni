@@ -9,7 +9,7 @@ class Comment < ActiveRecord::Base
   def self.save_comment(user, params)
     comment_params = params[:comment]
     comment = user.comments.build(comment_string: comment_params[:comment_string],
-                                  post_id: params[:post][:id])
+                                  post_id: params[:post][:id], post_type: params[:post][:post_type])
     comment.save
   end
 

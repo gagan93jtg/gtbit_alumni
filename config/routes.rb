@@ -16,9 +16,9 @@ Rails.application.routes.draw do
   # post 'user/:id/crop', :to => 'user#save_crop'
 
   resources :notifications, only: [:index]
-  resources :posts
-  resources :job_posts
-  resources :experience
+  resources :posts, controller: 'question_posts'
+  resources :job, controller: 'job_posts'
+  resources :experience, controller: 'experience_posts'
   resources :faqs, only: [:index, :show]
   resources :user
   resources :comments, only: [:create]

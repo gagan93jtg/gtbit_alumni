@@ -38,13 +38,18 @@
               <ul class="dropdown-menu menu-white">
                 <li><%= link_to "Home", root_path %> </li>
                 <li><%= link_to "View notifications (#{notif_count})", notifications_path %> </li>
+                <li role="separator" class="divider"></li>
                 <li><%= link_to "Ask question", new_post_path %> </li>
-                <li><%= link_to "Share experience", new_experience_path %> </li>
-                <li><%= link_to "Post a job", new_job_post_path %> </li>
+                <li><%= link_to "Share an experience", new_experience_path %> </li>
+                <li><%= link_to "Post a job", new_job_path %> </li>
+                <li role="separator" class="divider"></li>
                 <li><%= link_to "View profile", user_path(current_user) %></li>
                 <li><%= link_to "Update profile", edit_user_path(current_user) %></li>
+                <li role="separator" class="divider"></li>
                 <li><%= link_to "Search users", user_index_path  %> </li>
                 <li><%= link_to "Search questions", posts_path  %></li>
+                <li><%= link_to "Search experiences", experience_index_path  %> </li>
+                <li><%= link_to "Search job posts", job_index_path  %></li>
                 <li role="separator" class="divider"></li>
                 <li><%= link_to 'FAQs', faqs_path() %></li>
                 <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>

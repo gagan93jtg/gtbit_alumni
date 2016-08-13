@@ -2,8 +2,7 @@ class Post < ActiveRecord::Base
   belongs_to :user
 
   validates :query_string, length: { maximum: 65535 }
-  validates :tags, length: { maximum: 65535 }
-  validates :is_anonymous, inclusion: { in: [true, false] }
+  validates :tags, length: { maximum: 255 }
 
   scope :public_activity, -> (id) { where("user_id != #{id}") }
   has_many :post_histories
@@ -12,8 +11,10 @@ class Post < ActiveRecord::Base
     post_params = params[:post]
     post = user.posts.build(query_string: post_params[:query_string],
                             tags: post_params[:tags],
-                            is_anonymous: post_params[:is_anonymous])
+                            is_anonymous: post_params[:is_anonymous],
+                            post_type: post_params[:post_type])
     post.save
+    post
   end
 
   def update_post(params)

@@ -5,7 +5,7 @@
     <h4 class="title">* <%= @title %></h4>
 
     <% if @job_post.errors.any? %>
-    <div class="errors">
+    <div class="errors alert alert-danger">
       <p>Your job post could not be saved due to the following reasons:</p>
       <ul class="active-record-errors">
         <% @job_post.errors.full_messages.each do |message| %>

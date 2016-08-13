@@ -1,5 +1,3 @@
 class ExperiencePost < Post
-  def self.all
-    Post.where(post_type: Comment::POST_TYPE[:EXPERIENCE])
-  end
+  default_scope { where(post_type: Comment::POST_TYPE[:EXPERIENCE]) }
 end

@@ -178,12 +178,13 @@ header .navbar-default
 
 .input-group input
 {
-	border-left: 0px solid transparent;
+	border-left: 0px solid transparent !important;
 }
 
 .input-group .input-group-addon
 {
-	background: white;
+	background: #00bfa9;
+	color: white;
 	border: 1px solid #00bfa9;
 	border-right: 0px solid transparent;
 }
