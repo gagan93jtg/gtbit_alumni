@@ -1,14 +1,12 @@
 class Post < ActiveRecord::Base
   belongs_to :user
-  has_many :comments
-  has_many :post_histories
 
   validates :query_string, length: { maximum: 65535 }
   validates :tags, length: { maximum: 65535 }
   validates :is_anonymous, inclusion: { in: [true, false] }
 
-
   scope :public_activity, -> (id) { where("user_id != #{id}") }
+  has_many :post_histories
 
   def self.save_post(user, params)
     post_params = params[:post]
@@ -26,6 +24,10 @@ class Post < ActiveRecord::Base
       post_history.save
       update(query_string: post_params[:query_string], tags: post_params[:tags])
     end
+  end
+
+  def comments
+    Comment.where("post_id = #{id} AND post_type = #{post_type}")
   end
 
   private

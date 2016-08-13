@@ -1,0 +1,105 @@
+<div class="create_update_query_div" id="create_update_job_post">
+  <div class="container-custom">
+    <% create_update_job_post_options(form_type) %>
+    <%= form_for :job_post, :url => @url, :method => @form_method do |f|%>
+    <h4 class="title">* <%= @title %></h4>
+
+    <% if @job_post.errors.any? %>
+    <div class="errors">
+      <p>Your job post could not be saved due to the following reasons:</p>
+      <ul class="active-record-errors">
+        <% @job_post.errors.full_messages.each do |message| %>
+        <li class="active-record-error"><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+    <% end %>
+
+    <div class="form-group">
+      <label for="company_name">Company name</label>
+      <input type="text" class="form-control" id="company_name" placeholder="Full name of company" autofocus="autofocus" name="job_post[company_name]" value = "<%= @job_post.company_name %>">
+    </div>
+
+    <style type="text/css">
+
+    </style>
+
+    <div class="form-group">
+      <label for="company_website">Company website (if any)</label>
+
+      <div class="input-group">
+        <span class="input-group-addon">https://</span>
+        <input type="text" id="company_website" class="form-control" name="email" placeholder="Leave blank if no website" name="job_post[company_website]" value="<%= @job_post.company_website %>">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="job_type">Job type</label>
+      <input type="text" class="form-control" id="job_type" placeholder="Technical/ HR/ Marketing" name="job_post[job_type]" value="<%= @job_post.job_type %>">
+    </div>
+
+    <div class="form-group">
+      <label for="position">Position/Designation</label>
+      <input type="text" class="form-control" id="position" placeholder="Eg. Software Developer" name="job_post[position]" value="<%= @job_post.position %>">
+    </div>
+
+    <div class="form-group">
+      <label for="location">Job Location(s)</label>
+      <input type="text" class="form-control" id="location" placeholder="Gurgaon/ Noida/ Bangalore" name="job_post[location]" value="<%= @job_post.location %>">
+    </div>
+
+    <div class="form-group">
+      <label for="compensation">Yearly Compensation (in LPA)</label>
+      <input type="text" class="form-control" id="compensation" placeholder="6.0 LPA" name="job_post[compensation]" value="<%= @job_post.compensation %>">
+    </div>
+
+    <div class="form-group">
+      <label for="experience_in_months">Experience required (in months, Numeric value expected)</label>
+      <input type="text" class="form-control" id="experience_in_months" placeholder="Write 0 if no experience required" name="job_post[experience_in_months]" value="<%= @job_post.experience_in_months %>">
+    </div>
+
+    <div class="form-group">
+      <label for="bond_period_in_months">Bond period (in months, Numeric value expected)</label>
+      <input type="text" class="form-control" id="bond_period_in_months" placeholder="Write 0 if no bond period" name="job_post[bond_period_in_months]" value="<%= @job_post.bond_period_in_months %>">
+    </div>
+
+    <div class="form-group">
+      <label for="reporting_date_time">Reporting date and time</label>
+      <div class='input-group date' id='drive_date_date_picker'>
+        <input type='text' readonly="readonly" class="form-control" id="reporting_date_time" name="job_post[reporting_date_time]" value="<%= @job_post.reporting_date_time %>">
+        <span class="input-group-addon">
+          <span class="glyphicon glyphicon-calendar"></span>
+        </span>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="eligibility_criteria">Eligibility Criteria</label>
+      <textarea rows="4" class="form-control" id="eligibility_criteria" placeholder="Course specification, min percentage etc. Explain in detail" name="job_post[eligibility_criteria]" value="<%= @job_post.eligibility_criteria %>"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="selection_process">Selection Process</label>
+      <textarea rows="4" class="form-control" id="selection_process" placeholder="Description about different rounds or anything similar" name="job_post[selection_process]" value="<%= @job_post.selection_process %>"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="job_description">Job description</label>
+      <textarea rows="4" class="form-control" id="job_description" placeholder="What a person is expted to do on job" name="job_post[job_description]"><%= @job_post.job_description %></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="other_details">Other details (if any)</label>
+      <textarea rows="4" class="form-control" id="other_details" placeholder="Any other details which could not be covered above" name="job_post[other_details]"><%= @job_post.other_details %></textarea>
+    </div>
+
+    <%= submit_tag(@save_string, {class: "submit_job_post background-seagreen btn btn-submit"}) %>
+    <span class="preview background-seagreen btn btn-submit">Preview </span>
+    <% end %>
+  </div>
+</div>
+
+<script type="text/javascript">
+  initialize_date_time_picker();
+  preview_job_post();
+</script>

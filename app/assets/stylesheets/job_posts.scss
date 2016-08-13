@@ -1,0 +1,26 @@
+// Place all the styles related to the JobPosts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.container-custom
+{
+  .title
+  {
+    margin-bottom: 20px;
+  }
+
+  .preview
+  {
+     margin-left: 20px;
+  }
+
+  .preview, .submit_job_post
+  {
+    margin-top: 25px;
+  }
+
+  .inner_preview_div
+  {
+    margin-bottom: 25px;
+  }
+}

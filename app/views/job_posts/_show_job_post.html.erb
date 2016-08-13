@@ -1,0 +1,32 @@
+<div class="container-custom">
+  <p>
+    <% if @job_post.company_website && !@job_post.company_website.strip == "" %>
+    <a href="<%= @job_post.company_website %>"><%= @job_post.company_name %></a>
+    <% else %>
+    <%= @job_post.company_name %>
+    <% end %>
+    is hiring candidates for the position of <%= @job_post.position %>.
+    <% if @job_post.job_type && !@job_post.job_type.strip == "" %>
+    The nature of job is <%= @job_post.job_type %>.
+    <% end %>
+    The job requires <% @job_post.experience_in_months %> months of experience and bond period is
+    <%= @job_post.bond_period_in_months %>. Yearly compensation for the job is <%= @job_post.compensation %>.
+    The reporting date and time for the drive are <%= @job_post.drive_date %> <%= @job_post.drive_reporting_time %>.
+  </p>
+
+  <p>
+    Other details for the job are
+    <% if @job_post.eligibility_criteria && !@job_post.eligibility_criteria.strip == "" %>
+    <b>Eligibility Criteria</b> <%= @job_post.eligibility_criteria %>
+    <% end %>
+    <% if @job_post.selection_process && !@job_post.selection_process.strip == "" %>
+    <b>Selection Process</b> <%= @job_post.selection_process %>
+    <% end %>
+    <% if @job_post.job_description && !@job_post.job_description.strip == "" %>
+    <b>Job Description</b> <%= @job_post.job_description %>
+    <% end %>
+    <% if @job_post.other_details && !@job_post.other_details.strip == "" %>
+    <b>Other Details </b> <%= @job_post.other_details %>
+    <% end %>
+  </p>
+</div>

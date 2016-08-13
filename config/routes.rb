@@ -17,6 +17,8 @@ Rails.application.routes.draw do
 
   resources :notifications, only: [:index]
   resources :posts
+  resources :job_posts
+  resources :experience
   resources :faqs, only: [:index, :show]
   resources :user
   resources :comments, only: [:create]

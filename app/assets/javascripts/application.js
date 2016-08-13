@@ -15,7 +15,8 @@
 //= require turbolinks
 //= require rails-timeago
 //= require_tree .
-
+//= require moment
+//= require bootstrap-datetimepicker
 
 $(document).ready(function()
 {

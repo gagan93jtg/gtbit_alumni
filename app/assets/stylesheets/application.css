@@ -12,6 +12,8 @@
 *
 *= require_tree .
 *= require_self
+*= require bootstrap
+*= require bootstrap-datetimepicker
 */
 
 *
@@ -101,7 +103,7 @@ label
 
 .dropdown-menu>li>a
 {
-	color: #00bfa9 !important;
+	color: #black !important;
 }
 
 .dropdown-menu>li>a:hover
@@ -141,9 +143,49 @@ header .navbar-default
 	min-height: calc(100vh - (50px + 120px));
 }
 
+.transparent-panel
+{
+	width: 900px;
+	color: #34495e;
+	border: 1px solid #d4d4d4;
+	border-radius: 2px;
+	box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+	padding: 10px;
+	margin: 10px auto;
+}
+
+.transparent-panel-full-width
+{
+	width: 90%;
+	color: #34495e;
+	border: 1px solid #d4d4d4;
+	border-radius: 2px;
+	box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+	padding: 10px;
+	margin: 10px auto;
+}
+
 .active-record-error
 {
 	margin-left: 25px;
+}
+
+.multiline_text
+{
+	white-space: pre-wrap;
+	word-wrap: break-word;
+}
+
+.input-group input
+{
+	border-left: 0px solid transparent;
+}
+
+.input-group .input-group-addon
+{
+	background: white;
+	border: 1px solid #00bfa9;
+	border-right: 0px solid transparent;
 }
 
 @media (max-width: 767px)
@@ -335,5 +377,65 @@ table tbody tr:nth-child(even):hover
 	footer
 	{
 		height: 220px;
+	}
+}
+
+@media(max-width: 1000px)
+{
+	.transparent-panel
+	{
+		width: 760px;
+	}
+
+}
+
+@media(max-width: 990px)
+{
+	.transparent-panel
+	{
+		width: 660px;
+	}
+
+}
+
+@media(max-width: 780px)
+{
+	.transparent-panel
+	{
+		width: 570px;
+	}
+}
+
+
+@media(max-width: 650px)
+{
+	.transparent-panel
+	{
+		width: 470px;
+	}
+}
+
+
+@media(max-width: 550px)
+{
+	.transparent-panel
+	{
+		width: 375px;
+	}
+}
+
+@media(max-width: 450px)
+{
+	.transparent-panel
+	{
+		width: 275px;
+	}
+}
+
+@media(max-width: 350px)
+{
+	.transparent-panel
+	{
+		width: 225px;
 	}
 }

@@ -17,7 +17,7 @@
       <h2 class="activity_heading">Your Activity</h2>
       <div class="activity_content">
         <% @your_activity.each do |post| %>
-        <div class="activity_question">
+        <div class="activity_question transparent-panel">
           <div class="left_div">
             <%= image_tag "logov2.png", class: 'img-circle public_activity_user', alt: 'profile pic' %>
           </div>
@@ -25,7 +25,7 @@
            <p class="user-name"><%= post.user.full_name %></p>
            <p class="user-time"><%= timeago_tag post.created_at %></p>
          </div>
-         <span class="post-string user-post"><%= post.query_string %></span>
+         <span class="post-string user-post multiline_text"><%= post.query_string %></span>
          <%= link_to "View post", post_path(post.id), class: 'view_post background-seagreen' %>
          <%= link_to "Edit post", edit_post_path(post.id), class: 'edit_post background-seagreen' %>
        </div>
@@ -45,7 +45,7 @@
 
     <div class="activity_content">
       <% @public_activity.each do |post| %>
-      <div class="activity_question">
+      <div class="activity_question transparent-panel">
         <div class="left_div">
           <%= image_tag "logov2.png", class: 'img-circle public_activity_user', alt: 'profile pic' %>
         </div>
@@ -53,7 +53,7 @@
          <p class="user-name"><%= post.user.full_name %></p>
          <p class="user-time"><%=timeago_tag post.created_at %></p>
        </div>
-       <span class="post-string user-post"><%= post.query_string %></span>
+       <span class="post-string user-post multiline_text"><%= post.query_string %></span>
        <%= link_to "View post", post_path(post.id), class: 'view_post background-seagreen' %>
      </div>
      <% end %>

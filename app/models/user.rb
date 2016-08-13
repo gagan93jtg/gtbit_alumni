@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable,
          :recoverable, :rememberable, :trackable, :validatable
   has_many :posts
+  has_many :job_posts
   has_many :comments
   has_many :post_histories
 

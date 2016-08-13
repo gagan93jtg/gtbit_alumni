@@ -11,18 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160731030428) do
+ActiveRecord::Schema.define(version: 20160806065935) do
 
   create_table "comments", force: :cascade do |t|
-    t.integer  "post_id",        limit: 4
     t.integer  "user_id",        limit: 4
     t.text     "comment_string", limit: 65535
+    t.integer  "post_type",      limit: 4
     t.integer  "upvotes",        limit: 4,     default: 0
+    t.integer  "post_id",        limit: 4
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "comments", ["post_id"], name: "index_comments_on_post_id", using: :btree
+  add_index "comments", ["post_type"], name: "index_comments_on_post_type", using: :btree
   add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
   create_table "faqs", force: :cascade do |t|
@@ -31,6 +33,31 @@ ActiveRecord::Schema.define(version: 20160731030428) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "job_posts", force: :cascade do |t|
+    t.integer  "user_id",               limit: 4
+    t.string   "company_name",          limit: 255,   default: ""
+    t.string   "company_website",       limit: 255,   default: ""
+    t.string   "position",              limit: 255,   default: ""
+    t.string   "compensation",          limit: 255,   default: ""
+    t.integer  "experience_in_months",  limit: 4
+    t.integer  "bond_period_in_months", limit: 4
+    t.string   "location",              limit: 255,   default: ""
+    t.string   "reporting_date_time",   limit: 255,   default: ""
+    t.text     "eligibility_criteria",  limit: 65535
+    t.text     "selection_process",     limit: 65535
+    t.text     "job_description",       limit: 65535
+    t.string   "job_type",              limit: 255,   default: ""
+    t.string   "other_details",         limit: 255,   default: ""
+    t.boolean  "edited",                              default: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "job_posts", ["company_name"], name: "index_job_posts_on_company_name", using: :btree
+  add_index "job_posts", ["experience_in_months"], name: "index_job_posts_on_experience_in_months", using: :btree
+  add_index "job_posts", ["location"], name: "index_job_posts_on_location", using: :btree
+  add_index "job_posts", ["user_id"], name: "index_job_posts_on_user_id", using: :btree
 
   create_table "post_histories", force: :cascade do |t|
     t.integer  "user_id",      limit: 4
@@ -48,28 +75,30 @@ ActiveRecord::Schema.define(version: 20160731030428) do
     t.integer  "user_id",      limit: 4
     t.text     "query_string", limit: 65535
     t.text     "tags",         limit: 65535
+    t.integer  "post_type",    limit: 4,     default: 1
     t.boolean  "is_anonymous",               default: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+  add_index "posts", ["post_type"], name: "index_posts_on_post_type", using: :btree
   add_index "posts", ["user_id"], name: "index_posts_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
-    t.string   "first_name",             limit: 255
-    t.string   "last_name",              limit: 255
-    t.string   "username",               limit: 255
-    t.string   "gender",                 limit: 255
+    t.string   "first_name",             limit: 255,   default: ""
+    t.string   "last_name",              limit: 255,   default: ""
+    t.string   "username",               limit: 255,   default: ""
+    t.string   "gender",                 limit: 255,   default: ""
     t.text     "bio",                    limit: 65535
-    t.string   "batch",                  limit: 255
-    t.string   "company",                limit: 255
-    t.string   "job_type",               limit: 255
-    t.string   "designation",            limit: 255
+    t.string   "batch",                  limit: 255,   default: ""
+    t.string   "company",                limit: 255,   default: ""
+    t.string   "job_type",               limit: 255,   default: ""
+    t.string   "designation",            limit: 255,   default: ""
     t.integer  "experience_in_years",    limit: 4,     default: 0
-    t.string   "phone",                  limit: 255
-    t.string   "fb_link",                limit: 255
-    t.string   "twitter_link",           limit: 255
-    t.string   "linked_in_link",         limit: 255
+    t.string   "phone",                  limit: 255,   default: ""
+    t.string   "fb_link",                limit: 255,   default: ""
+    t.string   "twitter_link",           limit: 255,   default: ""
+    t.string   "linked_in_link",         limit: 255,   default: ""
     t.boolean  "is_admin",                             default: false
     t.datetime "created_at"
     t.datetime "updated_at"
