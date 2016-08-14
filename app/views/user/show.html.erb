@@ -41,7 +41,11 @@
                   <% end %>
                 </h1>
                 <div class="timeline-badge">
-                  <%= image_tag @user.avatar.url(:thumb), class: 'img-circle' %>
+                  <% if @user.avatar? %>
+                  <%= image_tag @user.avatar.url(:thumb), class: 'img-circle user-profile-pic'  %>
+                  <% else %>
+                  <%= image_tag 'logov2.png', class: 'img-circle user-profile-pic'  %>
+                  <% end %>
                 </div>
               </li>
 
@@ -57,12 +61,30 @@
                 <h1 class="panel-head">Dashboard</h1>
                 <div class="hr-left"></div>
                 <div class="btn-group">
-                  <button type="button" disabled class="btn btn-default profile-btn-two"><strong>0</strong></button>
+                  <button type="button" disabled class="btn btn-default profile-btn-two">
+                    <strong>
+                      <%= @user.question_posts.count %>
+                    </strong>
+                  </button>
                   <button type="button" disabled class="btn btn-primary profile-btn-one">Questions Posted</button>
                 </div>
+
                 <div class="btn-group">
-                  <button type="button" disabled class="btn btn-default profile-btn-two"><strong>0</strong></button>
-                  <button type="button" disabled class="btn btn-primary profile-btn-one">Questions Answered</button>
+                  <button type="button" disabled class="btn btn-default profile-btn-two">
+                    <strong>
+                      <%= @user.experience_posts.count %>
+                    </strong>
+                  </button>
+                  <button type="button" disabled class="btn btn-primary profile-btn-one">Experiences Shared</button>
+                </div>
+
+                <div class="btn-group">
+                  <button type="button" disabled class="btn btn-default profile-btn-two">
+                    <strong>
+                      <%= @user.job_posts.count %>
+                    </strong>
+                  </button>
+                  <button type="button" disabled class="btn btn-primary profile-btn-one">Job posts added</button>
                 </div>
               </li>
 
@@ -72,34 +94,52 @@
 
                 <div class="btn-group">
                   <button type="button" disabled class="btn btn-primary profile-btn-one">Batch</button>
-                  <button type="button" disabled class="btn btn-default profile-btn-two"><strong><%= @user.batch %></strong></button>
+                  <button type="button" disabled class="btn btn-default profile-btn-two">
+                    <strong>
+                      <% if @user.batch && !@user.batch.strip == "" %>
+                      <%= @user.batch %>
+                      <% else %>
+                      NA
+                      <% end %>
+                    </strong>
+                  </button>
                 </div>
 
                 <div class="btn-group">
                   <button type="button" disabled class="btn btn-primary profile-btn-one">Phone</button>
-                  <button type="button" disabled class="btn btn-default profile-btn-two"><strong><%= @user.phone %></strong></button>
-                </div>
-                <div class="btn-group">
-                  <button type="button" disabled class="btn btn-primary profile-btn-one">Branch</button>
-                  <button type="button" disabled class="btn btn-default profile-btn-two"><strong><%= @user.batch %></strong></button>
+                  <button type="button" disabled class="btn btn-default profile-btn-two">
+                    <strong>
+                      <% if @user.phone && !@user.phone.strip == "" %>
+                      <%= @user.phone %>
+                      <% else %>
+                      NA
+                      <% end %>
+                    </strong>
+                  </button>
                 </div>
 
                 <div class="btn-group">
                   <button type="button" disabled class="btn btn-primary profile-btn-one">Gender</button>
-                  <button type="button" disabled class="btn btn-default profile-btn-two"><strong><%= @user.gender %></strong></button>
+                  <button type="button" disabled class="btn btn-default profile-btn-two">
+                    <strong>
+                      <% if @user.gender && !@user.gender.strip == "" %>
+                      <%= @user.gender %>
+                      <% else %>
+                      NA
+                      <% end %>
+                    </strong>
+                  </button>
                 </div>
 
                 <div class="btn-group">
                   <button type="button" disabled class="btn btn-primary profile-btn-one">Email</button>
-                  <button type="button" disabled class="btn btn-default profile-btn-two"><strong>ekaspreet93.singh@gmail.com</strong></button>
+                  <button type="button" disabled class="btn btn-default profile-btn-two"><strong><%= @user.email %></strong></button>
                 </div>
               </li>
-
             </ul>
           </div>
         </div>
       </div>
-
     </div>
   </div>
 </div>

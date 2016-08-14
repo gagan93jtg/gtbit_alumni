@@ -4,8 +4,8 @@ class WelcomeController < ApplicationController
   before_filter :authenticate_user!, only: [:index]
 
   def index
-    @your_activity = current_user.posts
-    @public_activity = Post.public_activity(current_user.id)
+    @your_activity = current_user.posts.order("id desc").first(5)
+    @public_activity = Post.public_activity(current_user.id, 5)
   end
 
   def contact_us_mail

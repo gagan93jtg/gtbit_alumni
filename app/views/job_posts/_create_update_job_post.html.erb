@@ -1,7 +1,7 @@
 <div class="create_update_query_div" id="create_update_job_post">
   <div class="container-custom">
     <% create_update_job_post_options(form_type) %>
-    <%= form_for :job_post, :url => @url, :method => @form_method do |f|%>
+    <%= form_for :job_post, :url => @url, :method => @form_method, html: {class: 'create_update_job_post'} do |f|%>
     <h4 class="title">* <%= @title %></h4>
 
     <% if @job_post.errors.any? %>
@@ -20,13 +20,8 @@
       <input type="text" class="form-control" id="company_name" placeholder="Full name of company" autofocus="autofocus" name="job_post[company_name]" value = "<%= @job_post.company_name %>">
     </div>
 
-    <style type="text/css">
-
-    </style>
-
     <div class="form-group">
       <label for="company_website">Company website (if any)</label>
-
       <div class="input-group">
         <span class="input-group-addon">https://</span>
         <input type="text" id="company_website" class="form-control" name="email" placeholder="Leave blank if no website" name="job_post[company_website]" value="<%= @job_post.company_website %>">
@@ -100,6 +95,7 @@
 </div>
 
 <script type="text/javascript">
+  initialize_jquery_validator();
   initialize_date_time_picker();
   preview_job_post();
 </script>

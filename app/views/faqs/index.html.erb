@@ -4,15 +4,22 @@
   </p>
 
   <div class="faqs_body">
-    <% @faqs.each do |faq| %>
+    <% @faqs.each_with_index do |faq, index| %>
     <div class="faq">
-      <p class="faq_question">
-        <%= link_to faq.question, faq_path(faq.id) %>
+      <p class="faq_question toggle_faq_answer_<%= index %>">
+        <%= faq.question %>
+      </p>
+      <p class="faq_answer faq_answer_<%= index %>">
+        <%= faq.answer  %>
       </p>
     </div>
     <% end %>
   </div>
-  <div class="digg_pagination">
+  <div class="digg_pagination transparent-panel">
     <%= will_paginate @faqs, :container => false %>
   </div>
 </div>
+
+<script type="text/javascript">
+  bind_event_to_faq_questions("<%= @faqs.count %>");
+</script>

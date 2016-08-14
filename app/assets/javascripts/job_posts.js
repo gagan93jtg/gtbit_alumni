@@ -1,3 +1,7 @@
+function initialize_jquery_validator()
+{
+}
+
 function initialize_date_time_picker()
 {
   $(document).ready(function()
@@ -33,7 +37,7 @@ function preview_job_post()
     content += company_name;
 
     if (company_website != "")
-    content += "(" + company_website + ")";
+      content += "(" + company_website + ")";
 
     content += " is hiring candidates for the position of " + position
 
@@ -70,7 +74,8 @@ function preview_job_post()
       $('#preview_div').append("<p class='more_details multiline_text'><b>Other Details : </b>"
         + other_details +"</p>")
 
-    $('html, body').animate({
+    $('html, body').animate(
+    {
       scrollTop: $("#preview_div").offset().top - 50  /* compensate header size */
     }, 1000);
   });

@@ -1,21 +1,7 @@
 <div class="view_query_chain">
   <div class="container-custom">
     <div class="question">
-      <div class="transparent-panel activity_question clearfix">
-        <div class="left_div">
-          <img src="/assets/logov2.png" alt="profile pic" class="img-circle public_activity_user">
-        </div>
-        <div class="right_div">
-          <p class="user-name user-link"> <%= link_to asked_by(@post.user), user_path(@post.user.id), class: '' %> asked <%= anonymous?(@post) %></p>
-          <p class="user-time"><%=timeago_tag Time.at(@post.created_at) %></p>
-        </div>
-        <span class="user-post multiline_text"><%= @post.query_string.strip %></span>
-        <div class="user-tags"><%= @post.tags%></div>
-        <br>
-        <% if @post.post_histories.count > 0 %>
-        <a href="#" data-toggle="modal" data-target="#edit_history_modal" class="background-seagreen btn edit_history"> View edit history </a>
-        <% end %>
-      </div>
+    <%= render 'show_single_post', post: @post, show_full_post: true %>
       <br>
       <% @post.comments.each do |comment| %>
 
@@ -23,11 +9,11 @@
         <div class="left clearfix"><span><img src="/assets/logov2.png" alt="profile pic" class="img-circle public_activity_user comment-img pull-left" ></span>
 
           <div class="right clearfix">
-          <div class="header">
-            <p class="user-name user-link"><%= link_to comment.user.full_name, user_path(comment.user.id), class: '' %></p>
-            <p class=" user-time"><%=timeago_tag comment.created_at%> </p>
-            <span class="user-post multiline_text"><%=comment.comment_string%></span>
-          </div>
+            <div class="header">
+              <p class="user-name user-link"><%= link_to comment.user.full_name, user_path(comment.user.id), class: '' %></p>
+              <p class=" user-time"><%=timeago_tag comment.created_at%> </p>
+              <span class="user-post multiline_text"><%=comment.comment_string%></span>
+            </div>
           </div>
         </div>
       </div>

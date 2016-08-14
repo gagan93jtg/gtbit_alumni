@@ -14,10 +14,10 @@
 
     <% create_update_experience_form_options(form_type) %>
     <% if form_type == 'create'%>
-    Share an experience with others which is useful for them. This might be an experience at a company where you worked, or some university where you did higher studies. In any case, it should be helpful to others.
+    Share an experience with others which is useful for them. This might be an experience at a company where you worked, or some university where you did higher studies. Make sure whatever you post doesn't contain any abusive content and is helpful to others.
     <% end%>
     <%= form_for :post, :url => @url, :method => @form_method do |f|%>
-    <input type="hidden" name="[post][post_type]" value= <%= Comment::POST_TYPE[:QUESTION] %>>
+    <input type="hidden" name="[post][post_type]" value= <%= Comment::POST_TYPE[:EXPERIENCE] %>>
     <h1><%= form_type == "create" ? "Share an experience" : "Edit"%></h1>
     <div class="form-group">
       <label for="query_string">Your text here</label>

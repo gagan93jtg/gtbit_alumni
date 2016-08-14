@@ -21,8 +21,10 @@
 $(document).ready(function()
 {
 	$('.errors_warnings').delay(3000).slideUp(2000);
-  $('.scrollup').click(function(){
-    $("html, body").animate({ scrollTop: 0 }, 1000);
-    return false;
- });
+
+  $('.scrollup').click(function()
+  {
+    $("html, body").animate(
+      { scrollTop: 0 },100);
+  });
 });

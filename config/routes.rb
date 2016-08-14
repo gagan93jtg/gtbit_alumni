@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
   devise_for :users
 
-  get 'posts/edit_history' => 'posts#edit_history'
+  get 'posts/edit_history' => 'question_posts#edit_history'
 
   get 'errors/file_not_found', as: 'error_file_not_found'
   get 'errors/unprocessable', as: 'error_unprocessable'

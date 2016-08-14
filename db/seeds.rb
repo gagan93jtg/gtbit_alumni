@@ -52,3 +52,13 @@ Comment.create(post_id: 1, user_id: 1, comment_string: "I think it would be bett
 Comment.create(post_id: 1, user_id: 1, comment_string: "another comment", upvotes: 0, created_at: 2.hours.ago, post_type: 1)
 Comment.create(post_id: 1, user_id: 1, comment_string: "k", upvotes: 0, created_at: 10.minutes.ago, post_type: 1)
 
+30.times do |i|
+Faq.create(question: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed '\
+                     'do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad' + i.to_s,
+           answer: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod'\
+                   'tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,'\
+                   'quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo'\
+                   'consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse'\
+                   'cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat no'\
+                   'proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'+ i.to_s)
+end

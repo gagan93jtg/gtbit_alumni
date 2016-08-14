@@ -65,6 +65,14 @@ class User < ActiveRecord::Base
     update(sign_in_count: 2)
   end
 
+  def question_posts
+    posts.where(post_type: Comment::POST_TYPE[:QUESTION])
+  end
+
+  def experience_posts
+    posts.where(post_type: Comment::POST_TYPE[:EXPERIENCE])
+  end
+
   # Not supporting cropping right now !
   # def get_avatar_resolution(style)
   #   @geometry ||= {}
