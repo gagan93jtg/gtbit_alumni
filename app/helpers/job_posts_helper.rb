@@ -3,12 +3,12 @@ module JobPostsHelper
     if form_type == 'create'
       @url = '/job'
       @save_string = 'Create a Job post'
-      @title = 'Please provide appropriate information in each field and we will create a job post out of it'
+      @title = 'Create job post'
       @form_method = 'POST'
     elsif form_type == 'update'
-      @url = job_path + '/' + @job_post.id.to_s
+      @url = job_path
       @save_string = 'Update a Job post'
-      @title = @save_string
+      @title = 'Edit job post'
       @form_method = 'PUT'
     end
   end

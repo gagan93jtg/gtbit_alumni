@@ -2,7 +2,7 @@
   <div class="container-custom">
     <% create_update_job_post_options(form_type) %>
     <%= form_for :job_post, :url => @url, :method => @form_method, html: {class: 'create_update_job_post'} do |f|%>
-    <h4 class="title">* <%= @title %></h4>
+    <h1 class="title"><%= @title %></h1>
     <%=render 'errors/active_record_errors', model: @job_post %>
     <div class="form-group">
       <label for="company_name">Company name</label>
@@ -13,7 +13,7 @@
       <label for="company_website">Company website (if any)</label>
       <div class="input-group">
         <span class="input-group-addon">https://</span>
-        <input type="text" id="company_website" class="form-control" name="email" placeholder="Leave blank if no website" name="job_post[company_website]" value="<%= @job_post.company_website %>">
+        <input type="text" name="job_post[company_website]" id="company_website" class="form-control" name="email" placeholder="Leave blank if no website" value="<%= @job_post.company_website %>">
       </div>
     </div>
 
@@ -59,12 +59,12 @@
 
     <div class="form-group">
       <label for="eligibility_criteria">Eligibility Criteria</label>
-      <textarea rows="4" class="form-control" id="eligibility_criteria" placeholder="Course specification, min percentage etc. Explain in detail" name="job_post[eligibility_criteria]" value="<%= @job_post.eligibility_criteria %>"></textarea>
+      <textarea rows="4" class="form-control" name="job_post[eligibility_criteria]" id="eligibility_criteria" placeholder="Course specification, min percentage etc. Explain in detail"><%= @job_post.eligibility_criteria %></textarea>
     </div>
 
     <div class="form-group">
       <label for="selection_process">Selection Process</label>
-      <textarea rows="4" class="form-control" id="selection_process" placeholder="Description about different rounds or anything similar" name="job_post[selection_process]" value="<%= @job_post.selection_process %>"></textarea>
+      <textarea rows="4" class="form-control" id="selection_process" name="job_post[selection_process]" placeholder="Description about different rounds or anything similar"><%= @job_post.selection_process %></textarea>
     </div>
 
     <div class="form-group">
