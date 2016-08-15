@@ -1,6 +1,6 @@
 class Comment < ActiveRecord::Base
   belongs_to :user
-  #after_save :update_subscribers_and_notifications
+  after_save :update_subscribers_and_notifications
 
   validates :comment_string, length: { maximum: 65535 }
 
@@ -56,7 +56,7 @@ class Comment < ActiveRecord::Base
     notification_info['text'] = text
     notification_info['commenter_id'] = commenter_id
     notification_info['post_id'] = post_id
-    notification_info['type'] = 'post'
+    notification_info['post_type'] = post_type
     notification_info['timestamp'] = Time.current.to_i
     Notification::NotificationPipeline.push_notification(sub, post_id, commenter_id, notification_info)
   end

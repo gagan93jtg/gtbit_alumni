@@ -16,7 +16,7 @@ class CreateJobPosts < ActiveRecord::Migration
       t.text      :job_description
       t.string    :job_type, default: ''
       t.string    :other_details, default: ''
-      t.boolean   :edited, default: false
+      t.boolean   :is_edited, default: false
 
       t.timestamps
     end

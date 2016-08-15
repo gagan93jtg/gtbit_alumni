@@ -20,6 +20,8 @@ class CreateUsers < ActiveRecord::Migration
       t.string  :linked_in_link, default: ''
 
       t.boolean :is_admin, default: false
+      t.boolean :is_moderator, default: false
+      t.integer :reputation, default: 0
 
       t.timestamps
     end

@@ -18,7 +18,7 @@ User.create(first_name: 'Gagandeep', last_name: 'Singh', email: 'gagan@yahoo.com
 
 Post.create(user_id: 1, query_string: "Portugal became the first team to reach the Euro semi-finals"\
             " without winning a single game. That's something.\r\nhttp://9gag.com/gag/amz9RXV?ref=f"\
-            "bp\r\n", tags: "  1,2,3", is_anonymous: false)
+            "bp\r\n", tags: "  1,2,3", is_anonymous: false, post_type: Comment::POST_TYPE[:QUESTION])
 
 
 Post.create(user_id: 1, query_string: "Waheguru Ji Ka Khalsa, Waheguru Ji Ki Fateh !\r\nWatch This "\
@@ -27,7 +27,7 @@ Post.create(user_id: 1, query_string: "Waheguru Ji Ka Khalsa, Waheguru Ji Ki Fat
             " Vadh Spread Karo taaki Jo Sikh Bhatke Hoye Ne Oh Sri Guru Granth Sahib Ji Naal Vapis "\
             "Jur Ke Vapsi Kar Sakan..\r\nWritten & Directed By - Harjeet Singh Oberoi \r\n* "\
             "Inderpreet Singh, Manpreet Singh Gaba, Jasmeet Singh Kohli" ,
-            tags: "  1,2,3", is_anonymous: false)
+            tags: "  1,2,3", is_anonymous: false, post_type: Comment::POST_TYPE[:EXPERIENCE])
 
 Post.create(user_id: 2, query_string: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, "\
             "sed do eiusmod\r\ntempor incididunt ut labore et dolore magna aliqua. Ut enim ad "\
@@ -35,7 +35,7 @@ Post.create(user_id: 2, query_string: "Lorem ipsum dolor sit amet, consectetur a
             "commodo\r\nconsequat. Duis aute irure dolor in reprehenderit in voluptate velit "\
             "esse\r\ncillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat "\
             "non\r\nproident, sunt in culpa qui officia deserunt mollit anim id est laborum." ,
-            tags: "  1,2,3", is_anonymous: false)
+            tags: "  1,2,3", is_anonymous: false, post_type: Comment::POST_TYPE[:QUESTION])
 
 Comment.create(post_id: 1, user_id: 2, comment_string: "hey ", upvotes: 0, created_at: 10.days.ago, post_type: 1)
 Comment.create(post_id: 1, user_id: 3, comment_string: "hello", upvotes: 0, created_at: 9.days.ago, post_type: 1)
@@ -51,6 +51,7 @@ Comment.create(post_id: 1, user_id: 1, comment_string: "sdkjghgf", upvotes: 0, c
 Comment.create(post_id: 1, user_id: 1, comment_string: "I think it would be better if blah blah ", post_type: 1, upvotes: 0, created_at: 5.hours.ago)
 Comment.create(post_id: 1, user_id: 1, comment_string: "another comment", upvotes: 0, created_at: 2.hours.ago, post_type: 1)
 Comment.create(post_id: 1, user_id: 1, comment_string: "k", upvotes: 0, created_at: 10.minutes.ago, post_type: 1)
+Comment.create(post_id: 2, user_id: 2, comment_string: "k", upvotes: 0, created_at: 10.minutes.ago, post_type: 2)
 
 30.times do |i|
 Faq.create(question: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed '\

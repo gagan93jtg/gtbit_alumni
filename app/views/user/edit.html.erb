@@ -2,14 +2,7 @@
   <div class="container-custom">
     <h1>Update Your Profile</h1>
     <%= form_for :user, :url => user_path(), html: { multipart: true }, :method => "PUT" do |f|%>
-    <div class="errors">
-      <p>The details could not be saved due to the following reasons:</p>
-      <ul class="active-record-errors">
-        <% current_user.errors.full_messages.each do |message| %>
-        <li class="active-record-error"><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
+    <%=render 'errors/active_record_errors', model: current_user %>
     <div class="personal_details block_details">
       <div class="details_heading"><span> Personal details </span> </div>
       <div class="form-group">

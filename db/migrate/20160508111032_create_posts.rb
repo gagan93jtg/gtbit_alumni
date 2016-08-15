@@ -7,6 +7,7 @@ class CreatePosts < ActiveRecord::Migration
       t.string  :tags
       t.integer :post_type      # post_type = 1 for Question and 2 for Experience
       t.boolean :is_anonymous, default: false
+      t.boolean :is_edited, default: false
 
       t.timestamps
     end

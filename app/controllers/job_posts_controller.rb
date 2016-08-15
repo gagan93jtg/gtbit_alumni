@@ -23,6 +23,28 @@ class JobPostsController < ApplicationController
     redirect_to controller: 'errors', action: 'file_not_found' and return if @job_post.nil?
   end
 
+  def edit
+    @job_post = JobPost.find_by_id(params[:id])
+    redirect_to controller: 'errors', action: 'file_not_found' and return unless @job_post
+    redirect_to controller: 'errors', action: 'unprocessable' and return if current_user.id != @job_post.user_id
+  end
+
+  def update
+    job_post = JobPost.find(params[:id])
+    redirect_to controller: 'errors', action: 'file_not_found' and return unless job_post
+    redirect_to controller: 'errors', action: 'unprocessable'and return if current_user.id != job_post.user_id
+
+    job_post.update_job_post(params)
+
+    unless job_post.errors.any?
+      redirect_to job_path(job_post.id)
+    else
+      @job_post = job_post
+      render action: :edit
+    end
+  end
+
+
   private
 
   def get_job_posts

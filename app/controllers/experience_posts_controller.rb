@@ -35,7 +35,13 @@ class ExperiencePostsController < ApplicationController
     redirect_to controller: 'errors', action: 'unprocessable'and return if current_user.id != post.user_id
 
     post.update_post(params)
-    redirect_to experience_path(post.id)
+
+    unless post.errors.any?
+      redirect_to experience_path(post.id)
+    else
+      @post = post
+      render action: :edit
+    end
   end
 
   private

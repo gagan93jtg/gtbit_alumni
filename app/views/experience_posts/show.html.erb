@@ -1,22 +1,8 @@
 <div class="view_query_chain">
   <div class="container-custom">
     <div class="question">
-      <div class="transparent-panel activity_question clearfix">
-        <div class="left_div">
-          <img src="/assets/logov2.png" alt="profile pic" class="img-circle public_activity_user">
-        </div>
-        <div class="right_div">
-          <p class="user-name user-link"> <%= link_to asked_by(@post.user), user_path(@post.user.id), class: '' %> shared an experience</p>
-          <p class="user-time"><%=timeago_tag Time.at(@post.created_at) %></p>
-        </div>
-        <span class="user-post multiline_text"><%= @post.query_string.strip %></span>
-        <div class="user-tags"><%= @post.tags%></div>
-
-        <% if @post.user_id == current_user.id %>
-        <%= link_to "Edit post", edit_experience_path(@post.id), class: 'edit_post background-seagreen' %>
-        <% end %>
-      </div>
-
+      <%= render 'question_posts/show_single_post', post: @post, show_full_post: true %>
+      <br>
       <% @post.comments.each do |comment| %>
 
       <div class="transparent-panel activity_comment ">

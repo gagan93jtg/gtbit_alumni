@@ -12,13 +12,20 @@
 					</div>
 					<div class="<%=notification.inspect%> right_div">
 						<p class="user-name user-link">
-							<%= link_to User.find(notification["commenter_id"]).full_name, user_path(notification["commenter_id"])%>
+							<%= link_to User.find(notification["commenter_id"]).full_name, user_path(notification['commenter_id'])%>
 							<span class="post-link user-link">
-								<%= notification["text"] %>&nbsp;<%= link_to notification["type"], post_path(notification["post_id"]) %>
+								<%= notification['text'] %>&nbsp;
+								<% if notification['post_type'] == Comment::POST_TYPE[:QUESTION] %>
+								<%= link_to 'post', post_path(notification['post_id']) %>
+								<% elsif notification['post_type'] == Comment::POST_TYPE[:EXPERIENCE] %>
+								<%= link_to 'post', experience_path(notification['post_id']) %>
+								<% elsif notification['post_type'] == Comment::POST_TYPE[:JOB] %>
+								<%= link_to 'job post', job_path(notification['post_id']) %>
+								<% end %>
 							</span>
 
 						</p>
-						<p class="user-time"><%=timeago_tag Time.at(notification["timestamp"]) %></p>
+						<p class="user-time"><%=timeago_tag Time.at(notification['timestamp']) %></p>
 					</div>
 				</div>
 				<% end %>

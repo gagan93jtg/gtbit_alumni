@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 20160806065935) do
     t.text     "job_description",       limit: 65535
     t.string   "job_type",              limit: 255,   default: ""
     t.string   "other_details",         limit: 255,   default: ""
-    t.boolean  "edited",                              default: false
+    t.boolean  "is_edited",                           default: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -74,9 +74,10 @@ ActiveRecord::Schema.define(version: 20160806065935) do
   create_table "posts", force: :cascade do |t|
     t.integer  "user_id",      limit: 4
     t.text     "query_string", limit: 65535
-    t.text     "tags",         limit: 65535
-    t.integer  "post_type",    limit: 4,     default: 1
+    t.string   "tags",         limit: 255
+    t.integer  "post_type",    limit: 4
     t.boolean  "is_anonymous",               default: false
+    t.boolean  "is_edited",                  default: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

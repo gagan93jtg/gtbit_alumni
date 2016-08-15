@@ -1,22 +1,11 @@
 <div class="create_update_query_div">
   <div class="container-custom">
-
-    <% if @post.errors.any? %>
-    <div class="errors alert alert-danger">
-      <p>Your experience could not be saved due to the following reasons:</p>
-      <ul class="active-record-errors">
-        <% @post.errors.full_messages.each do |message| %>
-        <li class="active-record-error"><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-    <% end %>
-
     <% create_update_experience_form_options(form_type) %>
     <% if form_type == 'create'%>
     Share an experience with others which is useful for them. This might be an experience at a company where you worked, or some university where you did higher studies. Make sure whatever you post doesn't contain any abusive content and is helpful to others.
     <% end%>
     <%= form_for :post, :url => @url, :method => @form_method do |f|%>
+    <%=render 'errors/active_record_errors', model: @post %>
     <input type="hidden" name="[post][post_type]" value= <%= Comment::POST_TYPE[:EXPERIENCE] %>>
     <h1><%= form_type == "create" ? "Share an experience" : "Edit"%></h1>
     <div class="form-group">

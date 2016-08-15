@@ -2,11 +2,12 @@
   <div class="container-custom">
     <% create_update_question_form_options(form_type) %>
     <% if form_type == 'create'%>
-      Hey, we recommend you to check our <%= link_to 'FAQs page', faqs_path  %> before posting a question
+      We recommend you to check our <%= link_to 'FAQs page', faqs_path %> before posting a question, you may find a direct answer there !
     <% end%>
     <%= form_for :post, :url => @url, :method => @form_method do |f|%>
     <h1><%= form_type == "create" ? "Post a question" : "Update question"%></h1>
     <input type="hidden" name="[post][post_type]" value= <%= Comment::POST_TYPE[:QUESTION] %>>
+    <%=render 'errors/active_record_errors', model: @post %>
     <div class="form-group">
       <label for="query_string">Question?</label>
       <textarea rows="5" class="form-control" id="query_string" placeholder="Your Query Regarding Internships, Placements, Higher Studies etc." autofocus="autofocus" name="post[query_string]"><%= @post.query_string %></textarea>

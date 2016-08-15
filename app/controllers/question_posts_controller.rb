@@ -10,8 +10,12 @@ class QuestionPostsController < ApplicationController
   end
 
   def create
-    QuestionPost.save_post(current_user, params)
-    redirect_to root_path
+    @post = QuestionPost.save_post(current_user, params)
+    unless @post.errors.any?
+      redirect_to post_path(@post.id)
+    else
+      render action: :new
+    end
   end
 
   def show
@@ -31,7 +35,13 @@ class QuestionPostsController < ApplicationController
     redirect_to controller: 'errors', action: 'unprocessable'and return if current_user.id != post.user_id
 
     post.update_post(params)
-    redirect_to post_path(post.id)
+
+    unless post.errors.any?
+      redirect_to post_path(post.id)
+    else
+      @post = post
+      render action: :edit
+    end
   end
 
   def edit_history
