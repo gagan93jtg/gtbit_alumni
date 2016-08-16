@@ -21,6 +21,7 @@
       <div class="form-group add_comment">
         <%= form_for :comment, :url => comments_path(), :method => "POST" do |f| %>
         <input type="hidden" name="[post][id]" value= <%= @post.id %>>
+        <input type="hidden" name="[post][post_type]" value= <%= @post.post_type %>>
         <textarea rows="3" class="form-control" id="query_tags" placeholder="Write a comment" name="comment[comment_string]"></textarea>
         <%= submit_tag("Add", {class: "background-seagreen edit_post btn btn-submit add_comment_button"}) %>
         <% end %>

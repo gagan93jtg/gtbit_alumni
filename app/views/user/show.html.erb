@@ -19,9 +19,9 @@
             </div>
             <div class="social-bar">
               <div class="text-center">
-                <a href="<%= @user.fb_link %>" target="_blank"> <%= image_tag "fb.png", class: 'small_icon' %> </a>
-                <a href="<%= @user.twitter_link %>" target="_blank"> <%= image_tag "twitter.png", class: 'small_icon' %> </a>
-                <a href="<%= @user.linked_in_link %>" target="_blank"> <%= image_tag "linked_in.png", class: 'small_icon' %> </a>
+                <a href="https://www.facebook.com/<%= @user.fb_link %>" target="_blank"> <%= image_tag "fb.png", class: 'small_icon' %> </a>
+                <a href="https://www.twitter.com/<%= @user.twitter_link %>" target="_blank"> <%= image_tag "twitter.png", class: 'small_icon' %> </a>
+                <a href="https://in.linkedin.com/in/<%= @user.linked_in_link %>" target="_blank"> <%= image_tag "linked_in.png", class: 'small_icon' %> </a>
               </div>
             </div>
           </div>
@@ -96,7 +96,7 @@
                   <button type="button" disabled class="btn btn-primary profile-btn-one">Batch</button>
                   <button type="button" disabled class="btn btn-default profile-btn-two">
                     <strong>
-                      <% if @user.batch && !@user.batch.strip == "" %>
+                      <% if (!@user.batch.nil? && !(@user.batch.strip == "")) %>
                       <%= @user.batch %>
                       <% else %>
                       NA
@@ -109,7 +109,7 @@
                   <button type="button" disabled class="btn btn-primary profile-btn-one">Phone</button>
                   <button type="button" disabled class="btn btn-default profile-btn-two">
                     <strong>
-                      <% if @user.phone && !@user.phone.strip == "" %>
+                      <% if (!@user.phone.nil? && !(@user.phone.strip == "")) %>
                       <%= @user.phone %>
                       <% else %>
                       NA
@@ -122,7 +122,7 @@
                   <button type="button" disabled class="btn btn-primary profile-btn-one">Gender</button>
                   <button type="button" disabled class="btn btn-default profile-btn-two">
                     <strong>
-                      <% if @user.gender && !@user.gender.strip == "" %>
+                      <% if (!@user.gender.nil? && !(@user.gender.strip == "")) %>
                       <%= @user.gender %>
                       <% else %>
                       NA
