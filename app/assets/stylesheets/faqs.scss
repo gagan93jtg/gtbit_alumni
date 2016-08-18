@@ -2,35 +2,59 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.faqs_header
+.faqs-page
 {
-  word-wrap: break-word;
-  font-size: 16px;
-}
-
-.faqs_body
-{
-  margin-top: 25px;
+  .container-custom
+  {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+  .faqs_header
+  {
+    margin-top: 20px;
+    font-size: 30px;
+    font-weight: 700;
+    color: #00bfa9;
+  }
+  .faqs_body
+  {
+    margin-top: 25px;
+  }
+  .digg_pagination
+  {
+    margin-top: 15px;
+  }
 }
 
 .faq
 {
   margin-top: 12px;
-  background-color: rgb(230,230,230);
   padding: 10px;
+  background-color: rgba(0,191,169,0.4);
   word-wrap: break-word;
 
-  .faq_question
+  .faq_question,.faq_num
   {
-    font-size: 18px;
-    font-weight: 900;
-    cursor: pointer;
+    display: inline;
   }
 
+  .faq_question,.faq_num
+  {
+    font-size: 15px;
+    color: #000;
+    cursor: pointer;
+    font-weight: 500;
+  }
+
+  .faq_question:hover, .faq_question:active, .faq_question:visited
+  {
+    color: #685E6D;
+    font-weight: 700;
+  }
   .faq_answer
   {
-    font-size: 16px;
-    margin-left: 20px;
+    font-size: 13px;
+    margin: 20px 20px 10px 0;
     display: none;
   }
 }

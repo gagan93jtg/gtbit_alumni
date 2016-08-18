@@ -101,6 +101,8 @@ ActiveRecord::Schema.define(version: 20160806065935) do
     t.string   "twitter_link",           limit: 255,   default: ""
     t.string   "linked_in_link",         limit: 255,   default: ""
     t.boolean  "is_admin",                             default: false
+    t.boolean  "is_moderator",                         default: false
+    t.integer  "reputation",             limit: 4,     default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "email",                  limit: 255,   default: "",    null: false

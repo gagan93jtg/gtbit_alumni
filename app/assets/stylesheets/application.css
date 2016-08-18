@@ -354,35 +354,44 @@ table tbody tr:nth-child(even):hover
 {
 	background-color: rgb(248, 248, 248);
 }
+.table-main
+{
+	overflow-x: auto;
+}
 
+.search_div
+{
+	margin-top: 10px;
+}
+
+@media(max-width: 650px)
+{
+	footer li
+	{
+		display: block;
+	}
+	.separator
+	{
+		display: none;
+	}
+	footer
+	{
+		height: 250px;
+	}
+}
 @media(max-width: 620px)
 {
 	footer
 	{
-		height: 185px;
+		height: 250px;
 	}
 }
 
-@media(max-width: 400px)
+@media(max-width: 315px)
 {
 	footer
 	{
-		height: 190px;
-	}
-}
-@media(max-width: 345px)
-{
-	footer
-	{
-		height: 195px;
-	}
-}
-
-@media(max-width: 300px)
-{
-	footer
-	{
-		height: 220px;
+		height: 260px;
 	}
 }
 
@@ -426,22 +435,8 @@ table tbody tr:nth-child(even):hover
 {
 	.transparent-panel
 	{
-		width: 375px;
+		width: 100%;
+		margin: 10px 0;
 	}
 }
 
-@media(max-width: 450px)
-{
-	.transparent-panel
-	{
-		width: 275px;
-	}
-}
-
-@media(max-width: 350px)
-{
-	.transparent-panel
-	{
-		width: 225px;
-	}
-}
