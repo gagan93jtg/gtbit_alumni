@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   # I also removed :registerable as I don't want a signup process here.
 
   devise :database_authenticatable,
-         :recoverable, :rememberable, :trackable, :validatable
+  :recoverable, :rememberable, :trackable, :validatable
   has_many :posts
   has_many :job_posts
   has_many :comments
@@ -23,19 +23,20 @@ class User < ActiveRecord::Base
   validates :twitter_link, length: { maximum: 255 }
   validates :linked_in_link, length: { maximum: 255 }
   validates :bio, length: { maximum: 65535, message: 'is out of range. We know you are awesome, '\
-                           'but unfortunately we can handle only a 65535 characters long bio' }
-  validates :is_admin, inclusion: { in: [true, false] }
-  validates_numericality_of :experience_in_years, :greater_than_or_equal_to => 0,
-  :less_than_or_equal_to => 100, :message => "is out of range. I hope you are a human being!"\
-                                             " Now input a valid number to save."
+   'but unfortunately we can handle only a 65535 characters long bio' }
+   validates :is_admin, inclusion: { in: [true, false] }
+   validates_numericality_of :experience_in_years, :greater_than_or_equal_to => 0,
+   :less_than_or_equal_to => 100, :message => "is out of range. I hope you are a human being!"\
+   " Now input a valid number to save."
 
+   has_attached_file :avatar, styles: { large: "500x500>", thumb: "50x50>" },
+   :url => "users/avatars/:id/:style/avatar.:extension",
+   :path => "users/avatars/:id/:style/avatar.:extension"
 
-  has_attached_file :avatar, styles: { large: "500x500>", thumb: "50x50>" },
-                    :url => "users/avatars/:id/:style/avatar.:extension",
-                    :path => "users/avatars/:id/:style/avatar.:extension"
+   validates_with AttachmentSizeValidator, attributes: :avatar, less_than: 2.megabytes
+   validates_attachment :avatar, content_type: { content_type: ["image/jpeg", "image/gif", "image/png"] }
 
-  validates_with AttachmentSizeValidator, attributes: :avatar, less_than: 2.megabytes
-  validates_attachment :avatar, content_type: { content_type: ["image/jpeg", "image/gif", "image/png"] }
+   PASSWORD_LENGTH = 72
 
   # attr_accessor :crop_x, :crop_y, :crop_w, :crop_h
 
@@ -48,11 +49,11 @@ class User < ActiveRecord::Base
 
   def update_details(params)
     update(first_name: params[:first_name], last_name: params[:last_name],
-           phone: params[:phone], gender: params[:gender], batch: params[:batch],
-           job_type: params[:job_type], designation: params[:designation],
-           company: params[:company], experience_in_years: params[:experience_in_years],
-           bio: params[:bio], fb_link: params[:fb_link],
-           twitter_link: params[:twitter_link], linked_in_link: params[:linked_in_link])
+     phone: params[:phone], gender: params[:gender], batch: params[:batch],
+     job_type: params[:job_type], designation: params[:designation],
+     company: params[:company], experience_in_years: params[:experience_in_years],
+     bio: params[:bio], fb_link: params[:fb_link],
+     twitter_link: params[:twitter_link], linked_in_link: params[:linked_in_link])
 
     update(avatar: params[:avatar]) if params[:avatar]
   end
@@ -73,7 +74,38 @@ class User < ActiveRecord::Base
     posts.where(post_type: Comment::POST_TYPE[:EXPERIENCE])
   end
 
+  def update_password(params)
+    user = params[:user]
+    old_password = user[:current_password]
+    new_password = user[:new_password]
+    confirm_new_password = user[:confirm_new_password]
+
+    if(old_password.strip.empty? || new_password.strip.empty? || confirm_new_password.strip.empty?)
+      return '' , 'Please enter respective data in three fields'
+    else
+      if self.valid_password?(old_password)
+        if new_password == confirm_new_password
+          return '', "New password too long (< #{PASSWORD_LENGTH} max)" if new_password.length > PASSWORD_LENGTH
+
+          self.password = new_password
+          self.password_confirmation = confirm_new_password;
+          if self.invalid?
+            return self.errors.full_messages.join("\n")
+          else
+            self.save
+            return 'Password Updated !', ''
+          end
+        else
+          return '', 'New passwords do not match'
+        end
+      else
+        return '', 'Invalid old password'
+      end
+    end
+  end
+
   # Not supporting cropping right now !
+  #
   # def get_avatar_resolution(style)
   #   @geometry ||= {}
   #   @geometry[style] = Paperclip::Geometry.from_file(avatar.path(style))

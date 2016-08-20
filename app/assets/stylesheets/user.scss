@@ -154,6 +154,11 @@
 	cursor: pointer;
 }
 
+.password_update_response_div
+{
+	margin-top: 15px;
+}
+
 @media(max-width: 1000px)
 {
 	.container-custom
@@ -388,6 +393,7 @@
 	}
 
 }
+
 @media(max-width: 350px)
 {
 	.container-custom
@@ -429,6 +435,7 @@
 		font-size: 14px;
 	}
 }
+
 .user-profile
 {
 	background-color: rgb(245,245,245);
@@ -490,6 +497,7 @@
 	{
 		text-transform: uppercase;
 	}
+
 	.hr-center
 	{
 		height: 3px;
@@ -524,7 +532,8 @@
 		position: relative;
 	}
 
-	.timeline > li {
+	.timeline > li
+	{
 		margin-bottom: 20px;
 		position: relative;
 	}
@@ -541,8 +550,8 @@
 
 	.profile-icon img
 	{
-		width: 50px;
-		height: 50px;
+		width: 55px;
+		height: 55px;
 	}
 
 	.timeline-head
@@ -581,7 +590,8 @@
 		margin-top: -6px;
 	}
 
-	.hr-left {
+	.hr-left
+	{
 		height: 1px;
 		width: 100%;
 		margin-bottom: 20px;
@@ -594,7 +604,8 @@
 		margin-bottom: 20px;
 	}
 
-	.profile-btn-one{
+	.profile-btn-one
+	{
 		pointer-events: none;
 		background-color: #00bfa9;
 		color: #fff;

@@ -4,6 +4,6 @@ function bind_event_to_faq_questions(count)
   {
     cls = $(this).attr('class').split(' ')[1];
     cls = cls.substring(7, cls.length);
-    $('.' + cls).slideToggle(1000);
+    $('.' + cls).slideToggle(500);
   });
 }

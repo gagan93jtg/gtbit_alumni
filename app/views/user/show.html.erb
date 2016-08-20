@@ -35,18 +35,10 @@
               <li class="profile-icon">
                 <h1 class="timeline-head">
                   <% if @user == current_user %>
-                  Your profile
-                  <% else %>
-                  <%= @user.first_name %>'s Profile
+                  <%= link_to "Edit profile", edit_user_path(current_user.id), class: 'btn background-seagreen' %>
+                  <a href="#" data-toggle="modal" data-target="#update_password_modal" class="background-seagreen btn update_password"> Change Password </a>
                   <% end %>
                 </h1>
-                <div class="timeline-badge">
-                  <% if @user.avatar? %>
-                  <%= image_tag @user.avatar.url(:thumb), class: 'img-circle user-profile-pic'  %>
-                  <% else %>
-                  <%= image_tag 'logov2.png', class: 'img-circle user-profile-pic'  %>
-                  <% end %>
-                </div>
               </li>
 
               <li class="profile-panel">
@@ -139,6 +131,46 @@
             </ul>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="update_password_modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Update password</h4>
+      </div>
+      <div class="modal-body">
+        <%= form_tag(user_update_password_path, method: 'put', :remote => true, class: 'update_password_form') do %>
+        <div class="form-group">
+          <label for="first_name">Old Password</label>
+          <input type="password" class="form-control" id="current_password" placeholder="Your old password" autocomplete="off" name="user[current_password]">
+        </div>
+        <div class="form-group">
+          <label for="first_name">New Password </label>
+          <input type="password" class="form-control" id="first_name" placeholder="(Minimum 8 characters)" autocomplete="off" name="user[new_password]">
+        </div>
+        <div class="form-group">
+          <label for="first_name">Confirm New Password </label>
+          <input type="password" class="form-control" id="first_name" placeholder="(Minimum 8 characters)" autocomplete="off" name="user[confirm_new_password]">
+        </div>
+        <input type="submit" value="Update password" class="btn background-seagreen"></input>
+        <% end %>
+        <div class="password_update_response_div">
+          <div class="error_update_password alert alert-danger">
+
+          </div>
+          <div class="success_update_password alert alert-success">
+
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>

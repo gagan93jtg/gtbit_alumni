@@ -14,7 +14,7 @@ function bind_edit_history_modal_click(id)
      })
       .fail(function(error)
       {
-         console.log("error "+e);
+         $('.modal-body').html('Error encountered ! We have been notified about the same. Try again later');
      })
       .always(function()
       {

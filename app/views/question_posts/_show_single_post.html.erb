@@ -1,4 +1,4 @@
-<div class="activity_question transparent-panel">
+<div class="activity_question glass-panel">
   <div class="left_div">
     <% if post.is_anonymous == true %>
       <%= image_tag "anonymous.jpg", class: 'img-circle public_activity_user', alt: 'profile pic' %>
@@ -34,7 +34,7 @@
   <% else %>
     <% if post.post_type == Comment::POST_TYPE[:QUESTION] %>
       <%= link_to "View post", post_path(post.id), class: 'view_post background-seagreen' %>
-    <% elsif post.post_type == Comment::POST_TYPE[:EXPERIENCE] && post.user_id == current_user.id %>
+    <% elsif post.post_type == Comment::POST_TYPE[:EXPERIENCE] %>
       <%= link_to "View post", experience_path(post.id), class: 'view_post background-seagreen' %>
     <% end %>
   <% end %>

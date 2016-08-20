@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
   devise_for :users
 
+  put 'user/password' => 'user#update_password', as: 'user_update_password'
   get 'posts/edit_history' => 'question_posts#edit_history'
 
   get 'errors/file_not_found', as: 'error_file_not_found'
@@ -12,6 +13,7 @@ Rails.application.routes.draw do
   post 'contact_us',    :to => 'welcome#contact_us_mail'
   post 'report_bug',    :to => 'welcome#report_bug'
   get  'team',          :to => 'welcome#team'
+
   # get  'user/:id/crop', :to => 'user#crop'
   # post 'user/:id/crop', :to => 'user#save_crop'
 

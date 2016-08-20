@@ -23,6 +23,15 @@ class UserController < ApplicationController
     redirect_to controller: 'errors', action: 'file_not_found' and return unless @user
   end
 
+  def update_password
+    @success, @error = current_user.update_password(params)
+    Rails.logger.info "Success : #{@success}, error : #{@error}"
+    sign_in(current_user, :bypass => true) if @success == 'Password Updated !'
+    respond_to do |format|
+      format.js {}
+    end
+  end
+
   # def crop
   #
   # end
