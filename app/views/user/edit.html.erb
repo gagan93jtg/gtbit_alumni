@@ -81,8 +81,9 @@
         </div>
       </div>
     </div>
-
+    Choose your Avatar
     <%= f.file_field :avatar %>
+    <p class="avtar_notice small_text">We do not support cropping right now. Please choose square photo for best view. Size limit 1 MB</p>
     <%= submit_tag(@save_string ,{class: "background-seagreen btn-update btn"}) %>
     <% end %>
     <br>

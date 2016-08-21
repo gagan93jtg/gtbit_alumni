@@ -5,7 +5,7 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-<!--   <link href='https://fonts.googleapis.com/css?family=Work+Sans:100,300,400,600' rel='stylesheet' type='text/css'> -->
+  <link href='https://fonts.googleapis.com/css?family=Work+Sans:100,300,400,600' rel='stylesheet' type='text/css'>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -43,8 +43,7 @@
                 <li><%= link_to "Share an experience", new_experience_path %> </li>
                 <li><%= link_to "Post a job", new_job_path %> </li>
                 <li role="separator" class="divider"></li>
-                <li><%= link_to "View profile", user_path(current_user) %></li>
-                <li><%= link_to "Update profile", edit_user_path(current_user) %></li>
+                <li><%= link_to "My profile", user_path(current_user) %></li>
                 <li role="separator" class="divider"></li>
                 <li><%= link_to "Search users", user_index_path  %> </li>
                 <li><%= link_to "Search questions", posts_path  %></li>
@@ -79,8 +78,6 @@
           <li><a href="#" data-toggle="modal" data-target="#contact_us">Contact Us</a></li>
           <li class="separator">|</li>
           <li><a href="/team">Meet the developers</a></li>
-          <li class="separator">|</li>
-          <li><a href="#" data-toggle="modal" data-target="#contribute">Contribute</a></li>
           <li class="separator">|</li>
           <li><a href="#" data-toggle="modal" data-target="#report_bug">Report a Bug</a></li>
           <li class="separator">|</li>

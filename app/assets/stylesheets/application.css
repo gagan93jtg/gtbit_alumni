@@ -61,6 +61,10 @@ label
 	font-weight: 300;
 }
 
+.text-seagreen
+{
+	color: #00bfa9 !important;
+}
 .background-seagreen
 {
 	background-color: #00bfa9 !important;

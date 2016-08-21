@@ -33,7 +33,7 @@ class User < ActiveRecord::Base
    :url => "users/avatars/:id/:style/avatar.:extension",
    :path => "users/avatars/:id/:style/avatar.:extension"
 
-   validates_with AttachmentSizeValidator, attributes: :avatar, less_than: 2.megabytes
+   validates_with AttachmentSizeValidator, attributes: :avatar, less_than: 1.megabytes
    validates_attachment :avatar, content_type: { content_type: ["image/jpeg", "image/gif", "image/png"] }
 
   # attr_accessor :crop_x, :crop_y, :crop_w, :crop_h

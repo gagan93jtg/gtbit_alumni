@@ -8,8 +8,7 @@
 
     <div class="faqs_body ">
       <% @faqs.each_with_index do |faq, index| %>
-      <div class="faq ">
-        <p class="faq_num">+</p>
+      <div class="faq glass-panel">
         <p class="faq_question toggle_faq_answer_<%= index %>">
           <%= faq.question %> ?
         </p>

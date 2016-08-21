@@ -25,7 +25,7 @@ $(document).ready(function()
   $('.scrollup').click(function()
   {
     $("html, body").animate(
-      { scrollTop: 0 },100);
+      { scrollTop: 0 },1000);
   });
 
   $(".modal").on('hidden.bs.modal', function ()
