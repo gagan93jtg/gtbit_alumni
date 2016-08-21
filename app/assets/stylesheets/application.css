@@ -65,6 +65,7 @@ label
 {
 	color: #00bfa9 !important;
 }
+
 .background-seagreen
 {
 	background-color: #00bfa9 !important;
@@ -198,15 +199,21 @@ header .navbar-default
 .input-group .input-group-addon
 {
 	background: #00bfa9;
-	color: white;
+	color: white !important;
 	border: 1px solid #00bfa9;
-	border-right: 0px solid transparent;
+	border-right: 0px;
+}
+
+.input-group
+{
+	border-left: 0px;
 }
 
 .search_query
 {
 	margin: 20px 0px;
 }
+
 @media (max-width: 767px)
 {
 	header .navbar-left{

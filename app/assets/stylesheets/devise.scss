@@ -3,19 +3,6 @@
 	margin-top: 60px;
 }
 
-.main-form
-{
-	border: 1px solid #000;
-	border-radius: 2%;
-	padding:30px;
-}
-
-.login-pane span
-{
-	color: #685E6D;
-	font-size: 22px;
-}
-
 .login-pane h4
 {
 	color: #685E6D;
@@ -36,6 +23,8 @@
 {
 	margin: 0 auto;
 	width: 500px;
+	border-radius: 2%;
+	padding:30px;
 }
 
 .btn-recover-password
