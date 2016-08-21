@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160806065935) do
+ActiveRecord::Schema.define(version: 20160821045531) do
 
   create_table "comments", force: :cascade do |t|
     t.integer  "user_id",        limit: 4
@@ -85,6 +85,15 @@ ActiveRecord::Schema.define(version: 20160806065935) do
   add_index "posts", ["post_type"], name: "index_posts_on_post_type", using: :btree
   add_index "posts", ["user_id"], name: "index_posts_on_user_id", using: :btree
 
+  create_table "unverified_users", force: :cascade do |t|
+    t.string   "first_name", limit: 255, default: ""
+    t.string   "last_name",  limit: 255, default: ""
+    t.string   "email",      limit: 255, default: ""
+    t.string   "batch",      limit: 255, default: ""
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "first_name",             limit: 255,   default: ""
     t.string   "last_name",              limit: 255,   default: ""
@@ -102,6 +111,7 @@ ActiveRecord::Schema.define(version: 20160806065935) do
     t.string   "linked_in_link",         limit: 255,   default: ""
     t.boolean  "is_admin",                             default: false
     t.boolean  "is_moderator",                         default: false
+    t.boolean  "is_active",                            default: true
     t.integer  "reputation",             limit: 4,     default: 0
     t.datetime "created_at"
     t.datetime "updated_at"

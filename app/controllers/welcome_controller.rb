@@ -23,4 +23,12 @@ class WelcomeController < ApplicationController
       format.js {}
     end
   end
+
+  def request_account
+    @response = UnverifiedUser.create_unverified_user(params[:user])
+
+    respond_to do |format|
+      format.js {}
+    end
+  end
 end

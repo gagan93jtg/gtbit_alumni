@@ -36,8 +36,6 @@ class User < ActiveRecord::Base
    validates_with AttachmentSizeValidator, attributes: :avatar, less_than: 2.megabytes
    validates_attachment :avatar, content_type: { content_type: ["image/jpeg", "image/gif", "image/png"] }
 
-   PASSWORD_LENGTH = 72
-
   # attr_accessor :crop_x, :crop_y, :crop_w, :crop_h
 
   # after_update :reprocess_avtar, if: :avtar_was_cropped?
@@ -76,32 +74,37 @@ class User < ActiveRecord::Base
 
   def update_password(params)
     user = params[:user]
+    return 'Missing required fields. Fields marked * are ' +
+    'compulsory' unless Utils.params_have_all_keys?(user, [:current_password,
+     :new_password, :confirm_new_password])
+
+    # dont strip the text ! password may contain leading or trailing spaces
     old_password = user[:current_password]
     new_password = user[:new_password]
     confirm_new_password = user[:confirm_new_password]
 
-    if(old_password.strip.empty? || new_password.strip.empty? || confirm_new_password.strip.empty?)
-      return '' , 'Please enter respective data in three fields'
-    else
-      if self.valid_password?(old_password)
-        if new_password == confirm_new_password
-          return '', "New password too long (< #{PASSWORD_LENGTH} max)" if new_password.length > PASSWORD_LENGTH
 
-          self.password = new_password
-          self.password_confirmation = confirm_new_password;
-          if self.invalid?
-            return self.errors.full_messages.join("\n")
-          else
-            self.save
-            return 'Password Updated !', ''
-          end
+    if self.valid_password?(old_password)
+      if new_password == confirm_new_password
+        self.password = new_password
+        self.password_confirmation = confirm_new_password;
+        if self.invalid?
+          return self.errors.full_messages
         else
-          return '', 'New passwords do not match'
+          self.save
+          return 'Password Updated !'
         end
       else
-        return '', 'Invalid old password'
+        return 'New passwords do not match'
       end
+    else
+      return 'Invalid old password'
     end
+  end
+
+  # this method is called by devise to check for "active" state of the model
+  def active_for_authentication?
+    super and self.is_active
   end
 
   # Not supporting cropping right now !

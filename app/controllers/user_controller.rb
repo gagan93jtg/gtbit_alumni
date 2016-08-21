@@ -24,9 +24,8 @@ class UserController < ApplicationController
   end
 
   def update_password
-    @success, @error = current_user.update_password(params)
-    Rails.logger.info "Success : #{@success}, error : #{@error}"
-    sign_in(current_user, :bypass => true) if @success == 'Password Updated !'
+    @response = current_user.update_password(params)
+    sign_in(current_user, :bypass => true) if @response == 'Password Updated !'
     respond_to do |format|
       format.js {}
     end

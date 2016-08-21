@@ -5,14 +5,12 @@ class UserMailer < ApplicationMailer
   end
 
   def contact_us_mail(params)
-    Rails.logger.info ("abcd")
     subject = 'Contact us (new message)'
     @msg = "New message from #{params['full_name']} [ #{params['email']} ]. #{params['message']}"
     mail(to: CONFIG['dev_email'] || 'alumnigtbit@gmail.com', subject: subject)
   end
 
   def report_bug_mail(params)
-    Rails.logger.info ("abcd")
     subject = 'Report bug (new message)'
     @msg = "New message from #{params['full_name']} [ #{params['email']} ]. #{params['problem']}"
     mail(to: CONFIG['dev_email'] || 'alumnigtbit@gmail.com', subject: subject)

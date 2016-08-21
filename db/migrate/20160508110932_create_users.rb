@@ -21,6 +21,7 @@ class CreateUsers < ActiveRecord::Migration
 
       t.boolean :is_admin, default: false
       t.boolean :is_moderator, default: false
+      t.boolean :is_active, default: true
       t.integer :reputation, default: 0
 
       t.timestamps

@@ -27,4 +27,9 @@ $(document).ready(function()
     $("html, body").animate(
       { scrollTop: 0 },100);
   });
+
+  $(".modal").on('hidden.bs.modal', function ()
+  {
+    $(this).data('bs.modal', null);
+  });
 });
