@@ -403,6 +403,10 @@ table tbody tr:nth-child(even):hover
 
 @media(max-width: 650px)
 {
+	footer
+	{
+		margin-top: 50px;
+	}
 	footer li
 	{
 		display: block;
