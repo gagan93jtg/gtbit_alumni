@@ -6,4 +6,16 @@ module WelcomeHelper
       'shared an experience'
     end
   end
+
+  def is_anonymous(post_id)
+    post = Post.find_by_id(post_id)
+    return (post.nil? || post.is_anonymous == false) ? false : true
+  end
+
+  def is_owner(post_id, commenter_id)
+    post = Post.find_by_id(post_id)
+    return false unless post
+
+    (post.user_id == commenter_id)? true : false
+  end
 end

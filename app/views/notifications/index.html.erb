@@ -12,7 +12,11 @@
 					</div>
 					<div class="<%=notification.inspect%> right_div">
 						<p class="user-name user-link">
-							<%= link_to User.find(notification["commenter_id"]).full_name, user_path(notification['commenter_id'])%>
+							<% if notification['post_type'] == Comment::POST_TYPE[:QUESTION] && is_anonymous(notification['post_id']) && is_owner(notification['post_id'], notification['commenter_id']) %>
+								<%= "The anonymous" %>
+							<% else %>
+								<%= link_to User.find(notification["commenter_id"]).full_name, user_path(notification['commenter_id'])%>
+							<% end %>
 							<span class="post-link user-link">
 								<%= notification['text'] %>&nbsp;
 								<% if notification['post_type'] == Comment::POST_TYPE[:QUESTION] %>

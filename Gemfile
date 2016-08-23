@@ -40,6 +40,7 @@ gem 'mysql2', '0.4.3'
 gem 'nokogiri', '1.6.7.2'
 gem 'psych', '2.0.17'
 gem "paperclip", "5.0.0"
+gem 'passenger', '5.0.30'
 gem 'rack', '1.6.4'
 gem 'rack-test', '0.6.3'
 gem 'rails', '4.2.5.1'

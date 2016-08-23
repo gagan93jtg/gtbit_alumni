@@ -10,7 +10,13 @@
 
           <div class="right clearfix">
             <div class="header">
-              <p class="user-name user-link"><%= link_to comment.user.full_name, user_path(comment.user.id), class: '' %></p>
+              <p class="user-name user-link">
+              <% if @post.is_anonymous && comment.user_id == @post.user_id %>
+                <%= "The anonymous" %>
+              <% else %>
+                <%= link_to comment.user.full_name, user_path(comment.user.id), class: '' %>
+              <% end %>
+              </p>
               <p class=" user-time"><%=timeago_tag comment.created_at%> </p>
               <span class="user-post multiline_text"><%=comment.comment_string%></span>
             </div>
