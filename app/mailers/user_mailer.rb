@@ -1,7 +1,9 @@
 class UserMailer < ApplicationMailer
 
-  def welcome_mail(user)
-    mail(to: user.email, subject: 'Welcome bitchwa')
+  def welcome_mail(user, password)
+    @user = user
+    @password = password
+    mail(to: user.email, subject: 'Welcome to GTBIT Alumni Network')
   end
 
   def contact_us_mail(params)
