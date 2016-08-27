@@ -2,31 +2,30 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
 .container-custom
 {
 	width: 940px;
-	padding: 0 15px;
-	margin: 0px auto;
+	padding: 15px;
+	margin: 10px auto;
 	background-color: rgb(245,245,245);
 	border-radius: 10px;
 }
 
-.create_udpate_query_div
+.create_update_query_div
 {
 	margin: 80px 0 0;
 	font-size: 18px;
 	color: #685E6D;
 }
 
-.create_udpate_query_div h1
+.create_update_query_div h1
 {
 	padding-top: 20px;
 	font-size: 35px;
 	margin-bottom: 20px;
 }
 
-.create_udpate_query_div .check
+.create_update_query_div .check
 {
 	font-family: inherit;
 	font-size: 15px;
@@ -54,9 +53,21 @@
 	width: 80%;
 	margin: 0 auto;
 }
+
 .user-tags
 {
-	margin-bottom: 10px;
+	margin: 20px 0px;
+}
+
+.user-tag
+{
+	background-color: #00bfa9;
+	padding: 5px;
+	margin: 5px;
+	border-radius: 10px;
+	color: white;
+	font-size: 14px;
+	display: inline-block;
 }
 
 .activity_comment
@@ -87,28 +98,47 @@
 		width: 64px;
 		height: 64px;
 	}
-	.modal-content
-	{
-		background-color: #edeaea;
-		border-radius: 0;
-		border: 5px solid #00bfa9;
-	}
+
 	.modal-button
 	{
 		margin-top: -40px;
 	}
+
 	.separator_hr
 	{
 		width: 100%;
 	}
 }
 
+.modal_body_question
+{
+	.modal_question
+	{
+		.query_string
+		{
+			margin-bottom: 20px;
+		}
+	}
+}
+
+.search-question
+{
+	.container-custom
+	{
+		margin: 40px auto;
+	}
+}
 
 @media(max-width: 1000px)
 {
 	.container-custom
 	{
 		width: 800px;
+	}
+
+	.transparent-panel
+	{
+		width: 760px;
 	}
 
 }
@@ -118,6 +148,11 @@
 	.container-custom
 	{
 		width: 700px;
+	}
+
+	.transparent-panel
+	{
+		width: 660px;
 	}
 
 }
@@ -152,6 +187,10 @@
 		width: 600px;
 	}
 
+	.transparent-panel
+	{
+		width: 570px;
+	}
 }
 
 @media(max-width: 750px)
@@ -171,6 +210,12 @@
 	{
 		width: 500px;
 	}
+
+	.transparent-panel
+	{
+	  width: 470px;
+	}
+
 	.activity_comment
 	{
 		.user-post
@@ -215,6 +260,11 @@
 		width: 400px;
 	}
 
+	.transparent-panel
+	{
+		width: 375px;
+	}
+
 	.activity_comment
 	{
 		.user-time,.user-name
@@ -235,12 +285,12 @@
 		}
 	}
 
-	.create_udpate_query_div
+	.create_update_query_div
 	{
 		font-size: 16px;
 	}
 
-	.create_udpate_query_div h1
+	.create_update_query_div h1
 	{
 		font-size: 33px;
 	}
@@ -279,6 +329,11 @@
 		width: 300px;
 	}
 
+	.transparent-panel
+	{
+		width: 275px;
+	}
+
 	.activity_comment
 	{
 		.comment-img
@@ -294,12 +349,12 @@
 		}
 	}
 
-	.create_udpate_query_div
+	.create_update_query_div
 	{
 		font-size: 14px;
 	}
 
-	.create_udpate_query_div h1
+	.create_update_query_div h1
 	{
 		font-size: 30px;
 	}
@@ -330,6 +385,11 @@
 		width: 250px;
 	}
 
+	.transparent-panel
+	{
+		width: 225px;
+	}
+
 	.activity_comment
 	{
 
@@ -346,17 +406,17 @@
 		}
 	}
 
-	.create_udpate_query_div
+	.create_update_query_div
 	{
 		font-size: 12px;
 	}
 
-	.create_udpate_query_div h1
+	.create_update_query_div h1
 	{
 		font-size: 25px;
 	}
 
-	.create_udpate_query_div form
+	.create_update_query_div form
 	{
 		margin-top: -30px;
 	}

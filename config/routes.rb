@@ -3,18 +3,25 @@ Rails.application.routes.draw do
   root 'welcome#index'
   devise_for :users
 
-  get 'posts/edit_history' => 'posts#edit_history'
+  put 'user/password' => 'user#update_password', as: 'user_update_password'
+  get 'posts/edit_history' => 'question_posts#edit_history'
 
   get 'errors/file_not_found', as: 'error_file_not_found'
   get 'errors/unprocessable', as: 'error_unprocessable'
   get 'errors/internal_server_error', as: 'error_internal_server_error'
 
-  post 'contact_us', :to => 'welcome#contact_us_mail'
-  post 'report_bug', :to => 'welcome#report_bug'
-  get  'team',       :to => 'welcome#team'
+  post 'contact_us',      :to => 'welcome#contact_us_mail'
+  post 'request_account', :to => 'welcome#request_account'
+  post 'report_bug',      :to => 'welcome#report_bug'
+  get  'team',            :to => 'welcome#team'
+
+  # get  'user/:id/crop', :to => 'user#crop'
+  # post 'user/:id/crop', :to => 'user#save_crop'
 
   resources :notifications, only: [:index]
-  resources :posts
+  resources :posts, controller: 'question_posts'
+  resources :job, controller: 'job_posts'
+  resources :experience, controller: 'experience_posts'
   resources :faqs, only: [:index, :show]
   resources :user
   resources :comments, only: [:create]

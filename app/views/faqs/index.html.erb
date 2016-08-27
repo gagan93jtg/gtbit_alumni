@@ -1,18 +1,31 @@
-<div class="container-custom">
-  <p class="faqs_header">
-    Before you ask a new question, do check these questions. This list contains questions which are generally asked. This is an ongoing list, so your question (with an appropriate answer) may be added to this list.
-  </p>
-
-  <div class="faqs_body">
-    <% @faqs.each do |faq| %>
-    <div class="faq">
-      <p class="faq_question">
-        <%= link_to faq.question, faq_path(faq.id) %>
-      </p>
+<div class="faqs-page">
+  <div class="container-custom">
+    <div class="faqs_header ">
+        <h1>FAQ's</h1>
     </div>
-    <% end %>
-  </div>
-  <div class="digg_pagination">
-    <%= will_paginate @faqs, :container => false %>
+
+
+
+    <div class="faqs_body ">
+      <% @faqs.each_with_index do |faq, index| %>
+      <div class="faq glass-panel">
+        <p class="faq_question toggle_faq_answer_<%= index %>">
+          <%= faq.question %> ?
+        </p>
+        <p class="faq_answer faq_answer_<%= index %> ">
+          <%= faq.answer %>
+        </p>
+      </div>
+      <% end %>
+    </div>
+
+
+    <div class="digg_pagination">
+      <%= will_paginate @faqs, :container => false %>
+    </div>
   </div>
 </div>
+
+<script type="text/javascript">
+  bind_event_to_faq_questions("<%= @faqs.count %>");
+</script>

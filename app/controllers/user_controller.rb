@@ -7,13 +7,37 @@ class UserController < ApplicationController
 
   def update
     current_user.update_details(params[:user])
-    redirect_to user_path(params[:id])
+
+    if current_user.errors.any?
+      render action: :edit
+    else
+      redirect_to user_path(params[:id])
+    end
+
+    # elsif !params[:user][:avatar].blank?
+    #  redirect_to controller: 'user', action: 'crop', id: current_user.id
   end
 
   def show
     @user = User.find_by_id(params[:id])
     redirect_to controller: 'errors', action: 'file_not_found' and return unless @user
   end
+
+  def update_password
+    @response = current_user.update_password(params)
+    sign_in(current_user, :bypass => true) if @response == 'Password Updated !'
+    respond_to do |format|
+      format.js {}
+    end
+  end
+
+  # def crop
+  #
+  # end
+
+  # def save_crop
+  #
+  # end
 
   private
 

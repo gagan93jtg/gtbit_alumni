@@ -2,48 +2,24 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.team_member
+.team_container
 {
-  margin-bottom: 25px;
-  background-color: rgb(235,235,235);
-  padding: 10px;
-  border-radius: 10px;
-  .left-div
+  margin: 10px;
+
+  .team_back_to_home
   {
-    display: inline-block;
-    .display_pic
-    {
-      display: inline-block;
-      img
-      {
-        border-radius: 50%;
-        margin: 15px;
-        padding: 10px;
-        border: 2px solid #00bfa9;
-        background-color: #685E6D;
-        width: 128px;
-        height: 128px;
-      }
-    }
+    margin: 20px 0px 0px 25px;
   }
 
-  .right-div
+  .profile-sidebar
   {
-    display: inline-block;
-    width: 80%;
-    float: right;
-    .work_info, .designation,
-    {
-      word-wrap: break-word;
-      font-weight: 600;
-      font-size: 18px;
-    }
+    margin: 10px;
+  }
 
-    .about
-    {
-      word-wrap: break-word;
-      line-height: 2;
-    }
+  .team-profile-photo
+  {
+    width: 128px;
+    height: 128px;
+    border: 2px solid black;
   }
 }
-

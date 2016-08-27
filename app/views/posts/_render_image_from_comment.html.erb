@@ -1,0 +1,7 @@
+<% if post.try(:is_anonymous) && post.is_anonymous == true  &&  comment.user_id == post.user_id %>
+<%= image_tag "anonymous.jpg", class: 'img-circle public_activity_user comment-img pull-left', alt: 'profile pic' %>
+<% elsif comment.user.avatar? %>
+<%= image_tag comment.user.avatar.url(:large), class: 'img-circle user-profile-pic comment-img pull-left'  %>
+<% else %>
+<%= image_tag 'logov2.png', class: 'img-circle user-profile-pic comment-img pull-left'  %>
+<% end %>

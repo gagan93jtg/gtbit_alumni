@@ -24,5 +24,22 @@ module PlacementNet
     config.active_record.raise_in_transactional_callbacks = true
 
     config.autoload_paths << Rails.root.join('lib')
-  end
+
+    config.paperclip_defaults = {
+        storage: :fog,
+        fog_credentials: {
+            provider: "Local",
+            local_root: "#{Rails.root}/public"
+            },
+            fog_directory: "",
+            fog_host: ""
+        }
+
+    end
+
+    # Install imagemagick from source and then install
+    # sudo apt-get install graphicsmagick-libmagick-dev-compat
+    # sudo apt-get install libmagickcore-dev libmagickwand-dev
+
+    Paperclip.options[:command_path] = "/usr/local/bin/identify"
 end

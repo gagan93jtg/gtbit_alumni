@@ -1,0 +1,46 @@
+function populate_team()
+{
+  names = ['Gagandeep Singh', 'Ekaspreet Singh', 'Ishmeet Singh', 'Ishaan Singh', 'Jagtar Singh Sir'];
+  profilePhotos = ["<%= asset_path('team/gagan.jpg') %>", "<%= asset_path('team/ekas.jpg') %>",
+  "<%= asset_path('team/ishmeet.jpg') %>", "<%= asset_path('team/ishaan.jpg') %>",
+  "<%= asset_path('team/jagtar_sir.jpg') %>"];
+  workInfo = ['Software Dev, Josh Technology Group', 'Software Dev, Nucleus',
+  'Software Dev, Royal Bank of Canada', 'Software Eng, HCL', 'Head  CDMC & Head Mechanical, GTBIT'];
+  designation = ['Backend Dev', 'Frontend Dev', 'Visionary', 'Visionary', 'Supporting Faculty'];
+  fb_link = ['gagan93', 'Ekaspreetsingh', 'ishmeetsingh.sethi', 'chawla.ishaan', 'jagtar.singh.370515'];
+  twitter_link = ['gagan93', 'handi_eddy', 'ishmeetsingh.sethi', 'chawla.ishaan', 'jagtar.singh.370515'];
+  linked_in_link = ['gagan93', 'Ekaspreetsingh', 'ishmeetsingh.sethi', 'chawla.ishaan', 'jagtar.singh.370515'];
+  fb_logo = "<%= asset_path('fb.png') %>";
+  linked_in_logo = "<%= asset_path('linked_in.png') %>";
+  twitter_logo = "<%= asset_path('twitter.png') %>";
+
+  $('.team_container').html('<a href="/" class="btn background-seagreen team_back_to_home">Home</a><br><br>');
+  for(i = 0; i < names.length; i++)
+  {
+    $('.team_container').append('<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">' +
+      '  <div class="profile-sidebar glass-panel">' +
+      '    <div class="user">' +
+      '      <div class="text-center">' +
+      '        <img src="' + profilePhotos[i] + '" class="img-circle team-profile-photo">' +
+      '      </div>' +
+      '      <div class="user-head text-center">' +
+      '        <h2>' + names[i] + '</h2>' +
+      '        <div class="hr-center"></div>' +
+      '        <h4>' + designation[i] + '</h4>' +
+      '        <div class="hr-center"></div>' +
+      '        <p class="dev-intro">' +
+                 workInfo[i] +
+      '        </p>' +
+      '      </div>' +
+      '    </div>' +
+      '    <div class="social-bar">' +
+      '      <div class="text-center">' +
+      '        <a href="https://www.facebook.com/' + fb_link[i] + '" target="_blank"> <img src = ' + fb_logo +' class= "small_icon"></a>' +
+      '        <a href="https://www.twitter.com/' + twitter_link[i] + '" target="_blank"> <img src = ' + twitter_logo +' class= "small_icon"></a>' +
+      '        <a href="https://in.linkedin.com/in/' + linked_in_link[i] + '" target="_blank"> <img src = ' + linked_in_logo +' class= "small_icon"></a>' +
+      '        </div>' +
+      '    </div>' +
+      '  </div>' +
+      '</div>');
+  }
+}

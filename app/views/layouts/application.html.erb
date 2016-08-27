@@ -31,17 +31,24 @@
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right ">
-            <li ><a class="new_user_button foreground-seagreen transparent-bg" href="#">New User ?</a></li>
+            <li ><a class="new_user_button foreground-seagreen transparent-bg" data-toggle="modal" data-target="#request_account_modal" href="#">New User ?</a></li>
             <% if current_user %>
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle navigation_button foreground-seagreen transparent-bg" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= current_user.full_name %><span class="caret"></span></a>
+              <a href="#" class="dropdown-toggle navigation_button foreground-seagreen transparent-bg" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= current_user.reload.full_name %> <span class="caret"></span></a>
               <ul class="dropdown-menu menu-white">
                 <li><%= link_to "Home", root_path %> </li>
                 <li><%= link_to "View notifications (#{notif_count})", notifications_path %> </li>
-                <li><%= link_to "Ask a question", new_post_path %> </li>
-                <li><%= link_to "Update profile", edit_user_path(current_user) %></li>
+                <li role="separator" class="divider"></li>
+                <li><%= link_to "Ask question", new_post_path %> </li>
+                <li><%= link_to "Share an experience", new_experience_path %> </li>
+                <li><%= link_to "Post a job", new_job_path %> </li>
+                <li role="separator" class="divider"></li>
+                <li><%= link_to "My profile", user_path(current_user) %></li>
+                <li role="separator" class="divider"></li>
                 <li><%= link_to "Search users", user_index_path  %> </li>
                 <li><%= link_to "Search questions", posts_path  %></li>
+                <li><%= link_to "Search experiences", experience_index_path  %> </li>
+                <li><%= link_to "Search job posts", job_index_path  %></li>
                 <li role="separator" class="divider"></li>
                 <li><%= link_to 'FAQs', faqs_path() %></li>
                 <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
@@ -53,13 +60,13 @@
       </div>
     </nav>
   </header>
-  <div class="body_content">
+  <div class="body_content clearfix">
     <%= yield %>
   </div>
   <footer>
     <div class="container">
       <div class="row">
-        <a classs="footer_icons" href="https://www.fb.com" target="_blank"> <%= image_tag "fb.png", class: 'small_icon small_icon_social' %> </a>
+        <a classs="footer_icons" href="https://www.fb.com/gtbitalumni.in" target="_blank"> <%= image_tag "fb.png", class: 'small_icon small_icon_social' %> </a>
         <a classs="footer_icons" href="https://www.twitter.com" target="_blank"> <%= image_tag "twitter.png", class: 'small_icon small_icon_social' %> </a>
         <a classs="footer_icons" href="https://www.google.co.in" target="_blank"> <%= image_tag "gplus.png", class: 'small_icon small_icon_social' %> </a>
         <a href="#" class="scrollup btn-lg"> <span class="glyphicon glyphicon-arrow-up"> </span> </a>
@@ -70,9 +77,7 @@
           <li class="separator">|</li>
           <li><a href="#" data-toggle="modal" data-target="#contact_us">Contact Us</a></li>
           <li class="separator">|</li>
-          <li><a href="/team">Meet the developers</a></li>
-          <li class="separator">|</li>
-          <li><a href="#" data-toggle="modal" data-target="#contribute">Contribute</a></li>
+          <li><a href="/team">The Team</a></li>
           <li class="separator">|</li>
           <li><a href="#" data-toggle="modal" data-target="#report_bug">Report a Bug</a></li>
           <li class="separator">|</li>
@@ -92,6 +97,47 @@
 
 
 <%= render 'layouts/footer_links' %>
+
+<div id="request_account_modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Create an account</h4>
+        <p class="approve_account_text">Approving your account might take some time because we approve only GTBITians and verifying your identity might take some time </p>
+      </div>
+      <div class="modal-body">
+        <%= form_tag(request_account_path, method: 'post', :remote => true, class: 'request_account_form') do %>
+        <div class="form-group">
+          <label for="first_name">First name <span class="red_text">*</span></label>
+          <input type="text" class="form-control" id="first_name" placeholder="First name" name="user[first_name]">
+        </div>
+        <div class="form-group">
+          <label for="last_name">Last name <span class="red_text">*</span></label>
+          <input type="text" class="form-control" id="last_name" placeholder="Last name" name="user[last_name]">
+        </div>
+        <div class="form-group">
+          <label for="email">Email id <span class="red_text">*</span></label>
+          <input type="email" class="form-control" id="email" placeholder="Email id" name="user[email]">
+        </div>
+        <div class="form-group">
+          <label for="batch">Branch and batch</label>
+          <input type="text" class="form-control" id="batch" placeholder="Eg. CSE 2011 - 2015" name="user[batch]">
+        </div>
+        <input type="submit" value="Request account" class="btn background-seagreen"></input>
+        <% end %>
+        <div class="request_account_response_div modal_response_div">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 <!--
   The code below handles with visiblity of 'New User ?' and 'Navigate' buttons.
   The visiblity depends on the fact if the user is logged in or not. At a time,

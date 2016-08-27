@@ -1,0 +1,15 @@
+<% if @response == 'Success'%>
+  $('.request_account_response_div').html("<div class='alert alert-success'>We have saved your details for verification</div>");
+<% else %>
+  <% if @response.class == Array %>
+    $('.request_account_response_div').html("<div class='alert alert-danger'>We have faced these error(s) while creating your account" +
+      "<ul class='active-record-errors'>" +
+      "<% @response.each do |message| %>" +
+      "<li class='active-record-error'><%= message %></li>" +
+      "<% end %>" +
+      "</ul>"+
+      "</div>")
+  <% elsif @response.class == String %>
+  $('.request_account_response_div').html("<div class='alert alert-danger'><%= @response %>");
+  <% end %>
+<% end %>

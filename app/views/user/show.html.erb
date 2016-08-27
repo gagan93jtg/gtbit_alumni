@@ -5,7 +5,11 @@
           <div class="profile-sidebar">
             <div class="user">
               <div class="text-center">
-                <img src="/assets/user.jpg" class="img-circle">
+                <% if @user.avatar? %>
+                <%= image_tag @user.avatar.url(:large), class: 'img-circle user-profile-pic'  %>
+                <% else %>
+                <%= image_tag 'logov2.png', class: 'img-circle user-profile-pic'  %>
+                <% end %>
               </div>
               <div class="user-head text-center">
                 <h1><%= @user.full_name %></h1>
@@ -15,9 +19,9 @@
             </div>
             <div class="social-bar">
               <div class="text-center">
-                <a href="https://www.fb.com" target="_blank"> <%= image_tag "fb.png", class: 'small_icon' %> </a>
-                <a href="https://www.twitter.com" target="_blank"> <%= image_tag "twitter.png", class: 'small_icon' %> </a>
-                <a href="https://www.google.co.in" target="_blank"> <%= image_tag "gplus.png", class: 'small_icon' %> </a>
+                <a href="https://www.facebook.com/<%= @user.fb_link %>" target="_blank"> <%= image_tag "fb.png", class: 'small_icon' %> </a>
+                <a href="https://www.twitter.com/<%= @user.twitter_link %>" target="_blank"> <%= image_tag "twitter.png", class: 'small_icon' %> </a>
+                <a href="https://in.linkedin.com/in/<%= @user.linked_in_link %>" target="_blank"> <%= image_tag "linked_in.png", class: 'small_icon' %> </a>
               </div>
             </div>
           </div>
@@ -30,15 +34,11 @@
 
               <li class="profile-icon">
                 <h1 class="timeline-head">
-                <% if @user == current_user %>
-                  Your profile
-                <% else %>
-                  <%= @user.first_name %>'s Profile
-                <% end %>
+                  <% if @user == current_user %>
+                  <%= link_to "Edit profile", edit_user_path(current_user.id), class: 'btn background-seagreen' %>
+                  <a href="#" data-toggle="modal" data-target="#update_password_modal" class="background-seagreen btn update_password"> Change Password </a>
+                  <% end %>
                 </h1>
-                <div class="timeline-badge">
-                  <img src="/assets/profile-icon.png" alt="">
-                </div>
               </li>
 
               <li class="profile-panel">
@@ -46,22 +46,39 @@
                 <h4 class="user-job-type"><%= @user.designation %></h4>
                 <h4 class="user-company"><%= @user.company %></h4>
                 <div class="hr-left"></div>
-                <p>
-                  <%#= @user.bio %>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.
-                </p>
+
+                <p class="user-post multiline_text"><% if @user.bio.nil? || @user.bio.empty? %>
+                  NA<% else %><%= @user.bio %><% end %></p>
               </li>
 
               <li class="profile-panel">
                 <h1 class="panel-head">Dashboard</h1>
                 <div class="hr-left"></div>
                 <div class="btn-group">
-                  <button type="button" disabled class="btn btn-default profile-btn-two"><strong>0</strong></button>
-                  <button type="button" disabled class="btn btn-primary profile-btn-one">Questions Posted</button>
+                  <button type="button" disabled class="btn btn-default profile-btn-two">
+                    <strong>
+                      <%= @user.question_posts.count %>
+                    </strong>
+                  </button>
+                  <button type="button" disabled class="btn btn-primary profile-btn-one">Question(s) Posted</button>
                 </div>
+
                 <div class="btn-group">
-                  <button type="button" disabled class="btn btn-default profile-btn-two"><strong>0</strong></button>
-                  <button type="button" disabled class="btn btn-primary profile-btn-one">Questions Answered</button>
+                  <button type="button" disabled class="btn btn-default profile-btn-two">
+                    <strong>
+                      <%= @user.experience_posts.count %>
+                    </strong>
+                  </button>
+                  <button type="button" disabled class="btn btn-primary profile-btn-one">Experience(s) Shared</button>
+                </div>
+
+                <div class="btn-group">
+                  <button type="button" disabled class="btn btn-default profile-btn-two">
+                    <strong>
+                      <%= @user.job_posts.count %>
+                    </strong>
+                  </button>
+                  <button type="button" disabled class="btn btn-primary profile-btn-one">Job post(s) added</button>
                 </div>
               </li>
 
@@ -71,34 +88,86 @@
 
                 <div class="btn-group">
                   <button type="button" disabled class="btn btn-primary profile-btn-one">Batch</button>
-                  <button type="button" disabled class="btn btn-default profile-btn-two"><strong><%= @user.batch %></strong></button>
+                  <button type="button" disabled class="btn btn-default profile-btn-two">
+                    <strong>
+                      <% if (!@user.batch.nil? && !(@user.batch.strip == "")) %>
+                      <%= @user.batch %>
+                      <% else %>
+                      NA
+                      <% end %>
+                    </strong>
+                  </button>
                 </div>
 
                 <div class="btn-group">
                   <button type="button" disabled class="btn btn-primary profile-btn-one">Phone</button>
-                  <button type="button" disabled class="btn btn-default profile-btn-two"><strong><%= @user.phone %></strong></button>
-                </div>
-                <div class="btn-group">
-                  <button type="button" disabled class="btn btn-primary profile-btn-one">Branch</button>
-                  <button type="button" disabled class="btn btn-default profile-btn-two"><strong><%= @user.batch %></strong></button>
+                  <button type="button" disabled class="btn btn-default profile-btn-two">
+                    <strong>
+                      <% if (!@user.phone.nil? && !(@user.phone.strip == "")) %>
+                      <%= @user.phone %>
+                      <% else %>
+                      NA
+                      <% end %>
+                    </strong>
+                  </button>
                 </div>
 
                 <div class="btn-group">
                   <button type="button" disabled class="btn btn-primary profile-btn-one">Gender</button>
-                  <button type="button" disabled class="btn btn-default profile-btn-two"><strong><%= @user.gender %></strong></button>
+                  <button type="button" disabled class="btn btn-default profile-btn-two">
+                    <strong>
+                      <% if (!@user.gender.nil? && !(@user.gender.strip == "")) %>
+                      <%= @user.gender %>
+                      <% else %>
+                      NA
+                      <% end %>
+                    </strong>
+                  </button>
                 </div>
 
                 <div class="btn-group">
                   <button type="button" disabled class="btn btn-primary profile-btn-one">Email</button>
-                  <button type="button" disabled class="btn btn-default profile-btn-two"><strong>ekaspreet93.singh@gmail.com</strong></button>
+                  <button type="button" disabled class="btn btn-default profile-btn-two"><strong><%= @user.email %></strong></button>
                 </div>
               </li>
-
             </ul>
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</div>
 
+
+<div id="update_password_modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Update password</h4>
+      </div>
+      <div class="modal-body">
+        <%= form_tag(user_update_password_path, method: 'put', :remote => true, class: 'update_password_form') do %>
+        <div class="form-group">
+          <label for="current_password">Old Password <span class="red_text">*</span></label>
+          <input type="password" class="form-control" id="current_password" placeholder="Your old password" autocomplete="off" name="user[current_password]">
+        </div>
+        <div class="form-group">
+          <label for="new_password">New Password <span class="red_text">*</span></label>
+          <input type="password" class="form-control" id="new_password" placeholder="(Minimum 8 characters)" autocomplete="off" name="user[new_password]">
+        </div>
+        <div class="form-group">
+          <label for="confirm_new_password">Confirm New Password <span class="red_text">*</span></label>
+          <input type="password" class="form-control" id="confirm_new_password" placeholder="(Minimum 8 characters)" autocomplete="off" name="user[confirm_new_password]">
+        </div>
+        <input type="submit" value="Update password" class="btn background-seagreen"></input>
+        <% end %>
+        <div class="password_update_response_div modal_response_div">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
     </div>
   </div>
 </div>

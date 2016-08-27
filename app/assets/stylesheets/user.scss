@@ -2,13 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.container-custom
-{
-	width: 940px;
-	padding: 15px;
-	margin: 10px auto;
-}
-
 .first_sign_in
 {
 	margin-top: 40px;
@@ -17,10 +10,9 @@
 .first_sign_in_text
 {
 	color: #685E6D;
-	border: 2px solid #00bfa9;
-	-webkit-box-shadow: 6px 8px 15px 1px rgba(104,94,109,0.7);
-	-moz-box-shadow: 6px 8px 15px 1px rgba(104,94,109,0.7);
-	box-shadow: 6px 8px 15px 1px rgba(104,94,109,0.7);
+	-webkit-box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.5);
+	-moz-box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.5);
+	box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.5);
 	width: 100%;
 	padding: 20px;
 	font-size: 15px;
@@ -41,10 +33,17 @@
 
 .activity_question, .activity_comment, .activity_notify
 {
-	background-color: rgb(237, 234, 234);
+	background-color: transparent;
 	border-radius: 10px;
 	padding: 20px;
 	margin: 25px 0px;
+
+	img
+	{
+		width: 64px;
+		height: 64px;
+		z-index: 100;
+	}
 }
 
 .view_post, .edit_post
@@ -60,17 +59,6 @@
 {
 	display: inline;
 }
-
-.activity_question img, .activity_comment img, .activity_notify img
-{
-	border: 2px solid #00bfa9;
-	background-color: #685E6D;
-	padding: 5px;
-	width: 64px;
-	height: 64px;
-	z-index: 100;
-}
-
 
 .user-time,.user-name
 {
@@ -94,10 +82,8 @@
 .user-post
 {
 	font-size: 16px;
-	white-space: pre-wrap;
-	word-wrap: break-word;
 	display: inline-block;
-	background-color: rgba(209,202,202,0.7);
+	background-color: rgba(209,202,202,0.2);
 	padding: 10px;
 	border-radius: 10px;
 	margin-top:10px;
@@ -163,6 +149,12 @@
 {
 	cursor: pointer;
 }
+
+.avtar_notice
+{
+	margin-top: 10px;
+}
+
 @media(max-width: 1000px)
 {
 	.container-custom
@@ -397,6 +389,7 @@
 	}
 
 }
+
 @media(max-width: 350px)
 {
 	.container-custom
@@ -438,9 +431,17 @@
 		font-size: 14px;
 	}
 }
+
 .user-profile
 {
 	background-color: rgb(245,245,245);
+
+	.user-profile-pic
+	{
+		width: 256px;
+		height: 256px;
+		padding: 10px;
+	}
 
 	.dev-intro
 	{
@@ -480,7 +481,7 @@
 
 	.user img
 	{
-		border: 10px solid #00bfa9;
+		border: 10px solid #685E6D;
 	}
 
 	.user h1, .timeline-head
@@ -492,6 +493,7 @@
 	{
 		text-transform: uppercase;
 	}
+
 	.hr-center
 	{
 		height: 3px;
@@ -526,7 +528,8 @@
 		position: relative;
 	}
 
-	.timeline > li {
+	.timeline > li
+	{
 		margin-bottom: 20px;
 		position: relative;
 	}
@@ -543,15 +546,15 @@
 
 	.profile-icon img
 	{
-		width: 50px;
-		height: 50px;
+		width: 55px;
+		height: 55px;
 	}
 
 	.timeline-head
 	{
 		position: relative;
 		top: 10px;
-		right: 25px;
+		right: 10px;
 	}
 
 	.profile-panel
@@ -583,7 +586,8 @@
 		margin-top: -6px;
 	}
 
-	.hr-left {
+	.hr-left
+	{
 		height: 1px;
 		width: 100%;
 		margin-bottom: 20px;
@@ -596,7 +600,8 @@
 		margin-bottom: 20px;
 	}
 
-	.profile-btn-one{
+	.profile-btn-one
+	{
 		pointer-events: none;
 		background-color: #00bfa9;
 		color: #fff;
@@ -643,5 +648,13 @@
 		{
 			font-size: 11px;
 		}
+	}
+}
+
+.search-user
+{
+	.container-custom
+	{
+		margin: 40px auto;
 	}
 }

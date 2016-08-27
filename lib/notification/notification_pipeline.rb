@@ -6,10 +6,7 @@ module Notification
     def self.initialize_redices
       return unless @@redis_slave.nil? || @@redis_master.nil?
 
-      master = CONFIG['redis_master']
-      slave = CONFIG['redis_slave']
-      @@redis_master = Redis.new(host: master['host'], port: master['port'], db: master['db'])
-      @@redis_slave  = Redis.new(host: slave['host'], port: slave['port'], db: slave['db'])
+      @@redis_master, @@redis_slave = RedisConnection.initialize_redices
     end
 
     ############## SUBSCRIBER SET METHODS

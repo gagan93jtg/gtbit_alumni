@@ -1,0 +1,23 @@
+<div class="create_update_query_div">
+  <div class="container-custom">
+    <% create_update_experience_form_options(form_type) %>
+    <% if form_type == 'create'%>
+    Share an experience with others which is useful for them. This might be an experience at a company where you worked, or some university where you did higher studies. Make sure whatever you post doesn't contain any abusive content and is helpful to others.
+    <% end%>
+    <%= form_for :post, :url => @url, :method => @form_method do |f|%>
+    <%=render 'errors/active_record_errors', model: @post %>
+    <input type="hidden" name="[post][post_type]" value= <%= Comment::POST_TYPE[:EXPERIENCE] %>>
+    <h1><%= form_type == "create" ? "Share an experience" : "Edit"%></h1>
+    <div class="form-group">
+      <label for="query_string">Your text here</label>
+      <textarea rows="5" class="form-control" id="query_string" placeholder="Some shareable and useful experience" autofocus="autofocus" name="[post][query_string]"><%= @post.query_string %></textarea>
+    </div>
+    <div class="form-group">
+      <label for="query_tags">Tags (if any)</label>
+      <textarea rows="3" class="form-control" id="query_tags" placeholder="Comma separated tags" name="post[tags]"><%= @post.tags %></textarea>
+    </div>
+
+    <%= submit_tag(@save_string, {class: "background-seagreen btn btn-submit"}) %>
+    <% end %>
+  </div>
+</div>

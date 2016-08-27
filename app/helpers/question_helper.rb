@@ -1,4 +1,4 @@
-module PostsHelper
+module QuestionHelper
   def anonymous?(post)
     return '(anonymously)' if post.is_anonymous
     ''
@@ -9,7 +9,7 @@ module PostsHelper
     user.full_name
   end
 
-  def create_update_form_options(form_type)
+  def create_update_question_form_options(form_type)
     if form_type == 'create'
       @url = posts_path
       @save_string = 'Post a query'
