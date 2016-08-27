@@ -29,7 +29,7 @@ class User < ActiveRecord::Base
    :less_than_or_equal_to => 100, :message => "is out of range. I hope you are a human being!"\
    " Now input a valid number to save."
 
-   has_attached_file :avatar, styles: { large: "500x500>", thumb: "50x50>" },
+   has_attached_file :avatar, styles: { large: "256x256>", thumb: "64x64>" },
    :url => "users/avatars/:id/:style/avatar.:extension",
    :path => "users/avatars/:id/:style/avatar.:extension"
 

@@ -46,7 +46,9 @@
                 <h4 class="user-job-type"><%= @user.designation %></h4>
                 <h4 class="user-company"><%= @user.company %></h4>
                 <div class="hr-left"></div>
-                <p class="user-post"><%= @user.bio %></p>
+
+                <p class="user-post multiline_text"><% if @user.bio.nil? || @user.bio.empty? %>
+                  NA<% else %><%= @user.bio %><% end %></p>
               </li>
 
               <li class="profile-panel">

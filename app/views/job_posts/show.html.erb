@@ -1,24 +1,15 @@
 <div class="view_query_chain">
   <div class="container-custom">
     <div class="question">
-      <div class="transparent-panel activity_question clearfix">
-        <div class="left_div">
-          <img src="/assets/logov2.png" alt="profile pic" class="img-circle public_activity_user">
-        </div>
-        <div class="right_div">
-          <p class="user-name user-link"> <%= link_to asked_by(@job_post.user), user_path(@job_post.user.id), class: '' %> <span class="small_text">posted a Job</span></p>
-          <p class="user-time"><%=timeago_tag Time.at(@job_post.created_at) %></p>
-        </div>
-        <%= render 'show_job_post', job_post: @job_post, preview: 'false' %>
-        <% if @job_post.user_id == current_user.id %>
-        <%= link_to "Edit job post", edit_job_path(@job_post.id), class: 'edit_post background-seagreen' %>
-        <% end %>
-      </div>
+      <%= render 'show_job_post', job_post: @job_post, preview: 'false' %>
       <br>
       <% @job_post.comments.each do |comment| %>
 
       <div class="transparent-panel activity_comment ">
-        <div class="left clearfix"><span><img src="/assets/logov2.png" alt="profile pic" class="img-circle public_activity_user comment-img pull-left" ></span>
+        <div class="left clearfix">
+        <span>
+        <%= render 'posts/render_image_from_comment', post: @job_post, comment: comment %>
+        </span>
 
           <div class="right clearfix">
             <div class="header">
@@ -30,8 +21,9 @@
         </div>
       </div>
       <% end %>
+
       <div class="form-group add_comment">
-        <%= form_for :comment, :url => comments_path(), :method => "POST" do |f| %>
+        <%= form_for :comment, :url => comments_path, :method => "POST" do |f| %>
         <input type="hidden" name="[post][id]" value= <%= @job_post.id %>>
         <input type="hidden" name="[post][post_type]" value= <%= Comment::POST_TYPE[:JOB] %>>
         <textarea rows="3" class="form-control" id="query_tags" placeholder="Write a comment" name="comment[comment_string]"></textarea>

@@ -13,6 +13,8 @@ class JobPost < ActiveRecord::Base
   validates :job_type, length: { maximum: 255 }
   validates :other_details, length: { maximum: 255 }
 
+  scope :public_activity, -> (id, limit) { where("user_id != #{id}").order('id DESC').limit(limit) }
+
   def self.save_job_post(user, params)
     job_post_params = params[:job_post]
     job_post = user.job_posts.build(company_name: job_post_params[:company_name],

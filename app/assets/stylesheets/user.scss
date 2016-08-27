@@ -37,6 +37,13 @@
 	border-radius: 10px;
 	padding: 20px;
 	margin: 25px 0px;
+
+	img
+	{
+		width: 64px;
+		height: 64px;
+		z-index: 100;
+	}
 }
 
 .view_post, .edit_post
@@ -52,17 +59,6 @@
 {
 	display: inline;
 }
-
-.activity_question img, .activity_comment img, .activity_notify img
-{
-	border: 2px solid #00bfa9;
-	background-color: #685E6D;
-	padding: 5px;
-	width: 64px;
-	height: 64px;
-	z-index: 100;
-}
-
 
 .user-time,.user-name
 {
@@ -654,20 +650,11 @@
 		}
 	}
 }
+
 .search-user
 {
 	.container-custom
 	{
-		margin-top: 50px;
-		margin-bottom: -40px;
-	}
-}
-
-.search-question
-{
-	.container-custom
-	{
-		margin-top: 40px;
-		margin-bottom: 40px;
+		margin: 40px auto;
 	}
 }

@@ -6,6 +6,7 @@ class WelcomeController < ApplicationController
   def index
     @your_activity = current_user.posts.order("id desc").first(5)
     @public_activity = Post.public_activity(current_user.id, 5)
+    @public_job_posts = JobPost.public_activity(current_user.id, 5)
   end
 
   def contact_us_mail

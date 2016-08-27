@@ -17,7 +17,7 @@
       <h2 class="activity_heading">Your Activity</h2>
       <div class="activity_content">
         <% @your_activity.each do |post| %>
-        <%= render 'question_posts/show_single_post', post: post, show_full_post: false %>
+        <%= render 'posts/show_single_post', post: post, show_full_post: false %>
         <% end %>
       </div>
 
@@ -34,7 +34,11 @@
 
       <div class="activity_content">
         <% @public_activity.each do |post| %>
-        <%= render 'question_posts/show_single_post', post: post, show_full_post: false %>
+        <%= render 'posts/show_single_post', post: post, show_full_post: false %>
+        <% end %>
+
+        <% @public_job_posts.each do |job_post| %>
+        <%= render 'job_posts/show_job_post', job_post: job_post, preview: 'true' %>
         <% end %>
       </div>
     </div>
