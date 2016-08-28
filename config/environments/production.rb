@@ -78,6 +78,22 @@ Rails.application.configure do
   # Disable serving static files from the `/public` folder by default since
   # Apache or NGINX already handles this.
   # REMOVE THIS WHEN USING NGINX
-  config.serve_static_files = true
+  #config.serve_static_files = true
+
+  config.action_mailer.smtp_settings = {
+    :address              => 'smtp.gmail.com',
+    :port                 => 587,
+    :domain               => 'gmail.com',
+    :user_name            => 'alumnigtbit@gmail.com',
+    :password             => 'alumni_gtbit',
+    :authentication       => 'login',
+    :enable_starttls_auto => true
+  }
+  Rails.application.config.middleware.use ExceptionNotification::Rack,
+  :email => {
+    :email_prefix => "[ERROR] ",
+    :sender_address => %{"notifier" <alumnigtbit@gmail.com>},
+    :exception_recipients => %w{gagan93gtbit@gmail.com}
+  }
 
 end
