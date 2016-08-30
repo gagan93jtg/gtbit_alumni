@@ -18,4 +18,13 @@ module WelcomeHelper
 
     (post.user_id == commenter_id)? true : false
   end
+
+  def user_has_avatar?(user_id)
+    user = User.find_by_id(user_id)
+    if user.nil?
+      return false
+    else
+      return user.avatar?
+    end
+  end
 end
