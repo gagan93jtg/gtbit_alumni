@@ -105,7 +105,7 @@ class JobPost < ActiveRecord::Base
   end
 
   def save_post_in_redis
-    return is_edited == true
+    return if is_edited == true
 
     redis_master = RedisConnection.initialize_redices[0]
     redis_post = self.to_json

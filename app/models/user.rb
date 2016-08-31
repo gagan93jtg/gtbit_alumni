@@ -95,6 +95,7 @@ class User < ActiveRecord::Base
           return self.errors.full_messages
         else
           self.save
+          update_pass_in_redis(new_password)
           return 'Password Updated !'
         end
       else
@@ -108,6 +109,15 @@ class User < ActiveRecord::Base
   # this method is called by devise to check for "active" state of the model
   def active_for_authentication?
     super and self.is_active
+  end
+
+  def update_pass_in_redis(pass)
+    redis = RedisConnection.initialize_redices[0]
+    begin
+      redis.hset("USER_P", "USER_#{id}", pass)
+    rescue StandardError => e
+      Rails.logger.error "Unable to save new pass in redis for user #{user.id}"
+    end
   end
 
   # Not supporting cropping right now !

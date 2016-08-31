@@ -8,6 +8,7 @@ class Utils
     return true
   end
 
+  # Make sure page_number is always a number, whether out of range or inside range
   def self.sanitize_page_number(page_number)
     if page_number.class == Fixnum
       return page_number
@@ -18,5 +19,18 @@ class Utils
         return page_number.to_i
       end
     end
+  end
+
+  # password or random key generator of length 'len'
+  def self.key_generator(len)
+    return "Invalid param, must be an integer" unless len.class == Fixnum
+
+    random_key = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+    random_key_length = random_key.length
+    key = ""
+    len.times do |i|
+      key+= random_key[(rand*100)%random_key_length]
+    end
+    key
   end
 end
