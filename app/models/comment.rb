@@ -3,6 +3,7 @@ class Comment < ActiveRecord::Base
   after_save :update_subscribers_and_notifications
 
   validates :comment_string, length: { maximum: 65535 }
+  validates_presence_of :comment_string, message: 'cannot be empty'
 
   POST_TYPE = { QUESTION: 1, EXPERIENCE: 2, JOB: 3 }
 

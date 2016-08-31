@@ -10,11 +10,12 @@
   </div>
 
   <div class="right_div">
-    <p class="user-name">
+    <p class="user-name user-link">
       <% if post.is_anonymous  == true %>
-      The anonymous <span class="small_text"><%= asked_or_shared_experience(post) %> </span>
+      <%= link_to 'The anonymous', user_path('anonymous') %> <span class="small_text"><%= asked_or_shared_experience(post) %> </span>
       <% else %>
-      <%= post.user.full_name %> <span class="small_text"><%= asked_or_shared_experience(post) %> </span>
+      <%= link_to post.user.full_name, user_path(post.user.id) %>
+      <span class="small_text"><%= asked_or_shared_experience(post) %> </span>
       <% end %>
     </p>
     <p class="user-time"><%= timeago_tag post.created_at %></p>

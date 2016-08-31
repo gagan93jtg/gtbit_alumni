@@ -8,6 +8,8 @@ development:
     port: 6379
     db: 0
   dev_email: 'alumnigtbit@gmail.com'
+  admin_email: 'admin@gtbitalumni.in'
+  pagination_per_page: 10
 
 production:
   redis_master:
@@ -19,3 +21,5 @@ production:
     port: 12121
     db: 0
   dev_email: 'alumnigtbit@gmail.com'
+  admin_email: 'admin@gtbitalumni.in'
+  pagination_per_page: 10

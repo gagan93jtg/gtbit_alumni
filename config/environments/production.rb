@@ -89,6 +89,7 @@ Rails.application.configure do
     :authentication       => 'login',
     :enable_starttls_auto => true
   }
+
   Rails.application.config.middleware.use ExceptionNotification::Rack,
   :email => {
     :email_prefix => "[ERROR] ",

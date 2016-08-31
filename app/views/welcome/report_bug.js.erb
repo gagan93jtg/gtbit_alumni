@@ -1,1 +1,5 @@
-$('.dismiss-report-bug').trigger('click');
+<% if @response == true%>
+  $('.report_bug_response_div').html("<div class='alert-gan alert-success-gan'>Thanks for reporting the bug. We'll look into it and fix it ASAP</div>");
+<% else %>
+  $('.report_bug_response_div').html("<div class='alert-gan alert-danger-gan'>Fields marked * are compulsory");
+<% end %>

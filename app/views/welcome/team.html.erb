@@ -1,6 +1,36 @@
 <div class="team_container clearfix">
-</div>
+  <a href="/" class="btn background-seagreen team_back_to_home">Home</a><br><br>
+  <% @names.each_with_index do |name, index| %>
+  <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+   <div class="profile-sidebar glass-panel">
+     <div class="user">
+       <div class="text-center">
+         <%= image_tag @profilePhotos[index], class: 'img-circle team-profile-photo', alt: 'pic' %>
+       </div>
+       <div class="user-head text-center">
+         <h2><%= @names[index] %></h2>
+         <div class="hr-center"></div>
+         <h4><%= @designation[index] %></h4>
+         <div class="hr-center"></div>
+         <p class="dev-intro"><%= @workInfo[index] %></p>
+       </div>
+     </div>
+     <div class="social-bar">
+      <div class="text-center">
+        <% unless @fb_link[index].empty? %>
+        <a href="https://www.facebook.com/<%=@fb_link[index]%>" target="_blank"> <%= image_tag 'fb.png', class: 'medium_icon', alt: 'social' %></a>
+        <% end %>
 
-<script type="text/javascript">
-  populate_team();
-</script>
+        <% unless @twitter_link[index].empty? %>
+        <a href="https://www.twitter.com/<%=@twitter_link[index]%>" target="_blank"> <%= image_tag 'twitter.png', class: 'medium_icon', alt: 'social' %></a>
+        <% end %>
+
+        <% unless @linked_in_link[index].empty? %>
+        <a href="https://in.linkedin.com/in/<%=@linked_in_link[index]%>" target="_blank"> <%= image_tag 'linked_in.png', class: 'medium_icon', alt: 'social' %></a>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>
+</div>

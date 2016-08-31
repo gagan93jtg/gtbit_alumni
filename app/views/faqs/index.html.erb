@@ -1,7 +1,7 @@
 <div class="faqs-page">
   <div class="container-custom">
     <div class="faqs_header ">
-        <h1>FAQ's</h1>
+      <h1>FAQ's</h1>
     </div>
 
 
@@ -20,8 +20,10 @@
     </div>
 
 
-    <div class="digg_pagination">
-      <%= will_paginate @faqs, :container => false %>
+    <div class="gan_pagination">
+      <div class="internal_pagination">
+        <%= will_paginate @faqs, renderer: BootstrapPagination::Rails  %>
+      </div>
     </div>
   </div>
 </div>

@@ -187,9 +187,15 @@ header .navbar-default
 	margin: 10px auto;
 }
 
-.active-record-error
+.active-record-errors-div
 {
-	margin-left: 25px;
+	font-size: 14px;
+	margin: 10px 0px;
+
+	.active-record-error
+	{
+		margin-left: 25px;
+	}
 }
 
 .multiline_text
@@ -220,6 +226,23 @@ header .navbar-default
 .search_query
 {
 	margin: 20px 0px;
+}
+
+.alert-gan
+{
+	color: white;
+	padding: 10px;
+	border-radius: 10px;
+}
+
+.alert-danger-gan
+{
+	background-color: rgb(222, 39, 40);
+}
+
+.alert-success-gan
+{
+	background-color: rgb(38, 166, 91);
 }
 
 @media (max-width: 767px)
@@ -289,6 +312,7 @@ footer
 	background-color: #000;
 	color: white;
 	height: 150px;
+	border-top: 1px solid white;
 }
 
 footer .scrollup
@@ -347,6 +371,12 @@ img.small_icon_social:hover
 	height: 32px;
 }
 
+.medium_icon
+{
+	width: 64px;
+	height: 64px;
+}
+
 .footer_copyright_stamp
 {
 	margin-left: 20px;
@@ -380,25 +410,32 @@ img.small_icon_social:hover
 	margin-top: 10px;
 }
 
-table tbody tr:nth-child(odd)
+.user_search_table thead
+{
+	color: white;
+	background-color: rgba(0,0,0,0.75);
+}
+
+.user_search_table tbody tr:nth-child(odd)
 {
 	background-color: rgba(0, 191, 169, 0.10);
 }
 
-table tbody tr:nth-child(odd):hover
+.user_search_table tbody tr:nth-child(odd):hover
 {
-	background-color: rgba(0, 191, 169, 0.20);
+	background-color: rgba(0, 191, 169, 0.40);
 }
 
-table tbody tr:nth-child(even)
+.user_search_table tbody tr:nth-child(even)
 {
 	background-color: white;
 }
 
-table tbody tr:nth-child(even):hover
+.user_search_table tbody tr:nth-child(even):hover
 {
-	background-color: rgb(248, 248, 248);
+	background-color: rgb(200, 200, 200);
 }
+
 .table-main
 {
 	overflow-x: auto;
@@ -407,6 +444,38 @@ table tbody tr:nth-child(even):hover
 .search_div
 {
 	margin-top: 10px;
+}
+
+.gan_pagination
+{
+	font-size: 12px;
+
+	.internal_pagination
+	{
+		display: table;
+		margin: 0 auto;
+		li
+		{
+			font-weight: 500;
+			span, a
+			{
+				border: 1px solid #00bfa9 !important;
+				color: #00bfa9;
+			}
+			span:hover
+			{
+				color: rgb(220, 220, 200);
+			}
+		}
+
+		.active
+		{
+			span
+			{
+				color: white !important;
+			}
+		}
+	}
 }
 
 @media(max-width: 650px)

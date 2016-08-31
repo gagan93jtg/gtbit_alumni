@@ -20,6 +20,7 @@ class JobPostsController < ApplicationController
 
   def show
     @job_post = JobPost.find_by_id(params[:id])
+    @comments = get_comments(@job_post) unless @job_post.nil?
     redirect_to controller: 'errors', action: 'file_not_found' and return if @job_post.nil?
   end
 
@@ -56,5 +57,11 @@ class JobPostsController < ApplicationController
     else
       return JobPost.where("company_name LIKE '%#{search_string}%' OR position LIKE '%#{search_string}%'"), false
     end
+  end
+
+  def get_comments(post)
+    page = Utils.sanitize_page_number(params[:page])
+    per_page = CONFIG['pagination_per_page'] || 10
+    post.comments.paginate(page: page, per_page: per_page)
   end
 end

@@ -13,6 +13,21 @@ class JobPost < ActiveRecord::Base
   validates :job_type, length: { maximum: 255 }
   validates :other_details, length: { maximum: 255 }
 
+  validates_presence_of :company_name, message: 'is requried'
+  validates_presence_of :position, message: 'is requried'
+  validates_presence_of :compensation, message: 'is requried'
+  validates_presence_of :location, message: 'is requried'
+  validates_presence_of :job_type, message: 'is requried'
+
+  validates_numericality_of :experience_in_months, :greater_than_or_equal_to => 0,
+  :less_than_or_equal_to => 480, :message => "is out of range. Do you think somebody will work "\
+  "in IT after this much experience ?"
+
+  validates_numericality_of :bond_period_in_months, :greater_than_or_equal_to => 0,
+  :less_than_or_equal_to => 60, :message => "is out of range. Do you think somebody will work "\
+  "in a single company for such long time ?"
+
+
   scope :public_activity, -> (id, limit) { where("user_id != #{id}").order('id DESC').limit(limit) }
 
   def self.save_job_post(user, params)

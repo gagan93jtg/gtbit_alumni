@@ -67,8 +67,11 @@
     <div class="container">
       <div class="row">
         <a classs="footer_icons" href="https://www.fb.com/gtbitalumni.in" target="_blank"> <%= image_tag "fb.png", class: 'small_icon small_icon_social' %> </a>
+        <!--
+        Noy yet created twitter and fb pages. I think it's waste of time managing three social pages!
         <a classs="footer_icons" href="https://www.twitter.com" target="_blank"> <%= image_tag "twitter.png", class: 'small_icon small_icon_social' %> </a>
         <a classs="footer_icons" href="https://www.google.co.in" target="_blank"> <%= image_tag "gplus.png", class: 'small_icon small_icon_social' %> </a>
+        -->
         <a href="#" class="scrollup btn-lg"> <span class="glyphicon glyphicon-arrow-up"> </span> </a>
       </div>
       <div class="row">
@@ -110,19 +113,19 @@
         <%= form_tag(request_account_path, method: 'post', :remote => true, class: 'request_account_form') do %>
         <div class="form-group">
           <label for="first_name">First name <span class="red_text">*</span></label>
-          <input type="text" class="form-control" id="first_name" placeholder="First name" name="user[first_name]">
+          <input type="text" class="form-control" id="first_name" placeholder="First name" name="user[first_name]" required="true">
         </div>
         <div class="form-group">
           <label for="last_name">Last name <span class="red_text">*</span></label>
-          <input type="text" class="form-control" id="last_name" placeholder="Last name" name="user[last_name]">
+          <input type="text" class="form-control" id="last_name" placeholder="Last name" name="user[last_name]" required="true">
         </div>
         <div class="form-group">
           <label for="email">Email id <span class="red_text">*</span></label>
-          <input type="email" class="form-control" id="email" placeholder="Email id" name="user[email]">
+          <input type="email" class="form-control" id="email" placeholder="Email id" name="user[email]" required="true">
         </div>
         <div class="form-group">
           <label for="batch">Branch and batch</label>
-          <input type="text" class="form-control" id="batch" placeholder="Eg. CSE 2011 - 2015" name="user[batch]">
+          <input type="text" class="form-control" id="batch" placeholder="Eg. CSE 2011 - 2015" name="user[batch]" >
         </div>
         <input type="submit" value="Request account" class="btn background-seagreen"></input>
         <% end %>

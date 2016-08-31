@@ -1,1 +1,5 @@
-$('.dismiss-contact-us').trigger('click');
+<% if @response == true%>
+  $('.contact_us_response_div').html("<div class='alert-gan alert-success-gan'>Thanks, we'll get back soon</div>");
+<% else %>
+  $('.contact_us_response_div').html("<div class='alert-gan alert-danger-gan'>Fields marked * are compulsory");
+<% end %>

@@ -66,6 +66,7 @@ gem 'turbolinks', '2.5.3'
 gem 'tzinfo', '1.2.2'
 gem 'uglifier', '2.7.2'
 gem 'will_paginate', '3.1'
+gem 'will_paginate-bootstrap', '1.0.1'
 gem 'exception_notification', '4.1.4'
 
 
@@ -74,6 +75,7 @@ group :development do
   gem 'rails_best_practices', '1.16'
   gem 'rubocop', '0.40.0'
   gem 'tabs2spaces', '0.0.7'
+  gem 'mailcatcher', '0.6.5'
 end
 
 group :test do

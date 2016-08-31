@@ -20,6 +20,7 @@ class QuestionPostsController < ApplicationController
 
   def show
     @post = QuestionPost.find_by_id(params[:id])
+    @comments = get_comments(@post) unless @post.nil?
     redirect_to controller: 'errors', action: 'file_not_found' and return if @post.nil?
   end
 
@@ -62,5 +63,11 @@ class QuestionPostsController < ApplicationController
     else
       return QuestionPost.where("query_string LIKE '%#{search_string}%'"), false
     end
+  end
+
+  def get_comments(post)
+    page = Utils.sanitize_page_number(params[:page])
+    per_page = CONFIG['pagination_per_page'] || 10
+    post.comments.paginate(page: page, per_page: per_page)
   end
 end

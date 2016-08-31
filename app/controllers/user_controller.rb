@@ -19,7 +19,11 @@ class UserController < ApplicationController
   end
 
   def show
-    @user = User.find_by_id(params[:id])
+    if params[:id] == 'anonymous'
+      @user = User.find_by_email('anonymous_user@gtbitalumni.in')
+    else
+      @user = User.find_by_id(params[:id])
+    end
     redirect_to controller: 'errors', action: 'file_not_found' and return unless @user
   end
 
@@ -42,15 +46,18 @@ class UserController < ApplicationController
   private
 
   def get_users
+    page = Utils.sanitize_page_number(params[:page])
+    Rails.logger.error "\n\n\n\npagenumber after sanitize_page_number : #{page}"
     search_string = params['search_query']
     search_string = nil if search_string.blank?
+    per_page = CONFIG['pagination_per_page'] || 10
 
     if search_string.nil?
-      return User.paginate(page: params[:page], per_page: 3), true
+      return User.paginate(page: page, per_page: per_page), true
     else
       return User.where("first_name LIKE '%#{search_string}%' OR "\
         "last_name LIKE '%#{search_string}%' OR "\
-        "email LIKE '%#{search_string}%'").paginate(page: params[:page], per_page: 3), false
+        "email LIKE '%#{search_string}%'").paginate(page: params[:page], per_page: per_page), false
     end
   end
 end

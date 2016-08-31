@@ -3,6 +3,8 @@ class Post < ActiveRecord::Base
 
   validates :query_string, length: { maximum: 65535 }
   validates :tags, length: { maximum: 255 }
+  validates_presence_of :query_string, message: 'cannot be empty'
+  validates_presence_of :tags, message: 'Add atleast one matching tag for this post'
 
   scope :public_activity, -> (id, limit) { where("user_id != #{id}").order('id DESC').limit(limit) }
   has_many :post_histories

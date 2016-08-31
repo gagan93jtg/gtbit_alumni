@@ -36,6 +36,9 @@ class User < ActiveRecord::Base
    validates_with AttachmentSizeValidator, attributes: :avatar, less_than: 1.megabytes
    validates_attachment :avatar, content_type: { content_type: ["image/jpeg", "image/gif", "image/png"] }
 
+   validates_presence_of :first_name, message: 'must be present'
+   validates_presence_of :last_name, message: 'must be present'
+
   # attr_accessor :crop_x, :crop_y, :crop_w, :crop_h
 
   # after_update :reprocess_avtar, if: :avtar_was_cropped?
