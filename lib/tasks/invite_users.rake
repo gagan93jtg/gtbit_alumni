@@ -22,6 +22,7 @@ task :invite_users => :environment do
     end
     first_name.capitalize! unless first_name.nil?
     last_name.capitalize! unless last_name.nil?
+    last_name = ' ' if last_name.nil?
 
     password = Utils.key_generator(10)
     user = User.create(first_name: first_name, last_name: last_name, email: email, password: password)
