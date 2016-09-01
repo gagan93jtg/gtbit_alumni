@@ -26,14 +26,13 @@ task :invite_users => :environment do
 
     password = Utils.key_generator(10)
     user = User.create(first_name: first_name, last_name: last_name, email: email, password: password)
-
-    UserMailer.welcome_mail(user, password).deliver_now
-
-    user.update_pass_in_redis(password)
-
-    puts "Inviting : #{first_name} #{last_name} => #{email}"
+    unless user.errors.any?
+      UserMailer.welcome_mail(user, password).deliver_now
+      user.update_pass_in_redis(password)
+      puts "Inviting : #{first_name} #{last_name} => #{email}"
+    else
+      puts "Errors while creating acc for #{email}. \nErrors #{user.errors.full_messages.inspect}"
+    end
+    puts "[#{Time.current}] : Completing rake task"
   end
-
-  puts "[#{Time.current}] : Completing rake task"
-
 end

@@ -37,7 +37,6 @@ class User < ActiveRecord::Base
    validates_attachment :avatar, content_type: { content_type: ["image/jpeg", "image/gif", "image/png"] }
 
    validates_presence_of :first_name, message: 'must be present'
-   validates_presence_of :last_name, message: 'must be present'
 
   # attr_accessor :crop_x, :crop_y, :crop_w, :crop_h
 
