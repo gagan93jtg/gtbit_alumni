@@ -31,7 +31,7 @@ task :invite_users => :environment do
       user.update_pass_in_redis(password)
       puts "Inviting : #{first_name} #{last_name} => #{email}"
     else
-      puts "Errors while creating acc for #{email}. \nErrors #{user.errors.full_messages.inspect}"
+      puts "Errors while creating acc for #{email}. #{user.errors.full_messages.inspect}"
     end
   end
   puts "[#{Time.current}] : Completing rake task"
