@@ -10,7 +10,7 @@ task :invite_users => :environment do
   def invite
   end
 
-  puts "[#{Time.current}] : Starting rake task"
+  log "Starting rake task"
 
   redis_master = RedisConnection.initialize_redices[0]
   CSV.foreach("#{Rails.root}/public/invites/#{ARGV[1]}", :headers => true) do |row|
@@ -29,10 +29,10 @@ task :invite_users => :environment do
     unless user.errors.any?
       UserMailer.welcome_mail(user, password).deliver_now
       user.update_pass_in_redis(password)
-      puts "Inviting : #{first_name} #{last_name} => #{email}"
+      log "Inviting : #{first_name} #{last_name} => #{email}"
     else
-      puts "Errors while creating acc for #{email}. #{user.errors.full_messages.inspect}"
+      log "Errors while creating acc for #{email}. #{user.errors.full_messages.inspect}"
     end
   end
-  puts "[#{Time.current}] : Completing rake task"
+  log "Completing rake task"
 end

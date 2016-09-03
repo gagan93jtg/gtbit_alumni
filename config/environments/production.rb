@@ -91,4 +91,6 @@ Rails.application.configure do
     :exception_recipients => %w{gagan93gtbit@gmail.com}
   }
 
+  config.action_mailer.default_url_options = { :host => 'https://gtbitalumni.in' }
+
 end
