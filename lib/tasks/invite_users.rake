@@ -13,7 +13,7 @@ task :invite_users => :environment do
   puts "[#{Time.current}] : Starting rake task"
 
   redis_master = RedisConnection.initialize_redices[0]
-  CSV.foreach("#{Rails.root}/public/invites/2013_ece.csv", :headers => true) do |row|
+  CSV.foreach("#{Rails.root}/public/invites/#{ARGV[1]}", :headers => true) do |row|
     first_name, last_name = row[0].split
     email = row[1]
     if email.nil? || email.strip.empty?
@@ -33,6 +33,6 @@ task :invite_users => :environment do
     else
       puts "Errors while creating acc for #{email}. \nErrors #{user.errors.full_messages.inspect}"
     end
-    puts "[#{Time.current}] : Completing rake task"
   end
+  puts "[#{Time.current}] : Completing rake task"
 end

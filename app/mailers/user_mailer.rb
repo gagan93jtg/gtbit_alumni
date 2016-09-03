@@ -1,5 +1,9 @@
 class UserMailer < ApplicationMailer
 
+  def deactivate_users(users)
+    mail(to: users, subject: 'We are deactivating your account', cc: 'gagan@gtbitalumni.in')
+  end
+
   def welcome_mail(user, password)
     @user = user
     @password = password
