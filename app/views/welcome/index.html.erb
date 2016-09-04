@@ -2,10 +2,11 @@
   <div class="container-custom">
     <% if current_user.first_sign_in?%>
     <div class="first_sign_in_text alert-gan alert-success-gan" role="alert">
-      <p>Hey,hope you're doing good! As this is your first time login, You can Update few things. </p><br>
+      <p>Hey, hope you're doing good! As this is your first time login, You can Update few things. </p>
       <ul>
-        <li>Update your profile, we have no clue about you except your Email Id. </li><br>
-        <li>Ask question(s), there are a lot of people to help you out !  </li>
+        <li>Update your profile, we have a little information about you. </li>
+        <li>Update password, as this was a randomly generated password. </li>
+        <li>Ask questions, share experiences and job opportunities. That's what GTBIT Alumni Network was made for !</li>
       </ul>
     </div>
     <% current_user.update_sign_in_count %>
