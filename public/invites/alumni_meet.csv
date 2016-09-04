@@ -1,0 +1,803 @@
+Student Name, `stu_batchcode, `stu_branchcode,Student Email, `stu_email_visible`
+ Gaurav Kumar,1,1, cyber_gaurav@yahoo.com,1
+ Himanshu,1,3, himanshu_ece@hotmail.com,1
+ ajay,1,1, ajay_pal_22@sify.com,1
+ Naresh Kumar,1,1, nareshkumar_3k@indiatimes.com,1
+ shahan shah,1,2, mail.shahan@gmail.com,1
+ Akshay Sinha,1,3, akshay.sinha@gmail.com,1
+ Nitin Mehndiratta,1,1, mehndiratta.nitin@gmail.com,1
+ Jagminder Chugh,1,1, jagminder.chugh@gmail.com,1
+ Devashish,1,3, devashish.ganguly@gmail.com,1
+ Navdeep Kohli,1,2, whosthr@gmail.com,1
+ Munish Gulati,1,1, munishgulati_mg@yahoo.com,1
+ Harsh Mittal,1,2, harsh.mittal@gmail.com,1
+ Rahul Mishra,1,2, best_of_rahul@yahoo.com,1
+ Gaurav Sethi,1,2, gaurav.sethi18@gmail.com,1
+ Gaurav Sharma,1,1, gsmailbox@gmail.com,1
+ Sumit Kukreja,1,1, sumit.skuk@gmail.com,1
+ Paras Sachdeva,1,1, sachdeva.paras@gmail.com,1
+ ROHIT GUPTA,1,2, rohit_gupta10@infosys.com,1
+ rahul,1,1, rahulbutola81@gmail.com,1
+ Akhil Bajaj,1,3, akhil.bajaj@gmail.com,1
+ Arvinder Singh,1,2, arvinder1981@yahoo.com,1
+ Gaurav Katyal,1,3, katyalg@gmail.com,1
+ Sonam Raj,1,2, sonamraj.s@gmail.com,1
+ Rishu,1,1, contactrishu@gmail.com,1
+ tushar garg,1,2, tushargarg786@yahoo.com,1
+ Ankit Kumar Sharma,1,1, ankit.sharma@aricent.com,1
+ Nishant Vats,1,1, vatsanishant@gmail.com,1
+ qfavcepc,1,1, sample@email.tst,1
+ Vivek Kumar Agarwal,1,3, vkumar168@yahoo.com,1
+ Saurabh Sharma,1,2, saurabh2k1@gmail.com,1
+ 111-222-1933email@address.tst,1,1, 111-222-1933email@address.tst,1
+ sagar,1,3, abc@gmail.com,1
+ Manish Chawla,2,3, manish.k.chawla@gmail.com,1
+ Bappan,2,1, bappan@gmail.com,1
+ Sandeep Arora,2,1, sandeepar@hotmail.com,1
+ Vineet Tyagi,2,2, vineet.tyagi@yahoo.co.in,1
+ Ankit Kakkar,2,1, contactkakkar@gmail.com,1
+ Gaurav Gupta,2,1, gupta.gaurav123@gmail.com,1
+ Jasleen Batra,2,1, jasleenbatra@gmail.com,1
+ sumit dokania,2,3, sumit.dokania@gmail.com,1
+ Gaurav Gupta,2,1, gaurav_gup1@yahoo.com,1
+ Gagandeep Singh,2,1, gagandhanjal7@gmail.com,1
+ Dhiraj,2,2, dhiraj.gaur@gmail.com,1
+ Shaileshwar Dayal,3,1, shaileshwardayal@yahoomail.co.in,1
+ Animesh Ranjan,3,1, animesh.ranjan@yahoo.com,1
+ Praveen Verma,3,2, verma_praveen@engineer.com,1
+ Puneet Sharma,3,3, apdf_2@yahoo.com,1
+ Harvinder Singh,3,2, harvindersingh@inbox.com,1
+ Navjot Singh Nanda,3,2, navjotsnanda@yahoo.co.in,1
+ Inderpal Singh,3,2, inderpalsingh83@gmail.com,1
+ Mohit Vij,3,2, mohitvij07@gmail.com,1
+ SUMIT KUMAR,3,2, mrsumitg@yahoo.com,1
+ Nitin,3,1, surinitin@rediffmail.com,1
+ Basab Datta,3,3, basab.51283@gmail.com,1
+ Vatsal Raj,3,1, vatsalraj83@yahoo.com,1
+ Prashant,3,1, PrashantM@InterraIt.com,1
+ Kamaldeep,3,1, kamaldeep.singh@gmail.com,1
+ Saurabh,3,2, saurabhsymbi@gmail.com,1
+ Vatsal,3,2, vatsaltdesai@gmail.com,1
+ kanwal,3,1, kanwalpreetsingh16@gmail.com,1
+ vcvv,3,1, a@b.com,1
+ Anmol S Bhatti,3,3, anmolbhatti@gmail.com,1
+ MANOJ KUMAR,4,3, manojkumar.manojkumar@gmail.com,1
+ Abhelaksh Thakur,4,3, abhelaksh@gmail.com,1
+ Manpreet Singh,4,3, manpreet.mannu@gmail.com,1
+ Somendra Rathi,4,2, somendrarathi@yahoo.com,1
+ ANIL CHAND RAMOLA,4,1, anil.ramola@gmail.com,1
+ Rohit Sharma,4,2, rohit.sharma2@wipro.com,1
+ rajiv gupta,4,1, coolrajiv@gmail.com,1
+ sandeep bhan,4,2, i_sunny9@yahoo.com,1
+ Pooja Jetly,4,2, pooja.jetly@gmail.com,1
+ Shilpa Nagpal,4,2, shilpanagpal@rediffmail.com,1
+ Arun Kumar,4,1, shishodia.rahul@gmail.com,1
+ jatin,4,1, jatin_preet@yahoo.com,1
+ Dimple Nihalani,4,2, dimple.nihalani@gmail.com,1
+ Mayank Gupta,4,1, mayankg.usc@gmail.com,1
+ Gurpreet Singh Sohi,4,3, jimsohi@gmail.com,1
+ Kavneet Kaur,4,2, kavneet_kohli@rediffmail.com,1
+ Nav Aman Deep Singh,4,3, navyaman@gmail.com,1
+ Harpreet,4,3, kundralz@yahoo.com,1
+ Harvinder Pal Singh,4,3, harrycool7584@yahoo.co.in,1
+ Damanpreet Singh,4,3, damanpreet06@gmail.com,1
+ Anupreet Kaur,4,1, anupreet.kaur@gmail.com,1
+ Tejender Singh,4,2, tejen_vasir@rediffmail.com,1
+ Ubheydeep Singh,4,1, ubhey.1@gmail.com,1
+ Mukhpreet,4,1, mukhpreet@hotmail.com,1
+ Achint Singh,4,3, achint2105@gmail.com,1
+ Harpreet Singh Kalra,4,3, happythesurd@gmail.com,1
+ Prabhdeep Singh Saimbhi,4,1, prabhdeep.saimbhi@gmail.com,1
+ Sukaran Singh Saluja,4,3, sukaran_21@yahoo.co.in,1
+ Joban Marwah,4,3, jobanmarwah@yahoo.co.in,1
+ gagan,4,3, gagan_bagga83@yahoo.com,1
+ Sidharth Sehgal,4,1, sidharth.sehgal@microsoft.com,1
+ Sriram Viswanathan,4,2, viswanathsri@yahoo.com,1
+ Gaurav Chhabra,4,1, chhabra.gaurav@gmail.com,1
+ Harpreet Singh Bhatia,4,3, harpreetbhatia.83@gmail.com,1
+ Sameer,4,1, samd832000@gmail.com,1
+ Parul,4,1, libra.par@gmail.com,1
+ Vineet Mehta,4,3, vinmehta2002@gmail.com,1
+ Manpreet Singh Dhawan,4,1, manpreet.dhawan@sbi.co.in,1
+ Sudhanshu Goel,4,2, Sudhanshu.goel@yahoo.com,1
+ Jasmin,4,1, jasmin3784@yahoo.com,0
+ pulkit,4,3, pmittal@techmahindra.com,1
+ Pulkit Mittal,4,3, pulkit.mit@gmail.com,1
+ Khanna,4,3, sourabhkhanna@gmail.com,1
+ kunal bajaj,4,3, kunal.be@gmail.com,1
+ Ankit    Kadam,4,2, ankit0072896@rediffmail.com,1
+ sumit sharma,5,2, sumitsharmait@yahoo.co.in,1
+ sumit,5,2, sumitsharmait@gmail.com,1
+ Jatinder Singh Malhotra,5,1, shampymalhotra@yahoo.co.in,1
+ Soumya Makker,5,3, soumyamakker21@gmail.com,1
+ Tushar Singh,5,3, tushar.delhi@gmail.com,1
+ manisha,5,2, manisha_1486@yahoo.com,1
+ Lalit Bhardwaj,5,3, lalit_bhardwaj3520@yahoo.co.in,1
+ abhishekbhatnagar,5,2, abhishek.bhatnagars@yahoo.com,1
+ Taranjeet Singh,5,3, taranjs@gmail.com,1
+ Naveen,5,1, lad_naveen@yahoo.co.in,1
+ Apoorv Vij,5,3, apoorv.vij@gmail.com,1
+ Harpreet Singh,5,3, harpreet.delhi@yahoo.com,1
+ simranjeet singh randhir,5,3, simran.virgo.singh@gmail.com,1
+ Meer,5,3, mr.meer@gmail.com,1
+ Tribhuwan Singh Dangwal,5,3, sachin_dangwal@yahoo.co.in,1
+ Smita Sabharwal,5,2, sim3586@yahoo.com,1
+ kunal,5,1, joinkunal@yahoo.com,1
+ shramee,5,2, shrameechopra@rediffmail.com,1
+ Ratul Suman,5,2, ratulsuman@gmail.com,1
+ Maninder Singh Arora,5,1, miromeo2@gmail.com,1
+ SUPREET SINGH,5,3, supreet.singh86@gmail.com,1
+ Aman,5,1, amandeep.singh.85@gmail.com,1
+ Sahiba Sidana,5,3, sahiba_sidana@yahoo.co.in,1
+ Ishminder Pal Singh Bhatia,5,3, ishminder.bhatia@gmail.com,1
+ Honey Deep,5,1, honeydeep@gmail.com,0
+ Charandeep Singh,5,2, cd_stylein@yahoo.co.in,1
+ Kamalpreet Kaur,5,1, kamalpreet.kr@gmail.com,1
+ HARMINDER SINGH,5,1, harminder.harry@gmail.com,1
+ anushree oberoi,5,2, anushree_oberoi@yahoo.com,1
+ Hardeep Singh Sawhney,5,3, hardeepss@rediffmail.com,1
+ Jatinder Singh,5,3, jatinder.singh1@wipro.com,1
+ jasmine singh marwah,5,1, jasmine_virgo1@yahoo.com.au,1
+ Gaganeep Singh Awal,5,3, gagan_awal@yahoo.com,1
+ Sarabjeet Singh,5,2, cool_sabs19@yahoo.co.in,1
+ BISHNEET SINGH,5,2, BISHNEET@GMAIL.COM,1
+ Jaspreet singh,5,2, jaspreet_singh_it@yahoo.co.in,1
+ Amandeep singh,5,3, aman_85_3@yahoo.co.in,1
+ VANJULA KATARIA,6,3, vanjula.52@gmail.com,1
+ Amar Preet Singh,6,3, singh.amarpreet11@yahoo.co.in,1
+ Keshav Gupta,6,1, keshav0001@gmail.com,1
+ Harleen Kaur Kohli,6,1, harleen.kohli@gmail.com,1
+ Sahil,6,2, sahilbajaj86@yahoo.co.in,1
+ Tapsie Giridher,6,1, tapsie@gmail.com,1
+ Ankit Mahajan,6,2, a.ankitmahajan@gmail.com,1
+ Jayant Srivastava,6,1, srivastava.jayant@gmail.com,1
+ Abhishek Kumar,6,3, 1987abby@gmail.com,1
+ Suchtet Kumar Chachra,6,1, suchet_chachra@yahoo.com,1
+ prateek khera,6,2, prince_khera2008@yahoo.co.in,1
+ Nikhil Bathla,6,1, nb_bond123@yahoo.co.in,1
+ Mithun Singh,6,1, m.singh2005@gmail.com,1
+ Gurdip Singh Bindra,6,3, gurdipbindra@gmail.com,1
+ jasmeet singh,6,3, mailtojasmeet@gmail.com,1
+ shikha khera,6,2, khera_shikha@yahoo.co.in,1
+ Jaskirat Singh,6,1, jaskirat.anand@gmail.com,1
+ Gurpreet Singh Modi,6,1, gsmodi@gmail.com,1
+ Sarandeep Singh,6,3, deep_bsb@yahoo.co.in,1
+ Manpreet SIngh,6,1, manpreet.gtbit@gmail.com,1
+ Jasminder Singh Dhir,6,1, jasminderdhir@gmail.com,1
+ Manveet Singh Bhatia,6,1, manveet_bhatia@yahoo.co.in,1
+ Amandeep Singh Kalra,6,3, amandeepkalra86@gmail.com,1
+ Amardeep Singh,6,3, vb_amrit@yahoo.com,1
+ Chiranjiv singh,6,2, singh_chiranjiv@yahoo.co.in,1
+ Kunwardeep Singh,6,1, kunwar_singh@infosys.com,1
+ Harpreet,6,3, harpreetsingh@maxgroup.co.in,1
+ Maninder Singh,6,3, maninder.2334@gmail.com,1
+ angad deep singh,6,1, angad_deepsingh@yahoo.co.in,1
+ SUPREET SINGH,6,2, supreetsingh1586@gmail.com,1
+ Avneet Singh,6,3, avneet_singh2@yahoo.com,1
+ Amanpreet Singh,6,1, amanpreet.ghotra@gmail.com,1
+ jasmeet karir,6,1, karir.jasmeet@gmail.com,1
+ Ajit Pal Singh,6,1, singhs.are.kings@gmail.com,1
+ jasdeep singh,6,2, jasdeep1986@gmail.com,1
+ amitkulha,7,1, amit_kulha@yahoo.co.in,1
+ jaspreet singh,7,1, mail_jaspreet19@yahoo.co.in,1
+ Atul,7,1, gemini_atul2010@yahoo.co.in,1
+ yudi,7,2, yadvendranath@gmail.com,1
+ aman,7,3, amana@yahoo.com,1
+ kamal ,7,1, run.kamal@gmail.com,1
+ Harbhajan,7,1, harbhajan_12_CSE@yahoo.com,1
+ Utsav Gambhir,7,3, contact.ug@gmail.com,1
+ Nitin Sadana,7,3, ultaphultanitin@gmail.com,1
+ abhishek taneja,7,1, abhishake33@yahoo.co.in,1
+ Lund ka topa - Sandeep Burma,7,3, daljeet210@gmail.com,1
+ Girish Manchanda,7,3, gir.887@gmail.com,1
+ S Purushotham Kaushik,7,3, puru00047@gmail.com,1
+ Manik Rana,7,3, toxicated.maxy@gmail.com,1
+ mayank jain,7,2, mayank_0104@yahoo.co.in,1
+ harleen,7,3, harleen88@gmail.com,1
+ Tanuneet Kaur,7,1, tanuneet.kaur@gmail.com,1
+ sarabjeet,7,1, prince_me_999@yahoo.co.in,1
+ tapasee,7,1, tapasee_1887@yahoo.com,1
+ Twisha,7,2, twisha.dhingra@gmail.com,1
+ Fahd Malik,7,2, fahdmalik17xime@gmail.com,1
+ navjot,7,2, nav008@gmail.com,1
+ Navpreet Singh,7,1, navpreet87@yahoo.co.in,1
+ Parmeet Singh,7,1, parmeetdx@gmail.com,1
+ Amandeep Singh Sethi,7,2, sethi.amandeep@gmail.com,1
+ Inderjeet Singh,7,1, inderjeet26@gmail.com,1
+ CHARAN PUNEET SINGH,7,3, punjabi_yaara@yahoo.co.in,1
+ Harleen kaur,7,1, harleen87@gmail.com,1
+ Gurveer,7,3, gurveersj@gmail.com,1
+ GURLEEN KAUR,7,1, gurleen@gmail.com,1
+ Garima Singh,7,1, garima.singh.20.04@gmail.com,1
+ Rajashree Chaurasia,7,2, rajashree.chaurasia@gmail.com,1
+ KARAN BISHT,8,3, justkaranbisht@gmail.com,1
+ HARPREET SINGH,8,4, imharpreet28@gmail.com,1
+ test,8,1, gtbit@rediffmail.com,1
+ navneet singh,8,1, navneet86singh@gmail.com,1
+ jasmeet singh sodhi,8,4, jasmeet_s_sodhi@yahoomail.com,1
+ ritindeep singh,8,3, ritindeep_singh@yahoo.com,1
+ manmeetsingh,8,2, manmeetsingh21@gmail.com,1
+ Japneet Singh sahni,8,3, japneetsahni30@gmail.com,1
+ Raman Deep Singh,8,2, raman_leo007@yahoo.com,1
+ Saurabh Sharma,8,4, saurabhsharma_1988@yahoo.co.in,1
+ AJAY PAL SINGH SETHI,8,1, techgodajay@gmail.com,1
+ sanur,8,1, sanursharma@yahoo.co.in,1
+ JASMEET SINGH,8,1, jasmeetsingh2121@gmail.com,1
+ santosh kumar,8,3, saksh_sagar@yahoo.co.in,1
+ rohit sharma,8,4, rohitsharma008@gmail.com,1
+ suresh yadav,8,4, suresh_11jan1986@yahoo.co.in,1
+ RITESH SOOD,8,3, sun_ritesh@yahoo.com,1
+ Shashi Bhardawaj,8,2, shashi_0_07@sify.com,1
+ HARDEEP,8,2, hardee005@gmail.com,1
+ Pawan,8,3, pawanmehta1988@gmail.com,1
+ ritika verma,8,2, ritika765@yahoo.co.in,1
+ amandeep singh,8,1, adsdeep88@yahoo.co.in,1
+ Rasleen,8,1, rasleen_13@yahoo.com,1
+ puneet singh,8,3, puneet1987@hotmail.com,1
+ raminder singh virk,8,3, virk.saab78@gmail.com,1
+ Taranpreet Singh,8,3, Taranpreetsingh3087@gmail.com,1
+ gurpreet singh mohaar,8,1, sun_jattboy@yahoo.co.in,1
+ Ramanpreet Singh,8,3, raman.8051@gmail.com,1
+ amandeep,8,1, kaur_aman_123@yahoo.co.in,1
+ Jasneet Sabharwal,8,1, jas_saby1987@hotmail.com,1
+ INDERJEET SINGH,8,3, inder_foruandall@yahoo.co.in,1
+ Gagan Bindra,8,1, theelectricstorm@gmail.com,1
+ Tejdeep Singh  Bawa,8,1, tejdeepbawa@gmail.com,1
+ Rhythm Chawla,8,3, rhythmchawla@gmail.com,1
+ Bhupinder Pal singh,8,2, arorabhupinder@hotmail.com,1
+ Simranjit Singh,8,3, simranjitrandhawa@gmail.com,1
+ Manpreet Kaur Duggal,8,1, manpreetkaurduggal@gmail.com,1
+ jaideep singh,8,3, joydeep741@yahoo.co.in,1
+ Prabhjeet Singh,8,1, prabhjeetsingh007@gmail.com,1
+ amarpreet,8,2, wasanamar@gmail.com,1
+ GAURAV MAHAJAN,8,4, gauravmahajn@gmail.com,1
+ Ankit Kohli,8,4, kohliankit06@gmail.com,1
+ jasmeet singh,8,1, jas_khalsa@jamnation.in,1
+ ammar rizvi,8,4, ammarrizvi12@yahoo.in,1
+ Amandeep Singh,8,1, aammisingh@yahoo.co.in,1
+ Jasmeet Singh,8,1, jasman_rocks@yahoo.com,1
+ Kanika Khera,8,4, kanika_khera2006@yahoo.co.in,1
+ amarjot singh,8,1, cooldude_2006_008@yahoo.com,1
+ Randeep Singh,8,3, randeep_singh80@yahoo.com,1
+ Jaismeen Kaur Sabharwal,8,2, jaismeenks@gmail.com,1
+ Gurpreet Singh,8,1, atwalji@gmail.com,1
+ Ramandeep Singh,8,1, raman_9b@yahoo.com,1
+ Rishav Verma,8,4, rishavverma9@gmail.com,1
+ Harneet Singh Ahuja,8,3, ahuja.harneetsingh@gmail.com,1
+ jasmeet kaur,8,3, jasmeet_4687@yahoo.co.in,1
+ poonam rana,8,2, rana.pr@gmail.com,1
+ Chit Mohan Singh Bhatia,8,2, chitmohan.singh@gmail.com,1
+ atul aggarwal,8,4, atulasia@gmail.com,1
+ Iqbal Singh,8,2, iqbal_notta@yahoo.co.uk,1
+ Ashish,8,4, ashish.gtbit@yahoo.co.in,1
+ prabsimran singh,8,3, prabsimran69@gmail.com,1
+ Pooja,8,1, puja88@gmail.com,1
+ Mankaran Singh Kohli,8,3, mankaransingh2001@yahoo.co.in,1
+ Satinder Singh,8,2, satindersingh0001@yahoo.in,1
+ Pooja Arora,8,1, arora.pooja88@gmail.com,1
+ Pranjal Sehgal,8,4, pranjalsehgal@gmail.com,1
+ harneet kaur,8,3, harneet24smail@gmail.com,1
+ sandeep bansal,8,2, sandeep.bnsl@yahoo.co.in,1
+ Karandeep Singh Kukreja,8,1, kdkukreja@yahoo.co.in,1
+ sahiba,8,3, sahiba_power2@yahoo.com,1
+ lokesh kansal,8,2, lokesh.kansal@gmail.com,1
+ jagan deep,8,1, jagandeep86@yahoo.com,1
+ priyanka arora,8,3, arora.pri@gmail.com,1
+ Karanveer singh,8,1, karanveer_singh2001@yahoo.com,1
+ Pankaj Arora,8,2, pankajarora.pa@gmail.com,1
+ upanshu vaid,8,2, vaidupanshu.6@gmail.com,1
+ Gurneet Singh Sethi,8,1, gurneetsethi@hotmail.com,1
+ rohit khurana,8,2, rohit.kok@gmail.com,1
+ Prateek Ladha,8,2, prateekladha.31121988@gmail.com,1
+ Tejasvi,8,3, tejasvi_kumar@aol.in,1
+ Hemant Singh,8,3, GTBIT_139@YAHOO.CO.IN,1
+ Shreya Arora,8,2, shreya_arora@ymail.com,1
+ kavleen,8,1, tina_kav2002@yahoo.co.in,0
+ Gurpreet Singh Bindra,8,1, gurpreetbindra27@gmail.com,1
+ ipshit matta,8,3, vinodipshit@hotmail.com,1
+ vinod bhushan,8,1, vinodbhushan60@yahoo.com,1
+ Meera Hans,8,2, meerahans10@gmail.com,1
+ mayank dhawan,8,2, dhawanmayank88@gmail.com,1
+ M. ZUHAIB,8,2, FRIENDZUHAIB@YAHOO.CO.IN,1
+ Aditya sharma,8,1, aditya_sharma18128@yahoo.co.in,1
+ Ankit Aggarwal,8,1, ankit.gtbit@gmail.com,1
+ karanpreet singh,8,2, singhkaranpreet01@gmail.com,1
+ nidhish gupta,8,3, vicky_22k5@yahoo.co.in,1
+ Tarun Nangia,8,2, tarun_nangia16988@yahoo.co.in,1
+ vikash kumar,8,3, vikash.kumar006@gmail.com,1
+ Nimit Jain,8,3, nimitjn@gmail.com,1
+ Rajeev Raman,8,1, ramanrajeev18@gmail.com,1
+ prince pruthi,8,1, fundooprince17@yahoo.co.in,1
+ Mayank,8,3, tiwarymayank@yahoo.com,1
+ ankit gupta,8,1, guptaankit2210@gmail.com,1
+ ujjawal,8,2, ujj019@gmail.com,1
+ Nikhil Arora,8,2, nikhilarora17@gmail.com,1
+ Megha Gupta,8,1, smiley_megha@yahoo.co.in,1
+ piyush,8,2, piyushseth88@hotmail.com,1
+ Anupama Jha,8,2, anupamajha48@gmail.com,1
+ debashish,8,2, debdasg@gmail.com,1
+ Avinash Pandey,8,2, mail4avi.p@gmail.com,1
+ Abhimanyu Sachdeva,8,2, mana_dravid@yahoo.co.in,1
+ Rahul,8,2, rahulroy_kumar@yahoo.co.in,1
+ Arjit Singh Oberoi,8,2, arjit_oberoi@yahoo.com,1
+ Somya Aggarwal,8,2, aggarwal.somya@gmail.com,1
+ ashok kumar,8,3, raj.madhav.madhav@gmail.com,1
+ Harshdeep Singh Bedi,8,3, hdpxx90@gmail.com,1
+ Shveta Arora,9,3, snow.white1989@gmail.com,1
+ harmanjit singh,9,3, harmanjitsinghmalik@yahoo.com,1
+ Chetan JB Singh,9,1, chetanjbsingh@gmail.com,1
+ sahil singh karir,9,3, sahilkarir@ymail.com,1
+ Prabhnoor Sidhu,9,2, prabhnoor.sidhu@gmail.com,1
+ pavanjit singh,9,2, punjabi_munda311@yahoo.com,1
+ dalheet singh,9,2, cool4u_jonhy@yahoo.com,1
+ praman deep singh,9,2, praman.ITprofessional@hotmail.com,1
+ amrit pal,9,1, soundcanbefaster@yahoo.co.in,1
+ Kirandeep Kaur Bhullar,9,2, kirandeepkaur.2611@gmail.com,0
+ Anil Singh,9,4, anil_shine252375@yahoo.co.in,1
+ avneet kaur,9,1, cutegirl_avneet@yahoo.co.in,1
+ Jaipreet Singh,9,1, jaipy1990@gmail.com,1
+ harjit singh,9,4, sheetalmehra43@yahoo.com,1
+ Bakul trehan,9,2, bakultrehan@gmail.com,1
+ Ramandeep Singh,9,1, raman.soni22@gmail.com,1
+ Chandep Kaur,9,3, chandeep_kaur_ck@yahoo.com,1
+ rohit sharma,9,4, sharma_rohit97@rediffmail.com,1
+ satnam,9,1, kool4u_binny@hotmail.com,1
+ DEVINDER KUMAR VERMA,9,1, chatwithsingh@gmail.com,1
+ Manjit Kumar,9,4, mkumar9287@gmail.com,1
+ aman,9,1, nhazuria@rediffmail.com,1
+ guryash,9,1, eshabahra@yahoo.co.in,1
+131322807,9,3, mrazdan@hirerigth.com,1
+ amandeep singh ghuman,9,2, ghumansmsaa@gmail.com,1
+ Tarun Tanwar,9,1, tarun.tanwar@yahoo.co.in,1
+ Naman Kapoor,9,4, namankapoor22@yahoo.in,1
+ harpreet singh,9,2, sunny_smart_12@yahoo.com,1
+ Rayana Bhardwaj,9,2, psharma_397@yahoo.co.in,1
+ kanwarpreet singh oberoi,9,3, kanwar1989@gmail.com,1
+ TITA PANWAR,9,3, panwar20@gmail.com,1
+ tajinde singh,9,1, taj_singh91@yahoo.com,1
+ manish,9,2, manish_rana12345@yahoo.com,1
+ prabhjot kaur,9,3, naughty_hats_anu@yahoo.co.in,1
+ Harmeet singh,9,2, harry_xavier_guy@yahoo.co.uk,1
+ Harjot Shah Singh,9,2, harjot.shah@gmail.com,1
+ Mandeesh Singh,9,3, mandeeshc@gmail.com,1
+ Gagandeep singh gujral,9,2, dextruz_dude@yahoo.ca,1
+ Kavita Jha,9,4, kavitaaajha@yahoo.co.in,1
+ jaspreet,9,1, jaspreet_yj_vision@yahoo.co.in,1
+ pawandeep,9,1, harbans_5155@yahoomail.co.in,1
+ Sahil,9,4, 1989sahilmehta@gmail.com,1
+ Baljit singh,9,1, velly_0072@yahoo.com,1
+ AMITOJ SINGH BHATIA,9,2, AMITOJTHECHAMP@GMAIL.COM,1
+ deepika  kaur,9,2, deedood@gmail.com,1
+ Ankita,9,4, ankitashokeen1989@gmail.com,1
+ Harmandeep,9,1, annihilate_u_4_real@yahoo.co.in,1
+ rajinder,9,2, rajinder1801.singh@gmail.com,1
+ Arveen,9,3, arveen.walia@yahoo.com,1
+ Balvinder Singh Khurana,9,2, balvindersingh17@gmail.com,1
+ md faizan shibli,9,4, faizan.shibli@gmail.com,1
+ Hanit,9,3, hanit_09@hotmail.com,1
+ Apinder,9,2, as.nv.del@gmail.com,0
+ HANIT SINGH,9,3, kaio90@yahoo.co.in,1
+ sunit kaur ubhi,9,2, sunit_ubhi12@yahoo.com,1
+ AAA,9,4, HGASSA@YAHOO.COM,1
+ Sunny Singh,9,3, suunnyboy@gmail.com,1
+ Amandeep Singh lamba,9,3, amantheleader@yahoo.co.in,1
+ sonam monga,9,4, sonammonga89@gmail.com,0
+ nupur,9,1, nupurkohli@yahoo.co.in,1
+ Karan Sharma,9,4, s_karan@sify.com,1
+ Sarablin Kaur,9,2, sarablin@gmail.com,1
+ Jasmeen kaur,9,1, jasmeenkaur2510@gmail.com,1
+ Amrit Pal Singh,9,1, amycool03@gmail.com,1
+ Amanjot Singh,9,1, loving_shells@rediffmail.com,1
+ charatkakkar,9,2, charatkakkar@yahoo.com,1
+ DEEPANSHU JAIN,9,4, DJMASTY_COOL@YAHOO.CO.IN,1
+ Jaideep Singh Kohli,9,3, singhjai4u@gmail.com,1
+ Manmeet Singh,9,1, www.manman_89@yahoo.co.in,1
+ jaspreet kaur bhatia,9,3, jaspreetkaurbhatia@gmail.com,1
+ gaganpreet kour,9,1, gagan_preet@ymail.com,1
+ Sukhmeet,9,1, Sukhmeet015@yahoo.co.in,1
+ tarundeep singh,9,3, tarundeepsingh@ymail.com,1
+ Dapinder Singh Arora,9,2, dapinder_arora@rediffmail.com,1
+ nahyy cic,9,4, sweet_rubal19@yahoo.co.in,1
+ Gundeep Kaur Bhatia,9,2, gkb.8390@gmail.com,1
+ Diwakar Labh,9,4, diwakarkumarlabh@yahoo.com,1
+ Guruprakash Singh,9,3, gurusinghjassal@gmail.com,1
+ Imanpreet singh bindra,9,3, imanpreetsinghbindra@gmail.com,1
+ karanjot singh bhasin,9,1, karan18.kv@gmail.com,1
+ Rajneet Kaur,9,2, ena.hora.88@gmail.com,1
+ Kumar Gaurav Chhapola,9,4, zany_frenzy804@yahoo.co.in,1
+ harneet singh,9,1, gladiatorunleashed@gmail.com,1
+ Shagun Sehgal,9,3, engineer_shaggs@yahoo.com,1
+ richa,9,4, richa20pandey@gmail.com,1
+ Jatinpreet Singh,9,1, jatinpreet@gmail.com,1
+ maninder kaur,9,3, harman_bca@yahoo.co.in,1
+ paramveer singh,9,3, paramveersingh007@yahoo.com,1
+ Piyush kapoor,9,4, piks2689@gmail.com,1
+ Vishavjit Singh,9,1, vishavjits@gmail.com,1
+ jagdeep singh,9,2, jagdeep272@gmail.com,1
+ nishchal sharma,9,4, nishchalsharma89@gmail.com,1
+ Akansha,9,4, sharma.akansha.a@gmail.com,1
+ taranpreet,9,2, taranpreet121289@gmail.com,1
+ Anamdeep singh,9,1, anamchanana9@gmail.com,1
+ Preet Kamal,9,2, preet1989@gmail.com,1
+ Ashmeet Singh,9,1, azmit4209211@yahoo.co.in,1
+ Jasmeet Singh,9,3, jasmeet11@gmaail.com,1
+ jasmeet singh,9,3, jasmeet11@gmail.com,1
+ prateek agarwal,9,4, prateek435@yahoo.co.in,1
+ ravinder,9,1, ravisoulsearcher@gmail.com,1
+ amandeep singh,9,2, amandeep.success@gmail.com,1
+ DAPINDER SINGH,9,3, www.badboycheenu@yahoo.com,1
+ Gaurang Manchanda,9,4, gaurang300489@gmail.com,1
+ ARIF ANWAR,9,4, rfnwar@yahoo.com,1
+ pravleen kaur,9,2, prvln.kr@gmail.com,1
+ manmeet kaur,9,2, www.manmeetkr6@gmail.com,1
+ hitesh singh arora ,9,3, ahitesh35@gmail.com,1
+ anudeep kaur,9,1, anu.kaur14@yahoo.com,1
+ Amandeep Singh,9,3, amanrubal@yahoo.co.in,1
+ sukhbir kaur,9,3, sukhi_kaur@56yahoo.com,1
+ Ravneet,9,1, kool_ravneet@yahoo.com,1
+ gagandeep singh,9,1, rubalrgs21@gmail.com,1
+ sauravjit singh,9,3, sauravjit.singh@gmail.com,1
+ sunil,9,2, hello2meneetu@yahoo.co.in,1
+ Kamalpreet,9,1, kamalpreet@yahoo.com,1
+ maninder pal singh,9,2, manindersrah28@gmail.com,1
+ AJEET SINGH,9,1, ajeet_gemini@yahoo.com,1
+ Shashi Prakash,9,1, shashiprakashc5@gmail.com,1
+ varun dhingra,9,1, varundhingra1989@gmail.com,1
+ lalit,9,1, it_red04@yahoo.co.in,1
+ HITESH AGGARWAL,9,3, hiteshy2007@yahoo.com,1
+ komal sachdeva,9,1, komalsachdeva5@gmail.com,1
+ Aviral Midha,9,2, mighty_aviral@yahoo.com,1
+ amar kumar,9,2, amarlovesu1989@gmail.com,1
+ awanish kumar,9,2, awanish.rockstar@gmail.com,1
+ rakesh kumar singh,9,1, rakeshsingh4387@gmail.com,1
+ sumir singh bajaj,9,3, sumirbajaj@gmail.com,1
+ ANUJ KHUTTAN,9,3, anujnowingtbit@gmail.com,1
+ ANUBHAV SINGH,9,1, anubhav_grover@yahoo.co.in,1
+ nngoyal,9,2, nngoyal@gmail.com,1
+ prakhar,9,3, rani_abhishek_amitabh@yahoo.co.in,1
+ gunjan sikheria,9,3, gsikheria@gmail.com,1
+ vinay,9,3, vinay093@gmail.com,1
+ ishneet kaur,9,2, ishneetkaur17@gmail.com,1
+ Rishi Hora,9,3, evidence89@gmail.com,1
+ Sonal Ektaa,9,2, sonalektaa@yahoo.com,1
+ Priyanka Manchanda,9,2, priyanka3393@gmail.com,1
+ yash kapila,9,1, yash_red_fire@yahoo.com,1
+ Mansi,9,2, mansi_mahna@yahoo.co.in,1
+ sherry wasandi,9,2, sherry_wasandi@yahoo.co.in,1
+ nikhil mahna,9,1, nikhil_akam@yahoo.co.in,1
+ Anuj Kakkar,9,3, anujkakkar89@gmail.com,1
+ mayank jain,9,1, mayank13@gmail.com,1
+ divyansh,9,2, divyanshmadan@gmail.com,1
+ Hemant mishra,9,2, cool_hemant_mishra@yahoo.co.in,1
+ vaibhav singhal,9,2, vaibhavsinghal2@gmail.com,1
+ chetan kalra,9,2, rocktimy@gmail.com,1
+ DIWAKAR KUMAR LABH,9,3, diwakarl.labh@gmail.com,1
+ prachi bansal,9,3, bansalprachi20@gmail.com,1
+ sunil,9,2, pinku_ji4u@yahoo.co.in,1
+ Ravindra Kumar,10,1, ravi_loveuall@yahoo.com,1
+ MANISH KUMAR,10,4, er.mk90@yahoo.com,1
+ shivoy,10,3, funkyshivoy_1008@yahoo.co.in,1
+ gagandeep singh,10,1, singh.gagandeep491@gmail.com,1
+ dhruv farswan,10,3, dhruvfarswan@gmail.com,0
+ Amrinder Singh Jabbal,10,2, amrinder.delhi100@gmail.com,1
+ Harpreet Singh,10,1, harpreet.singh504@gmail.com,1
+ Amritpal singh Narula,10,1, amrit.pal.singh.narula@gmail.com,1
+ Ramandeep Singh,10,3, ramandeepsingh_2008@yahoo.com,1
+ Prince Verma,10,4, vprince48@yahoo.com,1
+ Sumit,10,4, sumitcares18@gmail.com,1
+ Karan G Singh Tuteja,10,2, delhiboykaran@gmail.com,1
+ Deepal Singh Chhabra,10,1, deepal.chhabra@gmail.com,1
+ Harmeet Singh,10,1, harry1009@gmail.com,1
+ karan veer singh,10,2, kbagga90@gmail.com,1
+ Amandeep Singh,10,4, bediads@gmail.com,1
+ kapildhawan,10,2, kapildhawan617@gmail.com,1
+ Barleen Kaur,10,1, barleenkaur@gmail.com,1
+ Amitoj Singh,10,3, amitojs@khalsa.com,1
+ Gurpreet Singh,10,2, gurpreet.focus@gmail.com,1
+ JAIVIR SINGH,10,1, jaivirsingh10@gmail.com,1
+ Jasmeet Singh Bedi,10,1, bedi.jasmeetsingh@gmail.com,1
+ Karanpreet Singh,10,3, k_preet_singh@yahoo.com,1
+ RAVNEET KAUR CHAWLA,10,4, ravneetchawla90@gmail.com,1
+ Harshdeep Singh,10,1, harsharora_kool@yahoo.com,1
+ NAVJOT SINGH BEDI,10,1, nnnaaavvv@gmail.com,1
+ Jasbir Singh,10,1, jasbirsinghkamboj@yahoo.co.in,1
+ Randeep Kaur,10,2, d45tui@yahoo.com,1
+ Gursharan Singh,10,3, link2sunnynow@yahoo.com,1
+ Maneet Kaur,10,2, maneetsachdeva@yahoo.com,1
+ DHRUV,10,3, yourheartthrob_dhruv@yahoo.com,1
+ HARNEET KAUR,10,4, harneet-kaur@hotmail.com,1
+ Karan Deep,10,2, karandeep90@yahoo.com,1
+ RattanDeep,10,4, rattandeep01@gmail.com ,1
+ Amardeep Kaur,10,2, amardeep.kaur76@yahoo.com,1
+ Jiapal,10,4, jai_singhbhatti@rediffmail.com,1
+ shubneet singh,10,3, shubneet_singh@yahoo.com,1
+ Amandeep Singh,10,1, amandeepsinghahuja@gmail.com,1
+ simran,10,3, simran0918@gmail.com,1
+ Gagandeep Singh,10,3, curtis.gagandeep.jackson@gmail.com,1
+ Avneet Singh Bindra,10,2, avneet_bindra09@yahoo.co.in,1
+ MANPREET KAUR,10,4, MANPREET_11190@YAHOO.IN,1
+ jagkaran singh,10,3, jagkaran_singh@yahoo.co.in,1
+ Amanpreet Kaur,10,1, anand.aman.05@gmail.com,1
+ Parnit Kaur,10,2, ParnitKaurKataria@yahoo.co.in,1
+ Prableen Singh,10,4, prableen.singh90@gmail.com,1
+ Kanchandeep kaur,10,1, kanchandeep84@ymail.com,1
+ Ajit Pal Singh,10,1, ajitpalsingh10@gmail.com,1
+ Amandeep Singh,10,2, singh.amandeep201190@gmail.com,1
+ ishpreet singh,10,1, ishpreetsingh11@gmail.com,1
+ Balpreet Singh,10,3, balpreetsingh91@gmail.com,1
+ PRABHJOT SINGH,10,1, ERPRABHJOT90@GMAIL.COM,1
+ Balmeet Kaur,10,2, balmeetk@ymail.com,1
+ sarabjit singh,10,4, sarabjit.singh_8@yahoo.co.in,1
+ Sukhpreet Kaur,10,1, spellmi@gmail.com,1
+ jagpreet kaur,10,2, jagpreet.saini@yahoo.com,1
+ Ishmeet Kaur Bhatia,10,4, ishikaurbhatia_0490@rediffmail.com,1
+ Harvinder Singh,10,2, harvinder.it@gmail.com,1
+ SAHIB SINGH,10,1, sahib.1990@yahoo.co.in,1
+ Arshdeep singh makkar,10,3, arsh2015@gmail.com,1
+ Preet Singh,10,1, preetcena@gmail.com,1
+ maan,10,4, kaurnidhi1@gmail.com,1
+ Jasjeet Singh Chandhok,10,4, jasjeet_chandhok@yahoo.com,1
+ rajvinder singh,10,1, rajvindersingh455@gmail.com,1
+ dashmeet singh,10,4, bobb_rocks@yahoo.co.in,1
+ Harneet Kaur,10,1, harneetk09@gmail.com,1
+ Sunjot Singh Saluja,10,3, sunjotsingh10@gmail.com,1
+ simran kaur,10,1, simranarora72@gmail.com,1
+ Sukarnbir Singh Dhadiala,10,2, sukarn07@gmail.com,1
+ Meghna Walia,10,3, abcd@rediffmail.com,1
+ Avinash Kaur,10,1, avinash.kaur90@gmail.com,1
+ Harmandeep Singh,10,2, harmandeep.singh418@gmail.com,1
+ Shilpa chalana,10,4, s.chalana@yahoo.com,1
+ perminder singh,10,1, perminder90@ymail.com,1
+ Harminder Singh,10,3, rubal19@gmail.com,1
+ CHARANDEEP SINGH,10,2, cool_guy_never_shy@yahoo.com,1
+ Cheenu Arora,10,1, guestathome.arora007@gmail.com,1
+ Ramanpreet Singh,10,1, ramanrocks4u@gmail.com,1
+ Gaganjot Singh,10,3, gaganjotssethi@gmail.com,1
+ gurpreet singh,10,4, gurpreetsingh.er@gmail.com,1
+ Vinaypreet Singh,10,1, singh.vinaypreet@gmail.com,1
+ DIVYAPREET SINGH,10,1, sunny_dguy@yahoo.co.in,1
+ Daljeet Singh Saini,10,2, singh.daljeet.2901@gmail.com,1
+ deep singh,10,1, deep.gtbit@gmail.com,1
+ gurpreet singh bedi,10,1, bedigups@yahoo.in,1
+ GARVPREET SINGH,10,1, garvs_1401@yahoo.in,1
+ Gurpreet Singh Bawa,10,2, diegovegaz@gmail.com,1
+ simran singh,10,3, simran9716@gmail.com,0
+ Sarabjeet Kaur,10,1, kaursarab1990@gmail.com,1
+ Jaspreet Kaur,10,1, jkaur1990@gmail.com,1
+ Pawanjot Singh,10,1, pawanjot90@gmail.com,1
+ Kanwalpreet Singh,10,3, kanwalpreet90@gmail.com,1
+ aninder,10,4, stger@rfsg.com,1
+ gagandeep singh,10,1, gagankhurana.deep@gmail.com,1
+ Gundeep Singh,10,2, harmeet_sg@hotmail.com,1
+ Ishpreet Singh,10,4, ishpreetsandhu91@gmail.com,1
+ Ravneet Singh,10,1, ravneet.gtbit@gmail.com,1
+ Sukhvinder  Singh,10,2, skhvnder@gmail.com,1
+ Gagandeep Singh,10,1, meetgds@gmail.com,1
+ tarveen  kaur gujral,10,3, tarveenster@gmail.com,1
+ amanbir singh,10,3, mr.amanbir@rediffmail.com,1
+ Himsimar Singh,10,3, sahni.simer@gmail.com,1
+ manprit singh,10,4, s.manprit@ymail.com,1
+ mandeep kaur,10,1, kaurmndp29@gmail.com,1
+ Raawi,10,2, raawi_2007@yahoo.com,1
+ Mandeep kaur,10,1, , jasmeetsingh90@gmail.com
+ Divyesh Kumar,10,2, je.divyesh@gmail.com,1
+ Baneet singh,10,3, singhbaneet@yahoo.com,1
+ Anam Kaur Dang,10,1, anamdang91@gmail.com,1
+ Uday Deep Singh,10,2, udaydeep_1990@yahoo.co.in,1
+ sugandh dhawan,10,4, sugandhawan26@gmail.com,1
+ Jagjeet Singh Chadha,10,3, singh.jagjeet84@gmail.com,1
+ Taranpreet Kaur,10,3, taran102@ymail.com,1
+ Kuwarpreet Singh,10,2, KpSingh577@gmail.com,1
+ jaspreet singh narang,10,3, jaspreet_narang1990@ymail.com,1
+ Amanpreet Singh Saroya,10,2, amanpreetsaroya29@gmail.com,1
+ vidur maini,10,4, vidurs_maini@yahoo.co.in,1
+ shruti chauhan,10,4, shrutz_segi@yahoo.co.in,1
+ gurpreet singh,10,3, gurpreetsingh.9storm@gmail.com,1
+ pankaj dogra,10,4, pankaj.20.7.dogra@gmail.com,1
+ Hemendra.kr.Singh,10,2, hemendrak68@gmail.com,1
+ gurpreet bedi,10,3, gurpreet_bedi90@yahoo.com,1
+ raman,10,2, hargo.drums@gmail.com,0
+ amandeep aingh,10,1, deep4539@gmail.com,1
+ Hargovind Singh,10,2, harkiratsinghnoida@gmail.com,1
+ harjot kaur saharan,10,2, amiableharjot@gmail.com,1
+ Jasmehr Singh Bhogal,10,3, jasmehr@gmail.com ,1
+ Devpal Singh,10,2, devpal.singh777@gmail.com,1
+ Navdeep Singh Sethi,10,3, navdeepsethi.sethi@gmail.com,1
+ Sarabjot singh sethi,10,2, sarabjotsethi27@yahoo.com,1
+ Simrit,10,3, simrit.91@gmail.com,1
+ Abhishek Katariya,10,3, abhishek25katariya@gmail.com,1
+ Ishdeep Singh,10,1, singh.ishdeep.0907@gmail.com,1
+ adarsh,10,1, adarsh.shukla3@gmail.com,1
+ kunal,10,3, kunal3112@gmail.com,1
+ Ramandeep Singh,10,4, Raman@Slaich.com,1
+ Jaspal singh saini,10,4, jaspal017@gmail.com,1
+ jaskaran singh bhatia,10,4, suby_bhatia@yahoo.com,1
+ rohit verma,10,1, rohitverma4204u@gmail.com,1
+ monika,10,2, monikasharma0007@gmail.com,1
+ Nirmala,10,2, tiddi1201323108@gmail.com,1
+ shaina mehta,10,1, me.sm.14@gmail.com,1
+ Jasmeet Singh Chadha,10,3, singh.jasmeet61@gmail.com,1
+ Jaspreet Kaur,10,1, jaspreetkaur307@gmail.com,1
+ sandeep singh,10,3, sikhsra@gmail.com,1
+ Vasundhra Kain,10,2, vk.kain@gmail.com,1
+ Raveen Kaur,10,3, kiran_deep_86@yahoo.co.in,1
+ pulkit bindra,10,2, pulkit.bindra@gmail.com,1
+ tripat kaur datta,10,3, tripat1989@gmail.com,1
+ Simranjeet Singh,10,2, singh.SJ90@gmail.com,1
+ simer,10,2, chawlasimer@gmail.com,1
+ Neetu Chopra,10,3, neetu_chopra5@yahoo.com,1
+ Jasmine Kaur,10,2, jasminesuri90@gmail.com,1
+ Ishmeet Singh Kohli,10,1, ishmeet_ninja@yahoo.co.in,1
+ firoz ahamed ansari,10,3, reffirozstre@gmail.com,1
+ Arnav Bhandari,10,3, arnavbhandari@gmail.com,1
+ Ramit,10,1, suri_ramit@yahoo.co.in,1
+ gurkirat singh,10,2, kirat10jan@gmail.com,1
+ Akshat Jain,10,1, akki68x03@gmail.com,1
+ Mohit,10,3, dhawanmohit.91@gmail.com,1
+ Neha Ghai,10,1, neha.ghai7@gmail.com,1
+ Sanchi,10,1, sanchivarma@gmail.com,1
+ sahil chugh,10,1, sahil.staysmart@gmail.com,1
+ Rahul dev,10,3, rahul.d.1988@gmail.com,1
+ Nikhil Mittal,10,3, nikachim@gmail.com,1
+ Rajat Malik,10,2, rajat_malik@hotmail.com,1
+ Akhilesh Kumar,10,3, zealous.akks@gmail.com,1
+ sunil kumar,10,2, sunilkumargtbit@gmail.com,1
+ Nitin Tomar,10,3, man_23817019@yahoo.co.in,1
+ kartik,10,2, sunny_v3g3ta@yahoo.com,1
+ neha miglani,10,3, miglani.2633@gmail.com,0
+ sina bapi mandal,10,3, sbmandal143@gmail.com,1
+ Jyoti Minocha,10,1, jyotiminocha13@gmail.com,1
+ Pallavi Pushpam,10,2, pallavi.pushpam9@gmail.com,1
+ shahanshah nayyar,10,1, shahanshahnayyar@gmail.com,1
+ Anupriya vij,10,1, leo17anu@gmail.com,1
+ Himanshu,10,2, joywidpain@yahoo.co.in,1
+ bhavya sharma,10,2, bhavya4frnds@gmail.com,1
+ deepti,10,1, deepti.deeps.aggarwal18@gmail.com,1
+ Ashish Kumar,10,1, ashishkr18vmc@gmail.com,1
+ Sanchi Varma,10,1, sanchi1706@gmail.com,1
+ JAGJIT SINGH,10,1, JAGJITSINGHCSE@GMAIL.COM,1
+ chitra choudhary,10,2, chitra14.89@gmail.com,1
+ Jaspreet singh,10,2, jaspreet010690@gmail.com,1
+ hast,10,2, a@a.com,1
+ DEVANAND JHA,11,4, ntnlvboy@gmail.com,1
+ Girish dewan,11,1, Girish_fun2006@yahoo.co.in,1
+ Jasmeet Singh,11,3, gpsingh945@yahoo.co.in,1
+ Anish,11,2, anish.innocent@gmail.com,1
+ Amandeep Singh Hanspal,11,1, sinamandeep@gmail.com,1
+ Gurpreet Kaur,11,1, preetlife.kaur@gmail.com,1
+ Gurpreet Kaur,11,1, preetlife.kaur@gail.com,1
+ Teghkaran Singh,11,2, teghkaransingh@yahoo.com,1
+ harpreet kaur,11,1, mini_scorpio90@yahoo.co.in,1
+ Archit Singh Sehmbi,11,2, coolguy.arch91@gmail.com,1
+ preetinder kaur,11,2, ship1175@yahoo.co.in,1
+ mandeep singh,11,2, kohli.mandeepsingh@yahoo.in,1
+ harneet kaur,11,2, harneet_0709@hotmail.com,1
+ prabhjot kaur,11,1, kaurprabhjot90@yahoo.co.in,1
+ surbhi,11,1, thunder_9811@yahoo.com,1
+ Harsimran Kaur,11,1, aina_simran@yahoo.com,1
+ kunwar deep singh toor,11,1, allstar.kunwar@gmail.com,1
+ prabhjot signh,11,3, prabhjot.singh77@yahoo.in,1
+ Ashwary Rastogi,11,2, xyzmanas@yahoo.com,1
+ amandeep singh narula,11,4, descentamansagi@yahoo.com,1
+ Anubhav Saxena,11,4, saxenaanubhav73@gmail.com,1
+ Japji Kaur Puri,11,2, japji_puri91@yahoo.com,1
+ Khalsa,11,2, khalsa_92@yahoo.com,1
+ Abhishek Kapoor,11,3, abhicome@gmail.com,1
+ manish kumar,11,4, manishrajput05@yahoo.in,1
+ yogesh kumar,11,1, koli1989@gmail.com,1
+ sam,11,3, jugni@yahoo.com,1
+ Simrandeep Singh,11,2, simrandeep@hotmail.co.in,1
+ jasmeet singh,11,3, rajdarbargutka@gmail.com,1
+ brajdhar asit,11,4, asitbrajdhar@gmail.com,1
+ Chandandeep Singh,11,3, singhisking00007@gmail.com,1
+ SHIVANGI SINGH,11,4, singhshivangi93@gmail.com,1
+ rajdeep singh gohal,11,1, rajindependent@gmail.com,1
+ rohit sharma,11,3, rohitrohitplayer@gmail.com,1
+ nitin kumar,11,2, nitin.nitinkumar.kumar72@gmail.com,1
+ Sugandha Gupta,11,2, soogupta_12@yahoo.com,1
+ Amanjot singh,11,3, aman_cool91@ymail.com,1
+ anupama,11,1, nonsthegreat@yahoo.com,1
+ Hargun Singh,11,3, cool_ace_ruble@yahoo.co.in,1
+ atul sharma,11,4, vicky_0sharma@yahoo.com,1
+ jasleen kaur,11,2, jsethi85@yahoo.com,1
+ sarabjot singh,11,2, sarabjot13@gmail.com,1
+ parminder singh,11,4, pamisingh18@gmail.com,1
+ GAGAN,11,3, gagadon23@yahoo.com,1
+ Ishmet Singh,11,2, ishmeetsingh1991@gmail.com,0
+ ravi,11,1, ravialodia@gmail.com,1
+ Lovneesh Tanwar,11,3, lovneesh.tanwar@gmail.com,1
+ Anshul Khandelwal,11,1, anshulgtbit91@gmail.com,1
+ iojopj,11,3, standbksc@gmail.com,1
+ ANJANI KUMAR SINGH,11,3, anjni_kumar89@yahoo.com,1
+ ANJANI KUMAR,11,3, anjani_kumar89@yahoo.com,1
+ devasheesh,11,3, devmn91@gmail.com,1
+ SAHIL GUPTA,11,1, SAHIL240791@gmail.com,1
+ jauneet singh,11,1, jimmywazir@gmail.com,1
+ Amanpreet Singh,11,3, apsghotra1994@gmail.com,1
+ Shalini,11,1, shubhankur05@gmail.com,1
+ DEEPKARAN SINGH MADAN,11,3, deepkaran_18@yahoo.co.in,1
+ gaurav sharma,11,3, rjvjdj@gmail.com,1
+ Abhimanyu Bhatia,11,3, abhatia1591@yahoo.co.in,1
+ sandeep kumar,11,1, jackyjindal98@gmail.com,1
+ sudhir,11,1, sudhirmiglani1991@gmail.com,1
+ aman,11,3, chadha.amandeep9@gmail,com
+ harsh,11,3, munmun.gautam07@gmail.com,1
+ Anmol Singh,11,1, anmol.arora25@gmail.com,1
+ shubham ,11,3, shubham_passi@yahoo.co.in,1
+ Sahil Aggarwal,11,3, sahila239@gmail.com,1
+ Teghkaran Singh,11,2, teghkaran.singh@gmail.com,1
+ ARUN KUMAR,11,3, PALBOY92@GMAIL.COM,1
+ Mohit Kumar,11,3, mohitrockkumar@ymail.com,1
+ Nikhil Aggarwal,11,3, nikeagg18@gmail.com,1
+ ankush mittal,11,2, ankush.13mittal@gmail.com,1
+ Maria Nishat,11,1, marianishat@gmail.com,1
+ prince kumar mahaseth,11,2, catch.prince2009@gmail.com,1
+ Sandeep Aggarwal,11,3, aggarwalsandeep03@gmail.com,1
+ mannat,11,1, hrshkhrb@gmail.com,0
+ Ishaan Singh Chawla,11,4, itsme.ish15@gmail.com,1
+ khushwant,11,2, khushwant.bindoria@gmail.com,1
+ Raminder kaur,11,2, raminderk.kaur920@gmail.com,1
+ vivek pasi,11,2, mr.coolboyvivek@gmail.com,1
+ lovjit,11,3, lovjitbedi@gmail.com,1
+ Maneesh Kumar Das,11,2, maneesh.das.44@gmail.com,1
+ jasvinder singh sethi,11,3, simar_2092@yahoo.co.in,1
+ VIPINJIT KAUR,11,2, vipinjit_kaur@ymail.com,1
+ GAGANPRIT SINGH,11,4, gagansingh.singh337@gmail.com,1
+ hemant gupta,11,2, hempreet86@yahoo.co.in,1
+ Prabhat,11,2, prabhatajmani@ymail.com,1
+ Ravleen Kaur,11,1, ravleen_24@yahoo.com,1
+ damanjeet kaur,11,3, damankaur91@yahoo.com,1
+ nikhil,11,1, nik_delhi58@yahoo.com,1
+ Taranmeet,11,1, mr.taranmeet@rediffmail.com,1
+ Rupinder Singh Sachdeva,11,1, rupinderss@gmail.com,1
+ Gagandeep Singh,11,3, gagandeep91@gmail.com,1
+ guneet kaur,11,2, gkgoomer@live.in,1
+ SANDEEP SINGH,11,3, ssinghssm@gmail.com,1
+ shyam,11,4, shyamsingh0077@gmail.com,1
+ Meenakshi kaur,11,3, attitude.rockerss@gmail.com,1
+ vandana shrestha,11,2, venu.shrestha@gmail.com,1
+ Gurpreet Singh Dhalliwall,11,2, gurpreet.dhalliwall@gmail.com,1
+ sarabjit singh,11,3, sarabjit_king@yahoo.in,1
+ Amritpal Singh,11,3, amrit_devil@rocketmail.com,1
+ Gaurav kumar,11,3, gaurav0191@gmail.com,0
+ hunny,11,3, hunny15sep1993@gmail.com,1
+ Shruti Mehrotra,11,2, shrutimehrotra7@gmail.com,1
+ damanpreet,11,3, damans227@yahoo.com,1
+ Harshdeep Singh,11,3, harsh_deep_11a@yahoo.co.in,1
+ Harpreet Singh,11,4, harpreet9155@yahoo.com,1
+ Lyric Dubey,11,3, lyricdubey@gmail.com,1
+ Atul kumar,11,2, atul.aryan1990@gmail.com,1
+ ankit garg,11,2, garg2302@gmail.com,1
+ Gurmanjot Singh,11,3, singhgurmanjot@ymail.com,1
+ ramanpreet kaur saini,11,2, namar0210@gmail.com,1
+ Simranjeet singh dadyala,11,1, simran2491@gmail.com,1
+ Sam Both,11,4, punam.international@gmail.com,1
+ ankur bhardwaj,11,3, ankurb175@gmail.com,0
+ prabhjit singh oberoi,11,2, oberoi.prabhjit@gmail.com,1
+ jaskaran singh,11,1, jaskaran.sikh@gmail.com,1
+ Gobindpreet Singh,11,1, gobind57@yahoo.com,1
+ prabhprit,11,4, jazzyjoelz@yahoo.com,1
+ Rahul Choudhary,11,2, rkc.15101991@gmail.com,1
+ Simranjeet singh,11,1, simranjeets385@gmail.com,1
+ karan kapur,11,2, killer.kk91@gmail.com,1
+ karan pratap singh,11,3, karansingh828@gmail.com,1
+ Nikita Sharma,11,2, nikki_19march@yahoo.co.in,1
+ Inderpreet Singh,11,3, inder_4991@yahoo.co.in,1
+ chirag,11,3, chiragtrust@gmail.com,1
+ jaspreet singh,11,4, jaspreet_singh219@yahoo.com,1
+ jitender ahuja,11,2, americaninindia@gmail.com,1
+ varun paul,11,2, vpvpaulnp@gmail.com,1
+ vivan deep singh,11,1, vivanorwinnie@gmail.com,1
+ manpreet singh,11,3, manpreetsinghpannu@gmail.com,1
+ Jaskaran Singh,11,3, cool_jas_91@yahoo.com,1
+ harmandeep singh,11,3, robinconcept16@gmail.com,1
+ GURLEEN KAUR,11,3, www.gkaur20@gmail.com,1
+ Rminder Singh,11,1, sahib.sahni@gmail.com,1
+ rohit koul,11,3, rohitkoul23jan@gmail.com,1
+ kanwaljeet singh,11,3, kanwaljeetsingh08@yahoo.com,1
+ rahul,11,3, kumar.rahul9250347383@gmail.com,1
+ Aaftab Singh Ahluwalia,11,1, aaftab.ahluwalia@gmail.com,1
+ bhanu gupta,11,2, bhanugupta93@yahoo.in,1
+ Gurpreet Singh,11,3, prince22gs@gmail.com,0
+ Lovneesh Tanwar,11,3, monutanwr@gmail.com,1
+ ayush chaudhary,11,4, ayushc509@gmail.com,1

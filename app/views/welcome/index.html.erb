@@ -13,6 +13,10 @@
 
     <h1 class="welcome_text">Welcome <%= current_user.full_name %>,</h1>
     <hr>
+    <% if(notif_count > 0) %>
+      <p class="text-seagreen glass-panel"><%= link_to "You have #{notif_count} Unread notification(s)", notifications_path %></p>
+      <hr>
+    <% end %>
     <div class="activity">
       <h2 class="activity_heading">Your Activity</h2>
       <div class="activity_content">
