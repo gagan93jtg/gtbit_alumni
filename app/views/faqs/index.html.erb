@@ -4,21 +4,16 @@
       <h1>FAQ's</h1>
     </div>
 
-
-
     <div class="faqs_body ">
       <% @faqs.each_with_index do |faq, index| %>
       <div class="faq glass-panel">
         <p class="faq_question toggle_faq_answer_<%= index %>">
-          <%= faq.question %> ?
+          <%= faq.question %>
         </p>
-        <p class="faq_answer faq_answer_<%= index %> ">
-          <%= faq.answer %>
-        </p>
+        <p class="faq_answer faq_answer_<%= index %> multiline_text"><%= faq.answer %></p>
       </div>
       <% end %>
     </div>
-
 
     <div class="gan_pagination">
       <div class="internal_pagination">

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160821045531) do
+ActiveRecord::Schema.define(version: 20160907170510) do
 
   create_table "comments", force: :cascade do |t|
     t.integer  "user_id",        limit: 4
@@ -58,6 +58,13 @@ ActiveRecord::Schema.define(version: 20160821045531) do
   add_index "job_posts", ["experience_in_months"], name: "index_job_posts_on_experience_in_months", using: :btree
   add_index "job_posts", ["location"], name: "index_job_posts_on_location", using: :btree
   add_index "job_posts", ["user_id"], name: "index_job_posts_on_user_id", using: :btree
+
+  create_table "notices", force: :cascade do |t|
+    t.string   "notice_text", limit: 255, default: ""
+    t.string   "notice_url",  limit: 255, default: ""
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "post_histories", force: :cascade do |t|
     t.integer  "user_id",      limit: 4

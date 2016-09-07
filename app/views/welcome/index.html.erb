@@ -18,6 +18,11 @@
       <p class="text-seagreen glass-panel"><%= link_to "You have #{notif_count} Unread notification(s)", notifications_path %></p>
       <hr>
     <% end %>
+    <% unless @notice.nil? %>
+      <p class="text-seagreen glass-panel normal-font-size"><%= link_to @notice.notice_text, @notice.notice_url %></p>
+      <hr>
+    <% end %>
+
     <div class="activity">
       <h2 class="activity_heading">Your Activity</h2>
       <div class="activity_content">
