@@ -15,7 +15,7 @@
             <div class="header">
               <p class="user-name user-link"><%= link_to comment.user.full_name, user_path(comment.user.id), class: '' %></p>
               <p class=" user-time"><%=timeago_tag comment.created_at%> </p>
-              <span class="user-post multiline_text"><%=comment.comment_string%></span>
+              <span class="user-post multiline_text"><%= auto_link(comment.comment_string) %></span>
             </div>
           </div>
         </div>

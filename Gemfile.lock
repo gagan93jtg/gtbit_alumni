@@ -165,6 +165,8 @@ GEM
     rails-timeago (2.13.0)
       actionpack (>= 3.1)
       activesupport (>= 3.1)
+    rails_autolink (1.1.6)
+      rails (> 3.1)
     rails_best_practices (1.16.0)
       activesupport
       code_analyzer (>= 0.4.3)
@@ -310,6 +312,7 @@ DEPENDENCIES
   rails-dom-testing (= 1.0.7)
   rails-html-sanitizer (= 1.0.3)
   rails-timeago (= 2.13.0)
+  rails_autolink (= 1.1.6)
   rails_best_practices (= 1.16)
   railties (= 4.2.5.1)
   rake (= 10.5.0)

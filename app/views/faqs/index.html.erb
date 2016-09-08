@@ -8,9 +8,9 @@
       <% @faqs.each_with_index do |faq, index| %>
       <div class="faq glass-panel">
         <p class="faq_question toggle_faq_answer_<%= index %>">
-          <%= faq.question %>
+          <%= auto_link(faq.question) %>
         </p>
-        <p class="faq_answer faq_answer_<%= index %> multiline_text"><%= faq.answer %></p>
+        <p class="faq_answer faq_answer_<%= index %> multiline_text"><%= auto_link(faq.answer) %></p>
       </div>
       <% end %>
     </div>

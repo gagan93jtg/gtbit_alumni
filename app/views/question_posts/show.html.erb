@@ -20,7 +20,7 @@
                 <% end %>
               </p>
               <p class=" user-time"><%=timeago_tag comment.created_at%> </p>
-              <span class="user-post multiline_text"><%=comment.comment_string%></span>
+              <span class="user-post multiline_text"><%= auto_link(comment.comment_string) %></span>
             </div>
           </div>
         </div>

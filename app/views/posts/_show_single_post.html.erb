@@ -20,7 +20,7 @@
     </p>
     <p class="user-time"><%= timeago_tag post.created_at %></p>
   </div>
-  <span class="post-string user-post multiline_text"><%= post.query_string %></span>
+   <span class="post-string user-post multiline_text"><%= auto_link(post.query_string) %></span>
   <% if show_full_post == true %>
   <div class="user-tags"><%= @post.tags %></div>
 
