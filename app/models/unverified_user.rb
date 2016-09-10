@@ -10,12 +10,12 @@ class UnverifiedUser < ActiveRecord::Base
 
   def self.create_unverified_user(params)
     return 'Missing required fields. Fields marked * are ' +
-           'compulsory' unless Utils.params_have_all_keys?(params, [:first_name, :last_name, :email])
+    'compulsory' unless Utils.params_have_all_keys?(params, [:first_name, :last_name, :email])
 
     return 'Email id already in use' if email_id_already_in_use(params[:email])
     user = UnverifiedUser.new(first_name: params[:first_name].strip,
-                              last_name: params[:last_name].strip, email: params[:email].strip,
-                              batch: params[:batch].strip)
+      last_name: params[:last_name].strip, email: params[:email].strip,
+      batch: params[:batch].strip)
     if user.valid?
       user.save
       return 'Success'
@@ -25,8 +25,12 @@ class UnverifiedUser < ActiveRecord::Base
   end
 
   def move_to_verified_user
-    User.create_user(first_name, last_name, email)
-    self.destroy
+    user_created = User.create_user(first_name, last_name, email)
+    if user_created == true
+      self.destroy
+    else
+      Rails.logger.error "Didn't destroy as user model has errors"
+    end
   end
 
   private
