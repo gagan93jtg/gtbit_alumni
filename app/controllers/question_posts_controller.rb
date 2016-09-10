@@ -52,6 +52,17 @@ class QuestionPostsController < ApplicationController
     return
   end
 
+  def mark_answered
+    post = QuestionPost.find(params[:id])
+    redirect_to controller: 'errors', action: 'file_not_found' and return unless post
+    redirect_to controller: 'errors', action: 'unprocessable'and return if current_user.id != post.user_id
+
+    post.is_answered = true
+    post.save
+
+    redirect_to post_path(post.id)
+  end
+
   private
 
   def get_question_posts

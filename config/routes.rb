@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   put 'user/password' => 'user#update_password', as: 'user_update_password'
   get 'posts/edit_history' => 'question_posts#edit_history'
+  get 'posts/mark_answered/:id' => 'question_posts#mark_answered', as: 'mark_answered'
 
   get 'errors/file_not_found', as: 'error_file_not_found'
   get 'errors/unprocessable', as: 'error_unprocessable'

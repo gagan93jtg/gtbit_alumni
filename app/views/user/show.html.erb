@@ -68,30 +68,30 @@
               <% else %>
 
               <div class="btn-group">
-                <button type="button" disabled class="btn btn-default profile-btn-two">
+                <button type="button" class="btn btn-default profile-btn-two">
                   <strong>
                     <%= @user.question_posts.count %>
                   </strong>
                 </button>
-                <button type="button" disabled class="btn btn-primary profile-btn-one">Question(s) Posted</button>
+                <button type="button" class="btn btn-primary profile-btn-one">Question(s) Posted</button>
               </div>
 
               <div class="btn-group">
-                <button type="button" disabled class="btn btn-default profile-btn-two">
+                <button type="button" class="btn btn-default profile-btn-two">
                   <strong>
                     <%= @user.experience_posts.count %>
                   </strong>
                 </button>
-                <button type="button" disabled class="btn btn-primary profile-btn-one">Experience(s) Shared</button>
+                <button type="button" class="btn btn-primary profile-btn-one">Experience(s) Shared</button>
               </div>
 
               <div class="btn-group">
-                <button type="button" disabled class="btn btn-default profile-btn-two">
+                <button type="button" class="btn btn-default profile-btn-two">
                   <strong>
                     <%= @user.job_posts.count %>
                   </strong>
                 </button>
-                <button type="button" disabled class="btn btn-primary profile-btn-one">Job post(s) added</button>
+                <button type="button" class="btn btn-primary profile-btn-one">Job post(s) added</button>
               </div>
               <% end %>
             </li>
@@ -101,8 +101,8 @@
               <div class="hr-left"></div>
 
               <div class="btn-group">
-                <button type="button" disabled class="btn btn-primary profile-btn-one">Batch</button>
-                <button type="button" disabled class="btn btn-default profile-btn-two">
+                <button type="button" class="btn btn-primary profile-btn-one">Batch</button>
+                <button type="button" class="btn btn-default profile-btn-two">
                   <strong>
                     <% if (!@user.batch.nil? && !(@user.batch.strip == "")) %>
                     <%= @user.batch %>
@@ -114,8 +114,8 @@
               </div>
 
               <div class="btn-group">
-                <button type="button" disabled class="btn btn-primary profile-btn-one">Phone</button>
-                <button type="button" disabled class="btn btn-default profile-btn-two">
+                <button type="button" class="btn btn-primary profile-btn-one">Phone</button>
+                <button type="button" class="btn btn-default profile-btn-two">
                   <strong>
                     <% if (!@user.phone.nil? && !(@user.phone.strip == "")) %>
                     <%= @user.phone %>
@@ -127,8 +127,8 @@
               </div>
 
               <div class="btn-group">
-                <button type="button" disabled class="btn btn-primary profile-btn-one">Gender</button>
-                <button type="button" disabled class="btn btn-default profile-btn-two">
+                <button type="button" class="btn btn-primary profile-btn-one">Gender</button>
+                <button type="button" class="btn btn-default profile-btn-two">
                   <strong>
                     <% if (!@user.gender.nil? && !(@user.gender.strip == "")) %>
                     <%= @user.gender %>
@@ -140,8 +140,8 @@
               </div>
 
               <div class="btn-group">
-                <button type="button" disabled class="btn btn-primary profile-btn-one">Email</button>
-                <button type="button" disabled class="btn btn-default profile-btn-two"><strong><%= @user.email %></strong></button>
+                <button type="button" class="btn btn-primary profile-btn-one">Email</button>
+                <button type="button" class="btn btn-default profile-btn-two"><strong><%= @user.email %></strong></button>
               </div>
             </li>
           </ul>

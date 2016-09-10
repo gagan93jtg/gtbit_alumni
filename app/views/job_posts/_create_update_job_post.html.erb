@@ -55,8 +55,10 @@
           <span class="glyphicon glyphicon-calendar"></span>
         </span>
       </div>
-      <input type="checkbox" class="form-group" id='ignore_date_time' name="job_post[ignore_date_time]">
-      <span class="ignore_text">Ignore date time</span>
+      <div class="ignore_date_time_div">
+        <input type="checkbox" class="form-group" id='ignore_date_time' name="job_post[ignore_date_time]">
+        <span class="ignore_text">Ignore date time</span>
+      </div>
     </div>
 
     <div class="form-group">
@@ -88,5 +90,6 @@
 <script type="text/javascript">
   initialize_jquery_validator();
   initialize_date_time_picker();
+  initialize_ignore_date_time_handler();
   preview_job_post();
 </script>

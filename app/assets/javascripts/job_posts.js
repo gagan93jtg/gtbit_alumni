@@ -1,5 +1,17 @@
 function initialize_jquery_validator()
 {
+
+}
+
+function initialize_ignore_date_time_handler()
+{
+  $('#ignore_date_time').change(function(event)
+  {
+    if ($(this).is(':checked') == true)
+      $('#drive_date_date_picker').css('visibility', 'hidden');
+    else
+      $('#drive_date_date_picker').css('visibility', 'visible');
+  });
 }
 
 function initialize_date_time_picker()
