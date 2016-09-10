@@ -20,18 +20,19 @@ class JobPost < ActiveRecord::Base
   validates_presence_of :job_type, message: 'is requried'
 
   validates_numericality_of :experience_in_months, :greater_than_or_equal_to => 0,
-  :less_than_or_equal_to => 480, :message => "is out of range. Do you think somebody will work "\
-  "in IT after this much experience ?"
+  :less_than_or_equal_to => 480, :message => 'is invalid'
 
   validates_numericality_of :bond_period_in_months, :greater_than_or_equal_to => 0,
-  :less_than_or_equal_to => 60, :message => "is out of range. Do you think somebody will work "\
-  "in a single company for such long time ?"
+  :less_than_or_equal_to => 60, :message => 'is invalid'
 
 
   scope :public_activity, -> (id, limit) { where("user_id != #{id}").order('id DESC').limit(limit) }
 
   def self.save_job_post(user, params)
     job_post_params = params[:job_post]
+    if job_post_params[:ignore_date_time] == 'on'
+      job_post_params[:reporting_date_time] = 'not known'
+    end
     job_post = user.job_posts.build(company_name: job_post_params[:company_name],
       company_website: job_post_params[:company_website],
       position: job_post_params[:position],
@@ -51,6 +52,9 @@ class JobPost < ActiveRecord::Base
 
   def update_job_post(params)
     job_post_params = params[:job_post]
+    if job_post_params[:ignore_date_time] == 'on'
+      job_post_params[:reporting_date_time] = 'not known'
+    end
     if was_job_post_updated?(job_post_params) && valid?
       save_post_in_redis
       update(company_name: job_post_params[:company_name],
