@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160907170510) do
+ActiveRecord::Schema.define(version: 20160908121135) do
 
   create_table "comments", force: :cascade do |t|
     t.integer  "user_id",        limit: 4
@@ -87,9 +87,13 @@ ActiveRecord::Schema.define(version: 20160907170510) do
     t.boolean  "is_edited",                  default: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "state",        limit: 255,   default: "active"
+    t.boolean  "is_answered",                default: false
   end
 
+  add_index "posts", ["is_answered"], name: "index_posts_on_is_answered", using: :btree
   add_index "posts", ["post_type"], name: "index_posts_on_post_type", using: :btree
+  add_index "posts", ["state"], name: "index_posts_on_state", using: :btree
   add_index "posts", ["user_id"], name: "index_posts_on_user_id", using: :btree
 
   create_table "unverified_users", force: :cascade do |t|

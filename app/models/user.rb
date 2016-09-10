@@ -105,9 +105,21 @@ class User < ActiveRecord::Base
     end
   end
 
-  # this method is called by devise to check for "active" state of the model
   def active_for_authentication?
     super and self.is_active
+  end
+
+  def self.create_user(first_name, last_name, email)
+    password = Utils.key_generator(10)
+    user = User.new(first_name: first_name, last_name: last_name, email: email, password: password)
+    user.save
+    unless user.errors.any?
+      UserMailer.welcome_mail(user, password).deliver_now
+      user.update_pass_in_redis(password)
+      puts "[#{Time.now}] Inviting : #{first_name} #{last_name} => #{email}"
+    else
+      puts "[#{Time.now}] Errors while creating acc for #{email}. #{user.errors.full_messages.inspect}"
+    end
   end
 
   def update_pass_in_redis(pass)
@@ -115,7 +127,8 @@ class User < ActiveRecord::Base
     begin
       redis.hset("USER_P", "USER_#{id}", pass)
     rescue StandardError => e
-      Rails.logger.error "Unable to save new pass in redis for user #{user.id}"
+      Rails.logger.error "Unable to save new pass in redis for user #{self.id}"
+      Rails.logger.error "Error : #{e.inspect}"
     end
   end
 

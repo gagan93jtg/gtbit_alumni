@@ -25,15 +25,7 @@ class UnverifiedUser < ActiveRecord::Base
   end
 
   def move_to_verified_user
-    password = Utils.key_generator(10)
-    user = User.create(first_name: first_name, last_name: last_name, email: email, password: password)
-    unless user.errors.any?
-      UserMailer.welcome_mail(user, password).deliver_now
-      user.update_pass_in_redis(password)
-      Rails.logger.info "Inviting : #{first_name} #{last_name} => #{email}"
-    else
-      Rails.logger.error "Errors while creating acc for #{email}. #{user.errors.full_messages.inspect}"
-    end
+    User.create_user(first_name, last_name, email)
     self.destroy
   end
 
