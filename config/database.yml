@@ -8,20 +8,23 @@ default: &default
   adapter: mysql2
   pool: 5
   timeout: 5000
-  database: gtbit_placement_dev
+  database: gan_dev
   username: "root"
   password: "root"
 
 development:
   <<: *default
 
-# Warning: The database defined as "test" will be erased and
-# re-generated from your development database when you run "rake".
-# Do not set this db to the same as development or production.
+staging:
+  <<: *default
+  database: gan_staging
+
 test:
   <<: *default
-  database: gtbit_placement_test
+  database: gan_test
 
-#production:
-#  <<: *default
-#W  database: db/production.sqlite3
+production:
+  <<: *default
+  database: gan_prod
+  username: "gan"
+  password: "ganrootpassword"

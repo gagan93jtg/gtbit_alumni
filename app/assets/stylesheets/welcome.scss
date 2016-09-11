@@ -1,0 +1,25 @@
+// Place all the styles related to the Welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.team_container
+{
+  margin: 10px;
+
+  .team_back_to_home
+  {
+    margin: 20px 0px 0px 25px;
+  }
+
+  .profile-sidebar
+  {
+    margin: 10px;
+  }
+
+  .team-profile-photo
+  {
+    width: 128px;
+    height: 128px;
+    border: 2px solid black;
+  }
+}

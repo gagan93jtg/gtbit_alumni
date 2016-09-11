@@ -1,0 +1,56 @@
+<div class="glass-panel activity_question clearfix">
+    <div class="left_div">
+        <% if job_post.user.avatar? %>
+        <%= image_tag job_post.user.avatar.url(:large), class: 'img-circle user-profile-pic'  %>
+        <% else %>
+        <%= image_tag 'logov2.png', class: 'img-circle user-profile-pic'  %>
+        <% end %>
+    </div>
+    <div class="right_div">
+        <p class="user-name user-link"> <%= link_to asked_by(job_post.user), user_path(job_post.user.id), class: '' %> <span class="small_text">posted a Job</span></p>
+        <p class="user-time"><%=timeago_tag Time.at(job_post.created_at) %></p>
+    </div>
+    <div class="user-post">
+        <%= job_post.company_name %>
+
+        <% unless job_post.company_website.nil? || job_post.company_website.strip == "" %>
+        (<%= auto_link(job_post.company_website) %>)
+        <% end %>
+
+        is hiring candidates for the position of <%= job_post.position %>
+
+        <% if job_post.location && job_post.location.strip == "" %>
+        in these locations [<%= job_post.location %>].
+        <% else %>
+        .
+        <% end %>
+
+        The nature of job is <%= job_post.job_type %>.
+
+        The job requires <%= job_post.experience_in_months %> months of experience.
+        There is <%= job_post.bond_period_in_months %> months of bond period for the job.
+        Yearly compensation for the job is <%= job_post.compensation %>
+        The reporting date and time for the drive are <%= job_post.reporting_date_time %>.
+
+        <% if preview == 'false' %>
+        <% if job_post.eligibility_criteria && !(job_post.eligibility_criteria.strip == "") %>
+        <p class="multiline_text more_details"><b>Eligibility Criteria : </b> <%= auto_link(job_post.eligibility_criteria) %> </p>
+        <% end %>
+        <% if job_post.selection_process && !(job_post.selection_process.strip == "") %>
+        <p class="multiline_text more_details"><b>Selection Process : </b> <%= auto_link(job_post.selection_process) %> </p>
+        <% end %>
+        <% if job_post.job_description && !(job_post.job_description.strip == "") %>
+        <p class="multiline_text more_details"><b>Job Description : </b> <%= auto_link(job_post.job_description) %> </p>
+        <% end %>
+        <% if job_post.other_details && !(job_post.other_details.strip == "") %>
+        <p class="multiline_text more_details"><b>Other Details : </b> <%= auto_link(job_post.other_details) %> </p>
+        <% end %>
+        <% end %>
+    </div>
+    <% if job_post.user_id == current_user.id %>
+    <%= link_to "Edit job post", edit_job_path(job_post.id), class: 'edit_post background-seagreen' %>
+    <% end %>
+    <% if preview == 'true'%>
+    <%= link_to "View Full post", job_path(job_post.id), class: 'view_post background-seagreen' %>
+    <% end %>
+</div>

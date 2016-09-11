@@ -1,0 +1,60 @@
+<div class="activity_question glass-panel">
+  <div class="left_div">
+    <% if post.is_anonymous == true %>
+    <%= image_tag "anonymous.jpg", class: 'img-circle public_activity_user', alt: 'profile pic' %>
+    <% elsif post.user.avatar? %>
+    <%= image_tag post.user.avatar.url(:large), class: 'img-circle user-profile-pic'  %>
+    <% else %>
+    <%= image_tag 'logov2.png', class: 'img-circle user-profile-pic'  %>
+    <% end %>
+  </div>
+
+  <div class="right_div">
+    <p class="user-name user-link">
+      <% if post.is_anonymous  == true %>
+      <%= link_to 'The anonymous', user_path('anonymous') %> <span class="small_text"><%= asked_or_shared_experience(post) %> </span>
+      <% else %>
+      <%= link_to post.user.full_name, user_path(post.user.id) %>
+      <span class="small_text"><%= asked_or_shared_experience(post) %> </span>
+      <% end %>
+    </p>
+    <p class="user-time"><%= timeago_tag post.created_at %></p>
+  </div>
+  <span class="post-string user-post multiline_text"><%= auto_link(post.query_string) %></span>
+  <% if show_full_post == true %>
+  <div class="user-tags"><%= @post.tags %></div>
+
+  <% if  @post.post_histories.count > 0 %>
+  <a href="#" data-toggle="modal" data-target="#edit_history_modal" class="background-seagreen btn edit_history"> View edit history </a>
+  <% end %>
+
+  <% if post.post_type == Comment::POST_TYPE[:QUESTION] && post.user_id == current_user.id %>
+  <%= link_to "Edit post", edit_post_path(post.id), class: 'edit_post background-seagreen' %>
+  <% if post.is_answered == false %>
+  <%= link_to "Mark answered", mark_answered_path(post.id), class: 'edit_post background-seagreen' %>
+  <br>
+  <p class="medium_text">Mark this question as 'answered' if you have got the requried answer.</p>
+  <% end %>
+  <% elsif post.post_type == Comment::POST_TYPE[:EXPERIENCE] && post.user_id == current_user.id %>
+  <%= link_to "Edit post", edit_experience_path(post.id), class: 'edit_post background-seagreen' %>
+  <% end %>
+
+  <% else %>
+  <% if post.post_type == Comment::POST_TYPE[:QUESTION] %>
+  <%= link_to "View post", post_path(post.id), class: 'view_post background-seagreen' %>
+  <% elsif post.post_type == Comment::POST_TYPE[:EXPERIENCE] %>
+  <%= link_to "View post", experience_path(post.id), class: 'view_post background-seagreen' %>
+  <% end %>
+  <% end %>
+
+  <% if post.is_answered == true%>
+  <div class="question_status_div">
+    <span class="answered_mark question_status_mark medium_text">&#10004;</span>
+    <span class="medium_text">This question is answered</span>
+  </div>
+  <% end %>
+
+  <% if post.is_anonymous  == true %>
+  <p class="small_text anonymous_text">This is an anonymous question. Your identity remains hidden for anonymous posts.</p>
+  <% end %>
+</div>

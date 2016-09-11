@@ -1,0 +1,221 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <link href='https://fonts.googleapis.com/css?family=Work+Sans:100,300,400,600' rel='stylesheet' type='text/css'>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Welcome to GTBIT Alumni Network</title>
+</head>
+<body style="margin: 0 auto; padding: 0; min-width: 100% !important; font-family: 'Work Sans';">
+  <div style="background-color: #C1C1C1;">
+    <table class="content" style="margin: 0 auto; max-width: 600px; background-color: #ffffff;">
+      <tr>
+        <td style=" padding: 40px 30px 20px 30px; background-color: #000000; max-width: 100% !important;">
+          <table align="left">
+            <tr>
+              <td height="70" style="padding: 0 20px 20px 0;">
+                <img src="http://i65.tinypic.com/9a9uok.png" height="70">
+              </td>
+            </tr>
+          </table>
+          <table align="left" style="width: 100%; max-width: 425px;">
+            <tr>
+              <td height="70">
+                <table width="100%">
+                  <tr>
+                    <td style="font-size: 15px; color: #00bfa9; letter-spacing: 5px; padding: 0 0 0 3px;">
+                      Welcome to
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="font-size: 32px; font-weight: bold; padding: 5px 0 0 0; color: #ffffff;">
+                      GTBIT Alumni Network
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom: 1px solid #f2eeed; padding: 20px;" >
+          <table width="100%">
+            <tr>
+              <td style="padding: 0 0 15px 0; font-size: 24px; line-height: 28px; font-weight: bold; color: #00bfa9;">
+                Hello <%= @user.full_name %>,
+              </td>
+            </tr>
+            <tr>
+              <td style="font-size: 18px; line-height: 22px;">
+                We would like to invite you to GTBIT's very own Alumni Network where you can connect with past and current GTBIT students to share experiences and explore opportunities.  We're sure you would like to stop by and check out some cool features built in-house. You can visit us <a style="text-decoration: none !important; color: #00bfa9; display: inline-block; margin-bottom: 10px;" href="https://www.gtbitalumni.in">here</a> and use the following credentials to login.
+                <p>
+                  <h4 style="margin-top: 10px; margin-bottom: 10px;">Email id : <%= @user.email %></h4>
+                  <h4 style="margin-top: 10px; margin-bottom: 10px;">Password : <%= @password %> </h4>
+                  <br>
+                  You can read more about us <a style="text-decoration: none !important; color: #00bfa9; display: inline-block; margin-bottom: 10px;" href="https://www.gtbitalumni.in/team">here</a>.
+                </p>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom: 1px solid #f2eeed; padding: 20px;" >
+          <table width="100%" >
+            <tr>
+              <td style="padding: 0 0 15px 0; font-size: 24px; line-height: 28px; font-weight: bold; color: #00bfa9;">
+                <h3>Quick glance on the features</h3>
+              </td>
+            </tr>
+          </table>
+
+          <table align="left" style="margin-top: 20px;">
+            <tr>
+              <td style="padding: 0 20px 20px 0;">
+                <img src="http://i68.tinypic.com/5wxlw4.png">
+              </td>
+            </tr>
+          </table>
+          <table align="left" style="width: 100%;max-width: 380px;margin-top: 10px;">
+            <tr>
+              <td>
+                <table width="100%">
+                  <tr>
+                    <td class="h2" style="padding: 0 0 15px 0; font-size: 24px; line-height: 28px; font-weight: bold; color: #00bfa9;">
+                      Post your queries
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="bodycopy">
+                      Whether you are an alumnus or student, post a question / help somebody by answering one.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 20px 0 0 0;">
+                      <table class="buttonwrapper"  width="100%">
+                        <tr>
+                          <td class="button" height="40" width= "50%" style="background-color: #00bfa9; text-align: center; border-right:5px solid #fff;">
+                            <a style="text-decoration: none !important; color: #fff; display: inline-block; vertical-align: bottom; font-size: 16px; margin: 10px auto 10px; font-weight: 600;" href="https://www.gtbitalumni.in/posts/new">Ask a question</a>
+                          </td>
+
+                          <td class="button" height="40" width= "50%" style="background-color: #00bfa9; text-align: center">
+                            <a style="text-decoration: none !important; color: #fff; display: inline-block; vertical-align: bottom; font-size: 16px; margin: 10px auto 10px; font-weight: 600;" href="https://www.gtbitalumni.in/posts/">View questions</a>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom: 1px solid #f2eeed; padding: 20px;" >
+          <table width="115" align="left" style="margin-top: 20px;">
+            <tr>
+              <td style="padding: 0 20px 20px 0;">
+                <img src="http://i67.tinypic.com/16byezk.png">
+              </td>
+            </tr>
+          </table>
+          <table align="left" style="width: 100%;max-width: 380px;margin-top: 10px;">
+            <tr>
+              <td>
+                <table width="100%">
+                  <tr>
+                    <td class="h2" style="padding: 0 0 15px 0; font-size: 24px; line-height: 28px; font-weight: bold; color: #00bfa9;">
+                      Share experiences
+                    </td>
+                  </tr>
+                  <tr>
+
+                    <td class="bodycopy">
+                      Share experiences related to job, a post graduation college or something useful.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 20px 0 0 0;">
+                      <table class="buttonwrapper" width="100%">
+                        <tr>
+                          <td class="button" height="40" width= "50%" style="background-color: #00bfa9; text-align: center; border-right:5px solid #fff;">
+                            <a style="text-decoration: none !important; color: #fff; display: inline-block; text-align: center; vertical-align: bottom; font-size: 16px; margin: 10px auto 10px;font-weight: 600;" href="https://www.gtbitalumni.in/experience/new">Share an experience</a>
+                          </td>
+                          <td class="button" height="40" width= "50%" style="background-color: #00bfa9; text-align: center;">
+                            <a style="text-decoration: none !important; color: #fff; display: inline-block; text-align: center; vertical-align: bottom; font-size: 16px; margin: 10px auto 10px;font-weight: 600;" href="https://www.gtbitalumni.in/experience">Read experiences</a>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td style="padding: 20px;" >
+          <table width="115" align="left" style="margin-top: 20px;">
+            <tr>
+              <td style="padding: 0 20px 20px 0;">
+                <img src="http://i65.tinypic.com/ztw4s9.png">
+              </td>
+            </tr>
+          </table>
+          <table align="left" style="width: 100%;max-width: 380px;margin-top: 10px;">
+            <tr>
+              <td>
+                <table width="100%">
+                  <tr>
+                    <td class="h2" style="padding: 0 0 15px 0; font-size: 24px; line-height: 28px; font-weight: bold; color: #00bfa9;">
+                      Share job opportunities
+                    </td>
+                  </tr>
+                  <tr>
+
+                    <td class="bodycopy">
+                      Sharing great job opportunities, or browse through those posted by others.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 20px 0 0 0;">
+                      <table class="buttonwrapper" width="100%">
+                        <tr>
+                          <td class="button" height="40" width= "50%" style="background-color: #00bfa9; text-align: center; border-right:5px solid #fff;">
+                            <a style="text-decoration: none !important; color: #fff; display: inline-block; text-align: center; vertical-align: bottom; font-size: 16px; margin: 10px auto 10px;font-weight: 600;" href="https://www.gtbitalumni.in/job/new">Post a job</a>
+                          </td>
+                          <td class="button" height="40" width= "50%" style="background-color: #00bfa9; text-align: center;">
+                            <a style="text-decoration: none !important; color: #fff; display: inline-block; text-align: center; vertical-align: bottom; font-size: 16px; margin: 10px auto 10px;font-weight: 600;" href="https://www.gtbitalumni.in/job">View job posts</a>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+        <tr>
+          <td>
+          <span style="font-size: 12px; color:gray; display: inline-block; margin: 30px 0px;">You're receiving this email because our records indicate that you've attended GTBIT in past or you're a current GTBIT student.</span>
+          </td>
+        </tr>
+      </tr>
+      <tr>
+        <td class="footer" bgcolor="black" >
+          <table width="100%" style="padding: 20px 35px 15px 50px;">
+            <tr>
+              <td align="center" style="font-size: 14px; color: #ffffff;">
+                <a style="color: #ffffff; text-decoration: none !important; display: inline-block; margin-bottom: 10px;" href="https://www.gtbitalumni.in">&copy; Copyright 2016 GTBIT Alumni Network</a>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </div>
+</body>
+</html>

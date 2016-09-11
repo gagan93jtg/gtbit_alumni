@@ -1,26 +1,313 @@
-h2
+.login-pane
 {
-  margin-bottom: 20px;
+	margin-top: 60px;
 }
 
-.devise_login_page, .devise_forgot_page
+.login-pane h4
 {
-  width: 400px;
+	color: #685E6D;
+	font-size: 22px;
 }
 
-.devise_login
+.sign_in_text, .forgot_password_text
 {
-  font-size: 14px;
+	display: block;
+	text-align: center;
+	font-size: 28px;
+	color: black;
+	font-weight: 900;
+	margin: 12px;
 }
 
-.back_to_login, .forgot_password
+.login-pane .main-form
 {
-  float: right;
-  /*This margin top is important as 'input' tags have margin top and bottom 10px each*/
-  margin-top: 20px;
+	margin: 0 auto;
+	width: 500px;
+	border-radius: 2%;
+	padding:30px;
 }
 
-.new_user
+.btn-recover-password
 {
-  visibility: visible;
+	display: block;
+	margin: 20px auto;
+	width: 90%;
+}
+
+.back_to_login
+{
+	display: block;
+}
+
+.form-control
+{
+	border: 1px solid #00bfa9;
+}
+
+.login-pane label
+{
+	color: #685E6D;
+	font-size: 16px;
+}
+
+.login-pane .check
+{
+	font-size: 15px;
+	margin-bottom: 10px;
+}
+
+.login-pane .btn-sign
+{
+	font-size: 17px;
+	text-align: center;
+	display: block;
+	width: 90%;
+	margin: 0 auto;
+}
+
+.login-pane .sign-with
+{
+	margin-top: 20px;
+}
+
+.login-pane .create
+{
+	text-align: center;
+	margin: 0 auto;
+}
+
+.login-pane .btn-create
+{
+	font-size: 18px;
+	text-align: center;
+	padding: 5px;
+	width: 500px;
+	margin: 10px 0px 50px 0px;
+}
+
+.login-pane h4
+{
+	text-align: center;
+	margin-top: 20px;
+}
+
+.remember_me
+{
+	display: inline-block;
+	margin-bottom: -2px;
+}
+
+.remember_me_checkbox
+{
+	border: 1px solid #00bfa9;
+}
+
+.forgot_password
+{
+	margin-top: 20px;
+	display: block;
+}
+
+.forgot_password_pane
+{
+	margin-bottom: 250px;
+}
+
+@media(max-width: 590px)
+{
+	.login-pane span
+	{
+		font-size: 19px;
+	}
+
+	.login-pane h4
+	{
+		font-size: 19px;
+	}
+
+	.login-pane .sign-in hr
+	{
+		width: 160px;
+	}
+
+	.login-pane .main-form
+	{
+		margin: 0 auto;
+		width: 450px;
+	}
+
+	.login-pane label
+	{
+		font-size: 19px;
+	}
+
+	.login-pane .check
+	{
+		font-size: 13px;
+	}
+
+	.login-pane .btn-sign
+	{
+		font-size: 15px;
+	}
+
+	.login-pane .btn-create
+	{
+		font-size: 15px;
+		width: 450px;
+	}
+
+}
+
+@media(max-width: 490px)
+{
+	.login-pane span
+	{
+		font-size: 17px;
+	}
+
+	.login-pane h4
+	{
+		font-size: 17px;
+	}
+
+	.login-pane .sign-in hr
+	{
+		width: 100px;
+	}
+
+	.login-pane .main-form
+	{
+		margin: 0 auto;
+		width: 400px;
+	}
+
+	.login-pane label
+	{
+		font-size: 17px;
+	}
+
+	.login-pane .check
+	{
+		font-size: 13px;
+	}
+
+	.login-pane .btn-sign
+	{
+		width: 100%;
+		font-size: 14px;
+	}
+
+	.login-pane .btn-create
+	{
+		width:350px;
+		font-size: 14px;
+	}
+
+}
+@media(max-width: 450px)
+{
+	.main-form
+	{
+		border: 0;
+	}
+	.login-pane .btn-create
+	{
+		width:300px;
+	}
+	.login-pane .main-form
+	{
+		width: 350px;
+	}
+}
+@media(max-width: 370px)
+{
+	.login-pane span
+	{
+		font-size: 15px;
+	}
+
+	.login-pane h4
+	{
+		font-size: 15px;
+	}
+
+	.login-pane .sign-in hr
+	{
+		width: 80px;
+	}
+
+	.login-pane .main-form
+	{
+		width: 330px;
+	}
+
+	.login-pane label
+	{
+		font-size: 15px;
+	}
+
+	.login-pane .check
+	{
+		font-size: 13px;
+	}
+
+	.login-pane .btn-sign
+	{
+		width: 100%;
+		font-size: 14px;
+	}
+
+	.login-pane .btn-create
+	{
+		width:300px;
+		font-size: 14px;
+	}
+}
+
+@media(max-width: 340px)
+{
+	.login-pane span
+	{
+		font-size: 15px;
+	}
+
+	.login-pane h4
+	{
+		font-size: 15px;
+	}
+
+	.login-pane .sign-in hr
+	{
+		width: 65px;
+	}
+
+	.login-pane .main-form
+	{
+		width: 285px;
+	}
+
+	.login-pane label
+	{
+		font-size: 15px;
+	}
+
+	.login-pane .check
+	{
+		font-size: 13px;
+	}
+
+	.login-pane .btn-sign
+	{
+		width: 100%;
+		font-size: 13px;
+		padding: 5px 40px;
+	}
+
+	.login-pane .btn-create
+	{
+		width:265px;
+		font-size: 13px;
+		padding: 5px 27px;
+	}
 }

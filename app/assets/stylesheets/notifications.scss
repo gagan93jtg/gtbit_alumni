@@ -1,0 +1,97 @@
+// Place all the styles related to the Notifications controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+.activity_notify
+{
+	width: 100%;
+	color: #34495e;
+	border: 1px solid #d4d4d4;
+	border-radius: 2px;
+	box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+	.user-name,.user-time
+	{
+		font-size: 16px;
+	}
+}
+
+@media(max-width: 950px)
+{
+	.activity_notify
+	{
+		.post-link
+		{
+			display: block !important;
+		}
+		.public_activity_user
+		{
+			margin-top: -10px;
+		}
+	}
+}
+
+@media(max-width: 800px)
+{
+	.activity_notify
+	{
+		.public_activity_user
+		{
+			height: 55px;
+			width: 55px;
+		}
+		.user-name
+		{
+			font-size: 18px;
+		}
+	}
+}
+
+@media(max-width: 750px)
+{
+	.activity_notify
+	{
+		.public_activity_user
+		{
+			height: 50px;
+			width: 50px;
+		}
+		.user-name
+		{
+			font-size: 17px;
+		}
+	}
+}
+
+@media(max-width: 750px)
+{
+	.activity_notify
+	{
+		.user-name
+		{
+			font-size: 16px;
+		}
+	}
+}
+
+@media(max-width: 600px)
+{
+	.activity_notify
+	{
+		.public_activity_user
+		{
+			height: 50px;
+			width: 50px;
+		}
+		.user-time
+		{
+			font-size: 14px;
+		}
+	}
+}
+
+@media(max-width: 550px)
+{
+
+}

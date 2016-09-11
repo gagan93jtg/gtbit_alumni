@@ -1,0 +1,584 @@
+/*
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+* or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any styles
+* defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+* file per style scope.
+*
+*= require_tree .
+*= require_self
+*= require bootstrap
+*= require bootstrap-datetimepicker
+*/
+
+@font-face
+{
+	font-family: 'Glyphicons Halflings';
+
+	src: url('<%= asset_path("glyphicons-halflings-regular.eot") %>');
+	src: url('<%= asset_path("glyphicons-halflings-regular.eot?#iefix") %>') format('embedded-opentype'), url('<%= asset_path("glyphicons-halflings-regular.woff2") %>') format('woff2'), url('<%= asset_path("glyphicons-halflings-regular.woff") %>') format('woff'), url('<%= asset_path("glyphicons-halflings-regular.ttf") %>') format('truetype'), url('<%= asset_path("glyphicons-halflings-regular.svg#glyphicons_halflingsregular") %>') format('svg');
+}
+
+*
+{
+	padding: 0;
+	margin: 0;
+}
+
+::selection
+{
+	color: #00bfa9;
+	background-color: rgba(0, 0, 0, 0.05);
+}
+
+body
+{
+	padding: 0;
+	padding-top: 50px;
+	font-family: 'Work Sans';
+}
+
+a:link, a:visited, a:hover, a:active
+{
+	text-decoration: none;
+	color: inherit;
+}
+
+a:hover
+{
+	color: #00bfa9;
+}
+
+.user-link a:link, .user-link a:visited, .user-link a:hover, .user-link a:active
+{
+	color: #337ab7;
+}
+
+.user-link a:hover
+{
+	color: #00bfa9;
+}
+
+label
+{
+	font-weight: 300;
+}
+
+.text-seagreen
+{
+	color: #00bfa9 !important;
+}
+
+.normal-font-size
+{
+	font-size: 16px;
+}
+
+.background-seagreen
+{
+	background-color: #00bfa9 !important;
+	border: 1px solid #00bfa9 !important;
+	color: white !important;
+	transition: background-color 0.5s ease;
+}
+
+.background-seagreen:hover
+{
+	color: #00bfa9 !important;
+	background-color: white !important;
+}
+
+.foreground-seagreen
+{
+	color: #00bfa9 !important;
+	border: 1px solid #00bfa9 !important;
+	background-color: white !important;
+	transition: background-color 0.5s ease;
+}
+
+.foreground-seagreen:hover
+{
+	background-color: #00bfa9 !important;
+	color: white !important;
+}
+
+.transparent-bg
+{
+	background-color: transparent !important;
+	border: 0px solid white !important;
+}
+
+.dropdown-menu
+{
+	background-color: #fff !important;
+	color: #00bfa9 !important;
+}
+
+.dropdown-menu>li>a
+{
+	color: #black !important;
+}
+
+.dropdown-menu>li>a:hover
+{
+	background-color: #00bfa9 !important;
+	color: #000 !important;
+}
+
+header
+{
+	font-size:20px;
+}
+
+header .navbar-left
+{
+	display: block;
+	cursor: pointer;
+}
+
+header .navbar-left span
+{
+	margin-left: 10px;
+	font-size: 24px;
+	vertical-align: bottom;
+	color: white;
+}
+
+header .navbar-default
+{
+	background: black;
+	border-bottom: 1px solid white;
+}
+
+.body_content
+{
+	/* main body height is 100% of viewport height - (header height + footer height) */
+	min-height: calc(100vh - (50px + 120px));
+}
+
+.transparent-panel
+{
+	width: 900px;
+	color: #34495e;
+	border: 1px solid #d4d4d4;
+	border-radius: 2px;
+	box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+	padding: 10px;
+	margin: 10px auto;
+}
+
+.glass-panel
+{
+	border: 1px solid #d4d4d4;
+	border-radius: 2px;
+	box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+	padding: 10px;
+	margin: 10px auto;
+}
+
+.transparent-panel-full-width
+{
+	width: 97.5%;
+	color: #34495e;
+	border: 1px solid #d4d4d4;
+	border-radius: 2px;
+	box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+	padding: 10px;
+	margin: 10px auto;
+}
+
+.active-record-errors-div
+{
+	font-size: 14px;
+	margin: 10px 0px;
+
+	.active-record-error
+	{
+		margin-left: 25px;
+	}
+}
+
+.anonymous_text
+{
+	margin-top: 10px;
+}
+
+.multiline_text
+{
+	white-space: pre-wrap;
+	word-wrap: break-word;
+}
+
+.small_text
+{
+	font-size: 10px;
+	color: rgba(0, 0, 0, 0.50);
+}
+
+.medium_text
+{
+	font-size: 12px;
+	color: rgba(0, 0, 0, 0.75);
+}
+
+.question_status_mark
+{
+	padding: 3px;
+	background-color: rgb(0, 191,169);
+	border-radius: 50%;
+	color: white;
+}
+
+.input-group .input-group-addon
+{
+	background: #00bfa9;
+	color: white !important;
+	border: 1px solid #00bfa9;
+	border-right: 0px;
+}
+
+.input-group
+{
+	border-left: 0px;
+}
+
+.search_query
+{
+	margin: 20px 0px;
+}
+
+.alert-gan
+{
+	color: white;
+	padding: 10px;
+	border-radius: 10px;
+}
+
+.alert-danger-gan
+{
+	background-color: rgb(222, 39, 40);
+}
+
+.alert-success-gan
+{
+	background-color: rgb(0, 191, 169);
+}
+
+@media (max-width: 767px)
+{
+	header .navbar-left{
+		margin-left: 10px;
+	}
+}
+
+@media (max-width: 400px)
+{
+	header .navbar-left span
+	{
+		font-size: 20px;
+	}
+}
+
+@media (max-width: 370px)
+{
+	header .navbar-left span
+	{
+		font-size: 18px;
+	}
+	header .navbar-default
+	{
+		font-size: 16px;
+	}
+}
+@media (max-width: 340px)
+{
+	header .navbar-left span
+	{
+		font-size: 16px;
+	}
+	header .navbar-default
+	{
+		font-size: 15px;
+	}
+}
+@media (max-width: 315px)
+{
+	header .navbar-left span
+	{
+		font-size: 14px;
+	}
+	header .navbar-default
+	{
+		font-size: 14px;
+	}
+}
+@media (max-width: 296px)
+{
+	header .navbar-left span
+	{
+		font-size: 13px;
+	}
+	header .navbar-default
+	{
+		font-size: 13px;
+	}
+}
+
+footer
+{
+	text-align: center;
+	padding-top: 20px;
+	background-color: #000;
+	color: white;
+	height: 150px;
+	border-top: 1px solid white;
+}
+
+footer .scrollup
+{
+	float: right;
+	display: inline-block;
+}
+
+
+footer ul
+{
+	margin-top: 5px;
+	margin-right: 35px;
+}
+
+footer li
+{
+	font-size: 16px;
+	list-style: none;
+	font-weight: 300;
+	margin: 0px 5px;
+	display: inline;
+}
+
+footer p
+{
+	font-family: inherit;
+	font-size: 14px;
+}
+
+.footer_icons
+{
+	display: inline-block;
+	width: 32px;
+	height: 32px;
+}
+
+.top_logo
+{
+	margin-top: 10px;
+}
+
+img.small_icon_social
+{
+	border-bottom: 2px solid black;
+}
+
+img.small_icon_social:hover
+{
+	border-bottom: 2px solid #00bfa9;
+}
+
+.small_icon
+{
+	width: 32px;
+	height: 32px;
+}
+
+.medium_icon
+{
+	width: 64px;
+	height: 64px;
+}
+
+.footer_copyright_stamp
+{
+	margin-left: 20px;
+}
+
+.separator
+{
+	margin: 0px 2px;
+}
+
+.modal-title
+{
+	text-align: center;
+	font-size: 18px;
+}
+
+.red_text
+{
+	color: rgb(222,39,40);
+	font-size: 16px;
+}
+
+.approve_account_text
+{
+	margin-top: 20px;
+	text-align: center;
+}
+
+.modal_response_div
+{
+	margin-top: 10px;
+}
+
+.user_search_table thead
+{
+	color: white;
+	background-color: rgba(0,0,0,0.75);
+}
+
+.user_search_table tbody tr:nth-child(odd)
+{
+	background-color: rgba(0, 191, 169, 0.10);
+}
+
+.user_search_table tbody tr:nth-child(odd):hover
+{
+	background-color: rgba(0, 191, 169, 0.40);
+}
+
+.user_search_table tbody tr:nth-child(even)
+{
+	background-color: white;
+}
+
+.user_search_table tbody tr:nth-child(even):hover
+{
+	background-color: rgb(200, 200, 200);
+}
+
+.table-main
+{
+	overflow-x: auto;
+}
+
+.search_div
+{
+	margin-top: 10px;
+}
+
+.gan_pagination
+{
+	font-size: 12px;
+
+	.internal_pagination
+	{
+		display: table;
+		margin: 0 auto;
+		li
+		{
+			font-weight: 500;
+			span, a
+			{
+				border: 1px solid #00bfa9 !important;
+				color: #00bfa9;
+			}
+			span:hover
+			{
+				color: rgb(220, 220, 200);
+			}
+		}
+
+		.active
+		{
+			span
+			{
+				color: white !important;
+			}
+		}
+	}
+}
+
+@media(max-width: 650px)
+{
+	footer
+	{
+		margin-top: 50px;
+	}
+	footer li
+	{
+		display: block;
+	}
+	.separator
+	{
+		display: none;
+	}
+	footer
+	{
+		height: 250px;
+	}
+}
+@media(max-width: 620px)
+{
+	footer
+	{
+		height: 250px;
+	}
+}
+
+@media(max-width: 315px)
+{
+	footer
+	{
+		height: 260px;
+	}
+}
+
+@media(max-width: 1000px)
+{
+	.transparent-panel
+	{
+		width: 760px;
+	}
+
+}
+
+@media(max-width: 990px)
+{
+	.transparent-panel
+	{
+		width: 660px;
+	}
+
+}
+
+@media(max-width: 780px)
+{
+	.transparent-panel
+	{
+		width: 570px;
+	}
+}
+
+
+@media(max-width: 650px)
+{
+	.transparent-panel
+	{
+		width: 470px;
+	}
+}
+
+
+@media(max-width: 550px)
+{
+	.transparent-panel
+	{
+		width: 100%;
+		margin: 10px 0;
+	}
+}
+

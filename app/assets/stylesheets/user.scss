@@ -2,7 +2,659 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.top_div
+.first_sign_in
 {
+	margin-top: 40px;
+}
 
+.first_sign_in_text
+{
+	color: #685E6D;
+	-webkit-box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.5);
+	-moz-box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.5);
+	box-shadow: 0px 0px 5px 2pxrgba(0, 0, 0, 0.5);
+	width: 100%;
+	padding: 20px;
+	font-size: 15px;
+	margin-bottom: 50px;
+}
+
+.first_sign_in_text ul li
+{
+	margin-left: 20px;
+}
+
+.welcome_text
+{
+	color: #00bfa9;
+	font-size: 25px;
+	padding-top: 20px;
+}
+
+.activity_question, .activity_comment, .activity_notify
+{
+	background-color: transparent;
+	border-radius: 10px;
+	padding: 20px;
+	margin: 25px 0px;
+
+	img
+	{
+		width: 64px;
+		height: 64px;
+		z-index: 100;
+	}
+}
+
+.view_post, .edit_post
+{
+	display: inline-block;
+	margin: 10px 10px 10px 0;
+	font-size: 15px;
+	border-radius: 5px;
+	padding: 5px 15px;
+}
+
+.left_div,.right_div
+{
+	display: inline;
+}
+
+.user-time,.user-name
+{
+	display: inline-block;
+}
+
+.user-name
+{
+	font-size: 22px;
+}
+
+.user-time
+{
+	float: right;
+	margin-top: 18px;
+	font-size: 18px;
+	font-weight: 300;
+	color: #685E6D;
+}
+
+.user-post
+{
+	font-size: 16px;
+	display: inline-block;
+	background-color: rgba(209,202,202,0.2);
+	padding: 10px;
+	border-radius: 10px;
+	margin-top:10px;
+	width: 100%;
+}
+
+.update_your_profile
+{
+	margin: 50px 0;
+	color: #685E6D;
+	font-size: 18px;
+}
+
+.update_your_profile form
+{
+	margin-top: -30px;
+}
+
+.update_your_profile h1
+{
+	padding-top: 20px;
+	font-size: 35px;
+	margin-bottom: 60px;
+}
+
+.update_your_profile .form-control
+{
+	border: 1px solid #00bfa9;
+	border-radius: 4px;
+}
+
+.update_your_profile .btn-update
+{
+	width: 200px;
+	margin-top: 25px;
+	font-size: 17px;
+	text-align: center;
+}
+
+.add_comment
+{
+	margin-top: 25px;
+
+	.add_comment_button
+	{
+		margin: 10px 0px 25px 0px;
+	}
+}
+
+.block_details
+{
+	margin:	25px 0px;
+}
+
+.details_heading
+{
+	font-size: 24px;
+	margin-bottom: 20px;
+	color: #00bfa9;
+}
+
+.clickable-row
+{
+	cursor: pointer;
+}
+
+.avtar_notice
+{
+	margin-top: 10px;
+}
+
+@media(max-width: 1000px)
+{
+	.container-custom
+	{
+		width: 900px;
+	}
+
+}
+
+@media(max-width: 960px)
+{
+	.container-custom
+	{
+		width: 850px;
+	}
+}
+
+@media(max-width: 900px)
+{
+	.container-custom
+	{
+		width: 800px;
+	}
+
+}
+
+@media(max-width: 850px)
+{
+	.container-custom
+	{
+		width: 750px;
+	}
+
+}
+
+@media(max-width: 800px)
+{
+	.container-custom
+	{
+		width: 700px;
+	}
+
+}
+
+@media(max-width: 750px)
+{
+	.container-custom
+	{
+		width: 650px;
+	}
+
+}
+
+@media(max-width: 700px)
+{
+	.container-custom
+	{
+		width: 600px;
+	}
+
+}
+
+@media(max-width: 650px)
+{
+	.container-custom
+	{
+		width: 550px;
+	}
+
+}
+
+@media(max-width: 600px)
+{
+	.container-custom
+	{
+		width: 500px;
+	}
+
+}
+
+@media(max-width: 550px)
+{
+	.container-custom
+	{
+		width: 450px;
+	}
+
+	.update_your_profile h1
+	{
+		font-size: 33px;
+	}
+
+	.update_your_profile .btn-update
+	{
+		font-size: 16px;
+	}
+
+	.user-time,.user-name{
+		display: block;
+	}
+
+	.user-time
+	{
+		float: left;
+		margin-top: -8px;
+	}
+
+}
+
+@media(max-width: 500px)
+{
+	.container-custom
+	{
+		width: 400px;
+	}
+
+	.welcome_text
+	{
+		font-size: 23px;
+	}
+
+	.activity_heading
+	{
+		font-size: 27px;
+	}
+
+	.user-name
+	{
+		font-size: 20px;
+	}
+
+	.user-post
+	{
+		font-size: 15px;
+	}
+
+	.update_your_profile
+	{
+		font-size: 16px;
+	}
+
+	.update_your_profile h1
+	{
+		font-size: 32px;
+	}
+
+	.update_your_profile .btn-update
+	{
+		font-size: 15px;
+	}
+
+}
+
+@media(max-width: 450px)
+{
+	.container-custom
+	{
+		width: 350px;
+	}
+
+	.update_your_profile
+	{
+		font-size: 14px;
+	}
+
+	.update_your_profile h1
+	{
+		font-size: 30px;
+	}
+
+	.update_your_profile .btn-update
+	{
+		width: 100%;
+		font-size: 14px;
+	}
+
+}
+
+@media(max-width: 400px)
+{
+	.container-custom
+	{
+		width: 330px;
+	}
+
+	.welcome_text
+	{
+		font-size: 20px;
+	}
+
+	.activity_heading
+	{
+		font-size: 25px;
+	}
+
+	.user-name
+	{
+		font-size: 18px;
+	}
+
+	.user-post
+	{
+		font-size: 15px;
+	}
+
+	.view_post, .edit_post
+	{
+		width: 100%;
+		text-align: center;
+		margin-left: -0.5px;
+	}
+
+	.activity img, .activity img
+	{
+		width: 60px;
+		height: 60px;
+	}
+
+	.update_your_profile
+	{
+		font-size: 13px;
+	}
+
+	.update_your_profile h1
+	{
+		font-size: 27px;
+	}
+
+	.update_your_profile .btn-update
+	{
+		font-size: 13px;
+	}
+
+}
+
+@media(max-width: 350px)
+{
+	.container-custom
+	{
+		width: 280px;
+	}
+
+}
+
+@media(max-width: 300px)
+{
+	.container-custom
+	{
+		width: 230px;
+	}
+
+	.welcome_text
+	{
+		font-size: 17px;
+	}
+
+	.activity_heading
+	{
+		font-size: 23px;
+	}
+
+	.user-name
+	{
+		font-size: 16px;
+	}
+
+	.user-time
+	{
+		font-size: 14px;
+	}
+
+	.user-post
+	{
+		font-size: 14px;
+	}
+}
+
+.user-profile
+{
+	background-color: rgb(245,245,245);
+
+	.user-profile-pic
+	{
+		width: 256px;
+		height: 256px;
+		padding: 10px;
+	}
+
+	.dev-intro
+	{
+		margin-top: 10px;
+		font-size: 15px;
+		color: #7f8c8d;
+	}
+
+	.profile-sidebar
+	{
+		border-top: 10px solid #685E6D;
+	}
+
+	.social-bar
+	{
+		margin-bottom: 35px;
+		padding: 20px;
+	}
+
+	.social-bar a
+	{
+		margin-right: 10px;
+		margin-left: 10px;
+	}
+
+	.social-bar img
+	{
+		width: 65px;
+		height: 65px;
+	}
+
+	.user
+	{
+		margin-top: 30px;
+		margin-bottom: 30px;
+	}
+
+	.user img
+	{
+		border: 10px solid #685E6D;
+	}
+
+	.user h1, .timeline-head
+	{
+		color: #34495e;
+	}
+
+	.user h1, .user-name
+	{
+		text-transform: uppercase;
+	}
+
+	.hr-center
+	{
+		height: 3px;
+		background-color: #00bfa9;
+		width: 40%;
+		display: block;
+		margin: 0 auto;
+	}
+
+	.user h2
+	{
+		font-weight: 600;
+		color: #7f8c8d;
+	}
+
+	.profile-content
+	{
+		border-top: 10px solid #00bfa9;
+	}
+
+	.main-content
+	{
+		margin-top: 30px;
+		margin-bottom: 50px;
+		padding: 0 20px;
+	}
+
+	.timeline
+	{
+		list-style: none;
+		padding: 20px 0 20px;
+		position: relative;
+	}
+
+	.timeline > li
+	{
+		margin-bottom: 20px;
+		position: relative;
+	}
+
+	.profile-icon
+	{
+		text-align: right;
+	}
+
+	.timeline-badge,.timeline-head
+	{
+		display: inline;
+	}
+
+	.profile-icon img
+	{
+		width: 55px;
+		height: 55px;
+	}
+
+	.timeline-head
+	{
+		position: relative;
+		top: 10px;
+		right: 10px;
+	}
+
+	.profile-panel
+	{
+		width: 100%;
+		float: left;
+		color: #34495e;
+		border: 1px solid #d4d4d4;
+		border-radius: 2px;
+		padding: 10px 20px 10px;
+		position: relative;
+		-webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+		box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+	}
+
+	.user-name,.panel-head
+	{
+		font-size: 27px;
+	}
+
+	.user-job-type
+	{
+		color: #00bfa9;
+	}
+
+	.user-company
+	{
+		color: #00bfa9;
+		margin-top: -6px;
+	}
+
+	.hr-left
+	{
+		height: 1px;
+		width: 100%;
+		margin-bottom: 20px;
+		background-color: #ddd;
+	}
+
+	.btn-group
+	{
+		margin-right: 20px;
+		margin-bottom: 20px;
+	}
+
+	.profile-btn-one
+	{
+		pointer-events: none;
+		background-color: #00bfa9;
+		color: #fff;
+		border: 1px solid #00bfa9;
+		font-size: 16px;
+	}
+
+	.profile-btn-two
+	{
+		pointer-events: none;
+		background-color: white;
+		color: #34495e;
+		border: 1px solid rgba(0,0,0,0.25);
+		font-size: 16px;
+	}
+
+	@media (max-width: 385px)
+	{
+		.profile-btn-one,.profile-btn-two
+		{
+			font-size: 14px;
+		}
+	}
+
+	@media (max-width: 360px)
+	{
+		.profile-btn-one,.profile-btn-two
+		{
+			font-size: 13px;
+		}
+	}
+
+	@media (max-width: 340px)
+	{
+		.profile-btn-one,.profile-btn-two
+		{
+			font-size: 12px;
+		}
+	}
+
+	@media (max-width: 325px)
+	{
+		.profile-btn-one,.profile-btn-two
+		{
+			font-size: 11px;
+		}
+	}
+}
+
+.search-user
+{
+	.container-custom
+	{
+		margin: 40px auto;
+	}
 }

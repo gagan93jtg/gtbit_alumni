@@ -1,26 +1,47 @@
-<div class="page_top_level_div">
-  <div>
-    <h2>Your Activity</h2>
-    <% @your_activity.each do |query| %>
-    <a href="/queries/<%=query.id%>"><%=label_tag(query.query_string)%></a>
-    <a href="/queries/<%=query.id%>/edit">Edit query</a>
-    <br><br>
-    <%end%>
+<div class="search-user clearfix">
+  <div class="container-custom">
+    <div class="search_div">
+      <%= form_tag(user_index_path, method: 'GET') do %>
+      <%= text_field_tag 'search_query', nil, autofocus: true, placeholder: "Search by first name, last name or email id", class: "form-control", size: 50, value: params['search_query'] %>
+      <%= submit_tag "Search", class: "btn background-seagreen search_query" %>
+      <% end %>
+    </div>
+    <div class="separator_hr"></div>
+    <div class="activity_content">
+      <% if @show_all_users %>
+      <h3 class="search_heading">All users</h3>
+      <% else %>
+      <h3 class="search_heading">Search results</h3>
+      <% end %>
+      <div class="table-main user_search_table">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>First name</th>
+              <th>Last name</th>
+              <th>Email id</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @users.each do |user| %>
+            <tr class="clickable-row" data-href="<%= user_path(user.id) %>">
+              <td><%= user.first_name %></td>
+              <td><%= user.last_name %></td>
+              <td><%= user.email %></td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+      <div class="gan_pagination">
+        <div class="internal_pagination">
+          <%= will_paginate @users, renderer: BootstrapPagination::Rails %>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <div>
-    <h2>Public Activity</h2>
-    <% @public_activity.each do |query| %>
-    <a href="/queries/<%=query.id%>"><%=label_tag(query.query_string)%></a>
-    <br><br>
-    <%end%>
-  </div>
 </div>
-
-
 <script type="text/javascript">
-  $(document).ready(function()
-  {
-    hideNewUserButton();
-  });
+  bind_clickable_row_event();
 </script>

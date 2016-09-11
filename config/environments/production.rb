@@ -20,10 +20,6 @@ Rails.application.configure do
   # NGINX, varnish or squid.
   # config.action_dispatch.rack_cache = true
 
-  # Disable serving static files from the `/public` folder by default since
-  # Apache or NGINX already handles this.
-  config.serve_static_files = ENV['RAILS_SERVE_STATIC_FILES'].present?
-
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = :uglifier
   # config.assets.css_compressor = :sass
@@ -35,7 +31,8 @@ Rails.application.configure do
   # yet still be able to expire them through the digest params.
   config.assets.digest = true
 
-  # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
+  # `config.assets.precompile` and `config.assets.version` have moved to
+  # config/initializers/assets.rb
 
   # Specifies the header that your server uses for sending files.
   # config.action_dispatch.x_sendfile_header = 'X-Sendfile' # for Apache
@@ -76,4 +73,24 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  config.action_mailer.smtp_settings = {
+    :address              => 'smtp.mailgun.org',
+    :port                 => 587,
+    :domain               => 'mailgun.org',
+    :user_name            => 'postmaster@gtbitalumni.in',
+    :password             => 'mailgunpassword',
+    :authentication       => 'login',
+    :enable_starttls_auto => true
+  }
+
+  Rails.application.config.middleware.use ExceptionNotification::Rack,
+  :email => {
+    :email_prefix => "[ERROR] ",
+    :sender_address => %{"notifier" <alumnigtbit@gmail.com>},
+    :exception_recipients => %w{gagan93gtbit@gmail.com}
+  }
+
+  config.action_mailer.default_url_options = { :host => 'https://gtbitalumni.in' }
+
 end

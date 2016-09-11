@@ -1,0 +1,9 @@
+<% if model.errors.any? %>
+  <div class="active-record-errors-div alert-gan alert-danger-gan">
+    <ul class="active-record-errors">
+      <% model.errors.each do |attr, message| %>
+      <li class="active-record-error"><%= format_attribute(attr) %> <%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
