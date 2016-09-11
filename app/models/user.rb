@@ -116,7 +116,7 @@ class User < ActiveRecord::Base
     unless user.errors.any?
       UserMailer.welcome_mail(user, password).deliver_now
       user.update_pass_in_redis(password)
-      Rails.logger.error "[#{Time.now}] Inviting : #{first_name} #{last_name} => #{email}"
+      Rails.logger.info "[#{Time.now}] Inviting : #{first_name} #{last_name} => #{email}"
       return true
     else
       Rails.logger.error "[#{Time.now}] Errors while creating acc for #{email}. #{user.errors.full_messages.inspect}"
