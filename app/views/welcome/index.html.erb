@@ -46,6 +46,8 @@
         <% @public_activity.each do |post| %>
         <%= render 'posts/show_single_post', post: post, show_full_post: false %>
         <% end %>
+        <hr>
+        <h2>Job Opportunities</h2>
 
         <% @public_job_posts.each do |job_post| %>
         <%= render 'job_posts/show_job_post', job_post: job_post, preview: 'true' %>

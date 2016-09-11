@@ -8,7 +8,7 @@ class WelcomeController < ApplicationController
     @your_activity = current_user.posts.order("id desc").first(per_page)
     @public_activity = Post.public_activity(current_user.id, per_page)
     @public_job_posts = JobPost.public_activity(current_user.id, per_page)
-    @notice = Notice.where("updated_at > #{2.days.ago.to_i}").last
+    @notice = Notice.where("updated_at > ?", Time.now - 3.days).last
   end
 
   def contact_us_mail
