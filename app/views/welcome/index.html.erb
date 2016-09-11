@@ -1,11 +1,12 @@
 <div class="first_sign_in">
   <div class="container-custom">
     <% if current_user.first_sign_in?%>
-    <div class="first_sign_in_text alert alert-success" role="alert">
-      <p>Hey,hope you're doing good! As this is your first time login, You can Update few things. </p><br>
+    <div class="first_sign_in_text alert-gan alert-success-gan" role="alert">
+      <p>Hey, hope you're doing good! As this is your first time login, You can Update few things. </p>
       <ul>
-        <li>Update your profile, we have no clue about you except your Email Id. </li><br>
-        <li>Ask question(s), there are a lot of people to help you out !  </li>
+        <li>Update your profile, we have a little information about you. </li>
+        <li>Update password, as this was a randomly generated password. </li>
+        <li>Ask questions, share experiences and job opportunities. That's what GTBIT Alumni Network was made for !</li>
       </ul>
     </div>
     <% current_user.update_sign_in_count %>
@@ -13,6 +14,15 @@
 
     <h1 class="welcome_text">Welcome <%= current_user.full_name %>,</h1>
     <hr>
+    <% if(notif_count > 0) %>
+      <p class="text-seagreen glass-panel"><%= link_to "You have #{notif_count} Unread notification(s)", notifications_path %></p>
+      <hr>
+    <% end %>
+    <% unless @notice.nil? %>
+      <p class="text-seagreen glass-panel normal-font-size"><%= link_to @notice.notice_text, @notice.notice_url %></p>
+      <hr>
+    <% end %>
+
     <div class="activity">
       <h2 class="activity_heading">Your Activity</h2>
       <div class="activity_content">
@@ -36,6 +46,8 @@
         <% @public_activity.each do |post| %>
         <%= render 'posts/show_single_post', post: post, show_full_post: false %>
         <% end %>
+        <hr>
+        <h2>Job Opportunities</h2>
 
         <% @public_job_posts.each do |job_post| %>
         <%= render 'job_posts/show_job_post', job_post: job_post, preview: 'true' %>

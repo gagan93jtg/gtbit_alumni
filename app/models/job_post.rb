@@ -13,10 +13,26 @@ class JobPost < ActiveRecord::Base
   validates :job_type, length: { maximum: 255 }
   validates :other_details, length: { maximum: 255 }
 
+  validates_presence_of :company_name, message: 'is requried'
+  validates_presence_of :position, message: 'is requried'
+  validates_presence_of :compensation, message: 'is requried'
+  validates_presence_of :location, message: 'is requried'
+  validates_presence_of :job_type, message: 'is requried'
+
+  validates_numericality_of :experience_in_months, :greater_than_or_equal_to => 0,
+  :less_than_or_equal_to => 480, :message => 'is invalid'
+
+  validates_numericality_of :bond_period_in_months, :greater_than_or_equal_to => 0,
+  :less_than_or_equal_to => 60, :message => 'is invalid'
+
+
   scope :public_activity, -> (id, limit) { where("user_id != #{id}").order('id DESC').limit(limit) }
 
   def self.save_job_post(user, params)
     job_post_params = params[:job_post]
+    if job_post_params[:ignore_date_time] == 'on'
+      job_post_params[:reporting_date_time] = 'not known'
+    end
     job_post = user.job_posts.build(company_name: job_post_params[:company_name],
       company_website: job_post_params[:company_website],
       position: job_post_params[:position],
@@ -36,6 +52,9 @@ class JobPost < ActiveRecord::Base
 
   def update_job_post(params)
     job_post_params = params[:job_post]
+    if job_post_params[:ignore_date_time] == 'on'
+      job_post_params[:reporting_date_time] = 'not known'
+    end
     if was_job_post_updated?(job_post_params) && valid?
       save_post_in_redis
       update(company_name: job_post_params[:company_name],
@@ -90,7 +109,7 @@ class JobPost < ActiveRecord::Base
   end
 
   def save_post_in_redis
-    return is_edited == true
+    return if is_edited == true
 
     redis_master = RedisConnection.initialize_redices[0]
     redis_post = self.to_json

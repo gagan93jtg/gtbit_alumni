@@ -14,7 +14,7 @@ Devise.setup do |config|
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
   config.secret_key = 'eed76bd35ee6e02949e3e52c01da40a5f9766116f1c15f92908b54076c52e08c77e8670f2b36157a2ef822349039e59f8ace9f22727f2c0acdb76d0bc6732d4f'
-  config.mailer_sender = 'alumnigtbit@gmail.com'
+  config.mailer_sender = 'admin@gtbitalumni.in'
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
@@ -158,7 +158,9 @@ Devise.setup do |config|
   # ==> Configuration for :timeoutable
   # The time you want to timeout the user session without activity. After this
   # time the user will be asked for credentials again. Default is 30 minutes.
-  # config.timeout_in = 30.minutes
+
+  # Updated after Karan arora and Ashpreet Singh faced invalid auth token error due to 30 min inactivity
+  config.timeout_in = 1.day
 
   # ==> Configuration for :lockable
   # Defines which strategy will be used to lock an account.

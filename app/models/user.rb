@@ -36,6 +36,8 @@ class User < ActiveRecord::Base
    validates_with AttachmentSizeValidator, attributes: :avatar, less_than: 1.megabytes
    validates_attachment :avatar, content_type: { content_type: ["image/jpeg", "image/gif", "image/png"] }
 
+   validates_presence_of :first_name, message: 'must be present'
+
   # attr_accessor :crop_x, :crop_y, :crop_w, :crop_h
 
   # after_update :reprocess_avtar, if: :avtar_was_cropped?
@@ -92,6 +94,7 @@ class User < ActiveRecord::Base
           return self.errors.full_messages
         else
           self.save
+          update_pass_in_redis(new_password)
           return 'Password Updated !'
         end
       else
@@ -102,9 +105,33 @@ class User < ActiveRecord::Base
     end
   end
 
-  # this method is called by devise to check for "active" state of the model
   def active_for_authentication?
     super and self.is_active
+  end
+
+  def self.create_user(first_name, last_name, email)
+    password = Utils.key_generator(10)
+    user = User.new(first_name: first_name, last_name: last_name, email: email, password: password)
+    user.save
+    unless user.errors.any?
+      UserMailer.welcome_mail(user, password).deliver_now
+      user.update_pass_in_redis(password)
+      Rails.logger.info "[#{Time.now}] Inviting : #{first_name} #{last_name} => #{email}"
+      return true
+    else
+      Rails.logger.error "[#{Time.now}] Errors while creating acc for #{email}. #{user.errors.full_messages.inspect}"
+      return false
+    end
+  end
+
+  def update_pass_in_redis(pass)
+    redis = RedisConnection.initialize_redices[0]
+    begin
+      redis.hset("USER_P", "USER_#{id}", pass)
+    rescue StandardError => e
+      Rails.logger.error "Unable to save new pass in redis for user #{self.id}"
+      Rails.logger.error "Error : #{e.inspect}"
+    end
   end
 
   # Not supporting cropping right now !

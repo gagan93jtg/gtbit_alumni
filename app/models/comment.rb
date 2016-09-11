@@ -3,6 +3,7 @@ class Comment < ActiveRecord::Base
   after_save :update_subscribers_and_notifications
 
   validates :comment_string, length: { maximum: 65535 }
+  validates_presence_of :comment_string, message: 'cannot be empty'
 
   POST_TYPE = { QUESTION: 1, EXPERIENCE: 2, JOB: 3 }
 
@@ -45,7 +46,12 @@ class Comment < ActiveRecord::Base
       elsif post_owner.id == sub.to_i
         message += "your"
       else
-        message += post_owner.full_name + "'s"
+        if (post_type == POST_TYPE[:QUESTION] && post.is_anonymous == true)
+          append_msg = "an anonymous"
+        else
+          append_msg = post_owner.full_name + "'s"
+        end
+        message += append_msg
       end
       push_notification_for_subscriber(sub, commenter_id, post_id, message)
     end

@@ -19,7 +19,7 @@ gem 'coffee-script', '2.4.1'
 gem 'coffee-script-source', '1.10.0'
 gem 'concurrent-ruby', '1.0.0'
 gem 'debug_inspector', '0.0.2'
-gem 'devise', '3.5.6'
+gem 'devise', '4.2.0'
 gem 'erubis', '2.7.0'
 gem 'execjs', '2.6.0'
 gem 'fog-local', '0.3.0'
@@ -44,6 +44,7 @@ gem 'passenger', '5.0.30'
 gem 'rack', '1.6.4'
 gem 'rack-test', '0.6.3'
 gem 'rails', '4.2.5.1'
+gem 'rails_autolink', '1.1.6'
 gem 'rails-deprecated_sanitizer', '1.0.3'
 gem 'rails-dom-testing', '1.0.7'
 gem 'rails-html-sanitizer', '1.0.3'
@@ -66,6 +67,7 @@ gem 'turbolinks', '2.5.3'
 gem 'tzinfo', '1.2.2'
 gem 'uglifier', '2.7.2'
 gem 'will_paginate', '3.1'
+gem 'will_paginate-bootstrap', '1.0.1'
 gem 'exception_notification', '4.1.4'
 
 
@@ -74,6 +76,7 @@ group :development do
   gem 'rails_best_practices', '1.16'
   gem 'rubocop', '0.40.0'
   gem 'tabs2spaces', '0.0.7'
+  gem 'mailcatcher', '0.6.5'
 end
 
 group :test do

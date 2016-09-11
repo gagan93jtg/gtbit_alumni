@@ -41,22 +41,8 @@ Rails.application.configure do
 
   # replicate action mailer and exception notification settings in staging/production.rb when deploying
 
-  config.action_mailer.default_url_options = { :host => 'http://localhost:3000' }
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-      :address              => 'smtp.gmail.com',
-      :port                 => 587,
-      :domain               => 'gmail.com',
-      :user_name            => 'alumnigtbit@gmail.com',
-      :password             => 'alumni_gtbit',
-      :authentication       => 'login',
-      :enable_starttls_auto => true
-  }
+  config.action_mailer.smtp_settings = { :address => "localhost", :port => 1025 }
 
-  #Rails.application.config.middleware.use ExceptionNotification::Rack,
-  #:email => {
-  #  :email_prefix => "[ERROR] ",
-  #  :sender_address => %{"notifier" <alumnigtbit@gmail.com>},
-  #  :exception_recipients => %w{gagan93gtbit@gmail.com}
-  #}
+  config.action_mailer.default_url_options = { :host => 'http://localhost:3000' }
 end

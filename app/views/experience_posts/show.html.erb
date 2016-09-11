@@ -3,27 +3,32 @@
     <div class="question">
       <%= render 'posts/show_single_post', post: @post, show_full_post: true %>
       <br>
-      <% @post.comments.each do |comment| %>
+      <% @comments.each do |comment| %>
       <div class="transparent-panel activity_comment ">
         <div class="left clearfix">
           <span>
-            <%= render 'posts/render_image_from_comment', post: @post, comment: comment %>
+            <%= render 'posts/render_image_for_comment', post: @post, comment: comment %>
           </span>
           <div class="right clearfix">
             <div class="header">
               <p class="user-name user-link"><%= link_to comment.user.full_name, user_path(comment.user.id), class: '' %></p>
               <p class=" user-time"><%=timeago_tag comment.created_at%> </p>
-              <span class="user-post multiline_text"><%=comment.comment_string%></span>
+              <span class="user-post multiline_text"><%= auto_link(comment.comment_string) %></span>
             </div>
           </div>
         </div>
       </div>
       <% end %>
+      <div class="gan_pagination">
+        <div class="internal_pagination">
+          <%= will_paginate @comments, renderer: BootstrapPagination::Rails  %>
+        </div>
+      </div>
       <div class="form-group add_comment">
         <%= form_for :comment, :url => comments_path(), :method => "POST" do |f| %>
         <input type="hidden" name="[post][id]" value= <%= @post.id %>>
         <input type="hidden" name="[post][post_type]" value= <%= Comment::POST_TYPE[:EXPERIENCE] %>>
-        <textarea rows="3" class="form-control" id="query_tags" placeholder="Write a comment" name="comment[comment_string]"></textarea>
+        <textarea rows="3" class="form-control" id="query_tags" placeholder="Write a comment" name="comment[comment_string]" required="true"></textarea>
         <%= submit_tag("Add", {class: "background-seagreen edit_post btn btn-submit add_comment_button"}) %>
         <% end %>
       </div>

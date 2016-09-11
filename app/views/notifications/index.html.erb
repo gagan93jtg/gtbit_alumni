@@ -8,14 +8,20 @@
 				<% @notifications.each do |notification| %>
 				<div class="activity_notify ">
 					<div class="left_div">
-						<img src="/assets/logov2.png" alt="profile pic" class="img-circle public_activity_user">
+						<% if notification['post_type'] == Comment::POST_TYPE[:QUESTION] && is_anonymous(notification['post_id']) && is_owner(notification['post_id'], notification['commenter_id']) %>
+						<%= image_tag "anonymous.jpg", class: 'img-circle public_activity_user', alt: 'profile pic' %>
+						<% elsif user_has_avatar?(notification['commenter_id']) %>
+						<%= image_tag User.find(notification['commenter_id']).avatar.url(:large), class: 'img-circle public_activity_user' %>
+						<% else %>
+						<%= image_tag 'logov2.png', class: 'img-circle public_activity_user'  %>
+						<% end %>
 					</div>
 					<div class="<%=notification.inspect%> right_div">
 						<p class="user-name user-link">
 							<% if notification['post_type'] == Comment::POST_TYPE[:QUESTION] && is_anonymous(notification['post_id']) && is_owner(notification['post_id'], notification['commenter_id']) %>
-								<%= "The anonymous" %>
+							<%= "The anonymous" %>
 							<% else %>
-								<%= link_to User.find(notification["commenter_id"]).full_name, user_path(notification['commenter_id'])%>
+							<%= link_to User.find(notification["commenter_id"]).full_name, user_path(notification['commenter_id'])%>
 							<% end %>
 							<span class="post-link user-link">
 								<%= notification['text'] %>&nbsp;

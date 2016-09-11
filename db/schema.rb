@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160821045531) do
+ActiveRecord::Schema.define(version: 20160908121135) do
 
   create_table "comments", force: :cascade do |t|
     t.integer  "user_id",        limit: 4
@@ -59,6 +59,13 @@ ActiveRecord::Schema.define(version: 20160821045531) do
   add_index "job_posts", ["location"], name: "index_job_posts_on_location", using: :btree
   add_index "job_posts", ["user_id"], name: "index_job_posts_on_user_id", using: :btree
 
+  create_table "notices", force: :cascade do |t|
+    t.string   "notice_text", limit: 255, default: ""
+    t.string   "notice_url",  limit: 255, default: ""
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "post_histories", force: :cascade do |t|
     t.integer  "user_id",      limit: 4
     t.integer  "post_id",      limit: 4
@@ -80,9 +87,13 @@ ActiveRecord::Schema.define(version: 20160821045531) do
     t.boolean  "is_edited",                  default: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "state",        limit: 255,   default: "active"
+    t.boolean  "is_answered",                default: false
   end
 
+  add_index "posts", ["is_answered"], name: "index_posts_on_is_answered", using: :btree
   add_index "posts", ["post_type"], name: "index_posts_on_post_type", using: :btree
+  add_index "posts", ["state"], name: "index_posts_on_state", using: :btree
   add_index "posts", ["user_id"], name: "index_posts_on_user_id", using: :btree
 
   create_table "unverified_users", force: :cascade do |t|

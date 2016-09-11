@@ -10,7 +10,7 @@ en:
       #already_authenticated: "You are already signed in."
       # I am commenting this out as I don't want to see this text
       already_authenticated: ""
-      inactive: "Your account was locked. Please contact admin"
+      inactive: "Your account was locked. Please contact admin@gtbitalumni.in"
       invalid: "Invalid password"
       locked: "Your account is locked."
       last_attempt: "You have one more attempt before your account is locked."

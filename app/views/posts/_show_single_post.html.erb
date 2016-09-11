@@ -10,16 +10,17 @@
   </div>
 
   <div class="right_div">
-    <p class="user-name">
+    <p class="user-name user-link">
       <% if post.is_anonymous  == true %>
-      The anonymous <span class="small_text"><%= asked_or_shared_experience(post) %> </span>
+      <%= link_to 'The anonymous', user_path('anonymous') %> <span class="small_text"><%= asked_or_shared_experience(post) %> </span>
       <% else %>
-      <%= post.user.full_name %> <span class="small_text"><%= asked_or_shared_experience(post) %> </span>
+      <%= link_to post.user.full_name, user_path(post.user.id) %>
+      <span class="small_text"><%= asked_or_shared_experience(post) %> </span>
       <% end %>
     </p>
     <p class="user-time"><%= timeago_tag post.created_at %></p>
   </div>
-  <span class="post-string user-post multiline_text"><%= post.query_string %></span>
+  <span class="post-string user-post multiline_text"><%= auto_link(post.query_string) %></span>
   <% if show_full_post == true %>
   <div class="user-tags"><%= @post.tags %></div>
 
@@ -29,6 +30,11 @@
 
   <% if post.post_type == Comment::POST_TYPE[:QUESTION] && post.user_id == current_user.id %>
   <%= link_to "Edit post", edit_post_path(post.id), class: 'edit_post background-seagreen' %>
+  <% if post.is_answered == false %>
+  <%= link_to "Mark answered", mark_answered_path(post.id), class: 'edit_post background-seagreen' %>
+  <br>
+  <p class="medium_text">Mark this question as 'answered' if you have got the requried answer.</p>
+  <% end %>
   <% elsif post.post_type == Comment::POST_TYPE[:EXPERIENCE] && post.user_id == current_user.id %>
   <%= link_to "Edit post", edit_experience_path(post.id), class: 'edit_post background-seagreen' %>
   <% end %>
@@ -41,7 +47,14 @@
   <% end %>
   <% end %>
 
+  <% if post.is_answered == true%>
+  <div class="question_status_div">
+    <span class="answered_mark question_status_mark medium_text">&#10004;</span>
+    <span class="medium_text">This question is answered</span>
+  </div>
+  <% end %>
+
   <% if post.is_anonymous  == true %>
-  <p class="small_text">This is an anonymous question. Your identity remains hidden for anonymous posts.</p>
+  <p class="small_text anonymous_text">This is an anonymous question. Your identity remains hidden for anonymous posts.</p>
   <% end %>
 </div>

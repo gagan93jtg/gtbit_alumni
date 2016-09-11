@@ -8,14 +8,18 @@ development:
     port: 6379
     db: 0
   dev_email: 'alumnigtbit@gmail.com'
+  admin_email: 'admin@gtbitalumni.in'
+  pagination_per_page: 20
 
 production:
   redis_master:
     host: localhost
-    port: 6379
+    port: 12121
     db: 0
   redis_slave:
     host: localhost
-    port: 6379
+    port: 12121
     db: 0
   dev_email: 'alumnigtbit@gmail.com'
+  admin_email: 'admin@gtbitalumni.in'
+  pagination_per_page: 20

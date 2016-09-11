@@ -3,11 +3,11 @@
     <div class="glass-panel main-form">
       <div class="errors_warnings">
         <% if flash[:notice] and !flash[:notice].empty? %>
-        <div class = "alert alert-danger"><%= flash[:notice] %></div>
+        <div class = "alert-gan alert-danger-gan"><%= flash[:notice] %></div>
         <% end %>
 
         <% if flash[:alert] and !flash[:alert].empty? %>
-        <div class = "alert alert-danger"><%= flash[:alert] %></div>
+        <div class = "alert-gan alert-danger-gan"><%= flash[:alert] %></div>
         <% end %>
       </div>
       <div class="row sign-in">
@@ -16,11 +16,11 @@
       <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
       <div class="form-group input-group">
         <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
-        <input type="email" class="form-control" placeholder="Email" autofocus="autofocus" name="user[email]">
+        <input type="email" class="form-control" placeholder="Email" autofocus="autofocus" name="user[email]" required="true">
       </div>
       <div class="form-group input-group">
       <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
-        <input type="password" class="form-control" placeholder="Password" autocomplete="off" name="user[password]">
+        <input type="password" class="form-control" placeholder="Password" autocomplete="off" name="user[password]"required="true">
       </div>
       <% if devise_mapping.rememberable? %>
       <div class="checkbox">

@@ -5,8 +5,8 @@
     <h1 class="title"><%= @title %></h1>
     <%=render 'errors/active_record_errors', model: @job_post %>
     <div class="form-group">
-      <label for="company_name">Company name</label>
-      <input type="text" class="form-control" id="company_name" placeholder="Full name of company" autofocus="autofocus" name="job_post[company_name]" value = "<%= @job_post.company_name %>">
+      <label for="company_name">Company name<span class="red_text">*</span></label>
+      <input type="text" class="form-control" id="company_name" placeholder="Full name of company" autofocus="autofocus" name="job_post[company_name]" value = "<%= @job_post.company_name %>" required="true">
     </div>
 
     <div class="form-group">
@@ -18,23 +18,23 @@
     </div>
 
     <div class="form-group">
-      <label for="job_type">Job type</label>
-      <input type="text" class="form-control" id="job_type" placeholder="Technical/ HR/ Marketing" name="job_post[job_type]" value="<%= @job_post.job_type %>">
+      <label for="job_type">Job type<span class="red_text">*</span></label>
+      <input type="text" class="form-control" id="job_type" placeholder="Technical/ HR/ Marketing" name="job_post[job_type]" value="<%= @job_post.job_type %>" required="true">
     </div>
 
     <div class="form-group">
-      <label for="position">Position/Designation</label>
-      <input type="text" class="form-control" id="position" placeholder="Eg. Software Developer" name="job_post[position]" value="<%= @job_post.position %>">
+      <label for="position">Position/Designation<span class="red_text">*</span></label>
+      <input type="text" class="form-control" id="position" placeholder="Eg. Software Developer" name="job_post[position]" value="<%= @job_post.position %>" required="true">
     </div>
 
     <div class="form-group">
-      <label for="location">Job Location(s)</label>
-      <input type="text" class="form-control" id="location" placeholder="Gurgaon/ Noida/ Bangalore" name="job_post[location]" value="<%= @job_post.location %>">
+      <label for="location">Job Location(s)<span class="red_text">*</span></label>
+      <input type="text" class="form-control" id="location" placeholder="Gurgaon/ Noida/ Bangalore" name="job_post[location]" value="<%= @job_post.location %>" required="true">
     </div>
 
     <div class="form-group">
-      <label for="compensation">Yearly Compensation (in LPA)</label>
-      <input type="text" class="form-control" id="compensation" placeholder="6.0 LPA" name="job_post[compensation]" value="<%= @job_post.compensation %>">
+      <label for="compensation">Yearly Compensation (in LPA)<span class="red_text">*</span></label>
+      <input type="text" class="form-control" id="compensation" placeholder="6.0 LPA" name="job_post[compensation]" value="<%= @job_post.compensation %>" required="true">
     </div>
 
     <div class="form-group">
@@ -54,6 +54,10 @@
         <span class="input-group-addon">
           <span class="glyphicon glyphicon-calendar"></span>
         </span>
+      </div>
+      <div class="ignore_date_time_div">
+        <input type="checkbox" class="form-group" id='ignore_date_time' name="job_post[ignore_date_time]">
+        <span class="ignore_text">Ignore date time</span>
       </div>
     </div>
 
@@ -86,5 +90,6 @@
 <script type="text/javascript">
   initialize_jquery_validator();
   initialize_date_time_picker();
+  initialize_ignore_date_time_handler();
   preview_job_post();
 </script>

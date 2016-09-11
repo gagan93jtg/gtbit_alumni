@@ -74,10 +74,23 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  # Assets don't work in prod (http://stackoverflow.com/questions/18700219/rails-4-assets-not-loading-in-production)
-  # Disable serving static files from the `/public` folder by default since
-  # Apache or NGINX already handles this.
-  # REMOVE THIS WHEN USING NGINX
-  config.serve_static_files = true
+  config.action_mailer.smtp_settings = {
+    :address              => 'smtp.mailgun.org',
+    :port                 => 587,
+    :domain               => 'mailgun.org',
+    :user_name            => 'postmaster@gtbitalumni.in',
+    :password             => 'mailgunpassword',
+    :authentication       => 'login',
+    :enable_starttls_auto => true
+  }
+
+  Rails.application.config.middleware.use ExceptionNotification::Rack,
+  :email => {
+    :email_prefix => "[ERROR] ",
+    :sender_address => %{"notifier" <alumnigtbit@gmail.com>},
+    :exception_recipients => %w{gagan93gtbit@gmail.com}
+  }
+
+  config.action_mailer.default_url_options = { :host => 'https://gtbitalumni.in' }
 
 end

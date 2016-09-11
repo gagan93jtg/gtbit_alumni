@@ -67,8 +67,11 @@
     <div class="container">
       <div class="row">
         <a classs="footer_icons" href="https://www.fb.com/gtbitalumni.in" target="_blank"> <%= image_tag "fb.png", class: 'small_icon small_icon_social' %> </a>
+        <!--
+        Noy yet created twitter and fb pages. I think it's waste of time managing three social pages!
         <a classs="footer_icons" href="https://www.twitter.com" target="_blank"> <%= image_tag "twitter.png", class: 'small_icon small_icon_social' %> </a>
         <a classs="footer_icons" href="https://www.google.co.in" target="_blank"> <%= image_tag "gplus.png", class: 'small_icon small_icon_social' %> </a>
+        -->
         <a href="#" class="scrollup btn-lg"> <span class="glyphicon glyphicon-arrow-up"> </span> </a>
       </div>
       <div class="row">
@@ -104,25 +107,25 @@
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title">Create an account</h4>
-        <p class="approve_account_text">Approving your account might take some time because we approve only GTBITians and verifying your identity might take some time </p>
+        <p class="approve_account_text">Approving your account might take some time because we approve only GTBITians and verifying your identity might take some time. We started inviting people on 31st August 2016 and have invited batches passing out 2016, 2017. If you want to know when you will be invited, you can drop a mail to admin@gtbitalumni.in. If you are a GTBITian, you will be invited in sometime so please be patient till then :) </p>
       </div>
       <div class="modal-body">
         <%= form_tag(request_account_path, method: 'post', :remote => true, class: 'request_account_form') do %>
         <div class="form-group">
           <label for="first_name">First name <span class="red_text">*</span></label>
-          <input type="text" class="form-control" id="first_name" placeholder="First name" name="user[first_name]">
+          <input type="text" class="form-control" id="first_name" placeholder="First name" name="user[first_name]" required="true">
         </div>
         <div class="form-group">
           <label for="last_name">Last name <span class="red_text">*</span></label>
-          <input type="text" class="form-control" id="last_name" placeholder="Last name" name="user[last_name]">
+          <input type="text" class="form-control" id="last_name" placeholder="Last name" name="user[last_name]" required="true">
         </div>
         <div class="form-group">
           <label for="email">Email id <span class="red_text">*</span></label>
-          <input type="email" class="form-control" id="email" placeholder="Email id" name="user[email]">
+          <input type="email" class="form-control" id="email" placeholder="Email id" name="user[email]" required="true">
         </div>
         <div class="form-group">
           <label for="batch">Branch and batch</label>
-          <input type="text" class="form-control" id="batch" placeholder="Eg. CSE 2011 - 2015" name="user[batch]">
+          <input type="text" class="form-control" id="batch" placeholder="Eg. CSE 2011 - 2015" name="user[batch]" >
         </div>
         <input type="submit" value="Request account" class="btn background-seagreen"></input>
         <% end %>

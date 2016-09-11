@@ -1,9 +1,8 @@
 <% if model.errors.any? %>
-  <div class="errors alert alert-danger">
-    <p>The details could not be saved due to the following errors:</p>
+  <div class="active-record-errors-div alert-gan alert-danger-gan">
     <ul class="active-record-errors">
-      <% model.errors.full_messages.each do |message| %>
-      <li class="active-record-error"><%= message %></li>
+      <% model.errors.each do |attr, message| %>
+      <li class="active-record-error"><%= format_attribute(attr) %> <%= message %></li>
       <% end %>
     </ul>
   </div>
