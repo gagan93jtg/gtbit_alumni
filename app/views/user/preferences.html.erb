@@ -1,0 +1,25 @@
+<div class="container-custom">
+  <h1>Manage preferences</h1>
+  <%= form_for :user, :url => update_user_preferences_path(), :method => "PUT" do |f|%>
+  <%=render 'errors/active_record_errors', model: current_user %>
+
+  <% if @response == true %>
+    <p class="alert-gan alert-success-gan">Updated !</p>
+  <% end %>
+
+  <div class="details_heading"><span> Configure mailers </span> </div>
+  <div class="form-group">
+    <input type="checkbox" class="form-group" id='receive_weekly_mailer' name="user[receive_weekly_mailer]" value="<%= current_user.receive_weekly_mailer%>">
+    <span class="checkbox_text">Receive weekly mailer about unread notifications, etc.</span>
+  </div>
+  <%= submit_tag('Update' ,{class: "background-seagreen btn-update btn"}) %>
+  <% end %>
+</div>
+
+<script type="text/javascript">
+  <% if current_user.receive_weekly_mailer == true %>
+  $('#receive_weekly_mailer').prop('checked', true)
+  <% else %>
+  $('#receive_weekly_mailer').prop('checked', false)
+  <% end %>
+</script>

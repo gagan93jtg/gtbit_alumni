@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160908121135) do
+ActiveRecord::Schema.define(version: 20160918142324) do
 
   create_table "comments", force: :cascade do |t|
     t.integer  "user_id",        limit: 4
@@ -140,6 +140,7 @@ ActiveRecord::Schema.define(version: 20160908121135) do
     t.string   "avatar_content_type",    limit: 255
     t.integer  "avatar_file_size",       limit: 4
     t.datetime "avatar_updated_at"
+    t.boolean  "receive_weekly_mailer",                default: true
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
