@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   devise_for :users
 
   put 'user/password' => 'user#update_password', as: 'user_update_password'
+  put 'user/preferences' => 'user#update_preferences', as: 'update_user_preferences'
+  get 'user/preferences' => 'user#preferences', as: 'user_preferences'
   get 'posts/edit_history' => 'question_posts#edit_history'
   get 'posts/mark_answered/:id' => 'question_posts#mark_answered', as: 'mark_answered'
 

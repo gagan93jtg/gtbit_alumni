@@ -43,7 +43,8 @@
                 <li><%= link_to "Share an experience", new_experience_path %> </li>
                 <li><%= link_to "Post a job", new_job_path %> </li>
                 <li role="separator" class="divider"></li>
-                <li><%= link_to "My profile", user_path(current_user) %></li>
+                <li><%= link_to "My Profile", user_path(current_user) %></li>
+                <li><%= link_to "My Preferences", user_preferences_path %></li>
                 <li role="separator" class="divider"></li>
                 <li><%= link_to "Search users", user_index_path  %> </li>
                 <li><%= link_to "Search questions", posts_path  %></li>

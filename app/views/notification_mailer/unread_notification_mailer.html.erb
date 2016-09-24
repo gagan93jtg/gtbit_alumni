@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Weekly mailer</title>
+  <style media="all" type="text/css">
+    @media only screen and (max-width: 620px) {
+      table[class=body] .container {
+        padding: 0 !important;
+        width: 100% !important;
+      }
+      table[class=body] .header {
+        margin-bottom: 10px !important;
+      }
+      table[class=body] .btn table {
+        width: 100% !important;
+      }
+      table[class=body] .btn a {
+        width: 100% !important;
+      }
+      table[class=body] .img-responsive {
+        height: auto !important;
+        max-width: 100% !important;
+        width: auto !important;
+      }
+      table[class=body] .span-2,
+      table[class=body] .span-3 {
+        max-width: none !important;
+        width: 100% !important;
+      }
+      table[class=body] .receipt {
+        width: 100% !important;
+      }
+    }
+  </style>
+</head>
+<body class="" style="font-family: sans-serif; -webkit-font-smoothing: antialiased; font-size: 14px; line-height: 1.4; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; background-color: #f6f6f6; margin: 0; padding: 0;">
+  <table border="0" cellpadding="0" cellspacing="0" class="body" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; background-color: #f6f6f6;" width="100%" bgcolor="#f6f6f6">
+    <tr>
+      <td style="font-family: sans-serif; font-size: 14px; vertical-align: top;" valign="top">&nbsp;</td>
+      <td class="container" style="font-family: sans-serif; font-size: 14px; vertical-align: top; display: block; Margin: 0 auto !important; max-width: 580px; padding: 10px; width: 580px;" width="580" valign="top">
+        <div class="content" style="box-sizing: border-box; display: block; Margin: 0 auto; max-width: 580px; padding: 10px;">
+          <span class="preheader" style="color: transparent; display: none; height: 0; max-height: 0; max-width: 0; opacity: 0; overflow: hidden; mso-hide: all; visibility: hidden; width: 0;">This is preheader text. Some clients will show this text as a preview.</span>
+          <table class="main" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; background: #fff; border-radius: 3px;" width="100%">
+            <tr>
+              <td class="wrapper" style="font-family: sans-serif; font-size: 14px; vertical-align: top; box-sizing: border-box; padding: 20px;" valign="top">
+                <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;" width="100%">
+                  <tr>
+                    <td style="font-family: sans-serif; font-size: 14px; vertical-align: top;" valign="top">
+                      <p style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; Margin-bottom: 15px;">Hi <%= @user.full_name %>,</p>
+                      <p style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; Margin-bottom: 15px;">Hope you are doing good. You have <%= @notifications_count %> unread notifications.</p>
+                      <table border="0" cellpadding="0" cellspacing="0" class="btn btn-primary" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; box-sizing: border-box;" width="100%">
+                        <tbody>
+                          <tr>
+                            <td align="left" style="font-family: sans-serif; font-size: 14px; vertical-align: top; padding-bottom: 15px;" valign="top">
+                              <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: auto;">
+                                <tbody>
+                                  <tr>
+                                    <td style="font-family: sans-serif; font-size: 14px; vertical-align: top; background#00bfa9#3498db; border-radius: 5px; text-align: center;" valign="top" bgcolor="#00bfa9" align="center"> <a href="https://www.gtbitalumni.in/notifications" target="_blank" style="display: inline-block; color: #ffffff; background-color: #00bfa9; border: solid 1px #00bfa9; border-radius: 5px; box-sizing: border-box; cursor: pointer; text-decoration: none; font-size: 14px; font-weight: bold; margin: 0; padding: 12px 25px; text-transform: capitalize; border-color: #00bfa9;">Click here to view </a> </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <br>
+                      <p style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; Margin-bottom: 15px;">Alot happened since you last checked the website.</p>
+                      <a href="https://www.gtbitalumni.in/posts" target="_blank" style="display: inline-block; color: #ffffff; background-color: #00bfa9; border: solid 1px #00bfa9; border-radius: 5px; box-sizing: border-box; cursor: pointer; text-decoration: none; font-size: 14px; font-weight: bold; margin: 0; padding: 12px 25px; border-color: #00bfa9;">View latest questions here </a>
+                      <br>
+                      <br>
+                      <a href="https://www.gtbitalumni.in/experience" target="_blank" style="display: inline-block; color: #ffffff; background-color: #00bfa9; border: solid 1px #00bfa9; border-radius: 5px; box-sizing: border-box; cursor: pointer; text-decoration: none; font-size: 14px; font-weight: bold; margin: 0; padding: 12px 25px; border-color: #00bfa9;">Read latest experiences here </a>
+                      <br>
+                      <br>
+                      <a href="https://www.gtbitalumni.in/job" target="_blank" style="display: inline-block; color: #ffffff; background-color: #00bfa9; border: solid 1px #00bfa9; border-radius: 5px; box-sizing: border-box; cursor: pointer; text-decoration: none; font-size: 14px; font-weight: bold; margin: 0; padding: 12px 25px; border-color: #00bfa9;">View latest job posts here </a>
+                      <br>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+          <div class="footer" style="clear: both; padding-top: 10px; text-align: center; width: 100%;">
+            <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;" width="100%">
+              <tr>
+                <td class="content-block powered-by" style="font-family: sans-serif; vertical-align: top; padding-top: 10px; padding-bottom: 10px; font-size: 12px; color: #999999; text-align: center;" valign="top" align="center">
+                  &#169; GTBIT Alumni Network.
+                </td>
+                <br> Don't like these emails? <a href="https://www.gtbitalumni.in/user/preferences" style="text-decoration: underline; color: #999999; font-size: 12px; text-align: center;">Unsubscribe</a>.
+              </tr>
+            </table>
+          </div>
+        </div>
+      </td>
+      <td style="font-family: sans-serif; font-size: 14px; vertical-align: top;" valign="top">&nbsp;</td>
+    </tr>
+  </table>
+</body>
+</html>

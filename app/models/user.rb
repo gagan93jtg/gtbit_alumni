@@ -134,6 +134,17 @@ class User < ActiveRecord::Base
     end
   end
 
+  def update_preferences_for_user(params_user)
+    weekly_mailer = params_user['receive_weekly_mailer'] unless params_user.nil?
+    unless weekly_mailer.nil?
+      update(receive_weekly_mailer: true)
+    else
+      update(receive_weekly_mailer: false)
+    end
+
+    true
+  end
+
   # Not supporting cropping right now !
   #
   # def get_avatar_resolution(style)

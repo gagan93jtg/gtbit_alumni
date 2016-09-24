@@ -9,7 +9,7 @@ development:
     db: 0
   dev_email: 'alumnigtbit@gmail.com'
   admin_email: 'admin@gtbitalumni.in'
-  pagination_per_page: 20
+  pagination_per_page: 10
 
 production:
   redis_master:

@@ -35,6 +35,14 @@ class UserController < ApplicationController
     end
   end
 
+  def preferences
+  end
+
+  def update_preferences
+    @response = current_user.update_preferences_for_user(params[:user])
+    redirect_to action: 'preferences'
+  end
+
   # def crop
   #
   # end
