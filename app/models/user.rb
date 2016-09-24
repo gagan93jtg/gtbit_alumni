@@ -53,7 +53,8 @@ class User < ActiveRecord::Base
      job_type: params[:job_type], designation: params[:designation],
      company: params[:company], experience_in_years: params[:experience_in_years],
      bio: params[:bio], fb_link: params[:fb_link],
-     twitter_link: params[:twitter_link], linked_in_link: params[:linked_in_link])
+     twitter_link: params[:twitter_link], linked_in_link: params[:linked_in_link],
+     github_link: params[:github_link])
 
     update(avatar: params[:avatar]) if params[:avatar]
   end
