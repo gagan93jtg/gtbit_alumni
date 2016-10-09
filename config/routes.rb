@@ -28,6 +28,16 @@ Rails.application.routes.draw do
   resources :faqs, only: [:index, :show]
   resources :user
   resources :comments, only: [:create]
+  resources :admin, only: [:index]
+
+
+  namespace :admin do
+    resources :users, only: [:index]
+    resources :question_posts, only: [:index]
+    resources :experience_posts, only: [:index]
+    resources :job_posts, only: [:index]
+  end
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with 'rake routes'.

@@ -45,13 +45,16 @@
                 <li role="separator" class="divider"></li>
                 <li><%= link_to "My Profile", user_path(current_user) %></li>
                 <li><%= link_to "My Preferences", user_preferences_path %></li>
+                <% if current_user.has_admin_role? %>
+                  <li><%= link_to "Admin Panel", admin_index_path %></li>
+                <% end %>
                 <li role="separator" class="divider"></li>
                 <li><%= link_to "Search users", user_index_path  %> </li>
                 <li><%= link_to "Search questions", posts_path  %></li>
                 <li><%= link_to "Search experiences", experience_index_path  %> </li>
                 <li><%= link_to "Search job posts", job_index_path  %></li>
                 <li role="separator" class="divider"></li>
-                <li><%= link_to 'FAQs', faqs_path() %></li>
+                <li><%= link_to 'FAQs', faqs_path %></li>
                 <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
               </ul>
             </li>
