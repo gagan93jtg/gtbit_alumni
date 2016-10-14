@@ -25,6 +25,7 @@ class User < ActiveRecord::Base
   validates :bio, length: { maximum: 65535, message: 'is out of range. We know you are awesome, '\
    'but unfortunately we can handle only a 65535 characters long bio' }
    validates :is_admin, inclusion: { in: [true, false] }
+   validates :is_moderator, inclusion: { in: [true, false] }
    validates_numericality_of :experience_in_years, :greater_than_or_equal_to => 0,
    :less_than_or_equal_to => 100, :message => "is out of range. I hope you are a human being!"\
    " Now input a valid number to save."
@@ -53,7 +54,8 @@ class User < ActiveRecord::Base
      job_type: params[:job_type], designation: params[:designation],
      company: params[:company], experience_in_years: params[:experience_in_years],
      bio: params[:bio], fb_link: params[:fb_link],
-     twitter_link: params[:twitter_link], linked_in_link: params[:linked_in_link])
+     twitter_link: params[:twitter_link], linked_in_link: params[:linked_in_link],
+     github_link: params[:github_link])
 
     update(avatar: params[:avatar]) if params[:avatar]
   end
@@ -143,6 +145,14 @@ class User < ActiveRecord::Base
     end
 
     true
+  end
+
+  def has_admin_role?
+    return (is_admin == true || is_moderator == true)
+  end
+
+  def not_an_admin?
+    !has_admin_role?
   end
 
   # Not supporting cropping right now !

@@ -1,0 +1,83 @@
+<div class="table-main search_table">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Profile</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Batch</th>
+        <th>Phno</th>
+        <th>FB link</th>
+        <th>Qns asked</th>
+        <th>Exps shared</th>
+        <th>Jobs added</th>
+        <th>Is active ?</th>
+        <th>Sign in count</th>
+        <th>Last signin at </th>
+        <th>Last signin IP</th>
+        <th>Notif Mail Sub</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @users.each do |user| %>
+      <tr>
+        <td><%= link_to 'Click to view', user_path(user.id), :target => "_blank" %></td>
+        <td><%= user.first_name %></td>
+        <td><%= user.last_name %></td>
+        <td><%= user.email %></td>
+        <td><%= user.batch %></td>
+        <td><%= user.phone %></td>
+        <% if user.fb_link.empty? %>
+        <td>(Not available)</td>
+        <% else %>
+        <td><%= link_to user.full_name, "https://www.facebook.com/" + user.fb_link , :target => "_blank" %></td>
+        <% end %>
+        <td><%= user.question_posts.count %></td>
+        <td><%= user.experience_posts.count %></td>
+        <td><%= user.job_posts.count %></td>
+        <td><%= user.is_active == true ? 'Yes' : 'No' %></td>
+        <td><%= user.sign_in_count %></td>
+
+        <td><%= timeago_tag user.last_sign_in_at %></td>
+        <td><%= user.last_sign_in_ip %></td>
+        <td><%= user.receive_weekly_mailer == true ? 'Yes' : 'No' %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<div class="gan_pagination">
+  <div class="internal_pagination">
+    <%= will_paginate @users, renderer: BootstrapPagination::Rails  %>
+  </div>
+</div>
+<div class="container-custom">
+<table class="table table-striped">
+    <tr>
+      <td>Total users</td>
+      <td class="pad-left-td"> <%= @user_statistics[:total_users] %> </td>
+    </tr>
+    <tr>
+      <td>Active users</td>
+      <td class="pad-left-td"> <%= @user_statistics[:active_users] %> </td>
+    </tr>
+    <tr>
+      <td>Users who never logged in</td>
+      <td class="pad-left-td"> <%= @user_statistics[:never_opened] %> </td>
+    </tr>
+    <tr>
+      <td>Users who updated profile atleast once</td>
+      <td class="pad-left-td"> <%= @user_statistics[:updated_profile_once] %> </td>
+    </tr>
+    <tr>
+      <td>Users subscribed to notifications mailer</td>
+      <td class="pad-left-td"> <%= @user_statistics[:subscribed_notification_mailer] %> </td>
+    </tr>
+    <tr>
+      <td>Users who have added a photo</td>
+      <td class="pad-left-td"> <%= @user_statistics[:has_avatars] %> </td>
+    </tr>
+  </table>
+</div>
+

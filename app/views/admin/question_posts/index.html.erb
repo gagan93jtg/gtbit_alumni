@@ -1,0 +1,43 @@
+<div class="table-main search_table">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>User</th>
+        <th>Post</th>
+        <th>Content (partial)</th>
+        <th>Tags</th>
+        <th>Anonymous ?</th>
+        <th># Comments</th>
+        <th>Answer accepted</th>
+        <th>Is post edited ?</th>
+        <th>Posted at</th>
+        <th>Updated at</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @question_posts.each do |post| %>
+      <tr>
+        <td><%= link_to post.user.full_name, user_path(post.user.id), :target => "_blank" %></td>
+        <td><%= link_to 'Click to view', post_path(post.id), :target => "_blank" %></td>
+        <td><%= post.query_string[0..50] %>...</td>
+        <td><%= post.tags %></td>
+        <td><%= post.is_anonymous == true ? 'Yes' : 'No' %></td>
+        <td><%= post.comments.count %></td>
+        <td><%= post.is_answered == true ? 'Yes' : 'No' %></td>
+        <td><%= post.is_edited == true ? 'Yes' : 'No' %></td>
+        <td><%= timeago_tag post.created_at %></td>
+        <td><%= timeago_tag post.updated_at %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<div class="gan_pagination">
+  <div class="internal_pagination">
+    <%= will_paginate @question_posts, renderer: BootstrapPagination::Rails  %>
+  </div>
+</div>
+<div class="container-custom">
+  <h4><%= @total_posts %> questions asked so far </h4>
+</div>
+
