@@ -2,11 +2,27 @@ class Utils
 
   # Check if params has all the keys
   def self.params_have_all_keys?(params, keys)
+    return false if params.nil?
+
     keys.each do |key|
-      return false if params.exclude?(key) || params[key].strip.empty?
+      return false if params.exclude?(key) || params[key].nil? || params[key].strip.empty?
     end
     return true
   end
+
+  # Check if attribute values have changed
+  def self.are_attributes_same?(original, updated)
+    if (original.nil? && updated.nil?)
+      return true
+    elsif (original.nil? || updated.nil?)
+      return false
+    elsif (original.to_s.strip == updated.to_s.strip)
+      return true
+    else
+      return false
+    end
+  end
+
 
   # Make sure page_number is always a number, whether out of range or inside range
   def self.sanitize_page_number(page_number)

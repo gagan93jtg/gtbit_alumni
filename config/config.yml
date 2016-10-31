@@ -23,3 +23,16 @@ production:
   dev_email: 'alumnigtbit@gmail.com'
   admin_email: 'admin@gtbitalumni.in'
   pagination_per_page: 20
+
+test:
+  redis_master:
+    host: localhost
+    port: 6379
+    db: 10
+  redis_slave:
+    host: localhost
+    port: 6379
+    db: 10
+  dev_email: 'alumnigtbit@gmail.com'
+  admin_email: 'admin@gtbitalumni.in'
+  pagination_per_page: 10

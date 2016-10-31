@@ -55,7 +55,8 @@ class JobPost < ActiveRecord::Base
     if job_post_params[:ignore_date_time] == 'on'
       job_post_params[:reporting_date_time] = 'not known'
     end
-    if was_job_post_updated?(job_post_params) && valid?
+
+    if was_job_post_updated?(job_post_params)
       save_post_in_redis
       update(company_name: job_post_params[:company_name],
         company_website: job_post_params[:company_website],
@@ -81,31 +82,19 @@ class JobPost < ActiveRecord::Base
   private
 
   def was_job_post_updated?(job_post_params)
-    !(are_attributes_same?(company_name               , job_post_params[:company_name]) &&
-      are_attributes_same?(company_website            , job_post_params[:company_website]) &&
-      are_attributes_same?(position                   , job_post_params[:position]) &&
-      are_attributes_same?(compensation               , job_post_params[:compensation]) &&
-      are_attributes_same?(experience_in_months       , job_post_params[:experience_in_months]) &&
-      are_attributes_same?(bond_period_in_months      , job_post_params[:bond_period_in_months]) &&
-      are_attributes_same?(location                   , job_post_params[:location]) &&
-      are_attributes_same?(reporting_date_time        , job_post_params[:reporting_date_time]) &&
-      are_attributes_same?(eligibility_criteria       , job_post_params[:eligibility_criteria]) &&
-      are_attributes_same?(selection_process          , job_post_params[:selection_process]) &&
-      are_attributes_same?(job_description            , job_post_params[:job_description]) &&
-      are_attributes_same?(job_type                   , job_post_params[:job_type]) &&
-      are_attributes_same?(other_details              , job_post_params[:other_details]))
-  end
-
-  def are_attributes_same?(original, updated)
-    if (original.nil? && updated.nil?)
-      return true
-    elsif (original.nil? || updated.nil?)
-      return false
-    elsif (original.to_s.strip == updated.to_s.strip)
-      return true
-    else
-      return false
-    end
+    !(Utils.are_attributes_same?(company_name          , job_post_params[:company_name]) &&
+      Utils.are_attributes_same?(company_website       , job_post_params[:company_website]) &&
+      Utils.are_attributes_same?(position              , job_post_params[:position]) &&
+      Utils.are_attributes_same?(compensation          , job_post_params[:compensation]) &&
+      Utils.are_attributes_same?(experience_in_months  , job_post_params[:experience_in_months]) &&
+      Utils.are_attributes_same?(bond_period_in_months , job_post_params[:bond_period_in_months]) &&
+      Utils.are_attributes_same?(location              , job_post_params[:location]) &&
+      Utils.are_attributes_same?(reporting_date_time   , job_post_params[:reporting_date_time]) &&
+      Utils.are_attributes_same?(eligibility_criteria  , job_post_params[:eligibility_criteria]) &&
+      Utils.are_attributes_same?(selection_process     , job_post_params[:selection_process]) &&
+      Utils.are_attributes_same?(job_description       , job_post_params[:job_description]) &&
+      Utils.are_attributes_same?(job_type              , job_post_params[:job_type]) &&
+      Utils.are_attributes_same?(other_details         , job_post_params[:other_details]))
   end
 
   def save_post_in_redis

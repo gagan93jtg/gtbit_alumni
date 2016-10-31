@@ -44,7 +44,7 @@ class User < ActiveRecord::Base
   # after_update :reprocess_avtar, if: :avtar_was_cropped?
 
   def full_name
-    return email if first_name.nil? || last_name.nil?
+    return email if first_name.nil? || last_name.nil? || first_name.empty? || last_name.empty?
     first_name + ' ' + last_name
   end
 

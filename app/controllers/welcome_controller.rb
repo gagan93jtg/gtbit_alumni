@@ -31,7 +31,6 @@ class WelcomeController < ApplicationController
 
   def request_account
     @response = UnverifiedUser.create_unverified_user(params[:user])
-    puts "sending params for mailer : #{params[:user].inspect}"
     UserMailer.signup_mail(params[:user]).deliver_now if @response == 'Success'
 
     respond_to do |format|

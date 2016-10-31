@@ -5,3 +5,4 @@ public/users
 .idea/*
 rails_best_practices_output.html
 rubocop.yml
+coverage/*
