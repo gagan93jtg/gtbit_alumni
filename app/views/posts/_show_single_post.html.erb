@@ -28,14 +28,14 @@
   <a href="#" data-toggle="modal" data-target="#edit_history_modal" class="background-seagreen btn edit_history"> View edit history </a>
   <% end %>
 
-  <% if post.post_type == Comment::POST_TYPE[:QUESTION] && post.user_id == current_user.id %>
+  <% if post.post_type == Comment::POST_TYPE[:QUESTION] && !current_user.nil? && post.user_id == current_user.id %>
   <%= link_to "Edit post", edit_post_path(post.id), class: 'edit_post background-seagreen' %>
   <% if post.is_answered == false %>
   <%= link_to "Mark answered", mark_answered_path(post.id), class: 'edit_post background-seagreen' %>
   <br>
   <p class="medium_text">Mark this question as 'answered' if you have got the requried answer.</p>
   <% end %>
-  <% elsif post.post_type == Comment::POST_TYPE[:EXPERIENCE] && post.user_id == current_user.id %>
+  <% elsif post.post_type == Comment::POST_TYPE[:EXPERIENCE] && !current_user.nil? && post.user_id == current_user.id %>
   <%= link_to "Edit post", edit_experience_path(post.id), class: 'edit_post background-seagreen' %>
   <% end %>
 

@@ -1,3 +1,11 @@
+<% content_for :head do %>
+  <% if form_type == 'create' %>
+    <title>GTBIT Alumni Network - Post experience</title>
+  <% else %>
+    <title>GTBIT Alumni Network - Edit experience</title>
+  <% end %>
+<% end %>
+
 <div class="create_update_query_div">
   <div class="container-custom">
     <% create_update_experience_form_options(form_type) %>

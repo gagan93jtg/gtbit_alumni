@@ -1,3 +1,18 @@
+<% @page_title = "#{@user.full_name}'s profile on #{get_domain_name}" %>
+<% if @user.avatar? %>
+  <% @page_image = get_domain_name + @user.avatar.url(:large) %>
+<% else %>
+  <% @page_image = get_domain_name + '/logov2.png'  %>
+<% end %>
+
+<% content_for :head do %>
+  <meta property="og:type"        content="website" />
+  <meta property="og:title"       content="<%= @page_title %>" />
+  <meta property="og:description" content="View <%= @page_title %>" />
+  <meta property="og:image"       content="<%= @page_image %>" />
+  <title><%= @page_title %></title>
+<% end %>
+
 <div class="user-profile">
   <div class="container">
     <div class="row full_page_user_show">

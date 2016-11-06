@@ -11,4 +11,14 @@ module ApplicationHelper
     end
     return attr.to_s.split("_").join(" ").camelize
   end
+
+  def get_domain_name
+    if Rails.env == 'development'
+      'http://gtbitalumnilocal.in'
+    elsif Rails.env == 'staging'
+      'http://staging.gtbitalumni.in'
+    else
+      'https://www.gtbitalumni.in'
+    end
+  end
 end

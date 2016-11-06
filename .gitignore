@@ -2,6 +2,7 @@ log/*
 tmp/*
 public/assets
 public/users
+public/sitemap*
 .idea/*
 rails_best_practices_output.html
 rubocop.yml

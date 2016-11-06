@@ -1,3 +1,23 @@
+<% if @post.is_anonymous == true %>
+  <% @post_title = 'New anonymous question on #{get_domain_name}' %>
+  <% @post_image = get_domain_name + 'anonymous.jpg' %>
+<% else %>
+  <% @post_title = "#{@post.user.full_name} asked a question on gtbitalumni.in" %>
+  <% if @post.user.avatar? %>
+    <% @post_image = get_domain_name + @post.user.avatar.url(:large) %>
+  <% else %>
+    <% @post_image = get_domain_name + '/logov2.png'  %>
+  <% end %>
+<% end %>
+
+<% content_for :head do %>
+  <meta property="og:type"        content="website" />
+  <meta property="og:title"       content="<%= @post_title %>" />
+  <meta property="og:description" content="<%= @post.query_string %>" />
+  <meta property="og:image"       content="<%= @post_image %>" />
+  <title><%= @post_title %></title>
+<% end %>
+
 <div class="view_query_chain">
   <div class="container-custom">
     <div class="question">
@@ -31,17 +51,24 @@
           <%= will_paginate @comments, renderer: BootstrapPagination::Rails  %>
         </div>
       </div>
-      <div class="form-group add_comment">
-        <%= form_for :comment, :url => comments_path(), :method => "POST" do |f| %>
-        <input type="hidden" name="[post][id]" value= <%= @post.id %>>
-        <input type="hidden" name="[post][post_type]" value= <%= @post.post_type %>>
-        <textarea rows="3" class="form-control" id="query_tags" placeholder="Write a comment" name="comment[comment_string]" required="true"></textarea>
-        <%= submit_tag("Add", {class: "background-seagreen edit_post btn btn-submit add_comment_button"}) %>
-        <% end %>
-      </div>
+      <% unless current_user.nil? %>
+        <div class="form-group add_comment">
+          <%= form_for :comment, :url => comments_path(), :method => "POST" do |f| %>
+          <input type="hidden" name="[post][id]" value= <%= @post.id %>>
+          <input type="hidden" name="[post][post_type]" value= <%= @post.post_type %>>
+          <textarea rows="3" class="form-control" id="query_tags" placeholder="Write a comment" name="comment[comment_string]" required="true"></textarea>
+          <%= submit_tag("Add", {class: "background-seagreen edit_post btn btn-submit add_comment_button"}) %>
+          <% end %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
+<% unless current_user.nil? %>
+  <div class="glass-panel container-custom">
+    <%= render 'layouts/quick_links' %>
+  </div>
+<% end %>
 
 <div id="edit_history_modal" class="modal fade" role="dialog">
   <div class="modal-dialog">

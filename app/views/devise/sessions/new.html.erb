@@ -1,3 +1,10 @@
+<% content_for :head do %>
+  <meta property="og:type"        content="website" />
+  <meta property="og:title"       content="GTBIT's very own alumni network" />
+  <meta property="og:description" content="An initiative by GTBITians to connect with each other, share opportunities and solve student queries" />
+  <title>GTBIT Alumni Network - User login</title>
+<% end %>
+
 <div class="login-pane">
   <div class="container">
     <div class="glass-panel main-form">
@@ -38,6 +45,9 @@
   <div class="create">
     <h4>New to Alumni Network?</h4>
     <button data-toggle="modal" data-target="#request_account_modal" class="btn-create btn foreground-seagreen">Request to Create an Account</button>
+  </div>
+  <div class="login_less">
+    <button data-toggle="modal" data-target="#browse_without_login_modal" class="btn-create btn background-seagreen">Browse without logging in</button>
   </div>
 </div>
 

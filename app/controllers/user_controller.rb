@@ -1,5 +1,6 @@
 class UserController < ApplicationController
-  before_filter :authenticate_user!
+  before_filter :authenticate_user!, only: [:update, :update_password, :preferences,
+                                            :update_preferences]
 
   def index
     @users, @show_all_users = get_users
@@ -63,9 +64,9 @@ class UserController < ApplicationController
     if search_string.nil?
       return User.paginate(page: page, per_page: per_page), true
     else
-      return User.where("first_name LIKE '%#{search_string}%' OR "\
-        "last_name LIKE '%#{search_string}%' OR "\
-        "email LIKE '%#{search_string}%'").paginate(page: params[:page], per_page: per_page), false
+      return User.where("first_name LIKE ? OR last_name LIKE ? OR email LIKE ?",
+        "%#{search_string}%", "%#{search_string}%",
+        "%#{search_string}%").paginate(page: params[:page], per_page: per_page), false
     end
   end
 end

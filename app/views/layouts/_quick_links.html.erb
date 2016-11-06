@@ -1,0 +1,12 @@
+<h3>Quick links </h3>
+<li class='quick_links'><%= link_to "Home", root_path, class: 'text-seagreen' %></li>
+<li class='quick_links'><%= link_to "Recent posts", posts_path, class: 'text-seagreen '%></li>
+<li class='quick_links'><%= link_to "Recent shared experiences", experience_index_path, class: 'text-seagreen '%></li>
+<li class='quick_links'><%= link_to "Recent job posts", job_index_path, class: 'text-seagreen '%></li>
+<li class='quick_links'><%= link_to "View users", user_index_path, class: 'text-seagreen '%></li>
+<% if current_user.nil? %>
+  <div class="login_button">
+    <%= link_to "Click here to login", new_user_session_path, class: "btn background-seagreen" %>
+  </div>
+  Login to add a comment, view your customized dashboard, edit profile, ask a question and much more !
+<% end %>
