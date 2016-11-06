@@ -1,3 +1,11 @@
+<% content_for :head do %>
+  <% if form_type == 'create' %>
+    <title>GTBIT Alumni Network - Post a job</title>
+  <% else %>
+    <title>GTBIT Alumni Network - Edit existing job post</title>
+  <% end %>
+<% end %>
+
 <div class="create_update_query_div" id="create_update_job_post">
   <div class="container-custom">
     <% create_update_job_post_options(form_type) %>

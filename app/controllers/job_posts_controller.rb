@@ -1,5 +1,5 @@
 class JobPostsController < ApplicationController
-  before_filter :authenticate_user!
+  before_filter :authenticate_user!, only: [:new, :create, :edit, :update]
 
   def index
     @job_posts, @show_recent_posts = get_job_posts
@@ -55,7 +55,8 @@ class JobPostsController < ApplicationController
     if search_string.nil?
       return JobPost.order('id DESC').last(10).reverse, true
     else
-      return JobPost.where("company_name LIKE '%#{search_string}%' OR position LIKE '%#{search_string}%'"), false
+      return JobPost.where("company_name LIKE ? OR position LIKE ?", "%#{search_string}%",
+        "%#{search_string}%"), false
     end
   end
 

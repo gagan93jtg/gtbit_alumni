@@ -5,7 +5,7 @@ module QuestionHelper
   end
 
   def asked_by(user)
-    return 'You' if user.id == current_user.id
+    return 'You' if current_user && user.id == current_user.id
     user.full_name
   end
 

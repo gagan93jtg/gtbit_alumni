@@ -69,6 +69,7 @@ gem 'uglifier', '2.7.2'
 gem 'will_paginate', '3.1'
 gem 'will_paginate-bootstrap', '1.0.1'
 gem 'exception_notification', '4.1.4'
+gem 'sitemap_generator', '5.2.0'
 
 
 group :development do

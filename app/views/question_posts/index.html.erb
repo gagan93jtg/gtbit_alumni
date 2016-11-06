@@ -1,3 +1,11 @@
+<% content_for :head do %>
+  <meta property="og:type"        content="website" />
+  <meta property="og:title"       content="Questions asked on <%= get_domain_name %>" />
+  <meta property="og:description" content="View / search from the list of questions" />
+  <meta property="og:image"       content="<%= get_domain_name + '/logov2.png' %>" />
+  <title>Questions asked on <%= get_domain_name %></title>
+<% end %>
+
 <div class="search-question">
   <div class="container-custom">
     <div class="search_div">

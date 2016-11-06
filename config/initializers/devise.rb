@@ -159,8 +159,9 @@ Devise.setup do |config|
   # The time you want to timeout the user session without activity. After this
   # time the user will be asked for credentials again. Default is 30 minutes.
 
-  # Updated after Karan arora and Ashpreet Singh faced invalid auth token error due to 30 min inactivity
-  config.timeout_in = 1.day
+  # Updated to 1 yr as I am not running a life critical or security sensitive website.
+  # Keeping it to lower value like 1.day was killing UX as people were required to login again
+  config.timeout_in = 10.years
 
   # ==> Configuration for :lockable
   # Defines which strategy will be used to lock an account.

@@ -34,7 +34,7 @@ class Post < ActiveRecord::Base
   end
 
   def comments
-    Comment.where("post_id = #{id} AND post_type = #{post_type}")
+    Comment.where(post_id: id, post_type: post_type)
   end
 
   private

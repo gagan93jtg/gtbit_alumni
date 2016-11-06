@@ -1,3 +1,11 @@
+<% content_for :head do %>
+  <meta property="og:type"        content="website" />
+  <meta property="og:title"       content="Team behind <%= get_domain_name %>" />
+  <meta property="og:description" content="Meet the creators of this website" />
+  <meta property="og:image"       content="<%= get_domain_name + '/logov2.png' %>" />
+  <title>GTBIT Alumni Network - The team</title>
+<% end %>
+
 <div class="team_container clearfix">
   <a href="/" class="btn background-seagreen team_back_to_home">Home</a><br><br>
   <% @names.each_with_index do |name, index| %>

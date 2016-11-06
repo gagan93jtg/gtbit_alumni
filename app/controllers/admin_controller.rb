@@ -7,6 +7,6 @@ class AdminController < ApplicationController
   private
 
   def allow_admins_only
-    render text: 'Not for kids !', status: :unauthorized and return if current_user.not_an_admin?
+    render text: 'Not for kids !', status: :unauthorized if current_user.nil? || current_user.not_an_admin?
   end
 end

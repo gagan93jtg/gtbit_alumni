@@ -1,16 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>GTBIT Alumni Network</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
   <link href='https://fonts.googleapis.com/css?family=Work+Sans:100,300,400,600' rel='stylesheet' type='text/css'>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
+  <meta property="og:url"         content="<%= get_domain_name + request.original_fullpath %>" />
+  <meta property="og:image:width" content="256" />
+  <meta property="og:image:height" content="256" />
+  <meta property="fb:app_id" content="1765946147003152" />
+
+  <% if content_for?(:head) %>
+    <%= yield(:head) %>
+  <% end %>
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
   <%= favicon_link_tag 'logov2.png' %>
 </head>
 <body>
@@ -46,7 +54,7 @@
                 <li><%= link_to "My Profile", user_path(current_user) %></li>
                 <li><%= link_to "My Preferences", user_preferences_path %></li>
                 <% if current_user.has_admin_role? %>
-                  <li><%= link_to "Admin Panel", admin_index_path %></li>
+                <li><%= link_to "Admin Panel", admin_index_path %></li>
                 <% end %>
                 <li role="separator" class="divider"></li>
                 <li><%= link_to "Search users", user_index_path  %> </li>
@@ -66,39 +74,44 @@
   </header>
   <div class="body_content clearfix">
     <%= yield %>
+    <% if current_user.nil? && request.original_fullpath != new_user_session_path  %>
+    <div class="glass-panel container-custom">
+      <%= render 'layouts/quick_links' %>
+    </div>
+    <% end %>
   </div>
   <footer>
     <div class="container">
       <div class="row">
         <a classs="footer_icons" href="https://www.fb.com/gtbitalumni.in" target="_blank"> <%= image_tag "fb.png", class: 'small_icon small_icon_social' %> </a>
         <!--
-        Noy yet created twitter and fb pages. I think it's waste of time managing three social pages!
+        Not yet created twitter and fb pages. I think it's waste of time managing three social pages!
         <a classs="footer_icons" href="https://www.twitter.com" target="_blank"> <%= image_tag "twitter.png", class: 'small_icon small_icon_social' %> </a>
         <a classs="footer_icons" href="https://www.google.co.in" target="_blank"> <%= image_tag "gplus.png", class: 'small_icon small_icon_social' %> </a>
-        -->
-        <a href="#" class="scrollup btn-lg"> <span class="glyphicon glyphicon-arrow-up"> </span> </a>
-      </div>
-      <div class="row">
-        <ul>
-          <li><a href="#" data-toggle="modal" data-target="#about_us">About Us</a></li>
-          <li class="separator">|</li>
-          <li><a href="#" data-toggle="modal" data-target="#contact_us">Contact Us</a></li>
-          <li class="separator">|</li>
-          <li><a href="/team">The Team</a></li>
-          <li class="separator">|</li>
-          <li><a href="#" data-toggle="modal" data-target="#report_bug">Report a Bug</a></li>
-          <li class="separator">|</li>
-          <li><%= link_to 'FAQs', faqs_path() %></li>
-        </ul>
-      </div>
-      <p>
-        &copy; Copyright <%= Time.current.year %>
-        <span>
-          <a href="/" class="footer_copyright_stamp">GTBIT Alumni Network</a>
-        </span>
-      </p>
+      -->
+      <a href="#" class="scrollup btn-lg"> <span class="glyphicon glyphicon-arrow-up"> </span> </a>
     </div>
-  </footer>
+    <div class="row">
+      <ul>
+        <li><a href="#" data-toggle="modal" data-target="#about_us">About Us</a></li>
+        <li class="separator">|</li>
+        <li><a href="#" data-toggle="modal" data-target="#contact_us">Contact Us</a></li>
+        <li class="separator">|</li>
+        <li><a href="/team">The Team</a></li>
+        <li class="separator">|</li>
+        <li><a href="#" data-toggle="modal" data-target="#report_bug">Report a Bug</a></li>
+        <li class="separator">|</li>
+        <li><%= link_to 'FAQs', faqs_path %></li>
+      </ul>
+    </div>
+    <p>
+      &copy; Copyright <%= Time.current.year %>
+      <span>
+        <a href="/" class="footer_copyright_stamp">GTBIT Alumni Network</a>
+      </span>
+    </p>
+  </div>
+</footer>
 </body>
 </html>
 
@@ -135,6 +148,24 @@
         <% end %>
         <div class="request_account_response_div modal_response_div">
         </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="browse_without_login_modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Browse without login</h4>
+        <p class="approve_account_text">We allow only GTBITIans to be a part of this website. If you are one, and have not got your login credentials yet, then you can request an account. If you are a non-GTBITian, then you can use the website in 'read-only' mode, i.e. browser major part of it without logging in, but you cannot write a post or comment on an existing post. Happy browsing ! </p>
+      </div>
+      <div class="modal-body">
+        <%= render 'layouts/quick_links' %>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

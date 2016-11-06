@@ -45,7 +45,7 @@ class WelcomeController < ApplicationController
     @profilePhotos = ["team/gagan.jpg", "team/ekas.jpg", "team/mandeep.jpg", "team/ishmeet.jpg",
        "team/ishaan.jpg",  "team/jagtar_sir.jpg"];
     @workInfo = ['Software Dev, Josh Technology Group', 'Software Dev, Nucleus', 'Security Enthusiast',
-      'Software Dev, Royal Bank of Canada', 'Software Eng, HCL', 'Head  CDMC & Head Mechanical, GTBIT'];
+      'iOS Developer, Mobile Banking, Royal Bank of Canada', 'Software Eng, HCL', 'Head  CDMC & Head Mechanical, GTBIT'];
     @designation = ['Backend Dev', 'Frontend Dev', 'Security', 'Visionary', 'Visionary', 'Supporting Faculty'];
     @fb_link = ['gagan93', 'Ekaspreetsingh', 'mandeepsingh.kapoor.984', 'ishmeetsingh.sethi', 'chawla.ishaan', 'jagtar.singh.370515'];
     @twitter_link = ['', 'handi_eddy', 'mandeeps13k', '', '', ''];

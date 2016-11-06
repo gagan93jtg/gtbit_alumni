@@ -1,3 +1,7 @@
+<% content_for :head do %>
+  <title>GTBIT Alumni Network - Update your preferences</title>
+<% end %>
+
 <div class="container-custom">
   <h1>Manage preferences</h1>
   <%= form_for :user, :url => update_user_preferences_path(), :method => "PUT" do |f|%>

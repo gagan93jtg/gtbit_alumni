@@ -47,7 +47,7 @@
         <% end %>
         <% end %>
     </div>
-    <% if job_post.user_id == current_user.id %>
+    <% if current_user && job_post.user_id == current_user.id %>
     <%= link_to "Edit job post", edit_job_path(job_post.id), class: 'edit_post background-seagreen' %>
     <% end %>
     <% if preview == 'true'%>

@@ -1,5 +1,5 @@
 class ExperiencePostsController < ApplicationController
-  before_filter :authenticate_user!
+  before_filter :authenticate_user!, only: [:new, :create, :edit, :update]
 
   def index
     @posts, @show_recent_posts = get_experience_posts
@@ -54,7 +54,7 @@ class ExperiencePostsController < ApplicationController
     if search_string.nil?
       return ExperiencePost.order('id DESC').last(10).reverse, true
     else
-      return ExperiencePost.where("query_string LIKE '%#{search_string}%'"), false
+      return ExperiencePost.where("query_string LIKE ?", "%#{search_string}%"), false
     end
   end
 

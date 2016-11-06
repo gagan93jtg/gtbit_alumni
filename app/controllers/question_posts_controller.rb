@@ -1,5 +1,5 @@
 class QuestionPostsController < ApplicationController
-  before_filter :authenticate_user!
+  before_filter :authenticate_user!, only: [:new, :create, :edit, :update, :mark_answered]
 
   def index
     @posts, @show_recent_posts = get_question_posts
@@ -72,7 +72,7 @@ class QuestionPostsController < ApplicationController
     if search_string.nil?
       return QuestionPost.order('id DESC').last(10).reverse, true
     else
-      return QuestionPost.where("query_string LIKE '%#{search_string}%'"), false
+      return QuestionPost.where("query_string LIKE ?", "%#{search_string}%"), false
     end
   end
 

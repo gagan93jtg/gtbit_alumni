@@ -1,3 +1,11 @@
+<% content_for :head do %>
+  <meta property="og:type"        content="website" />
+  <meta property="og:title"       content="Job posts on <%= get_domain_name %>" />
+  <meta property="og:description" content="View / search from the list of posted jobs" />
+  <meta property="og:image"       content="<%= get_domain_name + '/logov2.png' %>" />
+  <title>Job posts on <%= get_domain_name %></title>
+<% end %>
+
 <div class="search-job">
   <div class="container-custom">
     <div class="search_div">
@@ -18,9 +26,8 @@
        <div class="job_details">
          <%= render 'show_job_post', job_post: job_post, preview: 'true' %>
        </div>
+      <% end %>
      </div>
-     <% end %>
    </div>
  </div>
-</div>
 

@@ -25,7 +25,7 @@ Rails.application.routes.draw do
   resources :posts, controller: 'question_posts'
   resources :job, controller: 'job_posts'
   resources :experience, controller: 'experience_posts'
-  resources :faqs, only: [:index, :show]
+  resources :faqs, only: [:index]
   resources :user
   resources :comments, only: [:create]
   resources :admin, only: [:index]
