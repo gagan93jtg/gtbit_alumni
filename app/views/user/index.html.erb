@@ -35,7 +35,11 @@
             <tr class="clickable-row" data-href="<%= user_path(user.id) %>">
               <td><%= user.first_name %></td>
               <td><%= user.last_name %></td>
-              <td><%= user.email %></td>
+              <% if @current_user.nil? %>
+                <td>Login to view more details</td>
+              <% else %>
+                <td><%= user.email %></td>
+              <% end %>
             </tr>
             <% end %>
           </tbody>

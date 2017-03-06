@@ -118,15 +118,19 @@
             <li class="profile-panel">
               <h1 class="panel-head">Contact</h1>
               <div class="hr-left"></div>
-
+              <% if current_user.nil? %>
+                <div class="btn-group login_to_view">
+                  Login to view contact information
+                </div>
+              <% else %>
               <div class="btn-group">
                 <button type="button" class="btn btn-primary profile-btn-one">Batch</button>
                 <button type="button" class="btn btn-default profile-btn-two">
                   <strong>
                     <% if (!@user.batch.nil? && !(@user.batch.strip == "")) %>
-                    <%= @user.batch %>
+                      <%= @user.batch %>
                     <% else %>
-                    NA
+                      NA
                     <% end %>
                   </strong>
                 </button>
@@ -137,9 +141,9 @@
                 <button type="button" class="btn btn-default profile-btn-two">
                   <strong>
                     <% if (!@user.phone.nil? && !(@user.phone.strip == "")) %>
-                    <%= @user.phone %>
+                      <%= @user.phone %>
                     <% else %>
-                    NA
+                      NA
                     <% end %>
                   </strong>
                 </button>
@@ -150,9 +154,9 @@
                 <button type="button" class="btn btn-default profile-btn-two">
                   <strong>
                     <% if (!@user.gender.nil? && !(@user.gender.strip == "")) %>
-                    <%= @user.gender %>
+                      <%= @user.gender %>
                     <% else %>
-                    NA
+                      NA
                     <% end %>
                   </strong>
                 </button>
@@ -160,8 +164,11 @@
 
               <div class="btn-group">
                 <button type="button" class="btn btn-primary profile-btn-one">Email</button>
-                <button type="button" class="btn btn-default profile-btn-two"><strong><%= @user.email %></strong></button>
+                <button type="button" class="btn btn-default profile-btn-two"><strong>
+                    <%= @user.email %>
+                  </strong></button>
               </div>
+              <% end %>
             </li>
           </ul>
         </div>
